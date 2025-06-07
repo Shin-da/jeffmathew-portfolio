@@ -1,3 +1,4 @@
+console.log('main.js loaded');
 // Initialize AOS (Animate On Scroll)
 AOS.init({
   duration: 800,
@@ -166,8 +167,8 @@ function closeIgArtLightbox() {
   igArtLightboxMeta.textContent = '';
   document.body.style.overflow = '';
 }
-igArtLightboxClose.addEventListener('click', closeIgArtLightbox);
-igArtLightboxBackdrop.addEventListener('click', closeIgArtLightbox);
+if (igArtLightboxClose) igArtLightboxClose.addEventListener('click', closeIgArtLightbox);
+if (igArtLightboxBackdrop) igArtLightboxBackdrop.addEventListener('click', closeIgArtLightbox);
 document.addEventListener('keydown', function(e) {
   if (igArtLightbox.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
     closeIgArtLightbox();
@@ -232,35 +233,37 @@ function closeIgHighlightModal() {
   document.body.style.overflow = '';
   igHighlightCards.forEach(c => c.classList.remove('active'));
 }
-igHighlightModalClose.addEventListener('click', closeIgHighlightModal);
-igHighlightModalBackdrop.addEventListener('click', closeIgHighlightModal);
+if (igHighlightModalClose) igHighlightModalClose.addEventListener('click', closeIgHighlightModal);
+if (igHighlightModalBackdrop) igHighlightModalBackdrop.addEventListener('click', closeIgHighlightModal);
 document.addEventListener('keydown', function(e) {
   if (igHighlightModal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
     closeIgHighlightModal();
   }
 });
 
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const htmlEl = document.documentElement;
+// --- DARK MODE LOGIC (Instagram-inspired) ---
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, dark mode script running');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const htmlEl = document.documentElement;
 
-function setDarkMode(enabled, save = true) {
-  if (enabled) {
-    htmlEl.setAttribute('data-theme', 'dark');
-    if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    htmlEl.removeAttribute('data-theme');
-    if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  function setDarkMode(enabled, save = true) {
+    if (enabled) {
+      htmlEl.setAttribute('data-theme', 'dark');
+    } else {
+      htmlEl.removeAttribute('data-theme');
+    }
+    if (darkModeToggle) {
+      darkModeToggle.classList.toggle('is-dark', enabled);
+    }
+    if (save) localStorage.setItem('darkMode', enabled ? '1' : '0');
   }
-  if (save) localStorage.setItem('darkMode', enabled ? '1' : '0');
-}
 
-function getSystemDark() {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
+  function getSystemDark() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
 
-// On load: apply saved or system preference
-(function() {
+  // Initial theme check
   const saved = localStorage.getItem('darkMode');
   if (saved === '1') {
     setDarkMode(true, false);
@@ -269,21 +272,23 @@ function getSystemDark() {
   } else {
     setDarkMode(getSystemDark(), false);
   }
-})();
 
-if (darkModeToggle) {
-  darkModeToggle.addEventListener('click', function() {
-    const isDark = htmlEl.getAttribute('data-theme') === 'dark';
-    setDarkMode(!isDark, true);
-  });
-}
-
-// Listen for system theme changes if user hasn't set a preference
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  const saved = localStorage.getItem('darkMode');
-  if (saved === null) {
-    setDarkMode(e.matches, false);
+  // Toggle click
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', function() {
+      console.log('Toggle button clicked!');
+      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+      setDarkMode(!isDark, true);
+    });
   }
+
+  // Listen for system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === null) {
+      setDarkMode(e.matches, false);
+    }
+  });
 });
 
 // Page fade-in on load

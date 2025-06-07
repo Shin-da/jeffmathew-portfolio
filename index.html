@@ -49,13 +49,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto nav-pill-row">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#art">Art</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <button id="darkModeToggle" class="btn btn-link ms-3" aria-label="Toggle dark mode" style="font-size:1.5rem;"><i class="fas fa-moon"></i></button>
+        <div class="theme-toggle-wrapper ms-3">
+          <button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-track">
+              <span class="toggle-thumb">
+                <span class="toggle-icon sun"><i class="fas fa-sun"></i></span>
+                <span class="toggle-icon moon"><i class="fas fa-moon"></i></span>
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -593,6 +602,7 @@
       </div>
     </div>
   </div>
+  <script src="js/main.js"></script> 
 </body>
 
 </html>
