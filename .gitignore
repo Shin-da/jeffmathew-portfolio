@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Environment files
+.env
+
+# Node modules (if ever added)
+node_modules/
+
+# Logs
+*.log
+
+# XAMPP/Local server config
+config/ 
