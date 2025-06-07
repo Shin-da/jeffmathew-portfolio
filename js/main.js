@@ -59,24 +59,26 @@ const lightboxImg = document.getElementById('art-lightbox-img');
 const lightboxClose = document.getElementById('art-lightbox-close');
 const lightboxBackdrop = document.querySelector('.art-lightbox-backdrop');
 
-artGalleryItems.forEach(img => {
-  img.addEventListener('click', function() {
-    lightboxImg.src = this.src;
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+if (artGalleryItems && lightbox && lightboxImg) {
+  artGalleryItems.forEach(img => {
+    img.addEventListener('click', function() {
+      lightboxImg.src = this.src;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
+}
 
 function closeLightbox() {
-  lightbox.style.display = 'none';
-  lightboxImg.src = '';
+  if (lightbox) lightbox.style.display = 'none';
+  if (lightboxImg) lightboxImg.src = '';
   document.body.style.overflow = '';
 }
 
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxBackdrop.addEventListener('click', closeLightbox);
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
 document.addEventListener('keydown', function(e) {
-  if (lightbox.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+  if (lightbox && lightbox.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
     closeLightbox();
   }
 });
@@ -113,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
   backToTop.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  document.body.classList.add('page-fadein-active');
 });
 
 // IG-Style Art Gallery Filtering

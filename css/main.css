@@ -7,7 +7,7 @@
     --light-text: var(--storm-dust);
     --background-color: var(--cloud);
     --section-bg: #ffffff;
-    --card-bg: var(--cloud);
+    --card-bg: var(--tea-green);
     --border-color: var(--star-dust);
     --hover-color: var(--coral-tree);
     --transition: all 0.3s ease;
@@ -33,47 +33,135 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-color: var(--background-color);
-}
-
-body.page-fadein {
     opacity: 0;
     transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
 }
-body.page-fadein.page-fadein-active {
+
+body.page-fadein-active {
     opacity: 1;
 }
 
-/* Navigation */
+/* Enhanced Navbar Styles */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    border-bottom: 1.5px solid var(--star-dust);
-    padding: 1rem 0;
-    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(139, 86, 51, 0.08);
+    border-bottom: 2px solid var(--accent-bg);
+    padding: 1rem 0.5rem;
+    transition: background 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.navbar.sticky {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 24px rgba(139, 86, 51, 0.13);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    color: var(--header-color);
+    font-family: 'Playfair Display', serif;
+    transition: color 0.2s;
 }
 
-.brand-first {
-    color: var(--saddle);
-}
-
-.brand-second {
-    color: var(--coral-tree);
+.navbar-brand:hover {
+    color: var(--highlight);
 }
 
 .nav-link {
-    color: var(--woodsmoke);
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    transition: var(--transition);
+    color: var(--header-color);
+    font-weight: 600;
+    font-size: 1.08rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 18px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
-.nav-link:hover {
-    color: var(--coral-tree);
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+    background: var(--accent-bg);
+    color: var(--button-hover);
+    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.10);
+}
+
+.navbar-toggler {
+    border: none;
+    background: var(--accent-bg);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+    background: var(--highlight);
+}
+
+/* Button Styles */
+.btn, .btn-primary, .btn-outline {
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1.08rem;
+    padding: 0.7rem 2.2rem;
+    box-shadow: 0 2px 12px rgba(139, 86, 51, 0.08);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--button-color);
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--button-hover);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.13);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+.btn-outline:hover, .btn-outline:focus {
+    background: var(--button-color);
+    color: #fff;
+    border-color: var(--button-hover);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.13);
+}
+
+/* Card Styles */
+.project-card, .blog-card, .testimonial-card, .contact-info, .contact-form, .ig-art-card, .blog-post-card {
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.08);
+    border: 1.5px solid var(--accent-bg);
+    background: var(--card-bg);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-card:hover, .blog-card:hover, .testimonial-card:hover, .blog-post-card:hover, .ig-art-card:hover {
+    box-shadow: 0 12px 36px rgba(139, 86, 51, 0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Section Padding Consistency */
+.about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media (max-width: 991.98px) {
+    .about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
 }
 
 /* Hero Section */
@@ -832,7 +920,7 @@ body.page-fadein.page-fadein-active {
   --milk-chocolate: #8B5633;
   --metallic-bronze: #A37B47;
   --laurel-green: #9DB496;
-  --tea-green: #CCE3C2;
+  --tea-green: #e0dcca;
   --cookies-cream: #E0DCAA;
   --coconut: #EDE1D2;
   --palm-oil: #5D2510;
@@ -863,14 +951,12 @@ body {
 }
 
 .ig-header-section {
-  position: relative;
-  width: 100%;
+  padding-top: 110px;
   min-height: 420px;
   background: var(--secondary-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3.5rem 0 2.5rem 0;
   margin-bottom: 2.5rem;
   overflow: hidden;
 }
@@ -888,6 +974,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 .ig-profile-pic-wrapper {
   width: 144px;
@@ -954,8 +1043,8 @@ body {
 }
 @media (max-width: 767.98px) {
   .ig-header-section {
+    padding-top: 90px;
     min-height: 340px;
-    padding: 2.2rem 0 1.5rem 0;
   }
   .ig-profile-pic-wrapper {
     width: 100px;
