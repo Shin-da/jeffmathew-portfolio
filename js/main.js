@@ -98,4 +98,38 @@ document.addEventListener('keydown', function(e) {
   if (lightbox.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
     closeLightbox();
   }
+});
+
+// Scrollspy (Bootstrap 5)
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.bootstrap && bootstrap.ScrollSpy) {
+    new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNav',
+      offset: 80
+    });
+  }
+
+  // Auto-collapse mobile navbar after clicking a link
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navLinks = document.querySelectorAll('#navbarResponsive .nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click();
+      }
+    });
+  });
+
+  // Back to Top button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }); 

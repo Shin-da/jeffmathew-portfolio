@@ -16,7 +16,7 @@ Welcome to my personal portfolio website! I am Jeff Mathew Garcia, an IT graduat
 - AOS (Animate On Scroll)
 
 ## 🌐 Live Demo
-[GitHub Pages Link](https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/)
+[GitHub Pages Link](https://shin-da.github.io/jeffmathew-portfolio/)
 
 ## 📦 How to Use
 1. Clone the repository:

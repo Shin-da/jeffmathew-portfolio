@@ -599,6 +599,9 @@ body {
 
 /* Responsive Design */
 @media (max-width: 991.98px) {
+    .hero {
+        padding-top: 90px;
+    }
     .hero-title {
         font-size: 2.1rem;
     }
@@ -624,11 +627,22 @@ body {
     .contact-info, .contact-form {
         margin-bottom: 2rem;
     }
+    .open-commissions-badge {
+        display: block;
+        margin: 0 auto 1rem auto;
+        font-size: 1rem;
+        max-width: 95vw;
+        white-space: normal;
+    }
 }
 
 @media (max-width: 767.98px) {
+    .hero {
+        padding-top: 80px;
+    }
     .hero-title {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+        word-break: break-word;
     }
     .hero-content {
         padding: 1rem 0;
@@ -659,8 +673,13 @@ body {
         font-size: 0.95rem;
     }
     .open-commissions-badge {
-        font-size: 0.95rem;
-        padding: 0.3em 0.8em;
+        font-size: 0.92rem;
+        padding: 0.25em 0.7em;
+        margin-bottom: 0.7rem;
+        max-width: 98vw;
+    }
+    .navbar {
+        min-height: 56px;
     }
     .art-lightbox-close {
         top: 12px;
@@ -668,6 +687,39 @@ body {
         width: 36px;
         height: 36px;
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        padding-top: 70px;
+    }
+    .open-commissions-badge {
+        font-size: 0.85rem;
+        padding: 0.18em 0.5em;
+        margin-bottom: 0.5rem;
+        max-width: 99vw;
+        white-space: normal;
+    }
+    .hero-title {
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+    .brushstroke-icon svg {
+        width: 28px !important;
+        height: 12px !important;
+        margin-left: 1px !important;
+        margin-bottom: 2px !important;
+    }
+    .hero-image-container {
+        padding: 0.5rem;
+    }
+    .hero-image-wrapper {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+    .hero-image {
+        border-radius: 16px;
     }
 }
 

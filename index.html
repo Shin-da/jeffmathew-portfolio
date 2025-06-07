@@ -5,15 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeff Mathew Garcia - IT Professional & Artist</title>
+  <meta name="description" content="Jeff Mathew Garcia's portfolio: IT, web development, and digital art. Open for commissions.">
+  <meta name="keywords" content="Jeff Mathew Garcia, portfolio, IT, web development, digital art, commissions, resume">
+  <meta property="og:title" content="Jeff Mathew Garcia - IT Professional & Artist">
+  <meta property="og:description" content="Showcasing web, system, and art projects. Open for commissions.">
+  <meta property="og:image" content="https://shin-da.github.io/jeffmathew-portfolio/assets/images/me.jpg">
+  <meta property="og:url" content="https://shin-da.github.io/jeffmathew-portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
   <a href="#about" class="skip-link">Skip to main content</a>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="#page-top">
         <span class="brand-first">Jeff</span>
@@ -64,7 +71,7 @@
         <div class="col-lg-6" data-aos="fade-left">
           <div class="hero-image-container">
             <div class="hero-image-wrapper">
-              <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" class="hero-image">
+              <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" class="hero-image" loading="eager">
               <div class="hero-shape"></div>
             </div>
           </div>
@@ -84,7 +91,7 @@
         <div class="row align-items-center">
           <div class="col-lg-4">
             <div class="about-image-container">
-              <img src="assets/images/nstp.png" alt="Jeff Mathew Garcia" class="about-image">
+              <img src="assets/images/nstp.png" alt="Jeff Mathew Garcia" class="about-image" loading="lazy">
               <div class="about-image-overlay"></div>
             </div>
           </div>
@@ -161,7 +168,7 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/wedding-invitation.png" alt="Online Wedding Invitation with RSVP project screenshot" class="project-image">
+              <img src="assets/images/wedding-invitation.png" alt="Online Wedding Invitation with RSVP project screenshot" class="project-image" loading="lazy">
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -187,7 +194,7 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/hfc-management.png" alt="Inventory Management System project screenshot" class="project-image">
+              <img src="assets/images/hfc-management.png" alt="Inventory Management System project screenshot" class="project-image" loading="lazy">
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -214,7 +221,7 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/thesis.png" alt="Capstone Research Project screenshot" class="project-image">
+              <img src="assets/images/thesis.png" alt="Capstone Research Project screenshot" class="project-image" loading="lazy">
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -267,13 +274,13 @@
           <div class="art-gallery">
             <!-- Add your art portfolio images here -->
             <div class="art-gallery-item">
-              <img src="assets/images/art1.jpg" alt="Digital Art Sample 1 by Jeff Mathew Garcia">
+              <img src="assets/images/art1.jpg" alt="Digital Art Sample 1 by Jeff Mathew Garcia" loading="lazy">
             </div>
             <div class="art-gallery-item">
-              <img src="assets/images/art2.jpg" alt="Digital Art Sample 2 by Jeff Mathew Garcia">
+              <img src="assets/images/art2.jpg" alt="Digital Art Sample 2 by Jeff Mathew Garcia" loading="lazy">
             </div>
             <div class="art-gallery-item">
-              <img src="assets/images/art3.jpg" alt="Digital Art Sample 3 by Jeff Mathew Garcia">
+              <img src="assets/images/art3.jpg" alt="Digital Art Sample 3 by Jeff Mathew Garcia" loading="lazy">
             </div>
           </div>
         </div>
@@ -367,7 +374,7 @@
         <div class="col-lg-6" data-aos="fade-left">
           <div class="contact-form">
             <h3 class="contact-form-title">Send Me a Message</h3>
-            <form id="contactForm" action="send_message.php" method="POST">
+            <form id="contactForm" action="send_message.php" method="POST" aria-label="Contact form">
               <div class="form-group mb-3">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
               </div>
@@ -408,5 +415,13 @@
     <img id="art-lightbox-img" src="" alt="Artwork enlarged" />
     <button id="art-lightbox-close" class="art-lightbox-close" aria-label="Close">&times;</button>
   </div>
+
+  <!-- Resume Download Link -->
+  <div class="text-center mt-4 mb-4">
+    <a href="#" class="btn btn-outline" download aria-label="Download my resume (PDF)"><i class="fas fa-file-download"></i> Download Resume (PDF)</a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:var(--coral-tree);color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(180,124,108,0.10);cursor:pointer;transition:background 0.2s;"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
