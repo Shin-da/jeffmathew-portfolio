@@ -243,30 +243,47 @@ document.addEventListener('keydown', function(e) {
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const htmlEl = document.documentElement;
-function setDarkMode(enabled) {
+
+function setDarkMode(enabled, save = true) {
   if (enabled) {
     htmlEl.setAttribute('data-theme', 'dark');
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
   } else {
     htmlEl.removeAttribute('data-theme');
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   }
-  localStorage.setItem('darkMode', enabled ? '1' : '0');
+  if (save) localStorage.setItem('darkMode', enabled ? '1' : '0');
 }
+
 function getSystemDark() {
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
+
 // On load: apply saved or system preference
 (function() {
   const saved = localStorage.getItem('darkMode');
-  if (saved === '1' || (saved === null && getSystemDark())) {
-    setDarkMode(true);
+  if (saved === '1') {
+    setDarkMode(true, false);
+  } else if (saved === '0') {
+    setDarkMode(false, false);
   } else {
-    setDarkMode(false);
+    setDarkMode(getSystemDark(), false);
   }
 })();
-darkModeToggle.addEventListener('click', function() {
-  setDarkMode(!htmlEl.hasAttribute('data-theme'));
+
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', function() {
+    const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+    setDarkMode(!isDark, true);
+  });
+}
+
+// Listen for system theme changes if user hasn't set a preference
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  const saved = localStorage.getItem('darkMode');
+  if (saved === null) {
+    setDarkMode(e.matches, false);
+  }
 });
 
 // Page fade-in on load

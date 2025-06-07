@@ -11,6 +11,8 @@
     --border-color: var(--star-dust);
     --hover-color: var(--coral-tree);
     --transition: all 0.3s ease;
+    --insta-blue: #0095f6;
+    --insta-purple: #a259ff;
 }
 
 /* Custom Color Variables */
@@ -1575,42 +1577,36 @@ body {
 }
 
 [data-theme="dark"] {
-  --primary-bg: #23201b;
-  --secondary-bg: #181612;
-  --card-bg: #2d2922;
-  --accent-bg: #3a3327;
-  --header-color: #e0dcca;
-  --button-color: #b47c6c;
-  --button-hover: #a37b47;
-  --text-color: #f5e9d7;
-  --subtle-text: #b47c6c;
-  --highlight: #b47c6c;
-  --border-color: #3a3327;
+  --primary-bg: #000;
+  --secondary-bg: #18191a;
+  --card-bg: #232323;
+  --accent-bg: #232323;
+  --header-color: var(--milk-chocolate);
+  --button-color: var(--milk-chocolate);
+  --button-hover: var(--insta-blue);
+  --text-color: #fff;
+  --subtle-text: #e0e0e0;
+  --highlight: var(--insta-purple);
+  --border-color: #222;
 }
 [data-theme="dark"] body {
   background: var(--primary-bg);
   color: var(--text-color);
 }
 [data-theme="dark"] .navbar {
-  background-color: rgba(35, 32, 27, 0.97);
-  border-bottom: 1.5px solid var(--border-color);
+  background: rgba(0,0,0,0.97);
+  border-bottom: 2px solid var(--border-color);
 }
 [data-theme="dark"] .navbar-brand, [data-theme="dark"] .nav-link {
   color: var(--header-color);
 }
-[data-theme="dark"] .nav-link:hover {
-  color: var(--highlight);
+[data-theme="dark"] .nav-link.active, [data-theme="dark"] .nav-link:focus, [data-theme="dark"] .nav-link:hover {
+  background: var(--insta-purple);
+  color: #fff;
 }
-[data-theme="dark"] .ig-header-section {
-  background: var(--secondary-bg);
-}
-[data-theme="dark"] .ig-header-bg {
-  background: linear-gradient(120deg, var(--accent-bg) 0%, var(--secondary-bg) 60%, var(--primary-bg) 100%);
-  opacity: 0.55;
-}
-[data-theme="dark"] .ig-profile-pic-wrapper {
-  border: 5px solid var(--card-bg);
-  background: var(--card-bg);
+[data-theme="dark"] .navbar-toggler {
+  background: var(--insta-purple);
+  color: #fff;
 }
 [data-theme="dark"] .section-title {
   color: var(--header-color);
@@ -1621,7 +1617,7 @@ body {
 [data-theme="dark"] .about, [data-theme="dark"] .projects, [data-theme="dark"] .ig-gallery-section, [data-theme="dark"] .contact, [data-theme="dark"] .blog-section {
   background: var(--secondary-bg);
 }
-[data-theme="dark"] .project-card, [data-theme="dark"] .testimonial-card, [data-theme="dark"] .blog-card, [data-theme="dark"] .contact-info, [data-theme="dark"] .contact-form, [data-theme="dark"] .ig-art-card {
+[data-theme="dark"] .project-card, [data-theme="dark"] .testimonial-card, [data-theme="dark"] .blog-card, [data-theme="dark"] .contact-info, [data-theme="dark"] .contact-form, [data-theme="dark"] .ig-art-card, [data-theme="dark"] .blog-post-card {
   background: var(--card-bg);
   color: var(--text-color);
   border: 1.5px solid var(--border-color);
@@ -1631,72 +1627,64 @@ body {
   border-color: var(--highlight);
 }
 [data-theme="dark"] .project-link.demo, [data-theme="dark"] .btn-primary, [data-theme="dark"] .blog-readmore:hover {
-  background: var(--highlight);
+  background: var(--insta-blue);
   color: #fff;
+}
+[data-theme="dark"] .btn-outline {
+  background: transparent;
+  color: var(--insta-blue);
+  border: 2px solid var(--insta-blue);
+}
+[data-theme="dark"] .btn-outline:hover, [data-theme="dark"] .btn-outline:focus {
+  background: var(--insta-blue);
+  color: #fff;
+  border-color: var(--insta-purple);
 }
 [data-theme="dark"] .footer {
-  background: #181612;
+  background: #18191a;
   color: var(--header-color);
 }
-[data-theme="dark"] .ig-highlight-icon {
-  background: var(--card-bg);
-  color: var(--header-color);
-  border: 3px solid var(--accent-bg);
-}
-[data-theme="dark"] .ig-highlight-card:hover .ig-highlight-icon, [data-theme="dark"] .ig-highlight-card.active .ig-highlight-icon {
-  background: var(--highlight);
-  color: #fff;
-  border: 3px solid var(--header-color);
-}
-[data-theme="dark"] .carousel-control-prev-icon, [data-theme="dark"] .carousel-control-next-icon {
-  filter: invert(1) grayscale(1);
-}
-[data-theme="dark"] .form-control {
-  background: #23201b;
-  color: var(--text-color);
-}
-[data-theme="dark"] .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(180, 124, 108, 0.18);
-}
-[data-theme="dark"] .open-commissions-badge {
-  background: var(--highlight);
+[data-theme="dark"] .blog-post-title, [data-theme="dark"] .blog-post-content h2 {
   color: #fff;
 }
-[data-theme="dark"] .blog-card-title {
-  color: var(--header-color);
+[data-theme="dark"] .blog-post-content, [data-theme="dark"] .blog-post-content .lead {
+  color: #e0e0e0;
 }
-[data-theme="dark"] .blog-readmore {
-  color: var(--header-color);
-  border-color: var(--highlight);
-}
-[data-theme="dark"] .blog-readmore:hover, [data-theme="dark"] .blog-readmore:focus-visible {
-  background: var(--highlight);
-  color: #fff;
-  border-color: var(--highlight);
-}
-[data-theme="dark"] .ig-art-lightbox-content, [data-theme="dark"] .ig-highlight-modal-content {
-  background: var(--card-bg);
-  color: var(--text-color);
-}
-[data-theme="dark"] .ig-art-lightbox-title, [data-theme="dark"] .ig-highlight-modal-title {
-  color: var(--header-color);
-}
-[data-theme="dark"] .ig-art-lightbox-close, [data-theme="dark"] .ig-highlight-modal-close {
-  background: var(--highlight);
+[data-theme="dark"] .tag {
+  background: #232323;
   color: #fff;
 }
-[data-theme="dark"] .ig-art-lightbox-close:hover, [data-theme="dark"] .ig-highlight-modal-close:hover {
-  background: var(--button-hover);
-}
-[data-theme="dark"] .skip-link {
-  background: var(--highlight);
+[data-theme="dark"] .share-button {
+  background: #232323;
   color: #fff;
 }
-[data-theme="dark"] .skip-link:focus {
-  outline: 2px solid var(--highlight);
+[data-theme="dark"] .blog-index {
+  background: #000;
 }
-body, .project-card, .testimonial-card, .blog-card, .contact-info, .contact-form, .ig-art-card, .ig-header-section, .about, .projects, .ig-gallery-section, .contact, .blog-section {
-  transition: background 0.4s, color 0.4s, border-color 0.4s;
+[data-theme="dark"] .blog-post-card {
+  background: #18191a;
+  border-color: #232323;
+}
+[data-theme="dark"] .blog-post-content .blog-post-title a {
+  color: #fff;
+}
+[data-theme="dark"] .blog-post-excerpt {
+  color: #e0e0e0;
+}
+[data-theme="dark"] .blog-sidebar {
+  background: #18191a;
+  border-radius: 12px;
+  padding: 1.2rem;
+  color: #fff;
+}
+[data-theme="dark"] .sidebar-title {
+  color: var(--insta-blue);
+}
+[data-theme="dark"] .sidebar-list a {
+  color: var(--insta-blue);
+}
+[data-theme="dark"] .sidebar-list a:hover {
+  color: var(--insta-purple);
 }
 
 /* Blog Post Styles */
