@@ -30,25 +30,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Form submission handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Here you would typically send the data to your server
-    console.log('Form submitted:', data);
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    this.reset();
-  });
-}
-
 // Project image hover effect
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', function() {
@@ -253,4 +234,50 @@ document.addEventListener('keydown', function(e) {
   if (igHighlightModal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
     closeIgHighlightModal();
   }
-}); 
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const htmlEl = document.documentElement;
+function setDarkMode(enabled) {
+  if (enabled) {
+    htmlEl.setAttribute('data-theme', 'dark');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    htmlEl.removeAttribute('data-theme');
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+  localStorage.setItem('darkMode', enabled ? '1' : '0');
+}
+function getSystemDark() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+// On load: apply saved or system preference
+(function() {
+  const saved = localStorage.getItem('darkMode');
+  if (saved === '1' || (saved === null && getSystemDark())) {
+    setDarkMode(true);
+  } else {
+    setDarkMode(false);
+  }
+})();
+darkModeToggle.addEventListener('click', function() {
+  setDarkMode(!htmlEl.hasAttribute('data-theme'));
+});
+
+// Page fade-in on load
+(function() {
+  document.body.classList.add('page-fadein');
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.body.classList.add('page-fadein-active');
+    }, 10);
+  });
+})();
+
+// Show contact success message if redirected with #contact-success
+if (window.location.hash === '#contact-success') {
+  const successMsg = document.getElementById('contactSuccess');
+  if (successMsg) successMsg.style.display = 'block';
+  window.location.hash = '';
+} 

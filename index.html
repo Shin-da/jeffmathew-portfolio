@@ -8,16 +8,24 @@
   <meta name="description"
     content="Jeff Mathew Garcia's portfolio: IT, web development, and digital art. Open for commissions.">
   <meta name="keywords" content="Jeff Mathew Garcia, portfolio, IT, web development, digital art, commissions, resume">
+  <meta name="author" content="Jeff Mathew Garcia">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="Jeff Mathew Garcia - IT Professional & Artist">
   <meta property="og:description" content="Showcasing web, system, and art projects. Open for commissions.">
-  <meta property="og:image" content="https://shin-da.github.io/jeffmathew-portfolio/assets/images/me.jpg">
+  <meta property="og:image" content="https://shin-da.github.io/jeffmathew-portfolio/assets/images/me.webp">
   <meta property="og:url" content="https://shin-da.github.io/jeffmathew-portfolio/">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jeff Mathew Garcia - IT Professional & Artist">
+  <meta name="twitter:description" content="Showcasing web, system, and art projects. Open for commissions.">
+  <meta name="twitter:image" content="https://shin-da.github.io/jeffmathew-portfolio/assets/images/me.webp">
+  <meta name="twitter:url" content="https://shin-da.github.io/jeffmathew-portfolio/">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
@@ -39,6 +47,7 @@
           <li class="nav-item"><a class="nav-link" href="#art">Art</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
+        <button id="darkModeToggle" class="btn btn-link ms-3" aria-label="Toggle dark mode" style="font-size:1.5rem;"><i class="fas fa-moon"></i></button>
       </div>
     </div>
   </nav>
@@ -48,7 +57,10 @@
     <div class="ig-header-bg"></div>
     <div class="container ig-header-content text-center">
       <div class="ig-profile-pic-wrapper">
-        <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" class="ig-profile-pic">
+        <picture>
+          <source srcset="assets/images/me.webp" type="image/webp">
+          <img src="assets/images/me.jpg" alt="Portrait of Jeff Mathew Garcia" class="ig-profile-pic" width="144" height="144" loading="lazy">
+        </picture>
       </div>
       <h1 class="ig-profile-name">Jeff Mathew Garcia</h1>
       <div class="ig-profile-tagline">Artist & Web Developer<br><span class="ig-profile-highlight">I bring art to code
@@ -76,19 +88,19 @@
   <section class="ig-highlights-section">
     <div class="container">
       <div class="ig-highlights-row">
-        <div class="ig-highlight-card" data-highlight="about">
+        <div class="ig-highlight-card" data-highlight="about" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-user"></i></div>
           <div class="ig-highlight-label">About</div>
         </div>
-        <div class="ig-highlight-card" data-highlight="skills">
+        <div class="ig-highlight-card" data-highlight="skills" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-code"></i></div>
           <div class="ig-highlight-label">Skills</div>
         </div>
-        <div class="ig-highlight-card" data-highlight="services">
+        <div class="ig-highlight-card" data-highlight="services" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-briefcase"></i></div>
           <div class="ig-highlight-label">Services</div>
         </div>
-        <div class="ig-highlight-card" data-highlight="testimonials">
+        <div class="ig-highlight-card" data-highlight="testimonials" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-comment-dots"></i></div>
           <div class="ig-highlight-label">Testimonials</div>
         </div>
@@ -96,7 +108,7 @@
     </div>
   </section>
 
-  <div class="container-fluid about" style="height:auto; padding: 100px 0;">
+  <div class="container-fluid about" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="about">
       <div class="about-header text-center mb-5">
         <h2 class="section-title">About Me</h2>
@@ -105,13 +117,16 @@
 
       <div class="about-content">
         <div class="row align-items-center">
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-right">
             <div class="about-image-container">
-              <img src="assets/images/nstp.png" alt="Jeff Mathew Garcia" class="about-image" loading="lazy">
+              <picture>
+                <source srcset="assets/images/nstp.webp" type="image/webp">
+                <img src="assets/images/nstp.png" alt="Jeff Mathew Garcia participating in NSTP activity" class="about-image" width="320" height="240" loading="lazy">
+              </picture>
               <div class="about-image-overlay"></div>
             </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-lg-8" data-aos="fade-left">
             <div class="about-text">
               <div class="about-description">
                 <p>I am Jeff Mathew Garcia, an IT graduate student who combines technical expertise with artistic
@@ -173,7 +188,7 @@
     </div>
   </div>
 
-  <div class="container-fluid projects" style="height:auto; padding: 100px 0;">
+  <div class="container-fluid projects" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="projects">
       <div class="projects-header text-center mb-5">
         <h2 class="section-title">My Projects</h2>
@@ -183,11 +198,13 @@
 
       <div class="row g-4">
         <!-- Wedding Invitation Project -->
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/wedding-invitation.png"
-                alt="Online Wedding Invitation with RSVP project screenshot" class="project-image" loading="lazy">
+              <picture>
+                <source srcset="assets/images/wedding-invitation.webp" type="image/webp">
+                <img src="assets/images/wedding-invitation.png" alt="Screenshot of Online Wedding Invitation with RSVP project by Jeff Mathew Garcia" class="project-image" width="400" height="200" loading="lazy">
+              </picture>
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
@@ -213,11 +230,13 @@
         </div>
 
         <!-- HFC Management System -->
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/hfc-management.png" alt="Inventory Management System project screenshot"
-                class="project-image" loading="lazy">
+              <picture>
+                <source srcset="assets/images/hfc-management.webp" type="image/webp">
+                <img src="assets/images/hfc-management.png" alt="Screenshot of Inventory Management System project by Jeff Mathew Garcia" class="project-image" width="400" height="200" loading="lazy">
+              </picture>
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
@@ -244,11 +263,13 @@
         </div>
 
         <!-- Thesis Project -->
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="project-card">
             <div class="project-image-container">
-              <img src="assets/images/thesis.png" alt="Capstone Research Project screenshot" class="project-image"
-                loading="lazy">
+              <picture>
+                <source srcset="assets/images/thesis.webp" type="image/webp">
+                <img src="assets/images/thesis.png" alt="Screenshot of Capstone Research Project by Jeff Mathew Garcia" class="project-image" width="400" height="200" loading="lazy">
+              </picture>
               <div class="project-overlay">
                 <div class="project-links">
                   <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
@@ -277,7 +298,7 @@
   </div>
 
   <!-- IG-Style Art Gallery Section -->
-  <section class="ig-gallery-section" id="art">
+  <section class="ig-gallery-section" id="art" data-aos="fade-up">
     <div class="container">
       <div class="ig-gallery-header text-center mb-4">
         <h2 class="section-title">Art Gallery</h2>
@@ -290,25 +311,31 @@
       </div>
       <div class="ig-gallery-grid">
         <!-- Example art cards -->
-        <div class="ig-art-card" data-category="digital">
-          <img src="assets/images/art1.jpg" alt="Digital Art Sample 1 by Jeff Mathew Garcia" class="ig-art-img"
-            loading="lazy">
+        <div class="ig-art-card" data-category="digital" data-aos="zoom-in" data-aos-delay="100">
+          <picture>
+            <source srcset="assets/images/art1.webp" type="image/webp">
+            <img src="assets/images/art1.jpg" alt="Digital portrait artwork by Jeff Mathew Garcia, 2024" class="ig-art-img" width="400" height="400" loading="lazy">
+          </picture>
           <div class="ig-art-info">
             <div class="ig-art-title">Digital Portrait</div>
             <div class="ig-art-meta">2024 &bull; Digital</div>
           </div>
         </div>
-        <div class="ig-art-card" data-category="traditional">
-          <img src="assets/images/art2.jpg" alt="Traditional Art Sample 2 by Jeff Mathew Garcia" class="ig-art-img"
-            loading="lazy">
+        <div class="ig-art-card" data-category="traditional" data-aos="zoom-in" data-aos-delay="200">
+          <picture>
+            <source srcset="assets/images/art2.webp" type="image/webp">
+            <img src="assets/images/art2.jpg" alt="Traditional pencil sketch by Jeff Mathew Garcia, 2023" class="ig-art-img" width="400" height="400" loading="lazy">
+          </picture>
           <div class="ig-art-info">
             <div class="ig-art-title">Pencil Sketch</div>
             <div class="ig-art-meta">2023 &bull; Traditional</div>
           </div>
         </div>
-        <div class="ig-art-card" data-category="digital">
-          <img src="assets/images/art3.jpg" alt="Digital Art Sample 3 by Jeff Mathew Garcia" class="ig-art-img"
-            loading="lazy">
+        <div class="ig-art-card" data-category="digital" data-aos="zoom-in" data-aos-delay="300">
+          <picture>
+            <source srcset="assets/images/art3.webp" type="image/webp">
+            <img src="assets/images/art3.jpg" alt="Concept art by Jeff Mathew Garcia, 2024" class="ig-art-img" width="400" height="400" loading="lazy">
+          </picture>
           <div class="ig-art-info">
             <div class="ig-art-title">Concept Art</div>
             <div class="ig-art-meta">2024 &bull; Digital</div>
@@ -319,20 +346,88 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <div class="container testimonials-section" style="margin-top: 40px; margin-bottom: 40px;">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">“Jeff delivered exactly what I needed—creative, professional, and on time.
-            Highly recommended!”</div>
-          <div class="testimonial-client">— Client Name, Project Type</div>
+  <!-- Blog/Updates Section -->
+  <section class="container blog-section" id="blog" data-aos="fade-up">
+    <div class="blog-header text-center mb-5">
+      <h2 class="section-title">Blog & Updates</h2>
+      <div class="section-divider"></div>
+      <p class="blog-subtitle">Latest news, process posts, and updates from my journey in tech and art</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">The Art of Web Development</h3>
+            <div class="blog-card-meta">May 2024</div>
+            <p class="blog-card-summary">Exploring how my background in art influences my approach to web development, from color theory to user experience design.</p>
+            <a href="blog/art-of-web-development.html" class="blog-readmore" tabindex="0">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">Building My Portfolio</h3>
+            <div class="blog-card-meta">April 2024</div>
+            <p class="blog-card-summary">A behind-the-scenes look at creating this portfolio site, from choosing the perfect color palette to implementing smooth animations.</p>
+            <a href="blog/building-portfolio.html" class="blog-readmore" tabindex="0">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">Digital Art Tips & Tricks</h3>
+            <div class="blog-card-meta">March 2024</div>
+            <p class="blog-card-summary">Sharing my favorite techniques and tools for digital art, from sketching to final touches in Photoshop and Procreate.</p>
+            <a href="blog/digital-art-tips.html" class="blog-readmore" tabindex="0">Read More</a>
+          </div>
         </div>
       </div>
     </div>
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline">View All Posts</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <div class="container testimonials-section" style="margin-top: 40px; margin-bottom: 40px;" data-aos="fade-up">
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Testimonials carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-aos="zoom-in">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“Jeff delivered exactly what I needed—creative, professional, and on time. Highly recommended!”</div>
+            <div class="testimonial-client">— Client Name, Project Type</div>
+          </div>
+        </div>
+        <div class="carousel-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“Working with Jeff was a breeze. The website exceeded my expectations and the process was smooth from start to finish.”</div>
+            <div class="testimonial-client">— Another Client, Web Design</div>
+          </div>
+        </div>
+        <div class="carousel-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“Amazing art and fast turnaround! Will definitely commission again.”</div>
+            <div class="testimonial-client">— Art Client, Digital Portrait</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next" aria-label="Next testimonial">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 
-  <div class="container-fluid contact" style="height:auto; padding: 100px 0;">
+  <div class="container-fluid contact" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="contact">
       <div class="contact-header text-center mb-5">
         <h2 class="section-title">Get In Touch</h2>
@@ -409,7 +504,7 @@
         <div class="col-lg-6" data-aos="fade-left">
           <div class="contact-form">
             <h3 class="contact-form-title">Send Me a Message</h3>
-            <form id="contactForm" action="send_message.php" method="POST" aria-label="Contact form">
+            <form id="contactForm" action="https://formspree.io/f/mwkgrqzj" method="POST" aria-label="Contact form">
               <div class="form-group mb-3">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
               </div>
@@ -420,11 +515,13 @@
                 <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mb-3">
-                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message"
-                  required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
               </div>
+              <input type="hidden" name="_redirect" value="#contact-success">
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
+            <div id="contactSuccess" class="alert alert-success mt-3" style="display:none;">Thank you for your message! I will get back to you soon.</div>
+            <div id="contactError" class="alert alert-danger mt-3" style="display:none;">Oops! Something went wrong. Please try again later.</div>
           </div>
         </div>
       </div>
@@ -447,16 +544,17 @@
   <script src="js/main.js"></script>
 
   <!-- Lightbox overlay for art gallery -->
-  <div id="art-lightbox" class="art-lightbox" style="display:none;">
+  <div id="art-lightbox" class="art-lightbox" style="display:none;" aria-modal="true" role="dialog">
     <div class="art-lightbox-backdrop"></div>
     <img id="art-lightbox-img" src="" alt="Artwork enlarged" />
-    <button id="art-lightbox-close" class="art-lightbox-close" aria-label="Close">&times;</button>
+    <button id="art-lightbox-close" class="art-lightbox-close" aria-label="Close art lightbox" tabindex="0">&times;</button>
   </div>
 
   <!-- Resume Download Link -->
   <div class="text-center mt-4 mb-4">
-    <a href="#" class="btn btn-outline" download aria-label="Download my resume (PDF)"><i
-        class="fas fa-file-download"></i> Download Resume (PDF)</a>
+    <a href="Jeff-Mathew-Garcia-Resume.pdf" class="btn btn-primary btn-lg" download aria-label="Download my resume (PDF)">
+      <i class="fas fa-file-download"></i> Download Resume (PDF)
+    </a>
   </div>
 
   <!-- Back to Top Button -->
@@ -465,7 +563,7 @@
       class="fas fa-arrow-up"></i></button>
 
   <!-- IG Art Gallery Lightbox Overlay -->
-  <div id="igArtLightbox" class="ig-art-lightbox" style="display:none;">
+  <div id="igArtLightbox" class="ig-art-lightbox" style="display:none;" aria-modal="true" role="dialog">
     <div class="ig-art-lightbox-backdrop"></div>
     <div class="ig-art-lightbox-content">
       <img id="igArtLightboxImg" src="" alt="Artwork enlarged" />
@@ -473,15 +571,15 @@
         <div id="igArtLightboxTitle" class="ig-art-lightbox-title"></div>
         <div id="igArtLightboxMeta" class="ig-art-lightbox-meta"></div>
       </div>
-      <button id="igArtLightboxClose" class="ig-art-lightbox-close" aria-label="Close">&times;</button>
+      <button id="igArtLightboxClose" class="ig-art-lightbox-close" aria-label="Close art gallery lightbox" tabindex="0">&times;</button>
     </div>
   </div>
 
   <!-- IG Story Highlight Modal -->
-  <div id="igHighlightModal" class="ig-highlight-modal" style="display:none;">
+  <div id="igHighlightModal" class="ig-highlight-modal" style="display:none;" aria-modal="true" role="dialog">
     <div class="ig-highlight-modal-backdrop"></div>
     <div class="ig-highlight-modal-content">
-      <button id="igHighlightModalClose" class="ig-highlight-modal-close" aria-label="Close">&times;</button>
+      <button id="igHighlightModalClose" class="ig-highlight-modal-close" aria-label="Close story highlight modal" tabindex="0">&times;</button>
       <div id="igHighlightModalBody" class="ig-highlight-modal-body">
         <!-- Content will be injected here -->
       </div>
