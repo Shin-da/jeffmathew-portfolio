@@ -1701,10 +1701,7 @@ body {
   background: var(--accent);
   color: #fff;
 }
-[data-theme="dark"] .navbar-toggler {
-  background: var(--insta-purple);
-  color: #fff;
-}
+
 [data-theme="dark"] .section-title {
   color: var(--header-color);
 }
