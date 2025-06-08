@@ -234,34 +234,118 @@ const highlightContent = {
   about: `
     <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">About Me</h2>
     <p>I am Jeff Mathew Garcia, an IT graduate student who combines technical expertise with artistic vision. As a developer and artist, I bring creativity to everything I build, from websites to digital art. I'm passionate about creating beautiful, functional solutions that make an impact.</p>
+    <p style="margin-top: 1rem; color: var(--highlight);">"I believe in the perfect blend of technology and creativity."</p>
   `,
   skills: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Skills</h2>
-    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:1rem;">
-      <li><i class='fab fa-js-square'></i> JavaScript</li>
-      <li><i class='fab fa-php'></i> PHP</li>
-      <li><i class='fab fa-python'></i> Python</li>
-      <li><i class='fas fa-database'></i> MySQL</li>
-      <li><i class='fab fa-git-alt'></i> Git & GitHub</li>
-      <li><i class='fas fa-server'></i> XAMPP</li>
-      <li><i class='fas fa-draw-polygon'></i> Graphic Design</li>
-      <li><i class='fab fa-html5'></i> HTML</li>
-      <li><i class='fab fa-css3-alt'></i> CSS/Bootstrap</li>
-    </ul>
+    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Tech Stack</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-code"></i> Frontend</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li><i class="fab fa-html5"></i> HTML5</li>
+          <li><i class="fab fa-css3-alt"></i> CSS3/Bootstrap</li>
+          <li><i class="fab fa-js-square"></i> JavaScript</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-server"></i> Backend</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li><i class="fab fa-php"></i> PHP</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fas fa-database"></i> MySQL</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-tools"></i> Tools</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+          <li><i class="fas fa-server"></i> XAMPP</li>
+          <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
+        </ul>
+      </div>
+    </div>
   `,
   services: `
     <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Services</h2>
-    <ul style="padding-left:1.2em;">
-      <li>Web Development (Portfolio, Business, E-commerce)</li>
-      <li>System Development (Inventory, Management, Custom Solutions)</li>
-      <li>Digital Art Commissions (Portraits, Concept Art, Illustrations)</li>
-      <li>Graphic Design (Logos, Posters, Social Media)</li>
-      <li>IT Tutoring & Programming Help</li>
-    </ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-laptop-code"></i> Web Development</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>Portfolio Websites</li>
+          <li>Business Websites</li>
+          <li>E-commerce Solutions</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-paint-brush"></i> Digital Art</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>Portraits</li>
+          <li>Concept Art</li>
+          <li>Illustrations</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-chalkboard-teacher"></i> Tutoring</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>Programming Help</li>
+          <li>Web Development</li>
+          <li>IT Concepts</li>
+        </ul>
+      </div>
+    </div>
   `,
-  testimonials: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Testimonials</h2>
-    <blockquote style="font-style:italic; color:var(--saddle); border-left:4px solid var(--highlight); padding-left:1em;">"Jeff delivered exactly what I needed—creative, professional, and on time. Highly recommended!"<br><span style='color:var(--coral-tree); font-weight:500;'>— Client Name, Project Type</span></blockquote>
+  experience: `
+    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Experience</h2>
+    <div style="margin-top: 1rem;">
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-building"></i> SP Madrid & Associates Law Firm
+        </h3>
+        <p style="color: var(--highlight); margin-bottom: 0.5rem;">Developer and AI Prompt Engineer (Internship)</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>• Developed and maintained web applications</li>
+          <li>• Implemented AI solutions for document processing</li>
+          <li>• Collaborated with the legal team on tech solutions</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-graduation-cap"></i> Thesis Project
+        </h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>• Led frontend and backend development</li>
+          <li>• Designed and implemented project features</li>
+          <li>• Managed version control with GitHub</li>
+        </ul>
+      </div>
+    </div>
+  `,
+  education: `
+    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Education</h2>
+    <div style="margin-top: 1rem;">
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-university"></i> Pamantasan ng Lungsod ng Muntinlupa
+        </h3>
+        <p style="color: var(--highlight); margin-bottom: 0.5rem;">BS Information Technology (2025 - Present)</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>• Focus on Web Development</li>
+          <li>• System Development</li>
+          <li>• Database Management</li>
+        </ul>
+      </div>
+      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+          <i class="fas fa-school"></i> San Pedro Relocation Center National High School
+        </h3>
+        <p style="color: var(--highlight); margin-bottom: 0.5rem;">CHS - Computer Hardware Servicing Strand (2020-2021)</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>• Computer Hardware Maintenance</li>
+          <li>• Basic Networking</li>
+          <li>• Technical Support</li>
+        </ul>
+      </div>
+    </div>
   `
 };
 

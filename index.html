@@ -104,28 +104,32 @@
   </header>
 
   <!-- IG-Style Story Highlights Section -->
-  <!-- <section class="ig-highlights-section">
+  <section class="ig-highlights-section">
     <div class="container">
       <div class="ig-highlights-row">
         <div class="ig-highlight-card" data-highlight="about" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-user"></i></div>
-          <div class="ig-highlight-label">About</div>
+          <div class="ig-highlight-icon"><i class="fas fa-user-circle"></i></div>
+          <div class="ig-highlight-label">About Me</div>
         </div>
         <div class="ig-highlight-card" data-highlight="skills" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-code"></i></div>
-          <div class="ig-highlight-label">Skills</div>
+          <div class="ig-highlight-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="ig-highlight-label">Tech Stack</div>
         </div>
         <div class="ig-highlight-card" data-highlight="services" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="ig-highlight-icon"><i class="fas fa-paint-brush"></i></div>
           <div class="ig-highlight-label">Services</div>
         </div>
-        <div class="ig-highlight-card" data-highlight="testimonials" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-comment-dots"></i></div>
-          <div class="ig-highlight-label">Testimonials</div>
+        <div class="ig-highlight-card" data-highlight="experience" tabindex="0">
+          <div class="ig-highlight-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="ig-highlight-label">Experience</div>
+        </div>
+        <div class="ig-highlight-card" data-highlight="education" tabindex="0">
+          <div class="ig-highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="ig-highlight-label">Education</div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <div class="container-fluid about" data-aos="fade-up">
     <div class="container" id="about">
@@ -153,56 +157,61 @@
                   vision. As a developer and artist, I bring creativity to everything I build, from websites to digital
                   art. I'm passionate about creating beautiful, functional solutions that make an impact.</p>
               </div>
-              <div class="about-details">
-                <div class="detail-item">
-                  <i class="fas fa-graduation-cap"></i>
-                  <div class="detail-content">
-                    <h3>Education</h3>
-                    <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo" class="company-logo education-logo" width="60" height="60">
-                    <p>
-                      <strong>Pamantasan ng Lungsod ng Muntinlupa (2025 - Present)</strong><br>
-                      BS Information Technology<br><br>
-                    </p>
-                    <img src="assets/images/sprcnhs-logo.jpg" alt="San Pedro Relocation Center National High School Logo" class="company-logo education-logo" width="60" height="60">
-                    <p>
-                      <strong>San Pedro Relocation Center National High School (2020-2021)</strong><br>
-                      CHS - Computer Hardware Servicing Strand
-                    </p>
+              <button class="btn btn-outline mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#aboutDetails" aria-expanded="false" aria-controls="aboutDetails">
+                <i class="fas fa-chevron-down me-2"></i>View Details
+              </button>
+              <div class="collapse" id="aboutDetails">
+                <div class="about-details">
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="detail-content">
+                      <h3>Education</h3>
+                      <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo" class="company-logo education-logo" width="60" height="60">
+                      <p>
+                        <strong>Pamantasan ng Lungsod ng Muntinlupa (2025 - Present)</strong><br>
+                        BS Information Technology<br><br>
+                      </p>
+                      <img src="assets/images/sprcnhs-logo.jpg" alt="San Pedro Relocation Center National High School Logo" class="company-logo education-logo" width="60" height="60">
+                      <p>
+                        <strong>San Pedro Relocation Center National High School (2020-2021)</strong><br>
+                        CHS - Computer Hardware Servicing Strand
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-briefcase"></i>
-                  <div class="detail-content">
-                    <h3>Experience</h3>
-                    <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo" class="company-logo experience-logo" width="60" height="60">
-                    <p>
-                      <strong>SP Madrid & Associates Law Firm</strong><br>
-                      Developer and AI Prompt Engineer (Internship)<br><br>
-                      <strong>Thesis Project</strong><br>
-                      • Main developer, leading frontend and backend development<br>
-                      • Designed and implemented project features<br>
-                      • Managed version control and collaborative development using GitHub<br><br>
-                      <strong>Studypool</strong><br>
-                      • Teaching and assisting students with programming assignments<br>
-                      • Taking on commissioned projects for system development
-                    </p>
+                  <div class="detail-item">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="detail-content">
+                      <h3>Experience</h3>
+                      <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo" class="company-logo experience-logo" width="60" height="60">
+                      <p>
+                        <strong>SP Madrid & Associates Law Firm</strong><br>
+                        Developer and AI Prompt Engineer (Internship)<br><br>
+                        <strong>Thesis Project</strong><br>
+                        • Main developer, leading frontend and backend development<br>
+                        • Designed and implemented project features<br>
+                        • Managed version control and collaborative development using GitHub<br><br>
+                        <strong>Studypool</strong><br>
+                        • Teaching and assisting students with programming assignments<br>
+                        • Taking on commissioned projects for system development
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-tools"></i>
-                  <div class="detail-content">
-                    <h3>Skills</h3>
-                    <ul class="skills-list">
-                      <li><i class="fab fa-js-square"></i> JavaScript</li>
-                      <li><i class="fab fa-php"></i> PHP</li>
-                      <li><i class="fab fa-python"></i> Python</li>
-                      <li><i class="fas fa-database"></i> MySQL</li>
-                      <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-                      <li><i class="fas fa-server"></i> XAMPP</li>
-                      <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
-                      <li><i class="fab fa-html5"></i> HTML</li>
-                      <li><i class="fab fa-css3-alt"></i> CSS/Bootstrap</li>
-                    </ul>
+                  <div class="detail-item">
+                    <i class="fas fa-code"></i>
+                    <div class="detail-content">
+                      <h3>Skills</h3>
+                      <ul class="skills-list">
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-php"></i> PHP</li>
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-database"></i> MySQL</li>
+                        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                        <li><i class="fas fa-server"></i> XAMPP</li>
+                        <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
+                        <li><i class="fab fa-html5"></i> HTML</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS/Bootstrap</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
