@@ -38,9 +38,8 @@
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
   <a href="#about" class="skip-link">Skip to main content</a>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation"
-    style="padding: 0;">
-    <div class="container" style="padding: 0;">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
       <a class="navbar-brand" href="#page-top">
         <span class="brand-first">Jeff</span>
         <span class="brand-second">Mathew</span>
@@ -52,6 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto nav-pill-row">
           <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user"></i> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ojt"><i class="fas fa-briefcase"></i> OJT</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#art"><i class="fas fa-palette"></i> Art</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -86,8 +86,8 @@
           and code to art.</span></div>
       <span class="brushstroke-svg" aria-hidden="true">
         <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 18 Q60 6 115 18 Q90 12 60 18 Q30 24 5 18 Z" fill="#b47c6c" fill-opacity="0.32" />
-          <path d="M5 18 Q60 6 115 18" stroke="#b47c6c" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <path d="M5 18 Q60 6 115 18 Q90 12 60 18 Q30 24 5 18 Z" fill="var(--accent-color)" fill-opacity="0.32" />
+          <path d="M5 18 Q60 6 115 18" stroke="var(--accent-color)" stroke-width="2.5" stroke-linecap="round" fill="none" />
         </svg>
       </span>
       <div class="ig-social-row">
@@ -105,12 +105,12 @@
 
   <!-- IG-Style Story Highlights Section -->
   <section class="ig-highlights-section">
-    <div class="container" >
+    <div class="container">
       <div class="ig-highlights-row">
         <div class="ig-highlight-card" data-highlight="about" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-user-circle"></i></div>
           <div class="ig-highlight-label">About Me</div>
-        </div>  
+        </div>
         <div class="ig-highlight-card" data-highlight="skills" tabindex="0">
           <div class="ig-highlight-icon"><i class="fas fa-laptop-code"></i></div>
           <div class="ig-highlight-label">Tech Stack</div>
@@ -144,8 +144,8 @@
             <div class="about-image-container">
               <picture>
                 <source srcset="assets/images/about-me.webp" type="image/webp">
-                <img src="assets/images/about-me.png" alt="Jeff Mathew Garcia using computer"
-                  class="about-image" width="320" height="240" loading="lazy">
+                <img src="assets/images/about-me.png" alt="Jeff Mathew Garcia using computer" class="about-image"
+                  width="320" height="240" loading="lazy">
               </picture>
               <div class="about-image-overlay"></div>
             </div>
@@ -157,7 +157,8 @@
                   vision. As a developer and artist, I bring creativity to everything I build, from websites to digital
                   art. I'm passionate about creating beautiful, functional solutions that make an impact.</p>
               </div>
-              <button class="btn btn-outline mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#aboutDetails" aria-expanded="false" aria-controls="aboutDetails">
+              <button class="btn btn-outline mb-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#aboutDetails" aria-expanded="false" aria-controls="aboutDetails">
                 <i class="fas fa-chevron-down me-2"></i>View Details
               </button>
               <div class="collapse" id="aboutDetails">
@@ -167,15 +168,18 @@
                     <div class="detail-content">
                       <h3>Education</h3>
                       <div class="education-item">
-                        <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo" class="company-logo education-logo" width="60" height="60">
+                        <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo"
+                          class="company-logo education-logo" width="60" height="60">
                         <strong>Pamantasan ng Lungsod ng Muntinlupa (2021 - 2025)</strong><br>
                         Bachelor of Science in Information Technology<br><br>
                       </div>
                       <div class="education-item">
-                          <img src="assets/images/sprcnhs-logo.jpg" alt="San Pedro Relocation Center National High School Logo" class="company-logo education-logo" width="60" height="60">
-                          <strong>San Pedro Relocation Center National High School (2020-2021)</strong><br>
-                          Information and Communications Technology Strand<br><br>  
-                        </div>
+                        <img src="assets/images/sprcnhs-logo.jpg"
+                          alt="San Pedro Relocation Center National High School Logo"
+                          class="company-logo education-logo" width="60" height="60">
+                        <strong>San Pedro Relocation Center National High School (2020-2021)</strong><br>
+                        Information and Communications Technology Strand<br><br>
+                      </div>
                     </div>
                   </div>
                   <div class="detail-item">
@@ -184,25 +188,30 @@
                       <h3>Experience</h3>
                       <div class="experience-item">
                         <div class="experience-item-content">
-                          <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo" class="company-logo experience-logo" width="60" height="60">
+                          <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo"
+                            class="company-logo experience-logo" width="60" height="60">
                           <strong>SP Madrid & Associates Law Firm</strong><br>
                           <span>Developer and AI Prompt Engineer (Internship)</span><br><br>
-                          <span>Enhanced and maintained AI agents to handle multiple user interactions efficiently</span><br>
+                          <span>Enhanced and maintained AI agents to handle multiple user interactions
+                            efficiently</span><br>
                           <span>Developed automation solutions using Python and APIs to streamline workflows</span><br>
                           <span>Created and optimized AI prompts for operations and client services</span><br>
-                          <span>Collaborated with the team to implement new features and improve user experience</span><br>
+                          <span>Collaborated with the team to implement new features and improve user
+                            experience</span><br>
                         </div>
                       </div>
                       <div class="experience-item">
                         <div class="experience-item-content">
-                          <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo" width="60" height="60">
+                          <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo"
+                            width="60" height="60">
                           <strong>Thesis Project</strong><br>
                           <span>Main developer, leading frontend and backend development</span><br>
                           <span>Designed and implemented project features</span><br>
                           <span>Managed version control and collaborative development using GitHub</span><br><br>
                         </div>
                         <div class="experience-item-content">
-                          <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo" width="60" height="60">
+                          <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo"
+                            width="60" height="60">
                           <strong>Studypool</strong><br>
                           <span>Teaching and assisting students with programming assignments</span><br>
                           <span>Taking on commissioned projects for system development</span><br><br>
@@ -235,6 +244,54 @@
       </div>
     </div>
   </div>
+
+  <!-- OJT Experience Section -->
+  <section class="ojt-experience" id="ojt" data-aos="fade-up">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">On-the-Job Training Experience</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="ojt-card">
+            <div class="row align-items-center">
+              <div class="col-md-3 text-center mb-4 mb-md-0">
+                <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo" class="company-logo ojt-logo" width="120" height="120">
+              </div>
+              <div class="col-md-9">
+                <div class="ojt-content">
+                  <h3 class="company-name">SP Madrid & Associates Law Firm</h3>
+                  <div class="position">Developer and AI Prompt Engineer (Internship)</div>
+                  <div class="duration"><i class="far fa-calendar-alt"></i> Duration: 500 Hours (Feb-May)</div>
+                  
+                  <div class="achievements mt-4">
+                    <h4>Key Achievements & Responsibilities:</h4>
+                    <ul class="achievement-list">
+                      <li><i class="fas fa-check-circle"></i> Enhanced and maintained AI agents to handle multiple user interactions efficiently</li>
+                      <li><i class="fas fa-check-circle"></i> Developed automation solutions using Python and APIs to streamline workflows</li>
+                      <li><i class="fas fa-check-circle"></i> Created and optimized AI prompts for operations and client services</li>
+                      <li><i class="fas fa-check-circle"></i> Collaborated with the team to implement new features and improve user experience</li>
+                    </ul>
+                  </div>
+
+                  <div class="ojt-gallery mt-4">
+                    <h4>Memories & Workplace:</h4>
+                    <div class="ojt-images-container">
+                      <img src="assets/images/ojt_group_photo.jpg" alt="OJT Group Photo at SP Madrid" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                      <img src="assets/images/ojt_working.jpg" alt="Working during OJT" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                      <img src="assets/images/ojt_okpoai_interface.jpg" alt="OkPoAI interface during OJT" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="container-fluid projects" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="projects">
@@ -452,43 +509,8 @@
       <div class="section-divider"></div>
       <p class="blog-subtitle">Latest news, process posts, and updates from my journey in tech and art</p>
     </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="blog-card">
-          <div class="blog-card-body">
-            <h3 class="blog-card-title">The Art of Web Development</h3>
-            <div class="blog-card-meta">May 2025</div>
-            <p class="blog-card-summary">Exploring how my background in art influences my approach to web development,
-              from color theory to user experience design.</p>
-            <a href="blog/art-of-web-development.html" class="blog-readmore" tabindex="0">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="blog-card">
-          <div class="blog-card-body">
-            <h3 class="blog-card-title">Building My Portfolio</h3>
-            <div class="blog-card-meta">May 2025</div>
-            <p class="blog-card-summary">A behind-the-scenes look at creating this portfolio site, from choosing the
-              perfect color palette to implementing smooth animations.</p>
-            <a href="blog/building-portfolio.html" class="blog-readmore" tabindex="0">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="blog-card">
-          <div class="blog-card-body">
-            <h3 class="blog-card-title">Digital Art Tips & Tricks</h3>
-            <div class="blog-card-meta">March 2025</div>
-            <p class="blog-card-summary">Sharing my favorite techniques and tools for digital art, from sketching to
-              final touches in Photoshop and Procreate.</p>
-            <a href="blog/digital-art-tips.html" class="blog-readmore" tabindex="0">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="text-center mt-5">
-      <a href="#" class="btn btn-outline">View All Posts</a>
+      <a href="blog/index.html" class="btn btn-outline">View All Posts</a>
     </div>
   </section>
 
@@ -546,26 +568,30 @@
         </p>
         <p class="response-time-note">I usually reply within 24 hours.</p>
       </div>
-
       <div class="row contact-cards-container">
         <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
           <div class="contact-info">
             <h3 class="contact-info-title">Contact Information</h3>
             <div class="contact-info-grid">
-              <div class="contact-info-item">
-                <i class="fas fa-envelope"></i>
-                <div>
-                  <h4>Email</h4>
-                  <p>jeffmathewg@gmail.com</p>
+              <a href="mailto:jeffmathewg@gmail.com" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h4>Email</h4>
+                    <p>jeffmathewg@gmail.com</p>
+                  </div>
                 </div>
-              </div>
-              <div class="contact-info-item">
-                <i class="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>0997-658-9293</p>
+              </a>
+
+              <a href="https://www.facebook.com/jepmachu" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fab fa-facebook"></i>
+                  <div>
+                    <h4>Facebook</h4>
+                    <p>Jepmachu Garcia</p>
+                  </div>
                 </div>
-              </div>
+              </a>
               <div class="contact-info-item">
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
@@ -573,35 +599,33 @@
                   <p>San Pedro City, Philippines</p>
                 </div>
               </div>
-              <div class="contact-info-item">
-                <i class="fab fa-github"></i>
-                <div>
-                  <h4>GitHub</h4>
-                  <p><a href="https://github.com/Shin-da" target="_blank">github.com/Shin-da</a></p>
+              <a href="https://github.com/Shin-da" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fab fa-github"></i>
+                  <div>
+                    <h4>GitHub</h4>
+                    <p>github.com/Shin-da</p>
+                  </div>
                 </div>
-              </div>
-              <div class="contact-info-item">
-                <i class="fab fa-linkedin"></i>
-                <div>
-                  <h4>LinkedIn</h4>
-                  <p><a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank">Jeff Mathew
-                      Garcia</a></p>
+              </a>
+              <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fab fa-linkedin"></i>
+                  <div>
+                    <h4>LinkedIn</h4>
+                    <p>Jeffmathew Garcia</p>
+                  </div>
                 </div>
-              </div>
-              <div class="contact-info-item">
-                <i class="fab fa-instagram"></i>
-                <div>
-                  <h4>Instagram</h4>
-                  <p><a href="https://www.instagram.com/jepmachu/" target="_blank">@jepmachu</a></p>
+              </a>
+              <a href="https://www.instagram.com/jeffmathew04/" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fab fa-instagram"></i>
+                  <div>
+                    <h4>Instagram</h4>
+                    <p>@jeffmathew04</p>
+                  </div>
                 </div>
-              </div>
-              <div class="contact-info-item">
-                <i class="fab fa-facebook"></i>
-                <div>
-                  <h4>Facebook</h4>
-                  <p><a href="https://www.facebook.com/jepmachu" target="_blank">Jeff Mathew Garcia</a></p>
-                </div>
-              </div>
+              </a>
               <div class="contact-info-item">
                 <i class="fab fa-discord"></i>
                 <div>
@@ -609,9 +633,19 @@
                   <p>shin_da04</p>
                 </div>
               </div>
+              <a href="https://www.tiktok.com/@jepmachu" target="_blank">
+                <div class="contact-info-item">
+                  <i class="fab fa-tiktok"></i>
+                  <div>
+                    <h4>TikTok</h4>
+                    <p>@jepmachu</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
+
         <div class="col-lg-6" data-aos="fade-left">
           <div class="contact-form">
             <h3 class="contact-form-title">Send Me a Message</h3>
@@ -632,27 +666,78 @@
               <input type="hidden" name="_redirect" value="#contact-success">
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
-            <div id="contactSuccess" class="alert alert-success mt-3" style="display:none;">Thank you for your message!
-              I will get back to you soon.</div>
-            <div id="contactError" class="alert alert-danger mt-3" style="display:none;">Oops! Something went wrong.
-              Please try again later.</div>
+            <div id="contactSuccess" class="alert alert-success mt-3" style="display:none;">
+              Thank you for your message! I will get back to you soon.
+            </div>
+            <div id="contactError" class="alert alert-danger mt-3" style="display:none;">
+              Oops! Something went wrong. Please try again later.
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>  
 
   <footer class="footer">
     <div class="container">
       <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#art">Art Gallery</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4>Connect With Me</h4>
+          <div class="social-links">
+            <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@jepmachu" target="_blank" aria-label="TikTok"><i
+                class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="mt-3">
+            <a href="Jeff-Mathew-Garcia-Resume.pdf" class="btn btn-outline-light btn-sm" download
+              aria-label="Download my resume (PDF)">
+              <i class="fas fa-file-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to my newsletter for updates on new projects and artwork.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="row">
         <div class="col-lg-12 text-center">
-          <p>Made with <span aria-label="love" style="color:#b47c6c;">❤️</span> by Jeff Mathew Garcia &mdash; &copy;
-            2025. All rights reserved.</p>
+          <p class="mb-0">Made with <span aria-label="love" style="color:#b47c6c;">❤️</span> by Jeff Mathew Garcia
+            &mdash; &copy; 2025. All rights reserved.</p>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
@@ -664,19 +749,6 @@
     <button id="art-lightbox-close" class="art-lightbox-close" aria-label="Close art lightbox"
       tabindex="0">&times;</button>
   </div>
-
-  <!-- Resume Download Link -->
-  <div class="text-center mt-4 mb-4">
-    <a href="Jeff-Mathew-Garcia-Resume.pdf" class="btn btn-primary btn-lg" download
-      aria-label="Download my resume (PDF)">
-      <i class="fas fa-file-download"></i> Download Resume (PDF)
-    </a>
-  </div>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" aria-label="Back to top"
-    style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:var(--coral-tree);color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(180,124,108,0.10);cursor:pointer;transition:background 0.2s;"><i
-      class="fas fa-arrow-up"></i></button>
 
   <!-- IG Art Gallery Lightbox Overlay -->
   <div id="igArtLightbox" class="ig-art-lightbox" style="display:none;" aria-modal="true" role="dialog">
@@ -703,7 +775,9 @@
       </div>
     </div>
   </div>
-  <script src="js/main.js"></script>
+
+  </div>
+  </div>
 </body>
 
 </html>

@@ -223,6 +223,28 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// IG-Style Story Highlights Click functionality
+document.querySelectorAll('.ig-highlight-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const targetId = this.getAttribute('data-highlight');
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      // Offset for fixed navbar if needed, similar to smooth scrolling for nav links
+      const navbarHeight = document.getElementById('mainNav').offsetHeight || 80; // Default to 80 if not found
+      const scrollPosition = targetSection.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      // Update active class for highlights if desired (optional, not requested, but good UX)
+      document.querySelectorAll('.ig-highlight-card').forEach(hCard => hCard.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
 // IG-Style Story Highlights Card Click (visual feedback, ready for modal/expand)
 const igHighlightCards = document.querySelectorAll('.ig-highlight-card');
 const igHighlightModal = document.getElementById('igHighlightModal');
@@ -400,54 +422,96 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --- DARK MODE LOGIC (Instagram-inspired) ---
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, dark mode script running');
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const htmlEl = document.documentElement;
+// Encapsulate theme logic in a self-executing function to prevent global pollution
+(function() {
+  console.log('Theme script loaded and running.');
 
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const htmlEl = document.documentElement; // Targets the <html> element
+  const bodyEl = document.body; // Targets the <body> element
+
+  /**
+   * Sets the dark mode status and updates local storage.
+   * @param {boolean} enabled - True for dark mode, false for light mode.
+   * @param {boolean} save - Whether to save the preference to local storage.
+   */
   function setDarkMode(enabled, save = true) {
+    console.log(`setDarkMode called: enabled=${enabled}, save=${save}`);
+
     if (enabled) {
       htmlEl.setAttribute('data-theme', 'dark');
+      bodyEl.classList.remove('light-mode');
+      console.log('Theme: Dark Mode activated');
     } else {
       htmlEl.removeAttribute('data-theme');
+      bodyEl.classList.add('light-mode');
+      console.log('Theme: Light Mode activated');
     }
+
+    // Update visual state of the toggle button
     if (darkModeToggle) {
-      darkModeToggle.classList.toggle('is-dark', enabled);
+      const toggleThumb = darkModeToggle.querySelector('.toggle-thumb');
+      if (toggleThumb) {
+        // The 'light-mode-active' class on the toggle-thumb visually shifts it for light mode
+        if (enabled) {
+          darkModeToggle.classList.remove('light-mode-active');
+          toggleThumb.classList.remove('light-mode-active');
+        } else {
+          darkModeToggle.classList.add('light-mode-active');
+          toggleThumb.classList.add('light-mode-active');
+        }
+        console.log('Toggle button visual state updated.');
+      }
     }
-    if (save) localStorage.setItem('darkMode', enabled ? '1' : '0');
+
+    if (save) {
+      localStorage.setItem('darkMode', enabled ? '1' : '0');
+      console.log(`Theme preference saved to localStorage: ${enabled ? '1' : '0'}`);
+    }
   }
 
+  /**
+   * Checks if the system prefers dark color scheme.
+   * @returns {boolean} True if system prefers dark, false otherwise.
+   */
   function getSystemDark() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    console.log(`System prefers dark mode: ${prefersDark}`);
+    return prefersDark;
   }
 
-  // Initial theme check
-  const saved = localStorage.getItem('darkMode');
-  if (saved === '1') {
-    setDarkMode(true, false);
-  } else if (saved === '0') {
-    setDarkMode(false, false);
-  } else {
-    setDarkMode(getSystemDark(), false);
-  }
+  // Initial theme setup on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('darkMode');
+    console.log(`Initial load: Saved theme from localStorage: ${savedTheme}`);
 
-  // Toggle click
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', function() {
-      console.log('Toggle button clicked!');
-      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
-      setDarkMode(!isDark, true);
-    });
-  }
+    if (savedTheme === '1') {
+      setDarkMode(true, false); // Apply dark mode from saved preference
+    } else if (savedTheme === '0') {
+      setDarkMode(false, false); // Apply light mode from saved preference
+    } else {
+      setDarkMode(getSystemDark(), false); // Apply system preference if no saved setting
+    }
 
-  // Listen for system preference changes
+    // Add event listener to the toggle button
+    if (darkModeToggle) {
+      darkModeToggle.addEventListener('click', function() {
+        console.log('Dark mode toggle clicked!');
+        const currentThemeIsDark = htmlEl.getAttribute('data-theme') === 'dark';
+        setDarkMode(!currentThemeIsDark, true); // Toggle theme and save preference
+      });
+    }
+  });
+
+  // Listen for system preference changes (only if no manual preference is saved)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     const saved = localStorage.getItem('darkMode');
     if (saved === null) {
+      console.log('System color scheme changed. Applying new system theme.');
       setDarkMode(e.matches, false);
     }
   });
-});
+})();
 
 // Page fade-in on load
 (function() {

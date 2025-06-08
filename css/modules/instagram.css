@@ -1,19 +1,19 @@
 /* Instagram Gallery Styles */
 
 .ig-header-section {
-    padding-top: 110px;
-    min-height: 420px;
+    padding-top: 120px;
+    min-height: 480px;
     background: var(--secondary-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(139, 86, 51, 0.08);
+    box-shadow: 0 4px 20px rgba(var(--deepwood-shade-rgb), 0.1);
 }
 
 .ig-header-bg {
     background: linear-gradient(120deg, var(--accent-bg) 0%, var(--secondary-bg) 60%, var(--primary-bg) 100%);
-    opacity: 0.45;
+    opacity: 0.55;
     z-index: 1;
 }
 
@@ -25,25 +25,26 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding-top: 0.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: solid 2px var(--border-color);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px var(--border-color);
 }
 
 .ig-profile-pic-wrapper {
-    width: 144px;
-    height: 144px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(139, 86, 51, 0.22), 0 2px 12px rgba(163, 123, 71, 0.13);
-    border: 5px solid var(--card-bg);
-    margin-bottom: 1.2rem;
+    box-shadow: 0 10px 36px rgba(var(--milk-chocolate-rgb), 0.25), 0 3px 14px rgba(var(--metallic-bronze-rgb), 0.15);
+    border: 6px solid var(--card-bg);
+    margin-bottom: 1.5rem;
     background: var(--card-bg);
-    transition: box-shadow 0.25s;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .ig-profile-pic-wrapper:hover {
-    box-shadow: 0 16px 48px rgba(139, 86, 51, 0.28), 0 4px 18px rgba(163, 123, 71, 0.18);
+    box-shadow: 0 20px 50px rgba(var(--milk-chocolate-rgb), 0.35), 0 5px 20px rgba(var(--metallic-bronze-rgb), 0.2);
+    transform: translateY(-5px);
 }
 
 .ig-profile-pic {
@@ -55,82 +56,85 @@
 }
 
 .ig-profile-name {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--header-color);
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1.2px;
 }
 
 .ig-profile-tagline {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 1.1rem;
+    font-size: 1.25rem;
+    color: var(--subtle-text);
+    margin-bottom: 1.2rem;
+    text-align: center;
 }
 
 .ig-profile-highlight {
     color: var(--highlight);
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .ig-social-row {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 .ig-social-row a {
     color: var(--header-color);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     background: var(--card-bg);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.08);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 3px 12px rgba(var(--milk-chocolate-rgb), 0.1);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ig-social-row a:hover {
     background: var(--highlight);
     color: #fff;
-    transform: translateY(-3px) scale(1.08);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 6px 18px rgba(var(--milk-chocolate-rgb), 0.2);
 }
 
 /* Instagram Gallery */
 .ig-gallery-section {
-    padding: 40px 0;
+    padding: 60px 0;
     background: var(--section-bg);
-    border-top: 1px solid var(--border-color);
+    border-top: none;
 }
 
 .ig-gallery-header .section-title {
     font-size: 2.2rem;
     color: var(--header-color);
+    margin-bottom: 1.5rem;
 }
 
 .ig-gallery-filters {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid var(--border-color);
-    margin-top: 20px;
-    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .ig-gallery-filter {
     background: transparent;
     border: none;
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 16px 28px;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: var(--light-text);
+    color: var(--subtle-text);
     cursor: pointer;
-    transition: color 0.2s, border-bottom 0.2s;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
     position: relative;
     display: flex;
     align-items: center;
@@ -140,19 +144,19 @@
 }
 
 .ig-gallery-filter i {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .ig-gallery-filter.active,
 .ig-gallery-filter:hover {
     color: var(--header-color);
-    border-bottom: 1px solid var(--header-color);
+    border-bottom: 3px solid var(--accent-color);
 }
 
 .ig-gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
+    gap: 5px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -183,11 +187,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(var(--deepwood-shade-rgb), 0.6);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     opacity: 0;
     transition: opacity 0.3s ease;
     color: #fff;
@@ -202,11 +207,11 @@
 .ig-art-likes, .ig-art-comments {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .ig-art-likes i, .ig-art-comments i {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* Instagram Lightbox */
@@ -217,7 +222,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     z-index: 1050;
     justify-content: center;
     align-items: center;
@@ -233,255 +238,246 @@
 
 .ig-art-lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    max-height: 95%;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border-radius: 8px;
+    background: var(--card-bg);
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
 .ig-art-lightbox-content img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 75vh;
     object-fit: contain;
     display: block;
     margin: 0 auto;
 }
 
 .ig-art-lightbox-info {
-    padding: 15px 20px;
+    padding: 1.5rem 2rem;
+    background: var(--secondary-bg);
     color: var(--text-color);
-    background: var(--card-bg);
 }
 
 .ig-art-lightbox-title {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
     color: var(--header-color);
+    margin-bottom: 0.5rem;
 }
 
 .ig-art-lightbox-meta {
     font-size: 0.9rem;
-    color: var(--light-text);
+    color: var(--subtle-text);
 }
 
 .ig-art-lightbox-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 1060;
-    padding: 5px;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .ig-art-lightbox-close:hover {
-    color: var(--highlight);
+    background: rgba(var(--accent-rgb), 0.7);
+    transform: rotate(90deg);
 }
 
 /* Instagram Highlights */
 .ig-highlights-section {
+    padding: 60px 0;
     background: var(--primary-bg);
-    padding: 2.2rem 0 1.2rem 0;
-    /* margin-bottom: 2.2rem; */
-    border-bottom: 1px solid var(--border-color);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .ig-highlights-row {
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-@media (max-width: 991.98px) {
-    .ig-highlights-row {
-        justify-content: flex-start;
-        padding: 0 1rem;
-        gap: 1.5rem;
-        max-width: none;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .ig-highlights-section {
-        padding: 1.5rem 0 1rem 0;
-        /* margin-bottom: 1.5rem; */
-    }
-    .ig-highlights-row {
-        gap: 1rem;
-        padding: 0 1rem;
-    }
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .ig-highlight-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
-    border: none;
-    background: none;
-    padding: 0.5rem;
-    border-radius: 12px;
+    text-align: center;
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(var(--deepwood-shade-rgb), 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 auto;
+    max-width: 280px;
+}
+
+.ig-highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 36px rgba(var(--deepwood-shade-rgb), 0.12);
 }
 
 .ig-highlight-icon {
-    width: 74px;
-    height: 74px;
+    width: 72px;
+    height: 72px;
+    background: var(--accent-bg);
     border-radius: 50%;
-    background: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
-    color: var(--header-color);
-    box-shadow: 0 4px 12px rgba(139, 86, 51, 0.12);
-    margin-bottom: 0.7rem;
-    border: 3px solid var(--accent-bg);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
     position: relative;
-    overflow: hidden;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .ig-highlight-icon::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, var(--highlight), var(--accent-bg));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
     border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .ig-highlight-label {
-    font-size: 1.08rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--header-color);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    letter-spacing: 0.8px;
 }
 
-.ig-highlight-card:hover .ig-highlight-icon,
-.ig-highlight-card.active .ig-highlight-icon {
-    transform: scale(1.08);
-    border-color: var(--highlight);
-    box-shadow: 0 6px 16px rgba(139, 86, 51, 0.18);
+.ig-highlight-card:hover .ig-highlight-icon {
+    background: var(--accent-color);
+    color: #fff;
 }
 
-.ig-highlight-card:hover .ig-highlight-icon::after,
-.ig-highlight-card.active .ig-highlight-icon::after {
-    opacity: 0.1;
+.ig-highlight-card:hover .ig-highlight-icon::after {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
-.ig-highlight-card:hover .ig-highlight-label,
-.ig-highlight-card.active .ig-highlight-label {
-    color: var(--highlight);
-}
-
-.ig-highlight-card:hover,
-.ig-highlight-card.active {
-    transform: translateY(-4px);
+.ig-highlight-card:hover .ig-highlight-label {
+    color: var(--accent-color);
 }
 
 /* Instagram Highlight Modal */
 .ig-highlight-modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10010;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1070;
     justify-content: center;
+    align-items: center;
 }
 
 .ig-highlight-modal-backdrop {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(51, 53, 44, 0.85);
-    z-index: 1;
+    width: 100%;
+    height: 100%;
 }
 
 .ig-highlight-modal-content {
     position: relative;
-    z-index: 2;
-    background: var(--secondary-bg);
-    border-radius: 22px;
-    box-shadow: 0 8px 32px rgba(139, 86, 51, 0.18);
-    padding: 2.2rem;
-    max-width: 800px;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    max-width: 700px;
     width: 90%;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    animation: modalPopIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ig-highlight-modal-close {
     position: absolute;
-    top: 18px;
-    right: 24px;
-    z-index: 3;
-    background: var(--header-color);
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    font-size: 1.8rem;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.15);
-    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    z-index: 1080;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .ig-highlight-modal-close:hover {
-    background: var(--highlight);
+    background: rgba(var(--accent-rgb), 0.7);
     transform: rotate(90deg);
 }
 
 .ig-highlight-modal-body {
-    width: 100%;
-    text-align: left;
+    margin-top: 1.5rem;
     color: var(--text-color);
-    font-size: 1.08rem;
-    margin-top: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+.ig-highlight-modal-body h4 {
+    font-size: 1.3rem;
+    color: var(--header-color);
+    margin-bottom: 0.8rem;
+}
+
+.ig-highlight-modal-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .ig-highlight-modal-body ul li {
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .ig-highlight-modal-body ul li i {
+    position: absolute;
+    left: 0;
+    top: 5px;
     color: var(--highlight);
+    font-size: 1.1rem;
 }
 
 @keyframes modalPopIn {
-    0% { transform: scale(0.92) translateY(40px); opacity: 0; }
-    100% { transform: scale(1) translateY(0); opacity: 1; }
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 } 

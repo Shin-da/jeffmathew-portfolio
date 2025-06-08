@@ -8,7 +8,7 @@ const OUTPUT_DIR = path.join(__dirname, 'blog');
 const GA_TAG = `<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-83JWZVGGNV\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-83JWZVGGNV');\n</script>`;
 
 // Simple blog post template (customize as needed)
-function getTemplate({ title, date, content, recentPosts, filename, excerpt }) {
+function getTemplate({ title, date, content, recentPosts, filename, excerpt, prevPost, nextPost }) {
   // JSON-LD structured data for SEO
   const jsonLd = {
     "@context": "https://schema.org",
@@ -82,6 +82,10 @@ function getTemplate({ title, date, content, recentPosts, filename, excerpt }) {
           </header>
           <div class="blog-post-content">
             ${content}
+          </div>
+          <div class="blog-post-navigation d-flex justify-content-between mt-5">
+            ${prevPost ? `<a href="${prevPost.filename}" class="prev-post text-start d-flex flex-column align-items-start"><span class="nav-label">&larr; Previous Post</span><span class="nav-title">${prevPost.title}</span></a>` : ''}
+            ${nextPost ? `<a href="${nextPost.filename}" class="next-post text-end d-flex flex-column align-items-end"><span class="nav-label">Next Post &rarr;</span><span class="nav-title">${nextPost.title}</span></a>` : ''}
           </div>
         </div>
         <aside class="col-lg-4 d-none d-lg-block">
@@ -256,13 +260,27 @@ function build() {
   });
   // Sort posts by date (descending)
   postList.sort((a, b) => new Date(b.date) - new Date(a.date));
-  // Generate each post with recent posts sidebar
-  postList.forEach(post => {
+  // Generate each post with recent posts sidebar and navigation links
+  postList.forEach((post, index) => {
     const mdPath = path.join(POSTS_DIR, post.filename.replace(/\.html$/, '.md'));
     const md = fs.readFileSync(mdPath, 'utf-8');
     const { title, date, content } = parseMarkdown(md);
     const htmlContent = marked.parse(content);
-    const html = getTemplate({ title, date, content: htmlContent, recentPosts: postList.filter(p => p.filename !== post.filename).slice(0, 5), filename: post.filename, excerpt: post.excerpt });
+
+    const prevPost = postList[index + 1] || null; // Next post in array is previous in chronological order
+    const nextPost = postList[index - 1] || null; // Previous post in array is next in chronological order
+
+    const html = getTemplate({
+      title,
+      date,
+      content: htmlContent,
+      recentPosts: postList.filter(p => p.filename !== post.filename).slice(0, 5),
+      filename: post.filename,
+      excerpt: post.excerpt,
+      prevPost,
+      nextPost
+    });
+
     const outPath = path.join(OUTPUT_DIR, post.filename);
     fs.writeFileSync(outPath, html, 'utf-8');
     console.log(`Generated ${post.filename}`);

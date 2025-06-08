@@ -2,89 +2,108 @@
 
 /* Hero Section */
 .hero {
-    background-color: var(--background-color);
+    padding-top: 120px; /* More space for header */
+    min-height: 500px;
+    background-color: var(--primary-bg);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
-    padding: 2rem 0;
+    padding: 3rem 0;
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 1.8rem;
+    color: var(--header-color);
 }
 
 .greeting {
     display: block;
-    font-size: 1.5rem;
-    color: var(--saddle);
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    color: var(--milk-chocolate);
+    margin-bottom: 0.8rem;
 }
 
 .name {
-    color: var(--woodsmoke);
+    color: var(--header-color);
 }
 
 .role {
-    color: var(--coral-tree);
+    color: var(--accent-color);
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    color: var(--storm-dust);
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    color: var(--subtle-text);
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 .hero-image-container {
     position: relative;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .hero-image-wrapper {
     position: relative;
-    border-radius: 20px;
+    border-radius: 25px; /* More rounded */
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(82, 50, 35, 0.18), 0 1.5px 8px rgba(180, 124, 108, 0.10);
+    box-shadow: 0 12px 40px rgba(var(--palm-oil-rgb), 0.25), 0 2px 10px rgba(var(--metallic-bronze-rgb), 0.15); /* Richer shadows */
+    background: var(--card-bg);
+    padding: 15px; /* Inner padding for the image */
 }
 
 .hero-image {
     width: 100%;
     height: auto;
-    transition: var(--transition);
+    transition: transform 0.4s ease-in-out;
+    border-radius: 20px; /* Slightly less rounded than wrapper */
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: scale(1.03); /* Subtle zoom on hover */
 }
 
 /* About Section */
 .about {
-    padding: 100px 0;
+    padding: 120px 0; /* More padding */
     background-color: var(--section-bg);
     position: relative;
 }
 
 .about-header {
-    margin-bottom: 60px;
+    margin-bottom: 70px; /* More space below header */
 }
 
 .about-image-container {
     position: relative;
-    border-radius: 20px;
+    border-radius: 25px; /* More rounded */
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(139, 86, 51, 0.15);
-    margin-bottom: 30px;
+    box-shadow: 0 18px 50px rgba(var(--milk-chocolate-rgb), 0.2), 0 3px 15px rgba(var(--metallic-bronze-rgb), 0.1); /* Deeper shadows */
+    margin-bottom: 40px;
     transform: translateY(0);
-    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
 }
 
 .about-image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(139, 86, 51, 0.25);
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 25px 60px rgba(var(--milk-chocolate-rgb), 0.3), 0 5px 20px rgba(var(--metallic-bronze-rgb), 0.15);
 }
 
 .about-image {
@@ -95,442 +114,375 @@
 }
 
 .about-image-container:hover .about-image {
-    transform: scale(1.03);
+    transform: scale(1.04); /* More zoom on hover */
 }
 
 .about-description {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
     color: var(--text-color);
-    max-width: 700px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* Projects Section */
 .projects {
-    background: linear-gradient(180deg, var(--primary-bg) 0%, #e0dcca 100%);
-    padding: 100px 0;
+    background: linear-gradient(180deg, var(--secondary-bg) 0%, var(--primary-bg) 100%); /* Adjusted gradient */
+    padding: 120px 0;
     height: auto;
 }
 
 .projects-subtitle {
-    color: var(--light-text);
-    margin-bottom: 3rem;
+    color: var(--subtle-text);
+    margin-bottom: 3.5rem;
+    font-size: 1.15rem;
+}
+
+/* Gallery Section (adjusting existing .gallery for .ig-gallery-section) */
+.ig-gallery-section {
+    padding: 80px 0;
+    background: var(--section-bg);
+    border-top: none; /* Removed redundant border */
+}
+
+.ig-gallery-header .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.ig-gallery-filters {
+    border-bottom: 2px solid var(--border-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.ig-gallery-filter {
+    padding: 18px 30px; /* More padding */
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--subtle-text);
+    gap: 10px;
+}
+
+.ig-gallery-filter.active,
+.ig-gallery-filter:hover {
+    color: var(--header-color);
+    border-bottom: 3px solid var(--accent-color); /* Thicker active border */
+}
+
+.ig-gallery-grid {
+    gap: 5px; /* Slightly more gap for images */
 }
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(180deg, #e0dcca 0%, var(--primary-bg) 100%);
-    padding: 80px 0;
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--secondary-bg) 100%); /* Adjusted gradient */
+    padding: 120px 0;
 }
 
 .contact-cards-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* Space between contact info and form cards */
-    flex-wrap: wrap;
-    align-items: stretch; /* Ensure cards stretch to same height */
+    gap: 2.5rem;
 }
 
 .contact-info,
 .contact-form {
-    padding: 2.5rem;
-    background-color: var(--card-bg);
-    border-radius: 18px;
+    padding: 2.8rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(var(--deepwood-shade-rgb), 0.12); /* Deeper shadow */
     border: 1px solid var(--border-color);
-    box-shadow: 0 6px 24px rgba(139, 86, 51, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Make cards fill the height of their column */
 }
 
 .contact-info:hover,
 .contact-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 36px rgba(139, 86, 51, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(var(--deepwood-shade-rgb), 0.2);
 }
 
 .contact-info-title,
 .contact-form-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--header-color);
-    margin-bottom: 1.8rem;
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.2rem;
 }
 
 .contact-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; /* Space between individual contact items */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
 }
 
 .contact-info-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--primary-bg);
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px rgba(139, 86, 51, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(var(--milk-chocolate-rgb), 0.08);
 }
 
 .contact-info-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(139, 86, 51, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(var(--milk-chocolate-rgb), 0.15);
 }
 
 .contact-info-item i {
-    font-size: 1.6rem;
-    color: var(--highlight);
-    flex-shrink: 0;
+    font-size: 1.8rem;
 }
 
 .contact-info-item h4 {
-    font-size: 1.05rem;
-    color: var(--header-color);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
+    font-size: 1.15rem;
 }
 
 .contact-info-item p {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    margin-bottom: 0;
-}
-
-.contact-info-item p a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.contact-info-item p a:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
+    font-size: 1rem;
 }
 
 .contact-form .form-control {
-    background: var(--primary-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.2s;
-}
-
-.contact-form .form-control::placeholder {
-    color: var(--subtle-text);
-    opacity: 0.8;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
 }
 
 .contact-form .form-control:focus {
-    border-color: var(--highlight);
-    box-shadow: 0 0 0 0.2rem rgba(var(--highlight-rgb), 0.25);
-    background: var(--primary-bg);
-    color: var(--text-color);
-}
-
-.contact-form textarea.form-control {
-    resize: vertical;
-}
-
-/* Styles for Modals (e.g., About Me highlights) */
-.modal-section-title {
-    color: var(--header-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.modal-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.modal-item-container {
-    background: var(--card-bg);
-    padding: 1.2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 1rem; /* For items that stack (experience/education) */
-}
-
-.modal-item-container:last-child {
-    margin-bottom: 0;
-}
-
-.modal-item-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(139, 86, 51, 0.1);
-}
-
-.modal-item-title {
-    color: var(--header-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-}
-
-.modal-item-title i {
-    margin-right: 0.5rem;
-    color: var(--highlight);
-}
-
-.modal-item-subtitle {
-    color: var(--highlight);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.modal-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.modal-list-item {
-    margin-bottom: 0.2rem;
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-.modal-list-item i {
-    color: var(--highlight);
-    margin-right: 0.5rem;
-}
-
-.modal-list-item:last-child {
-    margin-bottom: 0;
-}
-
-@media (max-width: 991.98px) {
-    .contact-cards-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info-title,
-    .contact-form-title {
-        font-size: 1.6rem;
-        margin-bottom: 1.2rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .contact {
-        padding: 60px 0;
-    }
-    .contact-info,
-    .contact-form {
-        padding: 1.5rem;
-    }
-    .contact-info-grid {
-        gap: 1rem;
-    }
-    .contact-info-item {
-        padding: 0.8rem 1rem;
-    }
-    .contact-info-item i {
-        font-size: 1.4rem;
-    }
-    .contact-info-item h4 {
-        font-size: 1rem;
-    }
-    .contact-info-item p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .contact-info-title,
-    .contact-form-title {
-        font-size: 1.4rem;
-    }
-    .contact-info-item {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    .contact-info-item i {
-        margin-bottom: 0.5rem;
-    }
+    box-shadow: 0 0 0 0.3rem rgba(var(--metallic-bronze-rgb), 0.3);
 }
 
 /* Testimonials Section */
 .testimonials-section {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    padding: 100px 0;
+    background-color: var(--secondary-bg); /* Use secondary-bg for contrast */
 }
 
 .testimonial-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--star-dust);
-    border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(82, 50, 35, 0.08);
-    padding: 2rem 2.5rem;
-    text-align: center;
-    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(var(--deepwood-shade-rgb), 0.1);
 }
 
 .testimonial-quote {
-    font-size: 1.25rem;
-    color: var(--saddle);
-    font-style: italic;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .testimonial-client {
     font-size: 1.05rem;
-    color: var(--coral-tree);
-    font-weight: 500;
-}
-
-/* Styles for About Me (static details) */
-.about-details {
-    margin-top: 2rem;
-}
-
-.detail-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 16px rgba(139, 86, 51, 0.08);
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.detail-item:last-child {
-    margin-bottom: 0;
-}
-
-.detail-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(139, 86, 51, 0.12);
-}
-
-.detail-item > i.fas {
-    font-size: 1.8rem;
-    color: var(--highlight);
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-}
-
-.detail-content {
-    flex-grow: 1;
-}
-
-.detail-content h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
     font-weight: 600;
-    color: var(--header-color);
+    color: var(--highlight);
+}
+
+.carousel-indicators button {
+    background-color: var(--metallic-bronze); /* Match highlight color */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--highlight); /* Match highlight color */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* OJT Experience Section - Adjusting its styles from main.css into sections.css */
+.ojt-experience {
+    padding: 120px 0;
+    background-color: var(--primary-bg);
+}
+
+.ojt-card {
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(var(--deepwood-shade-rgb), 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.ojt-logo {
+    max-width: 140px;
+    border-radius: 15px;
+    padding: 12px;
+}
+
+.company-name {
+    font-size: 2rem;
     margin-bottom: 0.8rem;
 }
 
-.detail-content p {
-    font-size: 1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+.position {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
-.detail-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.detail-content ul li {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-    line-height: 1.5;
-}
-
-.detail-content ul li:last-child {
-    margin-bottom: 0;
-}
-
-.detail-content ul li::before {
-    content: '•';
-    color: var(--highlight);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: bold;
-}
-
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.75rem;
-}
-
-.skills-list li {
-    background: var(--primary-bg);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-bottom: 0;
-    padding-left: 1rem;
-}
-
-.skills-list li::before {
-    content: none;
-}
-
-.skills-list li i {
-    color: var(--highlight);
+.duration {
     font-size: 1.1rem;
+    margin-bottom: 1.2rem;
 }
 
-.company-logo {
-    max-width: 50px;
-    height: auto;
-    margin-right: 1rem;
-    border-radius: 4px;
-    vertical-align: middle;
-    margin-bottom: 0.5rem;
+.achievements h4,
+.skills-gained h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.achievement-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.achievement-list li i {
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+.skill-tags .skill-tag {
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+}
+
+.ojt-gallery h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.ojt-images-container {
+    gap: 15px;
+}
+
+.ojt-gallery-img {
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(var(--deepwood-shade-rgb), 0.1);
+}
+
+/* Responsive adjustments for sections */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    .hero-image-container {
+        padding: 2rem;
+    }
+    .about-image-container {
+        margin-bottom: 30px;
+    }
+    .projects-subtitle {
+        font-size: 1.05rem;
+    }
+    .contact-info-title,
+    .contact-form-title {
+        font-size: 1.8rem;
+    }
+    .ojt-card {
+        padding: 2.5rem;
+    }
+    .ojt-logo {
+        max-width: 120px;
+    }
+    .company-name {
+        font-size: 1.8rem;
+    }
+    .position {
+        font-size: 1.2rem;
+    }
+    .ojt-gallery-img {
+        height: 150px;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .detail-item {
-        padding: 1rem;
+    .hero {
+        padding-top: 90px;
+        min-height: 400px;
     }
-    .detail-item h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
+    .hero-title {
+        font-size: 2.5rem;
     }
-    .detail-item h3 i {
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-image-container {
+        padding: 1.5rem;
+    }
+    .about-image-container {
+        margin-bottom: 25px;
+    }
+    .about-description {
+        font-size: 1rem;
+    }
+    .projects-subtitle {
+        font-size: 1rem;
+    }
+    .contact-info-title,
+    .contact-form-title {
         font-size: 1.6rem;
     }
-    .detail-item p,
-    .detail-item ul li {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+    .ojt-card {
+        padding: 2rem;
+    }
+    .company-name {
+        font-size: 1.6rem;
+    }
+    .position {
+        font-size: 1.1rem;
+    }
+    .ojt-gallery-img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        padding-top: 70px;
+        min-height: 350px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-description {
         font-size: 0.9rem;
+    }
+    .hero-buttons {
+        gap: 0.8rem;
+    }
+    .hero-image-container {
+        padding: 1rem;
+    }
+    .about-image-container {
+        margin-bottom: 20px;
+    }
+    .about-header {
+        margin-bottom: 40px;
+    }
+    .about-description {
+        font-size: 0.95rem;
+    }
+    .projects-subtitle {
+        font-size: 0.95rem;
+    }
+    .contact-info-title,
+    .contact-form-title {
+        font-size: 1.4rem;
+    }
+    .ojt-card {
+        padding: 1.5rem;
+    }
+    .ojt-logo {
+        max-width: 100px;
+    }
+    .company-name {
+        font-size: 1.4rem;
+    }
+    .position {
+        font-size: 1rem;
+    }
+    .ojt-gallery-img {
+        height: 100px;
     }
 } 
