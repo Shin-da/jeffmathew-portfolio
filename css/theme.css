@@ -5,6 +5,11 @@
   Extracted from main.css for modularity and maintainability.
 */
 
+:root {
+  --accent: #b47c6c; /* A warm, inviting color for light mode links */
+  --accent-hover: #a16c5c; /* A slightly darker shade for hover effect */
+}
+
 /* 1. Dark Theme Variables */
 [data-theme="dark"] {
   --background: #000000;
@@ -14,8 +19,6 @@
   --subtle-text: #a8a8a8;
   --muted-text: #606770;
   --header-color: #f5f6fa;
-  --accent: #0095f6;
-  --accent-hover: #1877f2;
   --error: #ed4956;
   --primary-bg: #000000;
   --secondary-bg: #1a1a1a;
@@ -186,7 +189,7 @@
 
 /* 3. Theme Toggle & Transitions */
 [data-theme="dark"] .theme-toggle {
-  background: var(--card-bg);
+  /* background: var(--card-bg); */
 }
 [data-theme="dark"] .toggle-track {
   background: var(--background);
@@ -195,7 +198,7 @@
   /* background: var(--accent); */
 }
 [data-theme="dark"] .nav-pill-row .nav-link.active, [data-theme="dark"] .nav-pill-row .nav-link:focus, [data-theme="dark"] .nav-pill-row .nav-link:hover {
-  background: var(--accent);
+  /* background: var(--accent); */
   color: #fff;
 }
 

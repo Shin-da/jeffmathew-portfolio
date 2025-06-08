@@ -232,117 +232,117 @@ const igHighlightModalBackdrop = document.querySelector('.ig-highlight-modal-bac
 
 const highlightContent = {
   about: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">About Me</h2>
+    <h2 class="modal-section-title">About Me</h2>
     <p>I am Jeff Mathew Garcia, an IT graduate student who combines technical expertise with artistic vision. As a developer and artist, I bring creativity to everything I build, from websites to digital art. I'm passionate about creating beautiful, functional solutions that make an impact.</p>
-    <p style="margin-top: 1rem; color: var(--highlight);">"I believe in the perfect blend of technology and creativity."</p>
+    <p class="modal-item-subtitle" style="margin-top: 1rem;">"I believe in the perfect blend of technology and creativity."</p>
   `,
   skills: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Tech Stack</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-code"></i> Frontend</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><i class="fab fa-html5"></i> HTML5</li>
-          <li><i class="fab fa-css3-alt"></i> CSS3/Bootstrap</li>
-          <li><i class="fab fa-js-square"></i> JavaScript</li>
+    <h2 class="modal-section-title">Tech Stack</h2>
+    <div class="modal-grid-container">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-code"></i> Frontend</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item"><i class="fab fa-html5"></i> HTML5</li>
+          <li class="modal-list-item"><i class="fab fa-css3-alt"></i> CSS3/Bootstrap</li>
+          <li class="modal-list-item"><i class="fab fa-js-square"></i> JavaScript</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-server"></i> Backend</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><i class="fab fa-php"></i> PHP</li>
-          <li><i class="fab fa-python"></i> Python</li>
-          <li><i class="fas fa-database"></i> MySQL</li>
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-server"></i> Backend</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item"><i class="fab fa-php"></i> PHP</li>
+          <li class="modal-list-item"><i class="fab fa-python"></i> Python</li>
+          <li class="modal-list-item"><i class="fas fa-database"></i> MySQL</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-tools"></i> Tools</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-          <li><i class="fas fa-server"></i> XAMPP</li>
-          <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-tools"></i> Tools</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item"><i class="fab fa-git-alt"></i> Git & GitHub</li>
+          <li class="modal-list-item"><i class="fas fa-server"></i> XAMPP</li>
+          <li class="modal-list-item"><i class="fas fa-draw-polygon"></i> Graphic Design</li>
         </ul>
       </div>
     </div>
   `,
   services: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Services</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-laptop-code"></i> Web Development</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>Portfolio Websites</li>
-          <li>Business Websites</li>
-          <li>E-commerce Solutions</li>
+    <h2 class="modal-section-title">Services</h2>
+    <div class="modal-grid-container" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-laptop-code"></i> Web Development</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item">Portfolio Websites</li>
+          <li class="modal-list-item">Business Websites</li>
+          <li class="modal-list-item">E-commerce Solutions</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-paint-brush"></i> Digital Art</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>Portraits</li>
-          <li>Concept Art</li>
-          <li>Illustrations</li>
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-paint-brush"></i> Digital Art</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item">Portraits</li>
+          <li class="modal-list-item">Concept Art</li>
+          <li class="modal-list-item">Illustrations</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-chalkboard-teacher"></i> Tutoring</h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>Programming Help</li>
-          <li>Web Development</li>
-          <li>IT Concepts</li>
+      <div class="modal-item-container">
+        <h3 class="modal-item-title"><i class="fas fa-chalkboard-teacher"></i> Tutoring</h3>
+        <ul class="modal-list">
+          <li class="modal-list-item">Programming Help</li>
+          <li class="modal-list-item">Web Development</li>
+          <li class="modal-list-item">IT Concepts</li>
         </ul>
       </div>
     </div>
   `,
   experience: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Experience</h2>
+    <h2 class="modal-section-title">Experience</h2>
     <div style="margin-top: 1rem;">
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title">
           <i class="fas fa-building"></i> SP Madrid & Associates Law Firm
         </h3>
-        <p style="color: var(--highlight); margin-bottom: 0.5rem;">Developer and AI Prompt Engineer (Internship)</p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>• Developed and maintained web applications</li>
-          <li>• Implemented AI solutions for document processing</li>
-          <li>• Collaborated with the legal team on tech solutions</li>
+        <p class="modal-item-subtitle">Developer and AI Prompt Engineer (Internship)</p>
+        <ul class="modal-list">
+          <li class="modal-list-item">• Developed and maintained web applications</li>
+          <li class="modal-list-item">• Implemented AI solutions for document processing</li>
+          <li class="modal-list-item">• Collaborated with the legal team on tech solutions</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title">
           <i class="fas fa-graduation-cap"></i> Thesis Project
         </h3>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>• Led frontend and backend development</li>
-          <li>• Designed and implemented project features</li>
-          <li>• Managed version control with GitHub</li>
+        <ul class="modal-list">
+          <li class="modal-list-item">• Led frontend and backend development</li>
+          <li class="modal-list-item">• Designed and implemented project features</li>
+          <li class="modal-list-item">• Managed version control with GitHub</li>
         </ul>
       </div>
     </div>
   `,
   education: `
-    <h2 style="color: var(--header-color); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Education</h2>
+    <h2 class="modal-section-title">Education</h2>
     <div style="margin-top: 1rem;">
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title">
           <i class="fas fa-university"></i> Pamantasan ng Lungsod ng Muntinlupa
         </h3>
-        <p style="color: var(--highlight); margin-bottom: 0.5rem;">BS Information Technology (2025 - Present)</p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>• Focus on Web Development</li>
-          <li>• System Development</li>
-          <li>• Database Management</li>
+        <p class="modal-item-subtitle">BS Information Technology (2025 - Present)</p>
+        <ul class="modal-list">
+          <li class="modal-list-item">• Focus on Web Development</li>
+          <li class="modal-list-item">• System Development</li>
+          <li class="modal-list-item">• Database Management</li>
         </ul>
       </div>
-      <div style="background: var(--card-bg); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-        <h3 style="color: var(--header-color); font-size: 1.1rem; margin-bottom: 0.8rem;">
+      <div class="modal-item-container">
+        <h3 class="modal-item-title">
           <i class="fas fa-school"></i> San Pedro Relocation Center National High School
         </h3>
-        <p style="color: var(--highlight); margin-bottom: 0.5rem;">CHS - Computer Hardware Servicing Strand (2020-2021)</p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>• Computer Hardware Maintenance</li>
-          <li>• Basic Networking</li>
-          <li>• Technical Support</li>
+        <p class="modal-item-subtitle">CHS - Computer Hardware Servicing Strand (2020-2021)</p>
+        <ul class="modal-list">
+          <li class="modal-list-item">• Computer Hardware Maintenance</li>
+          <li class="modal-list-item">• Basic Networking</li>
+          <li class="modal-list-item">• Technical Support</li>
         </ul>
       </div>
     </div>

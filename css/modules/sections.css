@@ -123,20 +123,250 @@
 /* Contact Section */
 .contact {
     background: linear-gradient(180deg, #e0dcca 0%, var(--primary-bg) 100%);
+    padding: 80px 0;
 }
 
-.contact-info {
-    padding: 2rem;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
+.contact-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Space between contact info and form cards */
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensure cards stretch to same height */
 }
 
+.contact-info,
 .contact-form {
-    padding: 2rem;
+    padding: 2.5rem;
     background-color: var(--card-bg);
-    border-radius: 15px;
+    border-radius: 18px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 6px 24px rgba(139, 86, 51, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Make cards fill the height of their column */
+}
+
+.contact-info:hover,
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(139, 86, 51, 0.15);
+}
+
+.contact-info-title,
+.contact-form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--header-color);
+    margin-bottom: 1.8rem;
+    text-align: center;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Space between individual contact items */
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--primary-bg);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(139, 86, 51, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(139, 86, 51, 0.1);
+}
+
+.contact-info-item i {
+    font-size: 1.6rem;
+    color: var(--highlight);
+    flex-shrink: 0;
+}
+
+.contact-info-item h4 {
+    font-size: 1.05rem;
+    color: var(--header-color);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact-info-item p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.contact-info-item p a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-info-item p a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.contact-form .form-control {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.contact-form .form-control::placeholder {
+    color: var(--subtle-text);
+    opacity: 0.8;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 0.2rem rgba(var(--highlight-rgb), 0.25);
+    background: var(--primary-bg);
+    color: var(--text-color);
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+}
+
+/* Styles for Modals (e.g., About Me highlights) */
+.modal-section-title {
+    color: var(--header-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-item-container {
+    background: var(--card-bg);
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1rem; /* For items that stack (experience/education) */
+}
+
+.modal-item-container:last-child {
+    margin-bottom: 0;
+}
+
+.modal-item-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(139, 86, 51, 0.1);
+}
+
+.modal-item-title {
+    color: var(--header-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.modal-item-title i {
+    margin-right: 0.5rem;
+    color: var(--highlight);
+}
+
+.modal-item-subtitle {
+    color: var(--highlight);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-list-item {
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.modal-list-item i {
+    color: var(--highlight);
+    margin-right: 0.5rem;
+}
+
+.modal-list-item:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .contact-cards-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-title,
+    .contact-form-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact {
+        padding: 60px 0;
+    }
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+    .contact-info-grid {
+        gap: 1rem;
+    }
+    .contact-info-item {
+        padding: 0.8rem 1rem;
+    }
+    .contact-info-item i {
+        font-size: 1.4rem;
+    }
+    .contact-info-item h4 {
+        font-size: 1rem;
+    }
+    .contact-info-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-info-title,
+    .contact-form-title {
+        font-size: 1.4rem;
+    }
+    .contact-info-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .contact-info-item i {
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Testimonials Section */
@@ -166,4 +396,141 @@
     font-size: 1.05rem;
     color: var(--coral-tree);
     font-weight: 500;
+}
+
+/* Styles for About Me (static details) */
+.about-details {
+    margin-top: 2rem;
+}
+
+.detail-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(139, 86, 51, 0.08);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(139, 86, 51, 0.12);
+}
+
+.detail-item > i.fas {
+    font-size: 1.8rem;
+    color: var(--highlight);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.detail-content {
+    flex-grow: 1;
+}
+
+.detail-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--header-color);
+    margin-bottom: 0.8rem;
+}
+
+.detail-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.detail-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detail-content ul li {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.detail-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.detail-content ul li::before {
+    content: '•';
+    color: var(--highlight);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    background: var(--primary-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+
+.skills-list li::before {
+    content: none;
+}
+
+.skills-list li i {
+    color: var(--highlight);
+    font-size: 1.1rem;
+}
+
+.company-logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .detail-item {
+        padding: 1rem;
+    }
+    .detail-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    .detail-item h3 i {
+        font-size: 1.6rem;
+    }
+    .detail-item p,
+    .detail-item ul li {
+        font-size: 0.9rem;
+    }
 } 
