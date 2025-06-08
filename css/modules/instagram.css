@@ -1,0 +1,466 @@
+/* Instagram Gallery Styles */
+
+.ig-header-section {
+    padding-top: 110px;
+    min-height: 420px;
+    background: var(--secondary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(139, 86, 51, 0.08);
+}
+
+.ig-header-bg {
+    background: linear-gradient(120deg, var(--accent-bg) 0%, var(--secondary-bg) 60%, var(--primary-bg) 100%);
+    opacity: 0.45;
+    z-index: 1;
+}
+
+.ig-header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: solid 2px var(--border-color);
+}
+
+.ig-profile-pic-wrapper {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(139, 86, 51, 0.22), 0 2px 12px rgba(163, 123, 71, 0.13);
+    border: 5px solid var(--card-bg);
+    margin-bottom: 1.2rem;
+    background: var(--card-bg);
+    transition: box-shadow 0.25s;
+}
+
+.ig-profile-pic-wrapper:hover {
+    box-shadow: 0 16px 48px rgba(139, 86, 51, 0.28), 0 4px 18px rgba(163, 123, 71, 0.18);
+}
+
+.ig-profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.ig-profile-name {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--header-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.ig-profile-tagline {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.1rem;
+}
+
+.ig-profile-highlight {
+    color: var(--highlight);
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.ig-social-row {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.ig-social-row a {
+    color: var(--header-color);
+    font-size: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.ig-social-row a:hover {
+    background: var(--highlight);
+    color: #fff;
+    transform: translateY(-3px) scale(1.08);
+}
+
+/* Instagram Gallery */
+.ig-gallery-section {
+    padding: 40px 0;
+    background: var(--section-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.ig-gallery-header .section-title {
+    font-size: 2.2rem;
+    color: var(--header-color);
+}
+
+.ig-gallery-filters {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ig-gallery-filter {
+    background: transparent;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ig-gallery-filter i {
+    font-size: 0.9rem;
+}
+
+.ig-gallery-filter.active,
+.ig-gallery-filter:hover {
+    color: var(--header-color);
+    border-bottom: 1px solid var(--header-color);
+}
+
+.ig-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ig-art-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.ig-art-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ig-art-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ig-art-card:hover .ig-art-overlay {
+    opacity: 1;
+}
+
+.ig-art-likes, .ig-art-comments {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ig-art-likes i, .ig-art-comments i {
+    font-size: 1.2rem;
+}
+
+/* Instagram Lightbox */
+.ig-art-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+.ig-art-lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ig-art-lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ig-art-lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.ig-art-lightbox-info {
+    padding: 15px 20px;
+    color: var(--text-color);
+    background: var(--card-bg);
+}
+
+.ig-art-lightbox-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--header-color);
+}
+
+.ig-art-lightbox-meta {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.ig-art-lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1060;
+    padding: 5px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.ig-art-lightbox-close:hover {
+    color: var(--highlight);
+}
+
+/* Instagram Highlights */
+.ig-highlights-section {
+    background: var(--primary-bg);
+    padding: 2.2rem 0 1.2rem 0;
+    margin-bottom: 2.2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ig-highlights-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ig-highlight-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.ig-highlight-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--header-color);
+    box-shadow: 0 4px 12px rgba(139, 86, 51, 0.12);
+    margin-bottom: 0.7rem;
+    border: 3px solid var(--accent-bg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.ig-highlight-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--highlight), var(--accent-bg));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.ig-highlight-label {
+    font-size: 1.08rem;
+    color: var(--header-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.ig-highlight-card:hover .ig-highlight-icon,
+.ig-highlight-card.active .ig-highlight-icon {
+    transform: scale(1.08);
+    border-color: var(--highlight);
+    box-shadow: 0 6px 16px rgba(139, 86, 51, 0.18);
+}
+
+.ig-highlight-card:hover .ig-highlight-icon::after,
+.ig-highlight-card.active .ig-highlight-icon::after {
+    opacity: 0.1;
+}
+
+.ig-highlight-card:hover .ig-highlight-label,
+.ig-highlight-card.active .ig-highlight-label {
+    color: var(--highlight);
+}
+
+.ig-highlight-card:hover,
+.ig-highlight-card.active {
+    transform: translateY(-4px);
+}
+
+/* Instagram Highlight Modal */
+.ig-highlight-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-highlight-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 53, 44, 0.85);
+    z-index: 1;
+}
+
+.ig-highlight-modal-content {
+    position: relative;
+    z-index: 2;
+    background: var(--secondary-bg);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(139, 86, 51, 0.18);
+    padding: 2.2rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    animation: modalPopIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ig-highlight-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    z-index: 3;
+    background: var(--header-color);
+    color: #fff;
+    border: none;
+    font-size: 1.8rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-highlight-modal-close:hover {
+    background: var(--highlight);
+    transform: rotate(90deg);
+}
+
+.ig-highlight-modal-body {
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+    font-size: 1.08rem;
+    margin-top: 1.2rem;
+    line-height: 1.6;
+}
+
+.ig-highlight-modal-body ul li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ig-highlight-modal-body ul li i {
+    color: var(--highlight);
+}
+
+@keyframes modalPopIn {
+    0% { transform: scale(0.92) translateY(40px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+} 

@@ -1,0 +1,296 @@
+/* Component Styles */
+
+/* Buttons */
+.btn, .btn-primary, .btn-outline {
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 1.08rem;
+    padding: 0.7rem 2.2rem;
+    box-shadow: 0 2px 12px rgba(139, 86, 51, 0.08);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--button-color);
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--button-hover);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.13);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+.btn-outline:hover, .btn-outline:focus {
+    background: var(--button-color);
+    color: #fff;
+    border-color: var(--button-hover);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.13);
+}
+
+/* Cards */
+.project-card, .blog-card, .testimonial-card, .contact-info, .contact-form, .ig-art-card, .blog-post-card {
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(139, 86, 51, 0.08);
+    border: 1.5px solid var(--accent-bg);
+    background: var(--card-bg);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-card:hover, .blog-card:hover, .testimonial-card:hover, .blog-post-card:hover, .ig-art-card:hover {
+    box-shadow: 0 12px 36px rgba(139, 86, 51, 0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(139, 86, 51, 0.08);
+    border-bottom: 2px solid var(--accent-bg);
+    transition: background 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.navbar.sticky {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 24px rgba(139, 86, 51, 0.13);
+}
+
+.navbar-brand {
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    color: var(--header-color);
+    font-family: 'Playfair Display', serif;
+    transition: color 0.2s;
+}
+
+.navbar-brand:hover {
+    color: var(--highlight);
+}
+
+/* Theme Toggle */
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle {
+    background: #e4e6eb;
+    border: none;
+    border-radius: 999px;
+    width: 48px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.08);
+    padding-left: 15px;
+}
+
+.toggle-track {
+    position: relative;
+}
+
+.toggle-thumb {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 2px;
+    display: flex;
+    align-items: center;
+    transition: left 0.25s cubic-bezier(.4,0,.2,1), background 0.2s;
+}
+
+[data-theme="dark"] .toggle-thumb {
+    left: 22px;
+}
+
+.toggle-icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-size: 1.1rem;
+}
+
+.toggle-icon.sun {
+    opacity: 1;
+    transition: opacity 0.18s;
+}
+
+.toggle-icon.moon {
+    opacity: 0;
+    transition: opacity 0.18s;
+}
+
+[data-theme="dark"] .toggle-icon.sun {
+    opacity: 0;
+}
+
+[data-theme="dark"] .toggle-icon.moon {
+    opacity: 1;
+}
+
+/* Project Card specifics */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 18px 18px 0 0;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-link {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--button-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-link:hover {
+    background: var(--button-color);
+    color: #fff;
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--subtle-text);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.project-tech span {
+    background: var(--accent-bg);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+/* See More Projects Button */
+.btn-outline-primary {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-outline-primary:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Dark Theme Adjustments for Project Section */
+[data-theme="dark"] .project-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+}
+
+[data-theme="dark"] .project-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+[data-theme="dark"] .project-content h3 {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .project-content p {
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .project-tech span {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+} 

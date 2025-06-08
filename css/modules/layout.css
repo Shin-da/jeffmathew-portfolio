@@ -1,0 +1,30 @@
+/* Layout Styles */
+
+/* Section Padding Consistency */
+.about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media (max-width: 991.98px) {
+    .about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* Container and Grid Layouts */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--woodsmoke);
+    color: var(--cloud);
+    padding: 2rem 0;
+    text-align: center;
+} 

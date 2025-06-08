@@ -1,0 +1,101 @@
+/* Base Styles and Variables */
+
+/* Custom Color Variables */
+:root {
+    --saddle: #523223;
+    --star-dust: #989995;
+    --squirrel: #8c8276;
+    --cloud: #c8c7c3;
+    --delta: #a5a7a2;
+    --woodsmoke: #0c0d0d;
+    --flint: #747468;
+    --tobacco-brown: #6e5946;
+    --storm-dust: #61615d;
+    --coral-tree: #b47c6c;
+    --insta-blue: #0095f6;
+}
+
+/* Main Theme Variables */
+:root {
+    --primary-color: var(--woodsmoke);
+    --secondary-color: var(--saddle);
+    --accent-color: var(--coral-tree);
+    --text-color: var(--woodsmoke);
+    --light-text: var(--storm-dust);
+    --background-color: var(--cloud);
+    --section-bg: #ffffff;
+    --card-bg: var(--tea-green);
+    --border-color: var(--star-dust);
+    --hover-color: var(--coral-tree);
+    --transition: all 0.3s ease;
+}
+
+/* Earthy Artistic Palette */
+:root {
+    --milk-chocolate: #8B5633;
+    --metallic-bronze: #A37B47;
+    --laurel-green: #9DB496;
+    --tea-green: #e0dcca;
+    --cookies-cream: #E0DCAA;
+    --coconut: #EDE1D2;
+    --palm-oil: #5D2510;
+    --canopy-green: #798262;
+    --deepwood-shade: #33352C;
+
+    /* Main usage */
+    --primary-bg: var(--cookies-cream);
+    --secondary-bg: var(--coconut);
+    --card-bg: var(--tea-green);
+    --accent-bg: var(--laurel-green);
+    --header-color: var(--milk-chocolate);
+    --button-color: var(--milk-chocolate);
+    --button-hover: var(--palm-oil);
+    --text-color: var(--deepwood-shade);
+    --subtle-text: var(--canopy-green);
+    --highlight: var(--metallic-bronze);
+    --border-color: var(--laurel-green);
+    --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+body.page-fadein-active {
+    opacity: 1;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 10000;
+    background: var(--coral-tree);
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border-radius: 0 0 12px 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: left 0.2s;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    outline: 2px solid var(--saddle);
+    box-shadow: 0 2px 8px rgba(180, 124, 108, 0.10);
+} 

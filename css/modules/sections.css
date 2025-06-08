@@ -1,0 +1,169 @@
+/* Page Section Styles */
+
+/* Hero Section */
+.hero {
+    background-color: var(--background-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    padding: 2rem 0;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.greeting {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--saddle);
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    color: var(--woodsmoke);
+}
+
+.role {
+    color: var(--coral-tree);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--storm-dust);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image-container {
+    position: relative;
+    padding: 2rem;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(82, 50, 35, 0.18), 0 1.5px 8px rgba(180, 124, 108, 0.10);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background-color: var(--section-bg);
+    position: relative;
+}
+
+.about-header {
+    margin-bottom: 60px;
+}
+
+.about-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(139, 86, 51, 0.15);
+    margin-bottom: 30px;
+    transform: translateY(0);
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.about-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(139, 86, 51, 0.25);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.about-image-container:hover .about-image {
+    transform: scale(1.03);
+}
+
+.about-description {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Projects Section */
+.projects {
+    background: linear-gradient(180deg, var(--primary-bg) 0%, #e0dcca 100%);
+    padding: 100px 0;
+    height: auto;
+}
+
+.projects-subtitle {
+    color: var(--light-text);
+    margin-bottom: 3rem;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(180deg, #e0dcca 0%, var(--primary-bg) 100%);
+}
+
+.contact-info {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-form {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--star-dust);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(82, 50, 35, 0.08);
+    padding: 2rem 2.5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.testimonial-quote {
+    font-size: 1.25rem;
+    color: var(--saddle);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-client {
+    font-size: 1.05rem;
+    color: var(--coral-tree);
+    font-weight: 500;
+} 
