@@ -228,22 +228,45 @@ document.querySelectorAll('.ig-highlight-card').forEach(card => {
   card.addEventListener('click', function() {
     const targetId = this.getAttribute('data-highlight');
     const targetSection = document.getElementById(targetId);
+    const aboutDetailsCollapse = document.getElementById('aboutDetails');
+
     if (targetSection) {
-      // Offset for fixed navbar if needed, similar to smooth scrolling for nav links
-      const navbarHeight = document.getElementById('mainNav').offsetHeight || 80; // Default to 80 if not found
-      const scrollPosition = targetSection.offsetTop - navbarHeight;
+      // Check if the target section is inside the aboutDetails collapse
+      if (aboutDetailsCollapse && aboutDetailsCollapse.contains(targetSection)) {
+        // Ensure the collapse is shown if it's not already
+        if (!aboutDetailsCollapse.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(aboutDetailsCollapse, { toggle: false });
+          bsCollapse.show();
 
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
+          // Wait for the collapse transition to complete before scrolling
+          aboutDetailsCollapse.addEventListener('shown.bs.collapse', () => {
+            scrollToTarget(targetSection);
+          }, { once: true });
+        } else {
+          // If already open, just scroll
+          scrollToTarget(targetSection);
+        }
+      } else {
+        // For sections not in aboutDetails (like #about itself)
+        scrollToTarget(targetSection);
+      }
 
-      // Update active class for highlights if desired (optional, not requested, but good UX)
+      // Update active class for highlights
       document.querySelectorAll('.ig-highlight-card').forEach(hCard => hCard.classList.remove('active'));
       this.classList.add('active');
     }
   });
 });
+
+function scrollToTarget(targetSection) {
+  const navbarHeight = document.getElementById('mainNav').offsetHeight || 80;
+  const scrollPosition = targetSection.offsetTop - navbarHeight;
+
+  window.scrollTo({
+    top: scrollPosition,
+    behavior: 'smooth'
+  });
+}
 
 // IG-Style Story Highlights Card Click (visual feedback, ready for modal/expand)
 const igHighlightCards = document.querySelectorAll('.ig-highlight-card');
