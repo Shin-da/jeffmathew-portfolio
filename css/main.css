@@ -15,7 +15,6 @@
     --hover-color: var(--coral-tree);
     --transition: all 0.3s ease;
     --insta-blue: #0095f6;
-    --insta-purple: #a259ff;
 }
 
 /* Custom Color Variables */
@@ -102,7 +101,7 @@ body.page-fadein-active {
     justify-content: center;
 }
 .theme-toggle {
-    background: var(--accent-bg);
+    background: #e4e6eb;
     border: none;
     border-radius: 999px;
     width: 48px;
@@ -112,62 +111,50 @@ body.page-fadein-active {
     transition: background 0.2s;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     box-shadow: 0 2px 8px rgba(139, 86, 51, 0.08);
-    padding: 0;
+    padding-left: 15px;
 }
 .theme-toggle:focus {
     outline: 2px solid var(--highlight);
 }
 .toggle-track {
-    width: 38px;
-    height: 18px;
-    background: var(--card-bg);
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
     position: relative;
-    transition: background 0.2s;
 }
 .toggle-thumb {
     position: absolute;
-    left: 2px;
-    top: 2px;
     width: 24px;
     height: 24px;
-    background: var(--button-color);
-    border-radius: 50%;
+    left: 0px;
+    top: 2px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.10);
+    /* justify-content: center; */
     transition: left 0.25s cubic-bezier(.4,0,.2,1), background 0.2s;
 }
-.theme-toggle[data-theme="dark"] .toggle-thumb {
-    left: 12px;
-    background: var(--insta-blue);
+[data-theme="dark"] .toggle-thumb {
+    left: 22px;
 }
 .toggle-icon {
     position: absolute;
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
     font-size: 1.1rem;
-    color: #fff;
+}
+.toggle-icon.sun {
+    opacity: 1;
+    transition: opacity 0.18s;
+}
+.toggle-icon.moon {
     opacity: 0;
     transition: opacity 0.18s;
 }
-.toggle-icon.sun {
-    left: 4px;
-    opacity: 1;
-    color: var(--button-color);
-}
-.theme-toggle[data-theme="dark"] .toggle-icon.sun {
+[data-theme="dark"] .toggle-icon.sun {
     opacity: 0;
 }
-.toggle-icon.moon {
-    right: 4px;
-    opacity: 0;
-    color: var(--insta-blue);
-}
-.theme-toggle[data-theme="dark"] .toggle-icon.moon {
+[data-theme="dark"] .toggle-icon.moon {
     opacity: 1;
 }
 @media (max-width: 767.98px) {
@@ -190,17 +177,21 @@ body.page-fadein-active {
     }
 }
 [data-theme="dark"] .nav-pill-row .nav-link.active, [data-theme="dark"] .nav-pill-row .nav-link:focus, [data-theme="dark"] .nav-pill-row .nav-link:hover {
-    background: var(--insta-purple);
+    background: var(--accent);
     color: #fff;
 }
 [data-theme="dark"] .theme-toggle {
-    background: #232323;
+    background: #262626;
 }
 [data-theme="dark"] .toggle-track {
-    background: #18191a;
+    background: #262626;
 }
 [data-theme="dark"] .toggle-thumb {
-    background: var(--insta-blue);
+    /* background: #f5f6fa;
+    color: #000; */
+}
+[data-theme="dark"] .toggle-icon {
+    /* color: #000; */
 }
 
 /* Button Styles */
@@ -1101,12 +1092,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
   overflow: hidden;
+  box-shadow: 0 2px 12px rgba(139, 86, 51, 0.08);
 }
 .ig-header-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  /* position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0; */
   background: linear-gradient(120deg, var(--accent-bg) 0%, var(--secondary-bg) 60%, var(--primary-bg) 100%);
   opacity: 0.45;
   z-index: 1;
@@ -1121,6 +1113,7 @@ body {
   margin: 0 auto;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
+  border-bottom: solid 2px var(--border-color);
 }
 .ig-profile-pic-wrapper {
   width: 144px;
@@ -1705,7 +1698,7 @@ body {
   color: var(--header-color);
 }
 [data-theme="dark"] .nav-link.active, [data-theme="dark"] .nav-link:focus, [data-theme="dark"] .nav-link:hover {
-  background: var(--insta-purple);
+  background: var(--accent);
   color: #fff;
 }
 [data-theme="dark"] .navbar-toggler {
