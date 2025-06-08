@@ -51,7 +51,7 @@ body.page-fadein-active {
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 16px rgba(139, 86, 51, 0.08);
     border-bottom: 2px solid var(--accent-bg);
-    padding: 1rem 0.5rem;
+    /* padding: 0.5rem 0.5rem;  */
     transition: background 0.3s, box-shadow 0.3s;
     z-index: 1000;
 }
@@ -76,23 +76,41 @@ body.page-fadein-active {
 
 .nav-pill-row {
     display: flex;
-    gap: 0.5rem;
-    align-items: center;
+    /* gap: 0.5rem; */
+    /* align-items: center; */
+    border-bottom: 1px solid var(--border-color);
+    margin-left: 20px;
 }
 
 .nav-pill-row .nav-link {
-    border-radius: 999px;
-    padding: 0.5rem 1.3rem;
-    background: transparent;
-    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-    font-weight: 600;
+    border-radius: 0; /* Changed from 999px */
+    padding: 15px 25px; /* Matched ig-gallery-filter */
+    background: transparent; /* Matched ig-gallery-filter */
+    transition: color 0.2s, border-bottom 0.2s; /* Matched ig-gallery-filter */
+    font-weight: 600; /* Matched ig-gallery-filter */
+    color: var(--saddle); /* Changed to brown for inactive links */
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content within the link */
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.nav-pill-row .nav-link.active, .nav-pill-row .nav-link:focus, .nav-pill-row .nav-link:hover {
-    background: var(--accent-bg);
-    color: var(--button-hover);
-    box-shadow: 0 2px 8px rgba(139, 86, 51, 0.10);
+.nav-pill-row .nav-link.active,
+.nav-pill-row .nav-link:focus,
+.nav-pill-row .nav-link:hover {
+    background-color: transparent !important; /* Ensure no blue background */
+    color: #fff; /* Changed to white for active/hover/focus links in light mode */
+    box-shadow: none; /* Removed */
+    transform: none; /* Removed */
+    border-bottom: 1px solid #fff; /* Changed to white border for active/hover/focus links in light mode */
+}
+
+/* Adjustments for icons within nav links if any */
+.nav-item .nav-link i {
+    font-size: 0.9rem;
 }
 
 .theme-toggle-wrapper {
@@ -177,8 +195,8 @@ body.page-fadein-active {
     }
 }
 [data-theme="dark"] .nav-pill-row .nav-link.active, [data-theme="dark"] .nav-pill-row .nav-link:focus, [data-theme="dark"] .nav-pill-row .nav-link:hover {
-    background: var(--accent);
     color: #fff;
+    border-bottom-color: #fff;
 }
 [data-theme="dark"] .theme-toggle {
     background: #262626;
@@ -390,37 +408,39 @@ body.page-fadein-active {
 
 /* About Section */
 .about {
-    background: linear-gradient(180deg, var(--secondary-bg) 0%, #fffbe6 100%);
+    padding: 100px 0; /* Increased padding for more vertical space */
+    background-color: var(--section-bg);
+    position: relative;
 }
 
-.section-title {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: 2.7rem;
-    font-weight: 900;
-    letter-spacing: 1.2px;
-    color: var(--header-color);
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.section-divider {
-    width: 80px;
-    height: 4px;
-    background-color: var(--saddle);
-    margin: 0 auto 2rem;
+.about-header {
+    margin-bottom: 60px; /* More space below the header */
 }
 
 .about-image-container {
     position: relative;
-    border-radius: 20px;
+    border-radius: 20px; /* Slightly more rounded corners */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(139, 86, 51, 0.15); /* More pronounced shadow */
+    margin-bottom: 30px;
+    transform: translateY(0); /* Ensure no initial transform */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.about-image-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 20px 50px rgba(139, 86, 51, 0.25); /* Stronger shadow on hover */
 }
 
 .about-image {
     width: 100%;
     height: auto;
-    transition: var(--transition);
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.about-image-container:hover .about-image {
+    transform: scale(1.03); /* Slight zoom on hover */
 }
 
 .about-image-overlay {
@@ -429,56 +449,212 @@ body.page-fadein-active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--saddle), var(--coral-tree));
-    opacity: 0.1;
+    background: linear-gradient(to top, rgba(180, 124, 108, 0.6), rgba(180, 124, 108, 0.2)); /* Stronger gradient */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.about-image-container:hover .about-image-overlay {
+    opacity: 1; /* Overlay visible on hover */
 }
 
 .about-description {
-    font-size: 1.1rem;
-    color: var(--light-text);
-    margin-bottom: 2rem;
+    font-size: 1.15rem; /* Slightly larger font */
+    line-height: 1.9; /* Increased line height for better readability */
+    margin-bottom: 40px; /* More space below description */
+    color: var(--text-color);
+    max-width: 700px; /* Constrain width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-details {
+    margin-top: 30px; /* Space above details section */
 }
 
 .detail-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 30px; /* Increased space between items */
+    padding: 20px; /* More padding around each item */
+    background-color: var(--card-bg); /* Use card background color */
+    border-radius: 15px; /* Rounded corners for detail items */
+    box-shadow: 0 5px 20px rgba(139, 86, 51, 0.08); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Remove default border */
+}
+
+.detail-item:last-child {
+    margin-bottom: 0; /* No margin for the last item */
+}
+
+.detail-item:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(139, 86, 51, 0.12); /* Stronger shadow on hover */
 }
 
 .detail-item i {
-    font-size: 1.5rem;
-    color: var(--saddle);
-    margin-right: 1rem;
-    margin-top: 0.25rem;
+    font-size: 2.2rem; /* Larger icon size */
+    color: var(--accent-color);
+    margin-right: 25px; /* More space between icon and text */
+    padding-top: 5px;
+    min-width: 40px;
+    text-align: center;
 }
 
 .detail-content h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem; /* Slightly larger heading */
+    font-weight: 700;
+    margin-bottom: 10px; /* More space below heading */
+    color: var(--primary-color);
+    display: flex; /* Enable flexbox for alignment with logo */
+    align-items: center; /* Vertically align heading and logo */
+    gap: 15px; /* Space between heading and logo */
+}
+
+.detail-content .company-logo {
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    border-radius: 50%; /* Make logos round */
+    object-fit: cover; /* Ensure image covers the area */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    margin-bottom: 0; /* Ensure no extra margin pushes it down */
+}
+
+.detail-content .education-logo {
+    /* Specific styles for education logo if needed */
+}
+
+.detail-content .experience-logo {
+    /* Specific styles for experience logo if needed */
+}
+
+.detail-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--light-text);
 }
 
 .skills-list {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0 0 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem 2.2rem;
+    gap: 12px; /* Adjusted gap between skills */
+    justify-content: flex-start;
 }
 
 .skills-list li {
-    font-size: 1.08rem;
-    color: var(--saddle);
+    background-color: var(--squirrel); /* Adjusted background color for skills */
+    color: #fff; /* White text for skills */
+    padding: 10px 18px; /* Adjusted padding */
+    border-radius: 25px; /* More rounded pill shape */
+    font-weight: 500; /* Slightly lighter font weight */
+    font-size: 0.95rem; /* Slightly smaller font size */
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.2rem;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skills-list li:hover {
+    background-color: var(--saddle); /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .skills-list li i {
-    font-size: 1.3rem;
-    color: var(--coral-tree);
+    font-size: 1.1rem; /* Icon size within skills */
+    color: #fff; /* White icon color */
+    margin-right: 0; /* Remove extra margin */
+}
+
+@media (max-width: 991.98px) {
+    .about-image-container {
+        margin-bottom: 40px; /* More space on smaller screens */
+    }
+
+    .about-description {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    .detail-item {
+        padding: 15px;
+    }
+
+    .detail-item i {
+        margin-right: 0;
+        margin-bottom: 10px; /* Space below icon */
+    }
+
+    .detail-content h3 {
+        font-size: 1.4rem;
+        flex-direction: column; /* Stack heading and logo on small screens */
+        text-align: center; /* Center align text on small screens */
+        gap: 5px; /* Smaller gap when stacked */
+    }
+
+    .detail-content .company-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px; /* Adjust margin for stacked layout */
+    }
+
+    .skills-list li {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-header {
+        margin-bottom: 40px;
+    }
+
+    .about-image-container {
+        margin-bottom: 30px;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .detail-item {
+        flex-direction: column; /* Stack icon and content on very small screens */
+        align-items: center;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .detail-item i {
+        margin-right: 0;
+        margin-bottom: 10px; /* Space below icon */
+    }
+
+    .detail-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        flex-direction: column; /* Stack heading and logo on small screens */
+        text-align: center; /* Center align text on small screens */
+        gap: 5px; /* Smaller gap when stacked */
+    }
+
+    .detail-content .company-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px; /* Adjust margin for stacked layout */
+    }
+
+    .skills-list {
+        justify-content: center; /* Center skills on small screens */
+    }
 }
 
 /* Projects Section */
@@ -1202,182 +1378,235 @@ body {
 }
 
 .ig-gallery-section {
-  background: linear-gradient(180deg, var(--secondary-bg) 0%, #f5e9d7 100%);
-  padding: 3rem 0 2.5rem 0;
-  border-radius: 32px;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 2px 16px rgba(139, 86, 51, 0.06);
+  padding: 40px 0;
+  background: var(--section-bg);
+  border-top: 1px solid var(--border-color);
 }
+
+.ig-gallery-header {
+  /* margin-bottom: 30px; */
+}
+
 .ig-gallery-header .section-title {
+  font-size: 2.2rem;
+  /* margin-bottom: 15px; */
   color: var(--header-color);
-  font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 2.1rem;
-  margin-bottom: 0.2rem;
 }
+
 .ig-gallery-filters {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
-  margin: 1.2rem 0 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 20px;
+  margin-bottom: 10px; /* Space between filters and grid */
 }
+
 .ig-gallery-filter {
-  background: var(--card-bg);
-  color: var(--header-color);
+  background: transparent;
   border: none;
-  border-radius: 18px;
-  padding: 0.5em 1.5em;
-  font-size: 1.05rem;
+  padding: 15px 25px;
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--light-text);
   cursor: pointer;
-  box-shadow: 0 1px 4px rgba(139, 86, 51, 0.08);
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: color 0.2s, border-bottom 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-.ig-gallery-filter.active, .ig-gallery-filter:hover {
-  background: var(--highlight);
-  color: #fff;
-  transform: translateY(-2px) scale(1.04);
+
+.ig-gallery-filter i {
+  font-size: 0.9rem;
 }
+
+.ig-gallery-filter.active,
+.ig-gallery-filter:hover {
+  color: var(--header-color);
+  border-bottom: 1px solid var(--header-color);
+}
+
+[data-theme="dark"] .ig-gallery-filter.active,
+[data-theme="dark"] .ig-gallery-filter:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
 .ig-gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 5px;
 }
+
 .ig-art-card {
-  background: var(--card-bg);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(139, 86, 51, 0.10);
-  overflow: hidden;
   position: relative;
-  transition: box-shadow 0.2s, transform 0.2s;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-.ig-art-card:hover {
-  box-shadow: 0 8px 32px rgba(139, 86, 51, 0.18);
-  transform: translateY(-4px) scale(1.03);
-}
-.ig-art-img {
+  overflow: hidden;
+  border-radius: 0px; 
+  /* Slightly rounded corners for grid items */
+  box-shadow: none; /* No shadow here, handled by overlay */
+  border: none;
   width: 100%;
-  aspect-ratio: 1/1;
+  padding-top: 100%; /* Makes the card square */
+}
+
+.ig-art-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  border-bottom: 2px solid var(--accent-bg);
+  transition: transform 0.3s ease;
 }
-.ig-art-info {
-  padding: 1rem 1.2rem 0.8rem 1.2rem;
-  background: transparent;
-}
-.ig-art-title {
+
+.ig-art-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
   font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--header-color);
-  margin-bottom: 0.2rem;
+  font-weight: 600;
 }
-.ig-art-meta {
-  font-size: 0.98rem;
-  color: var(--subtle-text);
+
+.ig-art-card:hover .ig-art-overlay {
+  opacity: 1;
 }
+
+.ig-art-likes, .ig-art-comments {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ig-art-likes i, .ig-art-comments i {
+  font-size: 1.2rem;
+}
+
+/* Removed .ig-art-info, .ig-art-title, .ig-art-meta as they are no longer needed */
+
 @media (max-width: 991.98px) {
   .ig-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+    gap: 20px;
   }
 }
+
 @media (max-width: 575.98px) {
   .ig-gallery-section {
-    padding: 1.2rem 0 1.2rem 0;
-    border-radius: 18px;
+    padding: 30px 0;
   }
   .ig-gallery-grid {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 15px;
   }
-  .ig-art-info {
-    padding: 0.7rem 0.7rem 0.6rem 0.7rem;
+  .ig-gallery-filter {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    gap: 5px;
   }
 }
 
 .ig-art-lightbox {
+  display: none;
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1050;
   justify-content: center;
+  align-items: center;
 }
+
 .ig-art-lightbox-backdrop {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(51, 53, 44, 0.88);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
 .ig-art-lightbox-content {
   position: relative;
-  z-index: 2;
-  background: var(--secondary-bg);
-  border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(139, 86, 51, 0.18);
-  padding: 2.2rem 2.2rem 1.2rem 2.2rem;
+  max-width: 90%;
+  max-height: 90%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 96vw;
-  max-height: 92vh;
+  flex-direction: column; /* Stack image and info */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
+
+[data-theme="dark"] .ig-art-lightbox-content {
+  background: #262626;
+}
+
 .ig-art-lightbox-content img {
-  max-width: 60vw;
-  max-height: 60vh;
-  border-radius: 16px;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 2px 12px rgba(139, 86, 51, 0.10);
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.ig-art-lightbox-info {
+  padding: 15px 20px;
+  color: var(--text-color);
   background: var(--card-bg);
 }
-.ig-art-lightbox-info {
-  text-align: center;
-  margin-bottom: 0.7rem;
-}
+
 .ig-art-lightbox-title {
-  font-size: 1.3rem;
   font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
   color: var(--header-color);
-  margin-bottom: 0.2rem;
 }
+
 .ig-art-lightbox-meta {
-  font-size: 1.05rem;
-  color: var(--subtle-text);
+  font-size: 0.9rem;
+  color: var(--light-text);
 }
+
 .ig-art-lightbox-close {
   position: absolute;
-  top: 18px;
-  right: 24px;
-  z-index: 3;
-  background: var(--milk-chocolate);
-  color: #fff;
+  top: 15px;
+  right: 15px;
+  background: none;
   border: none;
-  font-size: 2.2rem;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  color: #fff;
+  font-size: 2rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(139, 86, 51, 0.10);
-  transition: background 0.2s;
+  z-index: 1060;
+  padding: 5px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
+
 .ig-art-lightbox-close:hover {
-  background: var(--palm-oil);
+  color: var(--highlight);
 }
+
 @media (max-width: 767.98px) {
   .ig-art-lightbox-content {
-    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
-    max-width: 98vw;
-    max-height: 98vh;
+    max-width: 95%;
+    max-height: 95%;
   }
   .ig-art-lightbox-content img {
-    max-width: 90vw;
-    max-height: 40vh;
+    max-height: 70vh;
   }
   .ig-art-lightbox-title {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 }
 

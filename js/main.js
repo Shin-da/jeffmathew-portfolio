@@ -17,18 +17,110 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Log navbar height for debugging scrollspy offset
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.getElementById('mainNav');
+  if (navbar) {
+    console.log('Navbar offset height:', navbar.offsetHeight);
+  }
+});
+
+// Smooth scrolling for navigation links and active state management
+document.querySelectorAll('#navbarResponsive a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    // Update active class on click
+    document.querySelectorAll('#navbarResponsive .nav-link').forEach(navLink => navLink.classList.remove('active'));
+    this.classList.add('active');
+
     if (target) {
       target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
     }
+    // Auto-collapse mobile navbar after clicking a link
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (window.getComputedStyle(navbarToggler).display !== 'none') {
+      navbarToggler.click();
+    }
   });
+});
+
+// Custom Scrollspy to manage active state on scroll
+window.addEventListener('scroll', function() {
+  const scrollPos = window.scrollY + 85; // Add offset for fixed navbar
+
+  document.querySelectorAll('section, div.container-fluid').forEach(section => {
+    const sectionId = section.getAttribute('id');
+    if (sectionId) { // Ensure section has an ID
+      const navLink = document.querySelector(`#navbarResponsive a[href="#${sectionId}"]`);
+      if (navLink) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPos >= sectionTop && scrollPos < (sectionTop + sectionHeight)) {
+          // Only add active class if it's not already active to prevent unnecessary re-renders
+          if (!navLink.classList.contains('active')) {
+            document.querySelectorAll('#navbarResponsive .nav-link').forEach(link => link.classList.remove('active'));
+            navLink.classList.add('active');
+          }
+        }
+      }
+    }
+  });
+});
+
+// Set initial active link on DOMContentLoaded or page load/refresh
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('#navbarResponsive .nav-link');
+  // Check if there's a hash in the URL on load
+  const currentHash = window.location.hash;
+  let foundActive = false;
+
+  if (currentHash) {
+    const initialNavLink = document.querySelector(`#navbarResponsive a[href="${currentHash}"]`);
+    if (initialNavLink) {
+      initialNavLink.classList.add('active');
+      foundActive = true;
+    }
+  }
+
+  // Fallback: if no hash or hash not found, set the first link (About) as active
+  if (!foundActive && navLinks.length > 0) {
+    navLinks[0].classList.add('active');
+  }
+
+  // Removed Bootstrap ScrollSpy initialization
+
+  // Auto-collapse mobile navbar after clicking a link (already handled in click listener, can remove redundant part here)
+  // const navbarToggler = document.querySelector('.navbar-toggler');
+  // const navLinksMobile = document.querySelectorAll('#navbarResponsive .nav-link');
+  // navLinksMobile.forEach(link => {
+  //   link.addEventListener('click', () => {
+  //     if (window.getComputedStyle(navbarToggler).display !== 'none') {
+  //       navbarToggler.click();
+  //     }
+  //   });
+  // });
+
+  // Back to Top button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.body.classList.add('page-fadein-active');
 });
 
 // Project image hover effect
@@ -84,42 +176,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Scrollspy (Bootstrap 5)
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.bootstrap && bootstrap.ScrollSpy) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#mainNav',
-      offset: 80
-    });
-  }
-
-  // Auto-collapse mobile navbar after clicking a link
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navLinks = document.querySelectorAll('#navbarResponsive .nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click();
-      }
-    });
-  });
-
-  // Back to Top button
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-  backToTop.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  document.body.classList.add('page-fadein-active');
-});
-
 // IG-Style Art Gallery Filtering
 const galleryFilters = document.querySelectorAll('.ig-gallery-filter');
 const artCards = document.querySelectorAll('.ig-art-card');
@@ -138,24 +194,18 @@ galleryFilters.forEach(btn => {
   });
 });
 
-// IG-Style Art Gallery Lightbox
+// IG-Style Art Gallery Lightbox (simplified for image only)
 const igArtCards = document.querySelectorAll('.ig-art-card');
 const igArtLightbox = document.getElementById('igArtLightbox');
 const igArtLightboxImg = document.getElementById('igArtLightboxImg');
-const igArtLightboxTitle = document.getElementById('igArtLightboxTitle');
-const igArtLightboxMeta = document.getElementById('igArtLightboxMeta');
 const igArtLightboxClose = document.getElementById('igArtLightboxClose');
 const igArtLightboxBackdrop = document.querySelector('.ig-art-lightbox-backdrop');
 
 igArtCards.forEach(card => {
   card.addEventListener('click', function() {
     const img = card.querySelector('img');
-    const title = card.querySelector('.ig-art-title')?.textContent || '';
-    const meta = card.querySelector('.ig-art-meta')?.textContent || '';
     igArtLightboxImg.src = img.src;
     igArtLightboxImg.alt = img.alt;
-    igArtLightboxTitle.textContent = title;
-    igArtLightboxMeta.textContent = meta;
     igArtLightbox.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   });
@@ -163,8 +213,6 @@ igArtCards.forEach(card => {
 function closeIgArtLightbox() {
   igArtLightbox.style.display = 'none';
   igArtLightboxImg.src = '';
-  igArtLightboxTitle.textContent = '';
-  igArtLightboxMeta.textContent = '';
   document.body.style.overflow = '';
 }
 if (igArtLightboxClose) igArtLightboxClose.addEventListener('click', closeIgArtLightbox);

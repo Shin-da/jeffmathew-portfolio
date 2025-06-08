@@ -39,8 +39,9 @@
   color: var(--header-color);
 }
 [data-theme="dark"] .nav-link.active, [data-theme="dark"] .nav-link:focus, [data-theme="dark"] .nav-link:hover {
-  background: var(--accent);
+  background: transparent;
   color: #fff;
+  border-bottom: 1px solid #fff;
 }
 [data-theme="dark"] .navbar-toggler {
   background: var(--accent);
