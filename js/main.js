@@ -349,28 +349,54 @@ const highlightContent = {
   `
 };
 
-igHighlightCards.forEach(card => {
-  card.addEventListener('click', function() {
-    igHighlightCards.forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-    const key = this.getAttribute('data-highlight');
-    igHighlightModalBody.innerHTML = highlightContent[key] || '';
-    igHighlightModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-});
-function closeIgHighlightModal() {
-  igHighlightModal.style.display = 'none';
-  igHighlightModalBody.innerHTML = '';
-  document.body.style.overflow = '';
-  igHighlightCards.forEach(c => c.classList.remove('active'));
-}
-if (igHighlightModalClose) igHighlightModalClose.addEventListener('click', closeIgHighlightModal);
-if (igHighlightModalBackdrop) igHighlightModalBackdrop.addEventListener('click', closeIgHighlightModal);
-document.addEventListener('keydown', function(e) {
-  if (igHighlightModal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
-    closeIgHighlightModal();
-  }
+// Instagram-style story highlights functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const highlightCards = document.querySelectorAll('.ig-highlight-card');
+    const modal = document.createElement('div');
+    modal.className = 'ig-highlight-modal';
+    modal.style.display = 'none';
+    document.body.appendChild(modal);
+
+    highlightCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const type = this.getAttribute('data-type');
+            const content = highlightContent[type];
+            
+            if (content) {
+                // Create modal content
+                modal.innerHTML = `
+                    <div class="ig-highlight-modal-backdrop"></div>
+                    <div class="ig-highlight-modal-content">
+                        <button class="ig-highlight-modal-close">&times;</button>
+                        <div class="ig-highlight-modal-body">
+                            ${content}
+                        </div>
+                    </div>
+                `;
+                
+                // Show modal
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Add active class to clicked card
+                highlightCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Close modal when clicking backdrop or close button
+                const backdrop = modal.querySelector('.ig-highlight-modal-backdrop');
+                const closeBtn = modal.querySelector('.ig-highlight-modal-close');
+                
+                backdrop.addEventListener('click', closeModal);
+                closeBtn.addEventListener('click', closeModal);
+            }
+        });
+    });
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        highlightCards.forEach(card => card.classList.remove('active'));
+    }
 });
 
 // --- DARK MODE LOGIC (Instagram-inspired) ---

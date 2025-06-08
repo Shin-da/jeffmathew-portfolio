@@ -2450,4 +2450,31 @@ body {
         width: 100%;
         justify-content: center;
     }
+  }
+
+.ig-highlight-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-highlight-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 53, 44, 0.85);
+    z-index: 1;
+}
+
+@keyframes modalPopIn {
+    0% { transform: scale(0.92) translateY(40px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 } 
