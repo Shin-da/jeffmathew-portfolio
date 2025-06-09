@@ -180,7 +180,7 @@
         font-size: 1.5rem;
     }
     .section-title {
-        font-size: 1.3rem;
+        /* font-size: 1.3rem; */
     }
     .brushstroke-svg {
         width: 70px;
@@ -242,7 +242,7 @@
         border-radius: 16px;
     }
     .section-title {
-        font-size: 1.3rem;
+        /* font-size: 1.3rem;    */
     }
     .ig-gallery-section {
         padding: 30px 0;

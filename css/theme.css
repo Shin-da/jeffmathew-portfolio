@@ -195,7 +195,7 @@
 }
 [data-theme="dark"] .toggle-track {
   background: var(--background);
-}
+} 
 [data-theme="dark"] .toggle-thumb {
   background: var(--accent);
 } */
