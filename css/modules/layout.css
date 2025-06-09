@@ -4,12 +4,14 @@
 .about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index, .ojt-experience {
     padding-top: 100px;
     padding-bottom: 100px;
+    scroll-margin-top: 100px; /* Account for fixed navbar */
 }
 
 @media (max-width: 991.98px) {
     .about, .projects, .art, .contact, .blog-section, .testimonials-section, .blog-index, .ojt-experience {
         padding-top: 60px;
         padding-bottom: 60px;
+        scroll-margin-top: 60px; /* Adjust for smaller screens if navbar changes height */
     }
 }
 

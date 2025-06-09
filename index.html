@@ -23,6 +23,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <link href="css/modules/navbar.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
@@ -50,19 +51,41 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto nav-pill-row">
-          <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user"></i> About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ojt"><i class="fas fa-briefcase"></i> OJT</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#art"><i class="fas fa-palette"></i> Art</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" aria-label="About section">
+              <i class="fas fa-user"></i>
+              <span class="nav-text">About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ojt" aria-label="OJT Experience section">
+              <i class="fas fa-briefcase"></i>
+              <span class="nav-text">Experience</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" aria-label="Projects section">
+              <i class="fas fa-code"></i>
+              <span class="nav-text">Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#art" aria-label="Art Gallery section">
+              <i class="fas fa-palette"></i>
+              <span class="nav-text">Gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" aria-label="Contact section">
+              <i class="fas fa-envelope"></i>
+              <span class="nav-text">Contact</span>
+            </a>
+          </li>
         </ul>
         <div class="theme-toggle-wrapper ms-3">
           <button id="darkModeToggle" type="button" class="theme-toggle" aria-label="Toggle dark mode">
             <span class="toggle-track">
-              <span class="toggle-thumb">
-                <span class="toggle-icon sun"><i class="fas fa-sun"></i></span>
-                <span class="toggle-icon moon"><i class="fas fa-moon"></i></span>
-              </span>
+              <span class="toggle-thumb"></span>
             </span>
           </button>
         </div>
@@ -87,7 +110,8 @@
       <span class="brushstroke-svg" aria-hidden="true">
         <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5 18 Q60 6 115 18 Q90 12 60 18 Q30 24 5 18 Z" fill="var(--accent-color)" fill-opacity="0.32" />
-          <path d="M5 18 Q60 6 115 18" stroke="var(--accent-color)" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <path d="M5 18 Q60 6 115 18" stroke="var(--accent-color)" stroke-width="2.5" stroke-linecap="round"
+            fill="none" />
         </svg>
       </span>
       <div class="ig-social-row">
@@ -104,7 +128,7 @@
   </header>
 
   <!-- IG-Style Story Highlights Section -->
-  <section class="ig-highlights-section">
+  <!-- <section class="ig-highlights-section">
     <div class="container">
       <div class="ig-highlights-row">
         <div class="ig-highlight-card" data-highlight="about" tabindex="0">
@@ -129,7 +153,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <div class="container-fluid about" data-aos="fade-up">
     <div class="container" id="about">
@@ -163,77 +187,126 @@
               </button>
               <div class="collapse" id="aboutDetails">
                 <div class="about-details">
+                  <!-- Education Section -->
                   <div class="detail-item" id="education">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div class="detail-content">
+                    <div class="detail-header">
+                      <i class="fas fa-graduation-cap"></i>
                       <h3>Education</h3>
+                    </div>
+                    <div class="detail-content">
                       <div class="education-item">
-                        <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo"
-                          class="company-logo education-logo" width="60" height="60">
-                        <strong>Pamantasan ng Lungsod ng Muntinlupa (2021 - 2025)</strong><br>
-                        Bachelor of Science in Information Technology<br><br>
+                        <div class="education-logo-wrapper">
+                          <img src="assets/images/plmun-logo.png" alt="Pamantasan ng Lungsod ng Muntinlupa Logo"
+                            class="company-logo education-logo" width="60" height="60">
+                        </div>
+                        <div class="education-info">
+                          <h4>Pamantasan ng Lungsod ng Muntinlupa</h4>
+                          <p class="education-period">2021 - 2025</p>
+                          <p class="education-degree">Bachelor of Science in Information Technology</p>
+                        </div>
                       </div>
                       <div class="education-item">
-                        <img src="assets/images/sprcnhs-logo.jpg"
-                          alt="San Pedro Relocation Center National High School Logo"
-                          class="company-logo education-logo" width="60" height="60">
-                        <strong>San Pedro Relocation Center National High School (2020-2021)</strong><br>
-                        Information and Communications Technology Strand<br><br>
+                        <div class="education-logo-wrapper">
+                          <img src="assets/images/sprcnhs-logo.jpg"
+                            alt="San Pedro Relocation Center National High School Logo"
+                            class="company-logo education-logo" width="60" height="60">
+                        </div>
+                        <div class="education-info">
+                          <h4>San Pedro Relocation Center National High School</h4>
+                          <p class="education-period">2020 - 2021</p>
+                          <p class="education-degree">Information and Communications Technology Strand</p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Experience Section -->
                   <div class="detail-item" id="experience">
-                    <i class="fas fa-briefcase"></i>
-                    <div class="detail-content">
+                    <div class="detail-header">
+                      <i class="fas fa-briefcase"></i>
                       <h3>Experience</h3>
+                    </div>
+                    <div class="detail-content">
                       <div class="experience-item">
-                        <div class="experience-item-content">
+                        <div class="experience-logo-wrapper">
                           <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo"
                             class="company-logo experience-logo" width="60" height="60">
-                          <strong>SP Madrid & Associates Law Firm</strong><br>
-                          <span>Developer and AI Prompt Engineer (Internship)</span><br><br>
-                          <span>Enhanced and maintained AI agents to handle multiple user interactions
-                            efficiently</span><br>
-                          <span>Developed automation solutions using Python and APIs to streamline workflows</span><br>
-                          <span>Created and optimized AI prompts for operations and client services</span><br>
-                          <span>Collaborated with the team to implement new features and improve user
-                            experience</span><br>
+                        </div>
+                        <div class="experience-info">
+                          <h4>SP Madrid & Associates Law Firm</h4>
+                          <p class="experience-role">Developer and AI Prompt Engineer (Internship)</p>
+                          <ul class="experience-achievements">
+                            <li>Enhanced and maintained AI agents to handle multiple user interactions efficiently</li>
+                            <li>Collaborated on developing automation solutions using Python and APIs to streamline workflows</li>
+                            <li>Created and optimized AI prompts for operations and client services</li>
+                            <li>Collaborated with the team to implement new features and improve user experience</li>
+                            <li>Researched and analyzed payment gateway API integrations to provide recommendations for the firm's digital payment solutions</li>
+                          </ul>
                         </div>
                       </div>
                       <div class="experience-item">
-                        <div class="experience-item-content">
+                        <div class="experience-logo-wrapper">
                           <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo"
                             width="60" height="60">
-                          <strong>Thesis Project</strong><br>
-                          <span>Main developer, leading frontend and backend development</span><br>
-                          <span>Designed and implemented project features</span><br>
-                          <span>Managed version control and collaborative development using GitHub</span><br><br>
                         </div>
-                        <div class="experience-item-content">
+                        <div class="experience-info">
+                          <h4>Thesis Project</h4>
+                          <ul class="experience-achievements">
+                            <li>Main developer, leading frontend and backend development</li>
+                            <li>Designed and implemented project features</li>
+                            <li>Managed version control and collaborative development using GitHub</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="experience-item">
+                        <div class="experience-logo-wrapper">
                           <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="company-logo experience-logo"
                             width="60" height="60">
-                          <strong>Studypool</strong><br>
-                          <span>Teaching and assisting students with programming assignments</span><br>
-                          <span>Taking on commissioned projects for system development</span><br><br>
+                        </div>
+                        <div class="experience-info">
+                          <h4>Studypool</h4>
+                          <ul class="experience-achievements">
+                            <li>Teaching and assisting students with programming assignments</li>
+                            <li>Taking on commissioned projects for system development</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Skills Section -->
                   <div class="detail-item" id="skills">
-                    <i class="fas fa-code"></i>
-                    <div class="detail-content">
+                    <div class="detail-header">
+                      <i class="fas fa-code"></i>
                       <h3>Skills</h3>
-                      <ul class="skills-list">
-                        <li><i class="fab fa-js-square"></i> JavaScript</li>
-                        <li><i class="fab fa-php"></i> PHP</li>
-                        <li><i class="fab fa-python"></i> Python</li>
-                        <li><i class="fas fa-database"></i> MySQL</li>
-                        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-                        <li><i class="fas fa-server"></i> XAMPP</li>
-                        <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
-                        <li><i class="fab fa-html5"></i> HTML</li>
-                        <li><i class="fab fa-css3-alt"></i> CSS/Bootstrap</li>
-                      </ul>
+                    </div>
+                    <div class="detail-content">
+                      <div class="skills-grid">
+                        <div class="skill-category">
+                          <h4>Programming Languages</h4>
+                          <ul class="skills-list">
+                            <li><i class="fab fa-js-square"></i> JavaScript</li>
+                            <li><i class="fab fa-php"></i> PHP</li>
+                            <li><i class="fab fa-python"></i> Python</li>
+                          </ul>
+                        </div>
+                        <div class="skill-category">
+                          <h4>Web Technologies</h4>
+                          <ul class="skills-list">
+                            <li><i class="fab fa-html5"></i> HTML</li>
+                            <li><i class="fab fa-css3-alt"></i> CSS/Bootstrap</li>
+                            <li><i class="fas fa-database"></i> MySQL</li>
+                          </ul>
+                        </div>
+                        <div class="skill-category">
+                          <h4>Tools & Others</h4>
+                          <ul class="skills-list">
+                            <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                            <li><i class="fas fa-server"></i> XAMPP</li>
+                            <li><i class="fas fa-draw-polygon"></i> Graphic Design</li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -252,36 +325,44 @@
         <h2 class="section-title">On-the-Job Training Experience</h2>
         <div class="section-divider"></div>
       </div>
-      
+
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="ojt-card">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-4 mb-md-0">
-                <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo" class="company-logo ojt-logo" width="120" height="120">
+                <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo"
+                  class="company-logo ojt-logo" width="120" height="120">
               </div>
               <div class="col-md-9">
                 <div class="ojt-content">
                   <h3 class="company-name">SP Madrid & Associates Law Firm</h3>
                   <div class="position">Developer and AI Prompt Engineer (Internship)</div>
                   <div class="duration"><i class="far fa-calendar-alt"></i> Duration: 500 Hours (Feb-May)</div>
-                  
+
                   <div class="achievements mt-4">
                     <h4>Key Achievements & Responsibilities:</h4>
                     <ul class="achievement-list">
-                      <li><i class="fas fa-check-circle"></i> Enhanced and maintained AI agents to handle multiple user interactions efficiently</li>
-                      <li><i class="fas fa-check-circle"></i> Developed automation solutions using Python and APIs to streamline workflows</li>
-                      <li><i class="fas fa-check-circle"></i> Created and optimized AI prompts for operations and client services</li>
-                      <li><i class="fas fa-check-circle"></i> Collaborated with the team to implement new features and improve user experience</li>
+                      <li><i class="fas fa-check-circle"></i> Enhanced and maintained AI agents to handle multiple user
+                        interactions efficiently</li>
+                      <li><i class="fas fa-check-circle"></i> Developed automation solutions using Python and APIs to
+                        streamline workflows</li>
+                      <li><i class="fas fa-check-circle"></i> Created and optimized AI prompts for operations and client
+                        services</li>
+                      <li><i class="fas fa-check-circle"></i> Collaborated with the team to implement new features and
+                        improve user experience</li>
                     </ul>
                   </div>
 
                   <div class="ojt-gallery mt-4">
                     <h4>Memories & Workplace:</h4>
                     <div class="ojt-images-container">
-                      <img src="assets/images/ojt_group_photo.jpg" alt="OJT Group Photo at SP Madrid" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
-                      <img src="assets/images/ojt_working.jpg" alt="Working during OJT" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
-                      <img src="assets/images/ojt_okpoai_interface.jpg" alt="OkPoAI interface during OJT" class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                      <img src="assets/images/ojt_group_photo.jpg" alt="OJT Group Photo at SP Madrid"
+                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                      <img src="assets/images/ojt_working.jpg" alt="Working during OJT"
+                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
+                      <img src="assets/images/ojt_okpoai_interface.jpg" alt="OkPoAI interface during OJT"
+                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
                     </div>
                   </div>
                 </div>
@@ -676,7 +757,7 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -772,6 +853,22 @@
         tabindex="0">&times;</button>
       <div id="igHighlightModalBody" class="ig-highlight-modal-body">
         <!-- Content will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- IG Highlight Modal Structure -->
+  <div class="modal fade" id="igHighlightModal" tabindex="-1" aria-labelledby="igHighlightModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="igHighlightModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="igHighlightModalBody">
+          <!-- Content will be loaded here by JavaScript -->
+        </div>
       </div>
     </div>
   </div>

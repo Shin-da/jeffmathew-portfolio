@@ -49,7 +49,7 @@
   border-bottom: 1px solid #fff;
 }
 [data-theme="dark"] .navbar-toggler {
-  background: var(--accent);
+  /* background: var(--accent); */
   color: #fff;
 }
 [data-theme="dark"] .section-title {
@@ -190,17 +190,27 @@
 }
 
 /* 3. Theme Toggle & Transitions */
-[data-theme="dark"] .theme-toggle {
-  /* background: var(--card-bg);   */
+/* [data-theme="dark"] .theme-toggle {
+  background: var(--card-bg);
 }
 [data-theme="dark"] .toggle-track {
   background: var(--background);
 }
 [data-theme="dark"] .toggle-thumb {
-  /* background: var(--accent); */
+  background: var(--accent);
+} */
+
+[data-theme="light"] .theme-toggle {
+  background: var(--card-bg);
 }
+[data-theme="light"] .toggle-track {
+  background: var(--accent-bg);
+}
+[data-theme="light"] .toggle-thumb {
+  background: var(--accent);
+}
+
 [data-theme="dark"] .nav-pill-row .nav-link.active, [data-theme="dark"] .nav-pill-row .nav-link:focus, [data-theme="dark"] .nav-pill-row .nav-link:hover {
-  /* background: var(--accent); */
   color: #fff;
 }
 

@@ -3,6 +3,7 @@
 /* Blog Section */
 .blog-section {
     padding: 80px 0;
+    margin: 40px 0;
     background: linear-gradient(to bottom, var(--section-bg), var(--card-bg));
 }
 

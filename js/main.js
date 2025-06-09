@@ -1,4 +1,35 @@
 console.log('main.js loaded');
+
+// --- DARK MODE LOGIC (Instagram-inspired) ---
+function setDarkMode(enabled, save = true) {
+  const htmlEl = document.documentElement; // Target the <html> element
+  const toggleButton = document.getElementById('darkModeToggle');
+
+  if (enabled) {
+    htmlEl.setAttribute('data-theme', 'dark');
+    if (toggleButton) {
+      toggleButton.setAttribute('aria-checked', 'true');
+      toggleButton.classList.add('dark-mode-active');
+    }
+    if (save) {
+      localStorage.setItem('darkMode', 'enabled');
+    }
+  } else {
+    htmlEl.removeAttribute('data-theme');
+    if (toggleButton) {
+      toggleButton.setAttribute('aria-checked', 'false');
+      toggleButton.classList.remove('dark-mode-active');
+    }
+    if (save) {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  }
+}
+
+function getSystemDark() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 // Initialize AOS (Animate On Scroll)
 AOS.init({
   duration: 800,
@@ -121,6 +152,103 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.body.classList.add('page-fadein-active');
+
+  // Initialize dark mode based on local storage or system preference
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const savedDarkMode = localStorage.getItem('darkMode');
+  if (savedDarkMode === 'enabled') {
+    setDarkMode(true, false);
+  } else if (savedDarkMode === 'disabled') {
+    setDarkMode(false, false);
+  } else {
+    setDarkMode(getSystemDark(), false);
+  }
+
+  // Toggle dark mode on button click
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      const isDarkMode = document.documentElement.hasAttribute('data-theme', 'dark'); // Check the data-theme attribute
+      setDarkMode(!isDarkMode);
+    });
+  }
+
+  // IG-Style Story Highlights Click functionality (now opens modal)
+  const igHighlightModalLabel = document.getElementById('igHighlightModalLabel');
+  const igHighlightModalBody = document.getElementById('igHighlightModalBody');
+
+  document.querySelectorAll('.ig-highlight-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent any default scroll behavior
+
+      const highlightType = this.getAttribute('data-highlight');
+      let modalTitle = '';
+      let modalContent = '';
+
+      // Remove active class from all highlight cards first
+      document.querySelectorAll('.ig-highlight-card').forEach(hCard => hCard.classList.remove('active'));
+      // Add active class to the clicked card
+      this.classList.add('active');
+
+      switch (highlightType) {
+        case 'about':
+          modalTitle = 'About Me';
+          const aboutContent = document.querySelector('#about .about-description');
+          modalContent = aboutContent ? aboutContent.innerHTML : '<p>About Me content not found.</p>';
+          console.log('About Me Modal Content:', modalContent);
+          break;
+        case 'skills':
+          modalTitle = 'Tech Stack';
+          const skillsContent = document.getElementById('skills');
+          modalContent = skillsContent ? skillsContent.querySelector('.detail-content').innerHTML : '<p>Tech Stack content not found.</p>';
+          console.log('Skills Modal Content:', modalContent);
+          break;
+        case 'services':
+          modalTitle = 'My Services';
+          modalContent = `
+            <p>I offer a range of services including:</p>
+            <ul>
+              <li>Web Development (Frontend & Backend)</li>
+              <li>Digital Art & Illustration</li>
+              <li>AI Prompt Engineering</li>
+              <li>System Automation</li>
+              <li>Technical Tutoring</li>
+            </ul>
+            <p>Contact me for a custom quote!</p>
+          `;
+          console.log('Services Modal Content:', modalContent);
+          break;
+        case 'experience':
+          modalTitle = 'Work Experience';
+          const experienceContent = document.getElementById('experience');
+          modalContent = experienceContent ? experienceContent.querySelector('.detail-content').innerHTML : '<p>Experience content not found.</p>';
+          console.log('Experience Modal Content:', modalContent);
+          break;
+        case 'education':
+          modalTitle = 'Education Background';
+          const educationContent = document.getElementById('education');
+          modalContent = educationContent ? educationContent.querySelector('.detail-content').innerHTML : '<p>Education content not found.</p>';
+          console.log('Education Modal Content:', modalContent);
+          break;
+        default:
+          modalTitle = 'Information';
+          modalContent = '<p>No content available for this highlight.</p>';
+          console.log('Default Modal Content:', modalContent);
+      }
+
+      igHighlightModalLabel.textContent = modalTitle;
+      igHighlightModalBody.innerHTML = modalContent;
+
+      // Ensure the modal is a fresh instance or correctly retrieved
+      const modalElement = document.getElementById('igHighlightModal');
+      let currentModalInstance = bootstrap.Modal.getInstance(modalElement);
+
+      if (!currentModalInstance) {
+        // If no instance exists, create a new one
+        currentModalInstance = new bootstrap.Modal(modalElement);
+      }
+      currentModalInstance.show(); // Use the reliable instance to show the modal
+    });
+  });
 });
 
 // Project image hover effect
@@ -222,319 +350,6 @@ document.addEventListener('keydown', function(e) {
     closeIgArtLightbox();
   }
 });
-
-// IG-Style Story Highlights Click functionality
-document.querySelectorAll('.ig-highlight-card').forEach(card => {
-  card.addEventListener('click', function() {
-    const targetId = this.getAttribute('data-highlight');
-    const targetSection = document.getElementById(targetId);
-    const aboutDetailsCollapse = document.getElementById('aboutDetails');
-
-    if (targetSection) {
-      // Check if the target section is inside the aboutDetails collapse
-      if (aboutDetailsCollapse && aboutDetailsCollapse.contains(targetSection)) {
-        // Ensure the collapse is shown if it's not already
-        if (!aboutDetailsCollapse.classList.contains('show')) {
-          const bsCollapse = new bootstrap.Collapse(aboutDetailsCollapse, { toggle: false });
-          bsCollapse.show();
-
-          // Wait for the collapse transition to complete before scrolling
-          aboutDetailsCollapse.addEventListener('shown.bs.collapse', () => {
-            scrollToTarget(targetSection);
-          }, { once: true });
-        } else {
-          // If already open, just scroll
-          scrollToTarget(targetSection);
-        }
-      } else {
-        // For sections not in aboutDetails (like #about itself)
-        scrollToTarget(targetSection);
-      }
-
-      // Update active class for highlights
-      document.querySelectorAll('.ig-highlight-card').forEach(hCard => hCard.classList.remove('active'));
-      this.classList.add('active');
-    }
-  });
-});
-
-function scrollToTarget(targetSection) {
-  const navbarHeight = document.getElementById('mainNav').offsetHeight || 80;
-  const scrollPosition = targetSection.offsetTop - navbarHeight;
-
-  window.scrollTo({
-    top: scrollPosition,
-    behavior: 'smooth'
-  });
-}
-
-// IG-Style Story Highlights Card Click (visual feedback, ready for modal/expand)
-const igHighlightCards = document.querySelectorAll('.ig-highlight-card');
-const igHighlightModal = document.getElementById('igHighlightModal');
-const igHighlightModalBody = document.getElementById('igHighlightModalBody');
-const igHighlightModalClose = document.getElementById('igHighlightModalClose');
-const igHighlightModalBackdrop = document.querySelector('.ig-highlight-modal-backdrop');
-
-const highlightContent = {
-  about: `
-    <h2 class="modal-section-title">About Me</h2>
-    <p>I am Jeff Mathew Garcia, an IT graduate student who combines technical expertise with artistic vision. As a developer and artist, I bring creativity to everything I build, from websites to digital art. I'm passionate about creating beautiful, functional solutions that make an impact.</p>
-    <p class="modal-item-subtitle" style="margin-top: 1rem;">"I believe in the perfect blend of technology and creativity."</p>
-  `,
-  skills: `
-    <h2 class="modal-section-title">Tech Stack</h2>
-    <div class="modal-grid-container">
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-code"></i> Frontend</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item"><i class="fab fa-html5"></i> HTML5</li>
-          <li class="modal-list-item"><i class="fab fa-css3-alt"></i> CSS3/Bootstrap</li>
-          <li class="modal-list-item"><i class="fab fa-js-square"></i> JavaScript</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-server"></i> Backend</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item"><i class="fab fa-php"></i> PHP</li>
-          <li class="modal-list-item"><i class="fab fa-python"></i> Python</li>
-          <li class="modal-list-item"><i class="fas fa-database"></i> MySQL</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-tools"></i> Tools</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item"><i class="fab fa-git-alt"></i> Git & GitHub</li>
-          <li class="modal-list-item"><i class="fas fa-server"></i> XAMPP</li>
-          <li class="modal-list-item"><i class="fas fa-draw-polygon"></i> Graphic Design</li>
-        </ul>
-      </div>
-    </div>
-  `,
-  services: `
-    <h2 class="modal-section-title">Services</h2>
-    <div class="modal-grid-container" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-laptop-code"></i> Web Development</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item">Portfolio Websites</li>
-          <li class="modal-list-item">Business Websites</li>
-          <li class="modal-list-item">E-commerce Solutions</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-paint-brush"></i> Digital Art</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item">Portraits</li>
-          <li class="modal-list-item">Concept Art</li>
-          <li class="modal-list-item">Illustrations</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title"><i class="fas fa-chalkboard-teacher"></i> Tutoring</h3>
-        <ul class="modal-list">
-          <li class="modal-list-item">Programming Help</li>
-          <li class="modal-list-item">Web Development</li>
-          <li class="modal-list-item">IT Concepts</li>
-        </ul>
-      </div>
-    </div>
-  `,
-  experience: `
-    <h2 class="modal-section-title">Experience</h2>
-    <div style="margin-top: 1rem;">
-      <div class="modal-item-container">
-        <h3 class="modal-item-title">
-          <i class="fas fa-building"></i> SP Madrid & Associates Law Firm
-        </h3>
-        <p class="modal-item-subtitle">Developer and AI Prompt Engineer (Internship)</p>
-        <ul class="modal-list">
-          <li class="modal-list-item">• Developed and maintained web applications</li>
-          <li class="modal-list-item">• Implemented AI solutions for document processing</li>
-          <li class="modal-list-item">• Collaborated with the legal team on tech solutions</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title">
-          <i class="fas fa-graduation-cap"></i> Thesis Project
-        </h3>
-        <ul class="modal-list">
-          <li class="modal-list-item">• Led frontend and backend development</li>
-          <li class="modal-list-item">• Designed and implemented project features</li>
-          <li class="modal-list-item">• Managed version control with GitHub</li>
-        </ul>
-      </div>
-    </div>
-  `,
-  education: `
-    <h2 class="modal-section-title">Education</h2>
-    <div style="margin-top: 1rem;">
-      <div class="modal-item-container">
-        <h3 class="modal-item-title">
-          <i class="fas fa-university"></i> Pamantasan ng Lungsod ng Muntinlupa
-        </h3>
-        <p class="modal-item-subtitle">BS Information Technology (2025 - Present)</p>
-        <ul class="modal-list">
-          <li class="modal-list-item">• Focus on Web Development</li>
-          <li class="modal-list-item">• System Development</li>
-          <li class="modal-list-item">• Database Management</li>
-        </ul>
-      </div>
-      <div class="modal-item-container">
-        <h3 class="modal-item-title">
-          <i class="fas fa-school"></i> San Pedro Relocation Center National High School
-        </h3>
-        <p class="modal-item-subtitle">CHS - Computer Hardware Servicing Strand (2020-2021)</p>
-        <ul class="modal-list">
-          <li class="modal-list-item">• Computer Hardware Maintenance</li>
-          <li class="modal-list-item">• Basic Networking</li>
-          <li class="modal-list-item">• Technical Support</li>
-        </ul>
-      </div>
-    </div>
-  `
-};
-
-// Instagram-style story highlights functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const highlightCards = document.querySelectorAll('.ig-highlight-card');
-    const modal = document.createElement('div');
-    modal.className = 'ig-highlight-modal';
-    modal.style.display = 'none';
-    document.body.appendChild(modal);
-
-    highlightCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const type = this.getAttribute('data-type');
-            const content = highlightContent[type];
-            
-            if (content) {
-                // Create modal content
-                modal.innerHTML = `
-                    <div class="ig-highlight-modal-backdrop"></div>
-                    <div class="ig-highlight-modal-content">
-                        <button class="ig-highlight-modal-close">&times;</button>
-                        <div class="ig-highlight-modal-body">
-                            ${content}
-                        </div>
-                    </div>
-                `;
-                
-                // Show modal
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                
-                // Add active class to clicked card
-                highlightCards.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Close modal when clicking backdrop or close button
-                const backdrop = modal.querySelector('.ig-highlight-modal-backdrop');
-                const closeBtn = modal.querySelector('.ig-highlight-modal-close');
-                
-                backdrop.addEventListener('click', closeModal);
-                closeBtn.addEventListener('click', closeModal);
-            }
-        });
-    });
-
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-        highlightCards.forEach(card => card.classList.remove('active'));
-    }
-});
-
-// --- DARK MODE LOGIC (Instagram-inspired) ---
-// Encapsulate theme logic in a self-executing function to prevent global pollution
-(function() {
-  console.log('Theme script loaded and running.');
-
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const htmlEl = document.documentElement; // Targets the <html> element
-  const bodyEl = document.body; // Targets the <body> element
-
-  /**
-   * Sets the dark mode status and updates local storage.
-   * @param {boolean} enabled - True for dark mode, false for light mode.
-   * @param {boolean} save - Whether to save the preference to local storage.
-   */
-  function setDarkMode(enabled, save = true) {
-    console.log(`setDarkMode called: enabled=${enabled}, save=${save}`);
-
-    if (enabled) {
-      htmlEl.setAttribute('data-theme', 'dark');
-      bodyEl.classList.remove('light-mode');
-      console.log('Theme: Dark Mode activated');
-    } else {
-      htmlEl.removeAttribute('data-theme');
-      bodyEl.classList.add('light-mode');
-      console.log('Theme: Light Mode activated');
-    }
-
-    // Update visual state of the toggle button
-    if (darkModeToggle) {
-      const toggleThumb = darkModeToggle.querySelector('.toggle-thumb');
-      if (toggleThumb) {
-        // The 'light-mode-active' class on the toggle-thumb visually shifts it for light mode
-        if (enabled) {
-          darkModeToggle.classList.remove('light-mode-active');
-          toggleThumb.classList.remove('light-mode-active');
-        } else {
-          darkModeToggle.classList.add('light-mode-active');
-          toggleThumb.classList.add('light-mode-active');
-        }
-        console.log('Toggle button visual state updated.');
-      }
-    }
-
-    if (save) {
-      localStorage.setItem('darkMode', enabled ? '1' : '0');
-      console.log(`Theme preference saved to localStorage: ${enabled ? '1' : '0'}`);
-    }
-  }
-
-  /**
-   * Checks if the system prefers dark color scheme.
-   * @returns {boolean} True if system prefers dark, false otherwise.
-   */
-  function getSystemDark() {
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    console.log(`System prefers dark mode: ${prefersDark}`);
-    return prefersDark;
-  }
-
-  // Initial theme setup on DOMContentLoaded
-  document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('darkMode');
-    console.log(`Initial load: Saved theme from localStorage: ${savedTheme}`);
-
-    if (savedTheme === '1') {
-      setDarkMode(true, false); // Apply dark mode from saved preference
-    } else if (savedTheme === '0') {
-      setDarkMode(false, false); // Apply light mode from saved preference
-    } else {
-      setDarkMode(getSystemDark(), false); // Apply system preference if no saved setting
-    }
-
-    // Add event listener to the toggle button
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('click', function() {
-        console.log('Dark mode toggle clicked!');
-        const currentThemeIsDark = htmlEl.getAttribute('data-theme') === 'dark';
-        setDarkMode(!currentThemeIsDark, true); // Toggle theme and save preference
-      });
-    }
-  });
-
-  // Listen for system preference changes (only if no manual preference is saved)
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    const saved = localStorage.getItem('darkMode');
-    if (saved === null) {
-      console.log('System color scheme changed. Applying new system theme.');
-      setDarkMode(e.matches, false);
-    }
-  });
-})();
 
 // Page fade-in on load
 (function() {

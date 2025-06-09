@@ -18,6 +18,7 @@
     --light-mode-border: var(--laurel-green); /* Ensure this is defined for light mode */
     --dark-toggle-bg: #4A4A4A; /* Dark toggle background */
     --light-toggle-bg: var(--cloud); /* Light toggle background */
+    --dark-text: #fff; /* White icon for dark mode thumb */
 }
 
 [data-theme="dark"] body {
@@ -308,4 +309,56 @@
 [data-theme="dark"] .nav-pill-row .nav-link:hover {
     color: #fff;
     border-bottom-color: #fff;
+}
+
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .contact-info:hover,
+[data-theme="dark"] .contact-form:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .contact-info-item {
+    background: var(--accent-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .contact-info-item:hover {
+    border-color: var(--highlight);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .contact-info-item i {
+    background: var(--card-bg);
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .contact-info-item:hover i {
+    background: var(--highlight);
+    color: var(--card-bg);
+}
+
+[data-theme="dark"] .contact-info-item h4 {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .contact-info-item p {
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .contact-subtitle {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .open-commissions-note {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .response-time-note {
+    color: var(--subtle-text);
 } 

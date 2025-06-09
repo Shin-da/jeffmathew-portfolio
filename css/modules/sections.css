@@ -184,6 +184,8 @@
 
 .contact-cards-container {
     gap: 2.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-info,
@@ -485,4 +487,26 @@
     .ojt-gallery-img {
         height: 100px;
     }
+}
+
+.detail-item {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(var(--shadow-color-rgb), 0.07);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-margin-top: 100px; /* Account for fixed navbar */
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--shadow-color-rgb), 0.12);
 } 

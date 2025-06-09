@@ -28,7 +28,11 @@
     --card-bg: #FDFBF8;
     --border-color: var(--star-dust);
     --hover-color: var(--coral-tree);
-    --transition: all 0.3s ease;
+    --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    --dark-toggle-bg: #4A4A4A;
+    --light-toggle-bg: var(--cloud);
+    --light-mode-border: var(--star-dust);
+    --dark-text: var(--woodsmoke);
 
     /* Earthy Artistic Palette */
     --milk-chocolate: #7C4A2D;
@@ -53,7 +57,6 @@
     --subtle-text: var(--canopy-green);
     --highlight: var(--metallic-bronze);
     --border-color: var(--laurel-green);
-    --transition: all 0.3s cubic-bezier(.4,0,.2,1);
 }
 
 /* Global Styles */

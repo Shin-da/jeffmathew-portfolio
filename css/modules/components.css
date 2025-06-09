@@ -130,12 +130,12 @@
 .theme-toggle {
     width: 55px;
     height: 30px;
-    background-color: var(--dark-toggle-bg);
+    background-color: var(--light-toggle-bg); /* Default: Light mode background */
     border-radius: 15px;
     position: relative;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Added border-color transition */
+    border: 1px solid var(--light-mode-border); /* Default: Light mode border */
 }
 
 .toggle-track {
@@ -152,11 +152,11 @@
 .toggle-thumb {
     width: 22px;
     height: 22px;
-    background-color: #fff;
+    background-color: var(--dark-toggle-bg); /* Changed from var(--accent-color) */
     border-radius: 50%;
     position: absolute;
     top: 3px;
-    left: 4px;
+    left: 4px; /* Default: Left for light mode */
     transition: transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     align-items: center;
@@ -164,83 +164,27 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.toggle-thumb .toggle-icon {
-    font-size: 1rem;
-    color: var(--dark-text);
-    transition: color 0.3s ease;
-}
-
-/* Icons within the track */
-.toggle-track .toggle-icon {
-    font-size: 1rem;
-    color: var(--subtle-text);
-    transition: color 0.3s ease;
-}
-
-.toggle-track .toggle-icon.sun {
-    opacity: 1;
-}
-
-.toggle-track .toggle-icon.moon {
-    opacity: 0;
-    position: absolute;
-}
-
-/* State for Light Mode */
-.theme-toggle.light-mode-active {
-    background-color: var(--light-toggle-bg);
-}
-
-.theme-toggle.light-mode-active .toggle-thumb {
-    transform: translateX(25px);
-    background-color: var(--accent-color);
-}
-
-.theme-toggle.light-mode-active .toggle-thumb .toggle-icon {
-    color: #fff;
-}
-
-.theme-toggle.light-mode-active .toggle-track .toggle-icon.sun {
-    opacity: 0;
-}
-
-.theme-toggle.light-mode-active .toggle-track .toggle-icon.moon {
-    opacity: 1;
-}
-
-/* Theme-specific adjustments for .theme-toggle in theme.css or main.css */
-[data-theme="dark"] .theme-toggle {
+/* State for Dark Mode */
+.theme-toggle.dark-mode-active {
     background-color: var(--dark-toggle-bg);
     border-color: var(--border-color);
 }
 
-[data-theme="dark"] .toggle-thumb {
-    background-color: #fff;
+.theme-toggle.dark-mode-active .toggle-thumb {
+    transform: translateX(25px); /* Move thumb to the right for dark mode */
+    background-color: #fff; /* White thumb in dark mode */
 }
 
-[data-theme="dark"] .toggle-thumb .toggle-icon {
-    color: var(--dark-text);
+.theme-toggle.dark-mode-active .toggle-thumb .toggle-icon {
+    color: var(--dark-text); /* Color for icon in dark mode thumb */
 }
 
-[data-theme="dark"] .toggle-track .toggle-icon {
-    color: var(--subtle-text);
+.theme-toggle.dark-mode-active .toggle-track .toggle-icon.sun {
+    opacity: 0; /* Hide sun in dark mode */
 }
 
-[data-theme="light"] .theme-toggle {
-    background-color: var(--light-toggle-bg);
-    border-color: var(--light-mode-border);
-}
-
-[data-theme="light"] .toggle-thumb {
-    background-color: var(--accent-color);
-}
-
-[data-theme="light"] .toggle-thumb .toggle-icon {
-    color: #fff;
-}
-
-[data-theme="light"] .toggle-track .toggle-icon {
-    color: var(--subtle-text);
+.theme-toggle.dark-mode-active .toggle-track .toggle-icon.moon {
+    opacity: 1; /* Show moon in dark mode */
 }
 
 /* Project Card specifics */
@@ -535,4 +479,113 @@
 [data-theme="dark"] .nav-pill-row .nav-link:hover {
     color: #fff;
     border-bottom-color: #fff;
+}
+
+/* Contact Section Styles */
+.contact-info, .contact-form {
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(var(--deepwood-shade-rgb), 0.08);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    padding: 2.5rem;
+    height: 100%;
+}
+
+.contact-info:hover, .contact-form:hover {
+    box-shadow: 0 16px 48px rgba(var(--deepwood-shade-rgb), 0.12);
+    transform: translateY(-5px);
+}
+
+.contact-info-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--header-color);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.contact-info-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--highlight));
+    border-radius: 2px;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--accent-bg);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(var(--deepwood-shade-rgb), 0.1);
+    border-color: var(--accent-color);
+}
+
+.contact-info-item i {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    background: var(--card-bg);
+    padding: 0.8rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover i {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.contact-info-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--header-color);
+    margin-bottom: 0.3rem;
+}
+
+.contact-info-item p {
+    font-size: 0.95rem;
+    color: var(--subtle-text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.open-commissions-note {
+    color: var(--highlight);
+    font-weight: 500;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.response-time-note {
+    font-size: 0.95rem;
+    color: var(--subtle-text);
+    font-style: italic;
+    margin-top: 0.5rem;
 } 
