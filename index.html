@@ -105,12 +105,124 @@
             100% {
                 transform: rotate(0deg);
             }
-        }
-
-        .theme-toggle-wrapper {
+        }        .theme-toggle-wrapper {
             position: fixed;
             top: 20px;
             right: 20px;
+        }        .author-signature {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 60px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(var(--saddle), 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .author-signature::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--saddle), transparent);
+            border-radius: 61px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: rgba(var(--saddle), 0.2);
+        }
+
+        .author-signature:hover::before {
+            opacity: 0.3;
+        }
+
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .author-image {
+            position: relative;
+            padding: 2px;
+        }
+
+        .author-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--saddle), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover .author-image::after {
+            opacity: 0.5;
+        }
+
+        .author-image img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--saddle);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .author-name {
+            color: var(--saddle);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.2px;
+        }
+
+        .author-role {
+            color: var(--text-color);
+            font-size: 0.85rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover .author-name {
+            color: var(--saddle);
+            text-shadow: 0 0 20px rgba(var(--saddle), 0.3);
+        }
+
+        .author-signature:hover .author-role {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .author-signature {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 2rem;
+                display: inline-block;
+            }
         }
     </style>
 </head>
@@ -123,13 +235,8 @@
         </button>
     </div>    <section class="maintenance-section">
         <div class="maintenance-content" data-aos="fade-up">
-            <div class="profile-image">
-                <picture>
-                    <source srcset="assets/images/me.webp" type="image/webp">
-                    <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" width="120" height="120" loading="lazy">
-                </picture>
-            </div>
-            <h2 class="dev-name">Jeff Mathew Garcia</h2>
+            
+           
             <i class="fas fa-wrench maintenance-icon"></i>
             <h1 class="maintenance-title">Under Maintenance</h1>
             <p class="maintenance-message">
@@ -155,10 +262,24 @@
                 </a>
                 <a href="mailto:jeffmathewg@gmail.com" aria-label="Email">
                     <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+                </a>            </div>
         </div>
     </section>
+
+    <div class="author-signature">
+        <div class="author-content">
+            <div class="author-image">
+                <picture>
+                    <source srcset="assets/images/me.webp" type="image/webp">
+                    <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" width="40" height="40" loading="lazy">
+                </picture>
+            </div>
+            <div class="author-details">
+                <span class="author-name">Jeff Mathew Garcia</span>
+                <span class="author-role">Web Developer & Artist</span>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/theme-handler.js"></script>
