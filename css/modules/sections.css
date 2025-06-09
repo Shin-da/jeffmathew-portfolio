@@ -249,7 +249,6 @@
 /* Testimonials Section */
 .testimonials-section {
     padding: 100px 0;
-    background-color: var(--secondary-bg); /* Use secondary-bg for contrast */
 }
 
 .testimonial-card {

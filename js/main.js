@@ -1,35 +1,5 @@
 console.log('main.js loaded');
 
-// --- DARK MODE LOGIC (Instagram-inspired) ---
-function setDarkMode(enabled, save = true) {
-  const htmlEl = document.documentElement; // Target the <html> element
-  const toggleButton = document.getElementById('darkModeToggle');
-
-  if (enabled) {
-    htmlEl.setAttribute('data-theme', 'dark');
-    if (toggleButton) {
-      toggleButton.setAttribute('aria-checked', 'true');
-      toggleButton.classList.add('dark-mode-active');
-    }
-    if (save) {
-      localStorage.setItem('darkMode', 'enabled');
-    }
-  } else {
-    htmlEl.removeAttribute('data-theme');
-    if (toggleButton) {
-      toggleButton.setAttribute('aria-checked', 'false');
-      toggleButton.classList.remove('dark-mode-active');
-    }
-    if (save) {
-      localStorage.setItem('darkMode', 'disabled');
-    }
-  }
-}
-
-function getSystemDark() {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
 // Initialize AOS (Animate On Scroll)
 AOS.init({
   duration: 800,

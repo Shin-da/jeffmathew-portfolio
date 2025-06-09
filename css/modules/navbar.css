@@ -19,7 +19,6 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--header-color);
     padding: 0.5rem 0;
     transition: all 0.3s ease;
     position: relative;
@@ -64,18 +63,11 @@
 }
 
 .nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
     color: var(--text-color);
-    padding: 0.7rem 1.2rem;
-    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     position: relative;
-    overflow: hidden;
 }
 
 .nav-link i {
@@ -85,18 +77,11 @@
 
 .nav-link:hover {
     color: var(--accent-color);
-    background: rgba(var(--accent-rgb), 0.1);
-    transform: translateY(-2px);
-}
-
-.nav-link:hover i {
-    transform: scale(1.2);
+    transform: translateY(-1px);
 }
 
 .nav-link.active {
     color: var(--accent-color);
-    background: rgba(var(--accent-rgb), 0.15);
-    font-weight: 700;
 }
 
 .nav-link.active::before {
@@ -112,11 +97,11 @@
 }
 
 .navbar-toggler {
-    border: none;
     padding: 0.5rem;
+    border: none;
     border-radius: 8px;
     transition: all 0.3s ease;
-    
+    margin-right: 0.5rem;
 }
 
 .navbar-toggler:focus {
@@ -170,145 +155,91 @@
 .theme-toggle-wrapper {
     display: flex;
     align-items: center;
-    margin-left: 1.5rem;
-    padding-left: 1.5rem;
-    border-left: 2px solid rgba(var(--border-color-rgb), 0.2);
 }
 
 .theme-toggle {
-    position: relative;
-    width: 56px;
-    height: 30px;
-    background: var(--toggle-bg);
-    border-radius: 15px;
+    background: none;
     border: none;
-    cursor: pointer;
     padding: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.theme-toggle:hover {
-    background: var(--toggle-hover-bg);
-    transform: translateY(-1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.theme-toggle:active {
-    transform: translateY(1px);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
 }
 
 .toggle-track {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    /* background: var(--toggle-track-bg);
-    border-radius: 12px; */
-    border: 1px solid var(--border-color);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-}
-
-.toggle-track::before {
-    content: '';
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(255, 255, 255, 0.2) 50%, 
-        rgba(255, 255, 255, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.theme-toggle:hover .toggle-track::before {
-    opacity: 1;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 32px;
+    transition: all 0.3s ease;
 }
 
 .toggle-thumb {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: var(--text-color);
     border-radius: 50%;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toggle-thumb::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 255, 255, 0.4) 0%, 
-        rgba(255, 255, 255, 0) 60%); */
-    border-radius: 50%;
-    /* opacity: 0; */
-    transition: opacity 0.3s ease;
-}
-
-.theme-toggle:hover .toggle-thumb::before {
-    opacity: 1;
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .theme-toggle {
-    background: var(--toggle-bg-dark);
-}
-
-[data-theme="dark"] .toggle-track {
-    background: var(--toggle-track-bg);
+    transition: transform 0.3s ease;
 }
 
 [data-theme="dark"] .toggle-thumb {
-    transform: translateX(26px);
-    background: var(--toggle-thumb-bg-dark);
+    transform: translateX(28px);
 }
 
-[data-theme="dark"] .toggle-thumb::before {
-    background: var(--toggle-bg);
-}
 /* Responsive Styles */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background: var(--card-bg);
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(var(--deepwood-shade-rgb), 0.15);
         margin-top: 1rem;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
     }
 
-    .nav-pill-row {
-        flex-direction: column;
-        gap: 0.5rem;
-        border-bottom: solid 1px var(--border-color);
+    .navbar-nav {
+        margin: 0 auto;
+        gap: 0.75rem;
     }
 
     .nav-link {
         width: 100%;
-        justify-content: flex-start;
-        padding: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid rgba(var(--border-color-rgb), 0.1);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
     }
 
-    .theme-toggle-wrapper {
-        margin: 1rem;
-        padding: 1rem 0 0 0;
-        border-left: none;
-        border-top: 2px solid rgba(var(--border-color-rgb), 0.2);
-        justify-content: center;
+    .theme-toggle {
+        width: 52px;
+        height: 28px;
+    }
+
+    .toggle-thumb {
+        width: 22px;
+        height: 22px;
+    }
+
+    [data-theme="dark"] .toggle-thumb {
+        transform: translateX(24px);
     }
 }
 
@@ -353,4 +284,4 @@
 .navbar-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
 .navbar-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
 .navbar-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
-.navbar-nav .nav-item:nth-child(5) { animation-delay: 0.5s; } 
+.navbar-nav .nav-item:nth-child(5) { animation-delay: 0.5s; }
