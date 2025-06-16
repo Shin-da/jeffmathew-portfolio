@@ -336,23 +336,4 @@ if (window.location.hash === '#contact-success') {
   const successMsg = document.getElementById('contactSuccess');
   if (successMsg) successMsg.style.display = 'block';
   window.location.hash = '';
-}
-
-// View counter functionality
-function updateViewCount() {
-    const viewCountElement = document.getElementById('viewCount');
-    if (viewCountElement) {
-        fetch('view-counter.php?page=' + window.location.pathname.split('/').pop())
-            .then(response => response.text())
-            .then(count => {
-                viewCountElement.textContent = count;
-            })
-            .catch(error => {
-                console.error('Error updating view count:', error);
-                viewCountElement.textContent = 'Error';
-            });
-    }
-}
-
-// Call updateViewCount when the page loads
-document.addEventListener('DOMContentLoaded', updateViewCount); 
+} 

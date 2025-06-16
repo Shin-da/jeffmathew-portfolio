@@ -3,7 +3,7 @@
 .ig-header-section {
     padding-top: 120px;
     min-height: 480px;
-    /* background: var(--secondary-bg); */
+    background: var(--secondary-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,8 +84,7 @@
 }
 
 .ig-profile-highlight {
-
-    color: var(--metallic-bronze);
+    color: var(--highlight);
     font-style: italic;
     font-size: 1.1rem;
 }
@@ -98,7 +97,7 @@
 }
 
 .ig-social-row a {
-    color: var(--metallic-bronze);
+    color: var(--header-color);
     font-size: 1.6rem;
     background: var(--card-bg);
     border-radius: 50%;

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance - Jeff Mathew Garcia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .maintenance-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .maintenance-content {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .profile-image {
+            margin-bottom: 1rem;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            border: 3px solid var(--saddle);
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .dev-name {
+            color: var(--saddle);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .maintenance-icon {
+            font-size: 4rem;
+            color: var(--saddle);
+            margin-bottom: 1.5rem;
+            animation: wrench 2.5s ease infinite;
+        }
+
+        .maintenance-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--heading-color);
+        }
+
+        .maintenance-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: var(--card-bg);
+        }
+
+        .social-links a:hover {
+            color: var(--saddle);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .estimated-time {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        @keyframes wrench {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20%,
+            90% {
+                transform: rotate(0deg);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: rotate(8deg);
+            }
+
+            40%,
+            60%,
+            80% {
+                transform: rotate(-8deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .theme-toggle-wrapper {
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .author-signature {
+            position: relative;
+            margin-top: 2.5rem;
+            padding: 20px 20px;
+            display: inline-flex;
+            background: var(--card-bg);
+            border-radius: 60px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(var(--saddle), 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .author-signature::before {
+            content: '';
+            background: linear-gradient(45deg, var(--saddle), transparent);
+            border-radius: 61px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: rgba(var(--saddle), 0.2);
+        }
+
+        .author-signature:hover::before {
+            opacity: 0.3;
+        }
+
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .author-image {
+            position: relative;
+            padding: 2px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .author-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--saddle), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover .author-image::after {
+            opacity: 0.5;
+        }
+
+        .author-image img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--saddle);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .author-name {
+            color: var(--saddle);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.2px;
+        }
+
+        .author-role {
+            color: var(--text-color);
+            font-size: 0.85rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .author-signature:hover .author-name {
+            color: var(--saddle);
+            text-shadow: 0 0 20px rgba(var(--saddle), 0.3);
+        }
+
+        .author-signature:hover .author-role {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .author-signature {
+                margin-top: 2rem;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="theme-toggle-wrapper">
+        <button id="darkModeToggle" type="button" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-track">
+                <span class="toggle-thumb"></span>
+            </span>
+        </button>
+    </div>
+    <section class="maintenance-section">
+        <div class="maintenance-content" data-aos="fade-up">
+
+            <i class="fas fa-wrench maintenance-icon"></i>
+            <h1 class="maintenance-title">Under Maintenance</h1>
+            <p class="maintenance-message">
+                I'm currently updating my portfolio to bring you an even better experience.
+                Thank you for your patience! In the meantime, feel free to connect with me on social media.
+            </p>
+            <div class="estimated-time">
+                <i class="far fa-clock"></i>
+                Expected completion: 24 hours
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a> <a href="mailto:jeffmathewg@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="author-signature" data-aos="fade-up" data-aos-delay="100">
+                <div class="author-content">
+                    <div class="author-image">
+                        <picture>
+                            <source srcset="assets/images/me.webp" type="image/webp">
+                            <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" width="40" height="40"
+                                loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="author-details">
+                        <span class="author-name">Jeff Mathew Garcia</span>
+                        <span class="author-role">Web Developer & Artist</span>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script src="js/theme-handler.js"></script>
+            <script>
+                AOS.init();
+            </script>
+</body>
+
+</html>

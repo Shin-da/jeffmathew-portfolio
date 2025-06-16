@@ -280,7 +280,7 @@
   bottom: 32px;
   right: 32px;
   z-index: 9999;
-  background: var(--metallic-bronze);
+  background: var(--coral-tree);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -991,15 +991,4 @@ body.light-mode .back-to-top {
 [data-theme="dark"] .education-item:hover,
 [data-theme="dark"] .experience-item:hover {
   background: var(--dark-hover-bg);
-}
-
-.view-counter {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-.view-counter i {
-    margin-right: 5px;
 }

@@ -8,8 +8,7 @@
 [data-theme="dark"] {
     --primary-bg: #1A1A1A; /* Darker primary background */
     --primary-bg-rgb: 26, 26, 26; /* RGB values for primary-bg */
-    --section-bg-1: #1F1F1F; /* Light section background */
-    --section-bg-2: #141414; /* Dark section background */
+    --secondary-bg: #232323; /* Darker secondary background */
     --card-bg: rgba(255, 255, 255, 0.03); /* Darker cards */
     --accent-bg: #3A3A3A; /* Darker accent background */
     --highlight-rgb: 99, 102, 241; /* RGB values for coral-tree */
@@ -145,7 +144,7 @@
 }
 
 [data-theme="dark"] .section-title::after {
-    /* background: linear-gradient(to right, var(--highlight), var(--coral-tree)); */
+    background: linear-gradient(to right, var(--highlight), var(--coral-tree));
 }
 
 [data-theme="dark"] .section-divider {
@@ -449,58 +448,4 @@
 
 [data-theme="dark"] .response-time-note {
     color: var(--subtle-text);
-}
-
-/* Section backgrounds in dark mode */
-[data-theme="dark"] section {
-    position: relative;
-    z-index: 1;
-    padding: 4rem 0;
-    transition: background-color 0.3s ease;
-}
-
-/* Hero/Header section (first section) */
-[data-theme="dark"] .hero-section {
-    background-color: var(--section-bg-1);
-}
-
-/* About section (second section) */
-[data-theme="dark"] .about {
-    background-color: var(--section-bg-2);
-}
-
-/* Experience section (third section) */
-[data-theme="dark"] .ojt-experience {
-    background-color: var(--section-bg-1);
-}
-
-/* Projects section (fourth section) */
-[data-theme="dark"] .projects {
-    background-color: var(--section-bg-2);
-}
-
-/* Gallery section (fifth section) */
-[data-theme="dark"] .ig-gallery-section {
-    background-color: var(--section-bg-1);
-}
-
-/* Contact section (sixth section) */
-[data-theme="dark"] .contact {
-    background-color: var(--section-bg-2);
-}
-
-/* Remove any other section background definitions */
-[data-theme="dark"] section:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Enhanced section transitions */
-[data-theme="dark"] section {
-    transition: background-color 0.3s ease;
-}
-
-/* Ensure content remains readable */
-[data-theme="dark"] section > * {
-    position: relative;
-    z-index: 2;
 }

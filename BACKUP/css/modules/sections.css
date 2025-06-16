@@ -248,250 +248,37 @@
 
 /* Testimonials Section */
 .testimonials-section {
-  padding: 80px 0;
-  background: var(--bg-light);
+    padding: 100px 0;
 }
 
-.testimonials-subtitle {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.testimonials-carousel {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 0;
-  position: relative; /* Add this */
-}
-
-/* Fixed positioning for carousel controls */
-.carousel-controls {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  pointer-events: none; /* This ensures clicks pass through to the content */
-  z-index: 2;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-color);
-  opacity: 0.8;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
-  pointer-events: auto; /* Re-enable clicks on buttons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0; /* Reset margin */
-}
-
-/* Move indicators to bottom */
-.carousel-indicators {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  display: flex;
-  gap: 0.5rem;
-  pointer-events: auto; /* Re-enable clicks on indicators */
-}
-
-/* Ensure content has enough padding for controls */
 .testimonial-card {
-  margin: 0 50px; /* Add horizontal margin for nav buttons */
-  background: var(--bg-white);
-  border-radius: 20px;
-  padding: 2.5rem;
-  margin: 1rem auto;
-  max-width: 800px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  perspective: 1000px;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-}
-
-.testimonial-content {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.testimonial-icon {
-  color: var(--accent-color);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInDown 0.5s ease-out forwards;
-  animation-delay: 0.3s;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(var(--deepwood-shade-rgb), 0.1);
 }
 
 .testimonial-quote {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  font-style: italic;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.4s;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .testimonial-client {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  opacity: 0;
-  transform: translateX(-10px);
-  animation: fadeInRight 0.5s ease-out forwards;
-  animation-delay: 0.5s;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--highlight);
 }
 
-/* Carousel Control Animations */
-.carousel-control-prev,
-.carousel-control-next {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-color);
-  opacity: 0.8;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-.carousel-control-prev:active,
-.carousel-control-next:active {
-  transform: scale(0.95);
-}
-
-.carousel-control-prev i,
-.carousel-control-next i {
-  color: white;
-  font-size: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.carousel-control-prev:hover i {
-  transform: translateX(-2px);
-}
-
-.carousel-control-next:hover i {
-  transform: translateX(2px);
-}
-
-/* Carousel Indicators Animation */
 .carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  opacity: 0.3;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
+    background-color: var(--metallic-bronze); /* Match highlight color */
 }
 
-.carousel-indicators button.active {
-  opacity: 1;
-  transform: scale(1.3);
-}
-
-/* Keyframe Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .testimonial-card {
-  background: var(--bg-dark-secondary);
-}
-
-[data-theme="dark"] .testimonial-quote {
-  color: var(--text-light);
-}
-
-[data-theme="dark"] .client-name {
-  color: var(--text-light);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .carousel-controls {
-    padding: 0 10px;
-  }
-  
-  .testimonial-card {
-    margin: 0 30px;
-    padding: 2rem 1.5rem;
-  }
-  
-  .testimonial-quote {
-    font-size: 1rem;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .carousel-indicators {
-    bottom: -25px;
-  }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--highlight); /* Match highlight color */
+    border-radius: 50%;
+    padding: 10px;
 }
 
 /* OJT Experience Section - Adjusting its styles from main.css into sections.css */
@@ -582,7 +369,7 @@
     .projects-subtitle {
         font-size: 1.05rem;
     }
-    .contact-info_title,
+    .contact-info-title,
     .contact-form-title {
         font-size: 1.8rem;
     }
@@ -630,7 +417,7 @@
     .projects-subtitle {
         font-size: 1rem;
     }
-    .contact-info_title,
+    .contact-info-title,
     .contact-form-title {
         font-size: 1.6rem;
     }
@@ -680,7 +467,7 @@
     .projects-subtitle {
         font-size: 0.95rem;
     }
-    .contact-info_title,
+    .contact-info-title,
     .contact-form-title {
         font-size: 1.4rem;
     }
@@ -721,4 +508,4 @@
 .detail-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(var(--shadow-color-rgb), 0.12);
-}
+} 
