@@ -919,6 +919,40 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const pageName = 'index'; // Or dynamically get from window.location.pathname if you have clean URLs
+      const viewCountElement = document.getElementById('viewCount');
+
+      try {
+        const response = await fetch('/.netlify/functions/track-view', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ page_name: pageName }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (viewCountElement) {
+            viewCountElement.textContent = data.view_count;
+          }
+        } else {
+          console.error('Failed to fetch view count:', response.status, response.statusText);
+          if (viewCountElement) {
+            viewCountElement.textContent = 'Error';
+          }
+        }
+      } catch (error) {
+        console.error('Error tracking view:', error);
+        if (viewCountElement) {
+          viewCountElement.textContent = 'Error';
+        }
+      }
+    });
+  </script>
+
   </div>
   </div>
 </body>

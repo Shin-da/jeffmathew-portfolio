@@ -1,0 +1,3 @@
+[build]
+  functions = "netlify/functions"
+  publish = "." # Assuming your static files are at the root, adjust if they are in a subfolder like 'public' or 'dist' 
