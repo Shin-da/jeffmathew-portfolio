@@ -23,6 +23,11 @@ exports.handler = async (event, context) => {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+    // --- DEBUGGING LINE --- 
+    console.log('Supabase URL:', supabaseUrl);
+    console.log('Supabase Key (first 5 chars):', supabaseKey ? supabaseKey.substring(0, 5) + '...' : 'Not Set');
+    // --- END DEBUGGING LINE --- 
+
     if (!supabaseUrl || !supabaseKey) {
         return {
             statusCode: 500,

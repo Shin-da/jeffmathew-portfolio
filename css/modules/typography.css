@@ -160,5 +160,6 @@
 }
 
 [data-theme="dark"] .section-title::after {
-    background: linear-gradient(to right, var(--insta-blue), var(--insta-purple));
+    /* background: linear-gradient(to right, var(--insta-blue), var(--insta-purple)); */
+    background: var(--metallic-bronze);
 } 

@@ -412,7 +412,7 @@ body.light-mode .back-to-top {
 }
 
 .position {
-  color: var(--accent-color);
+  color: var(--metallic-bronze);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -443,7 +443,7 @@ body.light-mode .back-to-top {
 }
 
 .achievement-list li i {
-  color: var(--accent-color);
+  color: var(--metallic-bronze);
   margin-right: 10px;
   margin-top: 5px;
 }
