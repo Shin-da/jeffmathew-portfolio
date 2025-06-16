@@ -1,0 +1,451 @@
+/* Dark Theme Styles */
+
+:root {
+    --accent: #b47c6c; /* A warm, inviting color for light mode links */
+    --accent-hover: #a16c5c; /* A slightly darker shade for hover effect */
+}
+
+[data-theme="dark"] {
+    --primary-bg: #1A1A1A; /* Darker primary background */
+    --primary-bg-rgb: 26, 26, 26; /* RGB values for primary-bg */
+    --secondary-bg: #232323; /* Darker secondary background */
+    --card-bg: rgba(255, 255, 255, 0.03); /* Darker cards */
+    --accent-bg: #3A3A3A; /* Darker accent background */
+    --highlight-rgb: 99, 102, 241; /* RGB values for coral-tree */
+    --header-color: #F8F8F8; /* Light headers */
+    --button-color: var(--metallic-bronze); /* Use metallic bronze for buttons */
+    --button-hover: #DDAA77; /* Slightly lighter on hover */
+    --text-color: rgba(255, 255, 255, 0.9); /* Light text */
+    --subtle-text: rgba(255, 255, 255, 0.6); /* Lighter subtle text */
+    --highlight: var(--coral-tree); /* Use coral tree for highlight */
+    --border-color: rgba(255, 255, 255, 0.1); /* Darker border */
+    --input-bg: #3A3A3A; /* Dark input background */
+    --placeholder-color: #888888; /* Darker placeholder */
+    --project-link-bg: rgba(255, 255, 255, 0.9); /* White background for links in dark mode */
+    --light-mode-border: var(--laurel-green); /* Ensure this is defined for light mode */
+    --dark-toggle-bg: #4A4A4A; /* Dark toggle background */
+    --light-toggle-bg: var(--cloud); /* Light toggle background */
+    --dark-text: #fff; /* White icon for dark mode thumb */
+    --error: #ed4956;
+    --shadow-color-rgb: 0, 0, 0; /* Black shadow for dark mode */
+    /* Blog specific colors - enhanced for dark mode */
+    --blog-bg: #121212;
+    --blog-section-bg: linear-gradient(
+        to bottom,
+        #1a1a1a,
+        #232323 10%,
+        #1a1a1a 90%
+    );
+    --blog-card-bg: rgba(255, 255, 255, 0.05);
+    --blog-card-hover-bg: rgba(255, 255, 255, 0.08);
+    --blog-code-bg: #2d2d2d;
+    --blog-code-color: #e6e6e6;
+    --blog-quote-bg: rgba(var(--highlight-rgb), 0.1);
+    --blog-quote-border: var(--highlight);
+    --blog-border-color: rgba(255, 255, 255, 0.1);
+    --blog-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    --blog-meta-color: rgba(255, 255, 255, 0.6);
+    --blog-link-color: #63f5aa;
+    --blog-link-hover-color: #7dffbf;
+}
+
+/* Blog-specific dark mode overrides */
+[data-theme="dark"] .blog-section,
+[data-theme="dark"] .blog-post {
+    background: var(--blog-section-bg);
+}
+
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .blog-post-content {
+    background: var(--blog-card-bg);
+    box-shadow: var(--blog-shadow);
+    border: 1px solid var(--blog-border-color);
+}
+
+[data-theme="dark"] .blog-card:hover {
+    background: var(--blog-card-hover-bg);
+    border-color: rgba(var(--highlight-rgb), 0.3);
+}
+
+[data-theme="dark"] .blog-post-content {
+    padding: 2.5rem;
+    border-radius: 16px;
+}
+
+[data-theme="dark"] .blog-post-content pre,
+[data-theme="dark"] .blog-post-content code {
+    background: var(--blog-code-bg);
+    color: var(--blog-code-color);
+    border: 1px solid var(--blog-border-color);
+}
+
+[data-theme="dark"] .blog-post-content blockquote {
+    background: var(--blog-quote-bg);
+    border-left: 4px solid var(--blog-quote-border);
+}
+
+[data-theme="dark"] .blog-post-content a {
+    color: var(--blog-link-color);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(99, 245, 170, 0.4);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .blog-post-content a:hover {
+    color: var(--blog-link-hover-color);
+    border-bottom-color: rgba(125, 255, 191, 0.6);
+}
+
+[data-theme="dark"] .blog-post-meta {
+    color: var(--blog-meta-color);
+}
+
+[data-theme="dark"] .social-share-btn {
+    background: var(--blog-card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--blog-border-color);
+}
+
+[data-theme="dark"] .social-share-btn:hover {
+    background: var(--blog-card-hover-bg);
+    color: var(--blog-link-color);
+    border-color: var(--blog-link-color);
+}
+
+[data-theme="dark"] body {
+    background: var(--primary-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(var(--primary-bg-rgb), 0.95);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .navbar.sticky {
+    background: rgba(var(--primary-bg-rgb), 0.98);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .nav-link {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: var(--highlight);
+    background-color: rgba(var(--highlight-rgb), 0.1);
+}
+
+[data-theme="dark"] .section-title {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .section-title::after {
+    background: linear-gradient(to right, var(--highlight), var(--coral-tree));
+}
+
+[data-theme="dark"] .section-divider {
+    background-color: var(--highlight);
+}
+
+[data-theme="dark"] .about,
+[data-theme="dark"] .projects,
+[data-theme="dark"] .ig-gallery-section,
+[data-theme="dark"] .contact,
+[data-theme="dark"] .blog-section,
+[data-theme="dark"] .testimonials-section,
+[data-theme="dark"] .ojt-experience {
+    background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .ig-art-card,
+[data-theme="dark"] .blog-post-card,
+[data-theme="dark"] .ojt-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .hero-image-wrapper {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .hero-image-wrapper:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .about-image-container {
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3), 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .about-image-container:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .btn-primary {
+    background: var(--button-color);
+    color: #fff;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-primary:focus {
+    background: var(--button-hover);
+}
+
+[data-theme="dark"] .btn-outline {
+    background: transparent;
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+[data-theme="dark"] .btn-outline:hover,
+[data-theme="dark"] .btn-outline:focus {
+    background: var(--button-color);
+    color: #fff;
+    border-color: var(--button-hover);
+}
+
+[data-theme="dark"] .project-link {
+    background: var(--project-link-bg);
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .project-link:hover {
+    background: var(--highlight);
+    color: var(--card-bg);
+}
+
+[data-theme="dark"] .project-tech span {
+    background: var(--accent-bg);
+    border: 1px solid var(--border-color);
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .footer {
+    background: var(--primary-bg);
+    color: var(--subtle-text);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .footer h4 {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .social-links a {
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .footer-links a:hover,
+[data-theme="dark"] .social-links a:hover {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .newsletter-form .input-group {
+    background: var(--input-bg);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .newsletter-form .form-control {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .newsletter-form .form-control::placeholder {
+    color: var(--placeholder-color);
+}
+
+[data-theme="dark"] .newsletter-form .btn {
+    background: var(--button-color);
+    color: #fff;
+}
+
+[data-theme="dark"] .newsletter-form .btn:hover {
+    background: var(--button-hover);
+}
+
+[data-theme="dark"] .blog-post-title,
+[data-theme="dark"] .blog-post-content h2 {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .blog-post-content,
+[data-theme="dark"] .blog-post-content .lead {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .tag {
+    background: var(--accent-bg);
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .tag:hover {
+    background: var(--highlight);
+    color: #fff;
+}
+
+[data-theme="dark"] .share-button {
+    background: var(--accent-bg);
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .share-button:hover {
+    background: var(--highlight);
+    color: #fff;
+}
+
+[data-theme="dark"] .blog-index {
+    background: var(--primary-bg);
+}
+
+[data-theme="dark"] .blog-index-title,
+[data-theme="dark"] .blog-index-subtitle {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .blog-post-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .blog-post-content .blog-post-title a {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .blog-post-excerpt {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .blog-sidebar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .sidebar-title {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .sidebar-list a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .sidebar-list a:hover {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .ig-gallery-filter.active,
+[data-theme="dark"] .ig-gallery-filter:hover {
+    color: var(--header-color);
+    border-bottom-color: var(--highlight);
+}
+
+[data-theme="dark"] .ig-art-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .ig-art-lightbox-content {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .ig-art-lightbox-info {
+    background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .ig-highlight-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ig-highlight-icon {
+    background: var(--accent-bg);
+    border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .ig-highlight-icon::after {
+    border-color: var(--highlight);
+}
+
+[data-theme="dark"] .ig-highlight-card:hover .ig-highlight-icon {
+    background: var(--highlight);
+    color: var(--card-bg);
+}
+
+[data-theme="dark"] .ig-highlight-card:hover .ig-highlight-label {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .ig-highlight-modal-content {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .toggle-track {
+    background: #262626;
+}
+
+[data-theme="dark"] .nav-pill-row .nav-link.active,
+[data-theme="dark"] .nav-pill-row .nav-link:focus,
+[data-theme="dark"] .nav-pill-row .nav-link:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+[data-theme="dark"] .contact-info,
+[data-theme="dark"] .contact-form {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .contact-info:hover,
+[data-theme="dark"] .contact-form:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .contact-info-item {
+    background: var(--accent-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .contact-info-item:hover {
+    border-color: var(--highlight);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .contact-info-item i {
+    background: var(--card-bg);
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .contact-info-item:hover i {
+    background: var(--highlight);
+    color: var(--card-bg);
+}
+
+[data-theme="dark"] .contact-info-item h4 {
+    color: var(--header-color);
+}
+
+[data-theme="dark"] .contact-info-item p {
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .contact-subtitle {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .open-commissions-note {
+    color: var(--highlight);
+}
+
+[data-theme="dark"] .response-time-note {
+    color: var(--subtle-text);
+}

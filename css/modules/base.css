@@ -1,0 +1,99 @@
+/* Base Styles and Variables */
+
+/* Custom Color Variables */
+:root {
+    --saddle: #7A5B4C;
+    --star-dust: #C0C0C0;
+    --squirrel: #A69E96;
+    --cloud: #F8F8F8;
+    --delta: #B8B8B8;
+    --woodsmoke: #1A1A1A;
+    --flint: #8C8C82;
+    --tobacco-brown: #8D6B52;
+    --storm-dust: #757570;
+    --coral-tree: #E79B8C;
+    --insta-blue: #0088CC;
+    --insta-purple: #8A3AB9;
+}
+
+/* Main Theme Variables */
+:root {
+    --primary-color: var(--woodsmoke);
+    --secondary-color: var(--saddle);
+    --accent-color: var(--coral-tree);
+    --text-color: var(--woodsmoke);
+    --light-text: var(--storm-dust);
+    --background-color: var(--cloud);
+    --section-bg: #FFFFFF;
+    --card-bg: #FDFBF8;
+    --border-color: var(--star-dust);
+    --hover-color: var(--coral-tree);
+    --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    --dark-toggle-bg: #4A4A4A;
+    --light-toggle-bg: var(--cloud);
+    --light-mode-border: var(--star-dust);
+    --dark-text: var(--woodsmoke);
+
+    /* Earthy Artistic Palette */
+    --milk-chocolate: #7C4A2D;
+    --metallic-bronze: #C49B6A;
+    --laurel-green: #B0C4AC;
+    --tea-green: #F0EDE5;
+    --cookies-cream: #EDE1D2;
+    --coconut: #F6F0E9;
+    --palm-oil: #4D200E;
+    --canopy-green: #899377;
+    --deepwood-shade: #2A2C26;
+
+    /* Main usage */
+    --primary-bg: var(--cookies-cream);
+    --secondary-bg: var(--coconut);
+    --card-bg: var(--tea-green);
+    --accent-bg: var(--laurel-green);
+    --header-color: var(--milk-chocolate);
+    --button-color: var(--milk-chocolate);
+    --button-hover: var(--palm-oil);
+    --text-color: var(--deepwood-shade);
+    --subtle-text: var(--canopy-green);
+    --highlight: var(--metallic-bronze);
+    --border-color: var(--laurel-green);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    /* opacity: 0; */
+    /* transition: opacity 0.7s cubic-bezier(.4,0,.2,1); */
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 10000;
+    background: var(--coral-tree);
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border-radius: 0 0 12px 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: left 0.2s;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    outline: 2px solid var(--saddle);
+    box-shadow: 0 2px 8px rgba(180, 124, 108, 0.10);
+} 
