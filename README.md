@@ -1,6 +1,6 @@
-# Jeff Mathew Garcia Portfolio
-
 ![Preview](preview.png)
+
+# Jeff Mathew Garcia Portfolio
 
 Welcome to my personal portfolio website! I am Jeff Mathew Garcia, an IT graduate and artist passionate about web development, system creation, and digital art. This site showcases my projects, skills, and services, and is open for commissions.
 
