@@ -924,30 +924,41 @@
       const pageName = 'index'; // Or dynamically get from window.location.pathname if you have clean URLs
       const viewCountElement = document.getElementById('viewCount');
 
-      try {
-        const response = await fetch('/.netlify/functions/track-view', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ page_name: pageName }),
-        });
+      // Check if the site is hosted on Netlify
+      if (window.location.hostname.includes('netlify.app')) {
+        try {
+          const response = await fetch('/.netlify/functions/track-view', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ page_name: pageName }),
+          });
 
-        if (response.ok) {
-          const data = await response.json();
-          if (viewCountElement) {
-            viewCountElement.textContent = data.view_count;
+          if (response.ok) {
+            const data = await response.json();
+            if (viewCountElement) {
+              viewCountElement.textContent = data.view_count;
+            }
+          } else {
+            console.error('Failed to fetch view count:', response.status, response.statusText);
+            if (viewCountElement) {
+              viewCountElement.style.display = 'none'; // Hide if error
+            }
           }
-        } else {
-          console.error('Failed to fetch view count:', response.status, response.statusText);
+        } catch (error) {
+          console.error('Error tracking view:', error);
           if (viewCountElement) {
-            viewCountElement.textContent = 'Error';
+            viewCountElement.style.display = 'none'; // Hide on error
           }
         }
-      } catch (error) {
-        console.error('Error tracking view:', error);
+      } else {
+        // If not on Netlify, hide the view counter
         if (viewCountElement) {
-          viewCountElement.textContent = 'Error';
+          const parentDiv = viewCountElement.closest('.view-counter');
+          if (parentDiv) {
+            parentDiv.style.display = 'none';
+          }
         }
       }
     });
