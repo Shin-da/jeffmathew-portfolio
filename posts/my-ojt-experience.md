@@ -1,6 +1,6 @@
 ---
 title: My On-the-Job Training Experience at SP Madrid & Associates Law Firm
-date: 2024-05-20
+date: 2025-05-20
 excerpt: A detailed look into my 500-hour On-the-Job Training as a Developer and AI Prompt Engineer at SP Madrid & Associates Law Firm, highlighting key achievements and skills gained.
 ---
 
