@@ -1003,3 +1003,67 @@ body.light-mode .back-to-top {
 .view-counter i {
     margin-right: 5px;
 }
+
+
+/* Development Notice Banner */
+.development-notice {
+  background: linear-gradient(135deg, var(--coral-tree) 0%, var(--milk-chocolate) 100%);
+  color: white;
+  padding: 12px 0;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(231, 155, 140, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+
+.development-notice-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.development-notice i {
+  font-size: 1.2rem;
+  color: var(--metallic-bronze);
+  animation: pulse 2s infinite;
+}
+
+.development-notice-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.development-notice-text strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.development-notice-text span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.development-notice-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.development-notice-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
