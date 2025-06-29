@@ -620,10 +620,10 @@ body.light-mode .back-to-top {
 }
 
 .about-text {
-  padding: 1.5rem;
 }
 
 .about-description {
+  padding: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-color);
@@ -633,7 +633,7 @@ body.light-mode .back-to-top {
 .about-details {
   background: var(--card-bg);
   border-radius: 15px;
-  padding: 2rem;
+  /* padding: 2rem; */
   box-shadow: 0 5px 20px rgba(var(--shadow-color-rgb), 0.08);
 }
 
