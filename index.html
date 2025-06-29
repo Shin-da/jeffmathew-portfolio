@@ -25,6 +25,7 @@
   <link href="css/main.css" rel="stylesheet">
   <link href="css/modules/navbar.css" rel="stylesheet">
   <link href="css/modules/dark-theme.css" rel="stylesheet">
+  <link href="css/modules/tech-stack.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
@@ -131,33 +132,21 @@
     </div>
   </header>
 
-  <!-- IG-Style Story Highlights Section -->
-  <!-- <section class="ig-highlights-section>
+  <!-- Development Notice Banner -->
+  <div class="development-notice" role="alert" aria-live="polite">
     <div class="container">
-      <div class="ig-highlights-row">
-        <div class="ig-highlight-card" data-highlight="about" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-user-circle"></i></div>
-          <div class="ig-highlight-label">About Me</div>
+      <div class="development-notice-content">
+        <i class="fas fa-tools"></i>
+        <div class="development-notice-text">
+          <strong>🚧 Site Under Development</strong>
+          <span>Some sections are still being completed. Live demos, blog posts, and additional features coming soon!</span>
         </div>
-        <div class="ig-highlight-card" data-highlight="skills" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-laptop-code"></i></div>
-          <div class="ig-highlight-label">Tech Stack</div>
-        </div>
-        <div class="ig-highlight-card" data-highlight="services" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-paint-brush"></i></div>
-          <div class="ig-highlight-label">Services</div>
-        </div>
-        <div class="ig-highlight-card" data-highlight="experience" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-briefcase"></i></div>
-          <div class="ig-highlight-label">Experience</div>
-        </div>
-        <div class="ig-highlight-card" data-highlight="education" tabindex="0">
-          <div class="ig-highlight-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="ig-highlight-label">Education</div>
-        </div>
+        <button class="development-notice-close" aria-label="Dismiss development notice">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     </div>
-  </section> -->
+  </div>
 
   <div class="container-fluid about" data-aos="fade-up">
     <div class="container" id="about">
@@ -380,6 +369,7 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <div class="container-fluid projects" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="projects">
       <div class="projects-header text-center mb-5">
@@ -389,12 +379,45 @@
       </div>
 
       <div class="row g-4">
+        <!-- HFC Management System / Thesis Project -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-image-container">
+              <picture>
+                <source srcset="assets/images/hfc-management.webp" type="image/webp">
+                <img src="assets/images/hfc-management.png"
+                  alt="Screenshot of HFC Management System project by Jeff and his team" class="project-image"
+                  width="400" height="200" loading="lazy">
+              </picture>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
+                    Demo</a>
+                  <a href="https://github.com/Shin-da/HFC-MANAGEMENT.git" class="project-link" target="_blank"><i
+                      class="fab fa-github"></i> Source Code</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>HFC Management System</h3>
+              <p>A comprehensive ERP & E-commerce solution developed for Henrich Food Corporation as a capstone research project. This enterprise-grade system streamlines operations, enhances data accuracy, and provides real-time business analytics.</p>
+              <div class="project-tech">
+                <span><i class="fab fa-php"></i><span>PHP</span></span>
+                <span><i class="fab fa-js"></i><span>JavaScript</span></span>
+                <span><i class="fab fa-html5"></i><span>HTML</span></span>
+                <span><i class="fab fa-css3-alt"></i><span>CSS</span></span>
+                <span><i class="fas fa-database"></i><span>MySQL</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Wedding Invitation Project -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="project-card">
             <div class="project-image-container">
               <picture>
-                <source srcset="assets/images/wedding-invitation.webp" type="image/webp">
+                <source srcset="assets/images/wedding-invitation-preview.webp" type="image/webp">
                 <img src="assets/images/wedding-invitation.png"
                   alt="Screenshot of Online Wedding Invitation with RSVP project by Jeff Mathew Garcia"
                   class="project-image" width="400" height="200" loading="lazy">
@@ -410,93 +433,27 @@
             </div>
             <div class="project-content">
               <h3>Online Wedding Invitation with RSVP</h3>
-              <p>A comprehensive wedding website platform featuring event details, guest information, and an RSVP
-                system. Includes bride and groom's story, venue details, and event schedule.</p>
+              <p> An elegant and interactive online wedding invitation platform that combines beautiful design with seamless functionality. Creating memorable digital experiences for special moments.</p>
               <div class="project-tech">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>PHP</span>
-                <span>MySQL</span>
+                <span><i class="fab fa-php"></i><span>PHP</span></span>
+                <span><i class="fab fa-html5"></i><span>HTML</span></span>
+                <span><i class="fab fa-css3-alt"></i><span>CSS</span></span>
+                <span><i class="fab fa-js"></i><span>JavaScript</span></span>
+                <span><i class="fas fa-database"></i><span>MySQL</span></span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- HFC Management System -->
-        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="project-card">
-            <div class="project-image-container">
-              <picture>
-                <source srcset="assets/images/hfc-management.webp" type="image/webp">
-                <img src="assets/images/hfc-management.png"
-                  alt="Screenshot of Inventory Management System project by Jeff Mathew Garcia" class="project-image"
-                  width="400" height="200" loading="lazy">
-              </picture>
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
-                    Demo</a>
-                  <a href="https://github.com/Shin-da/HFC-MANAGEMENT.git" class="project-link" target="_blank"><i
-                      class="fab fa-github"></i> Source Code</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Inventory Management System</h3>
-              <p>A comprehensive system featuring an online shop with cart functionality, purchase history, and
-                analytics reports. Includes both descriptive and prescriptive analytics for business insights.</p>
-              <div class="project-tech">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>Bootstrap</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Another Project  -->
 
-        <!-- Thesis Project -->
-        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-          <div class="project-card">
-            <div class="project-image-container">
-              <picture>
-                <source srcset="assets/images/thesis.webp" type="image/webp">
-                <img src="assets/images/thesis.png" alt="Screenshot of Capstone Research Project by Jeff Mathew Garcia"
-                  class="project-image" width="400" height="200" loading="lazy">
-              </picture>
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
-                    Demo</a>
-                  <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Capstone Research Project</h3>
-              <p>Led the development of a comprehensive system as the main programmer, handling both frontend and
-                backend development. Implemented features and managed version control using GitHub.</p>
-              <div class="project-tech">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>Git</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
     <div class="text-center mt-4">
-      <a href="projects.html" class="btn btn-outline-primary btn-lg">
+      <!-- <a href="projects.html" class="btn btn-outline-primary btn-lg">
         <i class="fas fa-arrow-right me-2"></i>See More Projects
-      </a>
+      </a> -->
     </div>
   </div>
 
@@ -516,8 +473,8 @@
         <!-- Example art cards -->
         <div class="ig-art-card" data-category="digital">
           <picture>
-            <source srcset="assets/images/arts1.webp" type="image/webp">
-            <img src="assets/images/arts1.jpg" alt="Digital portrait artwork by Jeff Mathew Garcia, 2025"
+            <source srcset="assets/images/art1.webp" type="image/webp">
+            <img src="assets/images/art1.jpg" alt="Digital portrait artwork by Jeff Mathew Garcia, 2025"
               class="ig-art-img" width="400" height="400" loading="lazy">
           </picture>
           <div class="ig-art-overlay">
@@ -527,8 +484,8 @@
         </div>
         <div class="ig-art-card" data-category="traditional">
           <picture>
-            <source srcset="assets/images/arts2.webp" type="image/webp">
-            <img src="assets/images/arts2.jpg" alt="Traditional pencil sketch by Jeff Mathew Garcia, 2023"
+            <source srcset="assets/images/art2.webp" type="image/webp">
+            <img src="assets/images/art2.jpg" alt="Traditional pencil sketch by Jeff Mathew Garcia, 2023"
               class="ig-art-img" width="400" height="400" loading="lazy">
           </picture>
           <div class="ig-art-overlay">
@@ -538,8 +495,8 @@
         </div>
         <div class="ig-art-card" data-category="digital">
           <picture>
-            <source srcset="assets/images/arts3.webp" type="image/webp">
-            <img src="assets/images/arts3.jpg" alt="Concept art by Jeff Mathew Garcia, 2025" class="ig-art-img"
+            <source srcset="assets/images/art3.webp" type="image/webp">
+            <img src="assets/images/art3.jpg" alt="Concept art by Jeff Mathew Garcia, 2025" class="ig-art-img"
               width="400" height="400" loading="lazy">
           </picture>
           <div class="ig-art-overlay">
@@ -590,7 +547,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="container testimonials-section" data-aos="fade-up">
+  <!-- <section class="container testimonials-section" data-aos="fade-up">
     <div class="text-center mb-5">
       <h2 class="section-title">Client Testimonials</h2>
       <div class="section-divider"></div>
@@ -670,7 +627,7 @@
         <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Blog/Updates Section -->
   <section class="container blog-section" id="blog" data-aos="fade-up">
@@ -758,7 +715,7 @@
                   <h4>Discord</h4>
                   <p>shin_da04</p>
                 </div>
-              </div>
+              </div> 
               <a href="https://www.tiktok.com/@jepmachu" target="_blank">
                 <div class="contact-info-item">
                   <i class="fab fa-tiktok"></i>
@@ -772,7 +729,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6" data-aos="fade-left">
+        <!-- <div class="col-lg-6" data-aos="fade-left">
           <div class="contact-form">
             <h3 class="contact-form-title">Send Me a Message</h3>
             <form id="contactForm" action="https://formspree.io/f/mwkgrqzj" method="POST" aria-label="Contact form">
@@ -799,7 +756,7 @@
               Oops! Something went wrong. Please try again later.
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -964,8 +921,6 @@
     });
   </script>
 
-  </div>
-  </div>
 </body>
 
 </html>

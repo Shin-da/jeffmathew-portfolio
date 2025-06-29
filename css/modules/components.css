@@ -6,9 +6,12 @@
     font-weight: 700;
     font-size: 1.05rem;
     padding: 0.8rem 2.5rem;
+<<<<<<< HEAD
     background: transparent;
     color: var(--button-color);
     border: 2px solid var(--button-color);
+=======
+>>>>>>> master
     box-shadow: 0 4px 16px rgba(var(--milk-chocolate-rgb), 0.15);
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     border: none;
@@ -20,6 +23,7 @@
 }
 
 .btn-primary {
+<<<<<<< HEAD
     background: transparent;
     color: var(--button-color);
     border: 2px solid var(--button-color);
@@ -29,6 +33,15 @@
     background: var(--button-color);
     color: #fff;
     border-color: var(--button-hover);
+=======
+    background: var(--button-color);
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--button-hover);
+    color: #fff;
+>>>>>>> master
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 24px rgba(var(--milk-chocolate-rgb), 0.25);
 }
