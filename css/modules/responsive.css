@@ -123,14 +123,6 @@
         z-index: 1100;
         margin-left: auto;
     }
-    .navbar-collapse {
-        width: 100%;
-        max-width: 100%;
-        background: rgba(255,255,255,0.98);
-        box-shadow: 0 4px 24px rgba(139, 86, 51, 0.13);
-        border-radius: 0 0 18px 18px;
-        margin-top: 0.5rem;
-    }
     .hero {
         padding-top: 80px;
     }

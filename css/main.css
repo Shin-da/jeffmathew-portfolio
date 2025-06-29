@@ -848,7 +848,7 @@ body.light-mode .back-to-top {
 /* Enhanced Mobile Responsive Styles */
 @media (max-width: 767.98px) {
   .about-details {
-    padding: 1.2rem;
+    padding: 0.9rem;
   }
 
   .detail-item {
@@ -974,6 +974,10 @@ body.light-mode .back-to-top {
   .skills-list li {
     padding: 0.7rem;
     font-size: 0.9rem;
+  }
+
+  .about-details {
+    padding: 0.5rem 0.7rem;
   }
 }
 
