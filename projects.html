@@ -30,9 +30,13 @@
     <link rel="stylesheet" href="css/modules/components.css">
     <link rel="stylesheet" href="css/modules/responsive.css">
     <link rel="stylesheet" href="css/modules/animations.css">
-    <link rel="stylesheet" href="css/modules/navbar.css">    <link rel="stylesheet" href="css/modules/dark-theme.css">
+    <link rel="stylesheet" href="css/modules/navbar.css">
+    <link rel="stylesheet" href="css/modules/dark-theme.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modules/projects-section.css">
     <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
+    <!-- Add marked.js for README rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83JWZVGGNV"></script>
     <script>
@@ -84,214 +88,70 @@
         </div>
     </nav>
 
-    <!-- Projects Header -->
-    <header class="projects-header">
-        <div class="container">
+    <!-- My Projects Section (GitHub driven) -->
+    <div class="container github-section" style="padding-top: 120px;">
+        <div class="section-header text-center mb-5">
             <h1 class="section-title">My Projects</h1>
             <div class="section-divider"></div>
-            <p class="lead">A collection of my web development, system, and other projects</p>
+            <p class="lead">Explore my open-source contributions and personal projects</p>
         </div>
-    </header>
-
-    <!-- Projects Grid -->
-    <div class="container">
-        <div class="projects-grid">
-            <!-- Project Item 1: Wedding Invitation Site -->
-            <div class="project-card" data-project-type="commissioned">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/wedding-invitation.webp" type="image/webp">
-                        <img src="assets/images/wedding-invitation.png" alt="Wedding Invitation Project"
-                            class="project-image" loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/Shin-da/Wedding-Invitation-Website" class="project-link"
-                                target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Wedding Invitation Website</h3>
-                    <p class="project-type">Commissioned Project</p>
-                    <p>Designed and developed a digital wedding invitation website, featuring responsive design and
-                        interactive elements.</p>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Responsive Design</span>
-                    </div>
-                </div>
+        
+        <div class="github-filters mb-4">
+            <div class="search-box">
+                <input type="text" id="repoSearch" placeholder="Search repositories..." class="form-control">
+                <i class="fas fa-search search-icon"></i>
             </div>
-
-            <!-- Project Item 2: HFC Management System -->
-            <div class="project-card" data-project-type="thesis">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/hfc-management.webp" type="image/webp">
-                        <img src="assets/images/hfc-management.png" alt="HFC Management System Project"
-                            class="project-image" loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/Shin-da/HFC-Management-System" class="project-link"
-                                target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>HFC Management System</h3>
-                    <p class="project-type">Thesis Project</p>
-                    <p>Developed a comprehensive management system for HFC, handling data management, reporting, and
-                        user authentication.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
+            <div class="sort-options">
+                <select id="repoSort" class="form-select">
+                    <option value="updated">Last Updated</option>
+                    <option value="created">Created Date</option>
+                    <option value="stars">Stars</option>
+                    <option value="forks">Forks</option>
+                </select>
             </div>
+        </div>
 
-            <!-- Project Item 3: NSTP Portal -->
-            <div class="project-card" data-project-type="academic">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/nstp.webp" type="image/webp">
-                        <img src="assets/images/nstp.png" alt="NSTP Portal Project" class="project-image"
-                            loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="#" class="project-link" target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>NSTP Portal</h3>
-                    <p class="project-type">Academic Project</p>
-                    <p>Created a portal for the National Service Training Program, facilitating student enrollment,
-                        module access, and attendance tracking.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
+        <div id="githubRepos" class="github-repos-grid">
+            <!-- Repositories will be loaded here -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Loading repositories...</span>
             </div>
+        </div>
+    </div>
 
-            <!-- Project Item 4: Online Booklist -->
-            <div class="project-card" data-project-type="academic">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/booklist.webp" type="image/webp">
-                        <img src="assets/images/booklist.png" alt="Online Booklist Project" class="project-image"
-                            loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="#" class="project-link" target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
+    <!-- GitHub Repository Modal -->
+    <div class="modal fade" id="repoModal" tabindex="-1" aria-labelledby="repoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="repoModalLabel">Repository Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="repo-header">
+                        <div class="repo-title">
+                            <h3 id="modalRepoName"></h3>
+                            <span id="modalRepoVisibility" class="badge"></span>
+                        </div>
+                        <div class="repo-stats">
+                            <span id="modalRepoStars"><i class="fas fa-star"></i> <span>0</span></span>
+                            <span id="modalRepoForks"><i class="fas fa-code-branch"></i> <span>0</span></span>
+                            <span id="modalRepoWatchers"><i class="fas fa-eye"></i> <span>0</span></span>
                         </div>
                     </div>
-                </div>
-                <div class="project-content">
-                    <h3>Online Booklist</h3>
-                    <p class="project-type">Academic Project</p>
-                    <p>Developed an online booklist application, allowing users to browse, search, and manage books.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
+                    <div class="repo-description" id="modalRepoDescription"></div>
+                    <div class="repo-tech-stack" id="modalRepoLanguages"></div>
+                    <div class="repo-readme" id="modalRepoReadme">
+                        <h4>README</h4>
+                        <div id="modalRepoReadmeContent"></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Project Item 5: Books Management -->
-            <div class="project-card" data-project-type="hobby">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/books.webp" type="image/webp">
-                        <img src="assets/images/books.png" alt="Books Management Project" class="project-image"
-                            loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="#" class="project-link" target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Books Management</h3>
-                    <p class="project-type">Hobby Project</p>
-                    <p>Designed a system for managing book inventory, including adding, updating, and deleting book
-                        records.</p>
-                    <div class="project-tech">
-                        <span>C++</span>
-                        <span>Desktop Application</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Item 6: Hour Converter -->
-            <div class="project-card" data-project-type="hobby">
-                <div class="project-image-container">
-                    <picture>
-                        <source srcset="assets/images/hourConvert.webp" type="image/webp">
-                        <img src="assets/images/hourConvert.png" alt="Hour Converter Project" class="project-image"
-                            loading="lazy">
-                    </picture>
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" target="_blank" aria-label="View Live Demo">
-                                <i class="fas fa-eye"></i> Live Demo
-                            </a>
-                            <a href="#" class="project-link" target="_blank" aria-label="View Source Code">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Hour Converter</h3>
-                    <p class="project-type">Hobby Project</p>
-                    <p>A simple yet effective hour conversion tool developed to quickly convert hours into different
-                        units.</p>
-                    <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
+                <div class="modal-footer">
+                    <a href="#" id="modalRepoLink" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -364,7 +224,194 @@
     <script src="js/theme-handler.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = 'Shin-da'; // Your GitHub username
+        const reposGrid = document.getElementById('githubRepos');
+        const repoSearch = document.getElementById('repoSearch');
+        const repoSort = document.getElementById('repoSort');
+        let allRepos = [];
 
+        // This array is now empty since we are only showing GitHub projects
+        const staticProjectNames = [];
+
+        // WARNING: Do NOT hardcode this for production. Use a backend server to proxy requests.
+        const githubToken = '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'; 
+
+        // Fetch GitHub repositories
+        async function fetchGitHubRepos() {
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, {
+                    headers: {
+                        'Authorization': `token ${githubToken}`
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to fetch repositories');
+                
+                let fetchedRepos = await response.json();
+                
+                // Filter out repositories that are already listed statically (now empty)
+                allRepos = fetchedRepos.filter(repo => !staticProjectNames.includes(repo.name));
+
+                displayRepos(allRepos);
+            } catch (error) {
+                console.error('Error fetching repositories:', error);
+                reposGrid.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Failed to load repositories. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Display repositories
+        function displayRepos(repos) {
+            reposGrid.innerHTML = repos.map(repo => {
+                // Ensure a valid image path. Use lowercase repo name for image search.
+                const imageUrlBase = `assets/images/projects/${repo.name.toLowerCase()}`;
+                const webpImage = `${imageUrlBase}.webp`;
+                const pngImage = `${imageUrlBase}.png`;
+                const jpgImage = `${imageUrlBase}.jpg`;
+                const placeholderImage = `assets/images/project-placeholder.webp`; 
+                const imageAlt = `Preview of ${repo.name} project`;
+
+                // Determine language display
+                let languageBadge = '';
+                if (repo.language) {
+                    languageBadge = `<span class="repo-language">${repo.language}</span>`;
+                }
+
+                return `
+                <div class="github-repo-card" data-repo="${repo.name}">
+                    <div class="repo-image-container">
+                        <picture>
+                            <!-- Attempt to load webp first, then fallback to png/jpg via onerror -->
+                            <source srcset="${webpImage}" type="image/webp" onerror="this.onerror=null; this.srcset='${pngImage}'; this.type='image/png';">
+                            <img src="${placeholderImage}" 
+                                alt="${imageAlt}" 
+                                class="repo-preview-image" 
+                                loading="lazy" 
+                                onerror="this.onerror=null; this.src='${jpgImage}'; if(this.src.includes('${jpgImage}')) { this.onerror=null; this.src='${placeholderImage}'; }">
+                        </picture>
+                    </div>
+                    <div class="repo-content">
+                        <div class="repo-card-header">
+                            <h3>${repo.name}</h3>
+                            <span class="repo-visibility ${repo.private ? 'private' : 'public'}">
+                                ${repo.private ? 'Private' : 'Public'}
+                            </span>
+                        </div>
+                        <p class="repo-description">${repo.description || 'No description available'}</p>
+                        <div class="repo-stats">
+                            <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                            <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                            <span><i class="fas fa-eye"></i> ${repo.watchers_count}</span>
+                        </div>
+                        <div class="repo-footer">
+                            ${languageBadge}
+                            <button class="btn btn-sm btn-outline-primary view-details" data-repo="${repo.name}">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            // Add event listeners to view details buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', () => showRepoDetails(button.dataset.repo));
+            });
+        }
+
+        // Show repository details in modal
+        async function showRepoDetails(repoName) {
+            const repo = allRepos.find(r => r.name === repoName);
+            if (!repo) return;
+
+            // Update modal content
+            document.getElementById('modalRepoName').textContent = repo.name;
+            document.getElementById('modalRepoVisibility').textContent = repo.private ? 'Private' : 'Public';
+            document.getElementById('modalRepoVisibility').className = `badge ${repo.private ? 'private' : 'public'}`;
+            document.getElementById('modalRepoDescription').textContent = repo.description || 'No description available';
+            document.getElementById('modalRepoStars').querySelector('span').textContent = repo.stargazers_count;
+            document.getElementById('modalRepoForks').querySelector('span').textContent = repo.forks_count;
+            document.getElementById('modalRepoWatchers').querySelector('span').textContent = repo.watchers_count;
+            document.getElementById('modalRepoLink').href = repo.html_url;
+
+            // Fetch README content
+            try {
+                const readmeResponse = await fetch(`https://api.github.com/repos/${username}/${repoName}/readme`);
+                if (readmeResponse.ok) {
+                    const readmeData = await readmeResponse.json();
+                    const readmeContent = atob(readmeData.content);
+                    document.getElementById('modalRepoReadmeContent').innerHTML = marked.parse(readmeContent);
+                } else {
+                    console.error(`Failed to fetch README for ${repoName}: ${readmeResponse.status} ${readmeResponse.statusText}`);
+                    document.getElementById('modalRepoReadmeContent').innerHTML = '<p>No README available</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching README:', error);
+                document.getElementById('modalRepoReadmeContent').innerHTML = '<p>Error loading README</p>';
+            }
+
+            // Fetch and display languages
+            try {
+                const languagesResponse = await fetch(`https://api.github.com/repos/${username}/${repoName}/languages`);
+                if (languagesResponse.ok) {
+                    const languagesData = await languagesResponse.json();
+                    const languageTags = Object.keys(languagesData).map(lang => `<span>${lang}</span>`).join('');
+                    document.getElementById('modalRepoLanguages').innerHTML = languageTags;
+                } else {
+                    document.getElementById('modalRepoLanguages').innerHTML = '<span>Languages not available</span>';
+                }
+            } catch (error) {
+                console.error('Error fetching languages:', error);
+                document.getElementById('modalRepoLanguages').innerHTML = '<span>Error loading languages</span>';
+            }
+
+
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('repoModal'));
+            modal.show();
+        }
+
+        // Search functionality
+        repoSearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredRepos = allRepos.filter(repo => 
+                repo.name.toLowerCase().includes(searchTerm) || 
+                (repo.description && repo.description.toLowerCase().includes(searchTerm)) ||
+                (repo.language && repo.language.toLowerCase().includes(searchTerm))
+            );
+            displayRepos(filteredRepos);
+        });
+
+        // Sort functionality
+        repoSort.addEventListener('change', (e) => {
+            const sortBy = e.target.value;
+            const sortedRepos = [...allRepos].sort((a, b) => {
+                switch(sortBy) {
+                    case 'updated':
+                        return new Date(b.updated_at) - new Date(a.updated_at);
+                    case 'created':
+                        return new Date(b.created_at) - new Date(a.created_at);
+                    case 'stars':
+                        return b.stargazers_count - a.stargazers_count;
+                    case 'forks':
+                        return b.forks_count - a.forks_count;
+                    default:
+                        return 0;
+                }
+            });
+            displayRepos(sortedRepos);
+        });
+
+        // Initial fetch
+        fetchGitHubRepos();
+    });
+    </script>
 </body>
 
 </html>
