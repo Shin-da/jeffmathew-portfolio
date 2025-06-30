@@ -274,8 +274,8 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// IG-Style Art Gallery Filtering
-const galleryFilters = document.querySelectorAll('.ig-gallery-filter');
+// IG-Style Art Gallery Filtering (multi-category support)
+const galleryFilters = document.querySelectorAll('.gallery-filter');
 const artCards = document.querySelectorAll('.ig-art-card');
 galleryFilters.forEach(btn => {
   btn.addEventListener('click', function() {
@@ -283,41 +283,82 @@ galleryFilters.forEach(btn => {
     this.classList.add('active');
     const filter = this.getAttribute('data-filter');
     artCards.forEach(card => {
-      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+      const categories = card.getAttribute('data-category').split(' ');
+      if (filter === 'all' || categories.includes(filter)) {
         card.style.display = '';
       } else {
         card.style.display = 'none';
       }
     });
+    // Update aria-selected
+    galleryFilters.forEach(b => b.setAttribute('aria-selected', 'false'));
+    this.setAttribute('aria-selected', 'true');
   });
 });
 
-// IG-Style Art Gallery Lightbox (simplified for image only)
+// IG-Style Art Gallery Lightbox with navigation
 const igArtCards = document.querySelectorAll('.ig-art-card');
-const igArtLightbox = document.getElementById('igArtLightbox');
-const igArtLightboxImg = document.getElementById('igArtLightboxImg');
-const igArtLightboxClose = document.getElementById('igArtLightboxClose');
-const igArtLightboxBackdrop = document.querySelector('.ig-art-lightbox-backdrop');
+const igArtLightbox = document.getElementById('galleryLightbox');
+const igArtLightboxImg = document.getElementById('lightboxImage');
+const igArtLightboxTitle = document.getElementById('lightboxTitle');
+const igArtLightboxDesc = document.getElementById('lightboxDescription');
+const igArtLightboxClose = document.getElementById('lightboxClose');
+const igLightboxArrowLeft = document.querySelector('.ig-lightbox-arrow-left');
+const igLightboxArrowRight = document.querySelector('.ig-lightbox-arrow-right');
 
-igArtCards.forEach(card => {
-  card.addEventListener('click', function() {
-    const img = card.querySelector('img');
-    igArtLightboxImg.src = img.src;
-    igArtLightboxImg.alt = img.alt;
-    igArtLightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-});
+let currentIndex = -1;
+function openIgArtLightbox(idx) {
+  const card = igArtCards[idx];
+  const img = card.querySelector('img');
+  igArtLightboxImg.src = img.src;
+  igArtLightboxImg.alt = img.alt;
+  igArtLightboxTitle.textContent = card.querySelector('.gallery-item-title')?.textContent || '';
+  igArtLightboxDesc.textContent = card.querySelector('.gallery-item-category')?.textContent || '';
+  igArtLightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  currentIndex = idx;
+  igArtLightboxImg.focus();
+}
 function closeIgArtLightbox() {
   igArtLightbox.style.display = 'none';
   igArtLightboxImg.src = '';
   document.body.style.overflow = '';
+  currentIndex = -1;
 }
+function showPrevArt() {
+  if (currentIndex > 0) openIgArtLightbox(currentIndex - 1);
+}
+function showNextArt() {
+  if (currentIndex < igArtCards.length - 1) openIgArtLightbox(currentIndex + 1);
+}
+igArtCards.forEach((card, idx) => {
+  card.addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.classList.contains('ig-art-overlay')) {
+      openIgArtLightbox(idx);
+    }
+  });
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-label', card.querySelector('.gallery-item-title')?.textContent || 'Artwork');
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') openIgArtLightbox(idx);
+  });
+});
 if (igArtLightboxClose) igArtLightboxClose.addEventListener('click', closeIgArtLightbox);
-if (igArtLightboxBackdrop) igArtLightboxBackdrop.addEventListener('click', closeIgArtLightbox);
+if (igLightboxArrowLeft) igLightboxArrowLeft.addEventListener('click', showPrevArt);
+if (igLightboxArrowRight) igLightboxArrowRight.addEventListener('click', showNextArt);
 document.addEventListener('keydown', function(e) {
-  if (igArtLightbox.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
-    closeIgArtLightbox();
+  if (igArtLightbox.style.display === 'flex') {
+    if (e.key === 'Escape' || e.key === 'Esc') closeIgArtLightbox();
+    if (e.key === 'ArrowLeft') showPrevArt();
+    if (e.key === 'ArrowRight') showNextArt();
+  }
+});
+// Trap focus in lightbox
+igArtLightbox?.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    igArtLightboxClose.focus();
   }
 });
 
@@ -355,4 +396,26 @@ function updateViewCount() {
 }
 
 // Call updateViewCount when the page loads
-document.addEventListener('DOMContentLoaded', updateViewCount); 
+document.addEventListener('DOMContentLoaded', updateViewCount);
+
+// Gallery image fallback for missing images
+igArtCards.forEach(card => {
+  const img = card.querySelector('img');
+  if (img) {
+    img.onerror = function() {
+      card.classList.add('ig-art-card--empty');
+      img.style.display = 'none';
+      // Optionally, add a fallback message
+      if (!card.querySelector('.fallback-msg')) {
+        const fallback = document.createElement('div');
+        fallback.className = 'fallback-msg';
+        fallback.innerHTML = '<i class="fas fa-image"></i> Image not found';
+        fallback.style.padding = '2.5rem 0 1rem 0';
+        fallback.style.textAlign = 'center';
+        fallback.style.color = 'var(--subtle-text)';
+        fallback.style.fontSize = '1.1rem';
+        card.insertBefore(fallback, card.firstChild);
+      }
+    };
+  }
+}); 

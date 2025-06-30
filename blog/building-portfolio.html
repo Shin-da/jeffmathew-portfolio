@@ -90,61 +90,282 @@
           <div class="blog-post-content">
             <h2>Introduction</h2>
             <p>Creating a portfolio website that showcases both my technical skills and artistic abilities was an
-              exciting challenge. Let me walk you through the process of building this site, from concept to completion.
-            </p>
+              exciting challenge. Let me walk you through the process of building this site, from concept to completion, including the actual color palettes and technical decisions that went into its creation.</p>
+            
             <h2>Choosing the Color Palette</h2>
             <p>The first step was selecting a color scheme that would reflect my personality and work. I wanted
               something warm and earthy, yet professional. After experimenting with various combinations, I settled on a
-              palette inspired by natural elements:</p>
-            <ul>
-              <li>Warm browns and tans for a grounded feel</li>
-              <li>Soft corals for accent and warmth</li>
-              <li>Neutral grays for balance and professionalism</li>
-            </ul>
+              sophisticated palette inspired by natural elements and carefully crafted to work seamlessly in both light and dark modes.</p>
+            
+            <h3>Primary Color Palette</h3>
+            <p>Here's the actual color palette I implemented in my CSS:</p>
+            
+            <div class="color-palette-section">
+              <h4>Base Colors (CSS Variables)</h4>
+              <div class="color-grid">
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #7A5B4C;"></div>
+                  <div class="color-info">
+                    <strong>--saddle:</strong> #7A5B4C<br>
+                    <small>Deep brown for primary elements</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #C0C0C0;"></div>
+                  <div class="color-info">
+                    <strong>--star-dust:</strong> #C0C0C0<br>
+                    <small>Light gray for borders and subtle elements</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #E79B8C;"></div>
+                  <div class="color-info">
+                    <strong>--coral-tree:</strong> #E79B8C<br>
+                    <small>Warm coral for accents and highlights</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #1A1A1A;"></div>
+                  <div class="color-info">
+                    <strong>--woodsmoke:</strong> #1A1A1A<br>
+                    <small>Deep charcoal for text and dark elements</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Earthy Artistic Palette</h3>
+            <p>For a more sophisticated and artistic feel, I created a secondary palette with nature-inspired names:</p>
+            
+            <div class="color-palette-section">
+              <div class="color-grid">
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #7C4A2D;"></div>
+                  <div class="color-info">
+                    <strong>--milk-chocolate:</strong> #7C4A2D<br>
+                    <small>Rich brown for headers and buttons</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #C49B6A;"></div>
+                  <div class="color-info">
+                    <strong>--metallic-bronze:</strong> #C49B6A<br>
+                    <small>Warm bronze for highlights and interactions</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #B0C4AC;"></div>
+                  <div class="color-info">
+                    <strong>--laurel-green:</strong> #B0C4AC<br>
+                    <small>Soft sage for borders and subtle accents</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #EDE1D2;"></div>
+                  <div class="color-info">
+                    <strong>--cookies-cream:</strong> #EDE1D2<br>
+                    <small>Warm cream for primary backgrounds</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #F6F0E9;"></div>
+                  <div class="color-info">
+                    <strong>--coconut:</strong> #F6F0E9<br>
+                    <small>Light cream for secondary backgrounds</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #4D200E;"></div>
+                  <div class="color-info">
+                    <strong>--palm-oil:</strong> #4D200E<br>
+                    <small>Deep brown for hover states</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Dark Mode Palette</h3>
+            <p>The dark mode implementation uses carefully selected colors that maintain the warm, earthy feel while providing excellent contrast and readability:</p>
+            
+            <div class="color-palette-section">
+              <div class="color-grid">
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #1A1A1A;"></div>
+                  <div class="color-info">
+                    <strong>--primary-bg:</strong> #1A1A1A<br>
+                    <small>Dark primary background</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #232323;"></div>
+                  <div class="color-info">
+                    <strong>--secondary-bg:</strong> #232323<br>
+                    <small>Dark secondary background</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #3A3A3A;"></div>
+                  <div class="color-info">
+                    <strong>--accent-bg:</strong> #3A3A3A<br>
+                    <small>Dark accent background</small>
+                  </div>
+                </div>
+                <div class="color-item">
+                  <div class="color-swatch" style="background-color: #F8F8F8;"></div>
+                  <div class="color-info">
+                    <strong>--header-color:</strong> #F8F8F8<br>
+                    <small>Light headers in dark mode</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <h2>Design Inspiration</h2>
-            <p>I drew inspiration from Instagram&#39;s clean, image-focused layout while maintaining a professional
+            <p>I drew inspiration from Instagram's clean, image-focused layout while maintaining a professional
               portfolio feel. The goal was to create a space where my technical projects and artwork could coexist
-              harmoniously.</p>
-            <h2>Key Features</h2>
-            <p>Several features were essential to include:</p>
+              harmoniously. The design emphasizes:</p>
             <ul>
-              <li>Responsive design that works on all devices</li>
-              <li>Dark mode support for better user experience</li>
-              <li>Smooth animations and transitions</li>
-              <li>Accessible navigation and content</li>
-              <li>Integrated blog for sharing insights</li>
+              <li><strong>Visual Hierarchy:</strong> Clear typography scale and spacing to guide user attention</li>
+              <li><strong>Card-Based Layout:</strong> Consistent card components for projects, blog posts, and gallery items</li>
+              <li><strong>Smooth Transitions:</strong> Subtle animations that enhance rather than distract from content</li>
+              <li><strong>Responsive Design:</strong> Mobile-first approach ensuring great experience on all devices</li>
             </ul>
+
             <h2>Technical Implementation</h2>
-            <p>The site is built with modern web technologies:</p>
+            <p>The site is built with modern web technologies and follows best practices for performance and maintainability:</p>
+            
+            <h3>Core Technologies</h3>
             <ul>
-              <li>HTML5 for structure</li>
-              <li>CSS3 for styling and animations</li>
-              <li>JavaScript for interactivity</li>
-              <li>Bootstrap for responsive layout</li>
-              <li>AOS library for scroll animations</li>
+              <li><strong>HTML5:</strong> Semantic markup with proper accessibility attributes</li>
+              <li><strong>CSS3:</strong> Custom properties (CSS variables) for consistent theming</li>
+              <li><strong>JavaScript:</strong> Vanilla JS for interactivity and theme switching</li>
+              <li><strong>Bootstrap 5.2.3:</strong> Responsive grid system and components</li>
+              <li><strong>AOS Library:</strong> Scroll-triggered animations</li>
             </ul>
+
+            <h3>CSS Architecture</h3>
+            <p>I organized the CSS using a modular approach with separate files for different concerns:</p>
+            
+            <div class="code-example">
+              <h4>File Structure:</h4>
+              <pre><code>css/
+├── main.css              # Main entry point with imports
+├── modules/
+│   ├── base.css          # CSS variables and global styles
+│   ├── typography.css    # Font definitions and text styles
+│   ├── layout.css        # Grid and layout utilities
+│   ├── components.css    # Reusable component styles
+│   ├── sections.css      # Page section styles
+│   ├── blog.css          # Blog-specific styles
+│   ├── dark-theme.css    # Dark mode overrides
+│   ├── animations.css    # Keyframes and transitions
+│   └── responsive.css    # Media queries and mobile styles</code></pre>
+            </div>
+
+            <h3>CSS Variables Implementation</h3>
+            <p>The color system is implemented using CSS custom properties, making theme switching seamless:</p>
+            
+            <div class="code-example">
+              <h4>CSS Variables Definition:</h4>
+              <pre><code>:root {
+    /* Base Colors */
+    --saddle: #7A5B4C;
+    --star-dust: #C0C0C0;
+    --coral-tree: #E79B8C;
+    --woodsmoke: #1A1A1A;
+    
+    /* Earthy Artistic Palette */
+    --milk-chocolate: #7C4A2D;
+    --metallic-bronze: #C49B6A;
+    --laurel-green: #B0C4AC;
+    --cookies-cream: #EDE1D2;
+    --coconut: #F6F0E9;
+    --palm-oil: #4D200E;
+    
+    /* Semantic Usage */
+    --primary-bg: var(--cookies-cream);
+    --secondary-bg: var(--coconut);
+    --header-color: var(--milk-chocolate);
+    --text-color: var(--deepwood-shade);
+    --accent-color: var(--coral-tree);
+}</code></pre>
+            </div>
+
+            <h3>Dark Mode Implementation</h3>
+            <p>The dark mode uses a data attribute approach for clean theme switching:</p>
+            
+            <div class="code-example">
+              <h4>Dark Theme CSS:</h4>
+              <pre><code>[data-theme="dark"] {
+    --primary-bg: #1A1A1A;
+    --secondary-bg: #232323;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --header-color: #F8F8F8;
+    --text-color: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(255, 255, 255, 0.1);
+}</code></pre>
+            </div>
+
+            <h2>Key Features</h2>
+            <p>Several features were essential to include for a modern, professional portfolio:</p>
+            <ul>
+              <li><strong>Responsive Design:</strong> Mobile-first approach with Bootstrap grid system</li>
+              <li><strong>Dark Mode Support:</strong> Seamless theme switching with persistent user preference</li>
+              <li><strong>Smooth Animations:</strong> AOS library for scroll-triggered animations and custom CSS transitions</li>
+              <li><strong>Accessible Navigation:</strong> Semantic HTML, ARIA labels, and keyboard navigation support</li>
+              <li><strong>Integrated Blog:</strong> Clean, readable blog layout with proper typography</li>
+              <li><strong>Project Showcase:</strong> Card-based project display with technology tags</li>
+              <li><strong>Art Gallery:</strong> Instagram-inspired gallery with lightbox functionality</li>
+            </ul>
+
+            <h2>Performance Optimizations</h2>
+            <p>To ensure fast loading and smooth user experience, I implemented several optimizations:</p>
+            <ul>
+              <li><strong>CSS Organization:</strong> Modular CSS with selective imports to reduce bundle size</li>
+              <li><strong>Image Optimization:</strong> Proper sizing and lazy loading for gallery images</li>
+              <li><strong>Font Loading:</strong> Google Fonts with display=swap for better performance</li>
+              <li><strong>Minimal Dependencies:</strong> Only essential external libraries (Bootstrap, AOS, Font Awesome)</li>
+              <li><strong>Efficient Animations:</strong> CSS transforms and opacity for smooth 60fps animations</li>
+            </ul>
+
             <h2>Challenges and Solutions</h2>
             <p>One of the biggest challenges was creating a seamless experience between the art gallery and project
               sections. I solved this by:</p>
             <ul>
-              <li>Using consistent styling across sections</li>
-              <li>Implementing smooth transitions</li>
-              <li>Creating a unified navigation system</li>
+              <li><strong>Consistent Design Language:</strong> Using the same color palette and component styles across all sections</li>
+              <li><strong>Unified Navigation:</strong> Single navigation system with smooth scrolling between sections</li>
+              <li><strong>Responsive Grid System:</strong> Bootstrap grid ensuring consistent layout across different screen sizes</li>
+              <li><strong>Theme Consistency:</strong> Ensuring all components work perfectly in both light and dark modes</li>
             </ul>
-            <h2>Future Improvements</h2>
-            <p>While I&#39;m happy with the current version, I&#39;m always looking to improve. Planned updates include:
-            </p>
+
+            <h2>Accessibility Considerations</h2>
+            <p>Accessibility was a priority throughout the development process:</p>
             <ul>
-              <li>Adding more interactive elements</li>
-              <li>Expanding the blog section</li>
-              <li>Implementing a project filter system</li>
-              <li>Adding more art gallery features</li>
+              <li><strong>Semantic HTML:</strong> Proper heading hierarchy and landmark elements</li>
+              <li><strong>ARIA Labels:</strong> Descriptive labels for interactive elements</li>
+              <li><strong>Color Contrast:</strong> WCAG AA compliant color combinations</li>
+              <li><strong>Keyboard Navigation:</strong> Full keyboard accessibility for all interactive elements</li>
+              <li><strong>Screen Reader Support:</strong> Proper alt text and descriptive content</li>
             </ul>
+
+            <h2>Future Improvements</h2>
+            <p>While I'm happy with the current version, I'm always looking to improve. Planned updates include:</p>
+            <ul>
+              <li><strong>Interactive Elements:</strong> Adding more micro-interactions and hover effects</li>
+              <li><strong>Blog Expansion:</strong> Adding categories, tags, and search functionality</li>
+              <li><strong>Project Filtering:</strong> Implementing filter system for projects by technology or category</li>
+              <li><strong>Gallery Enhancements:</strong> Adding more art gallery features like collections and detailed views</li>
+              <li><strong>Performance Monitoring:</strong> Adding analytics to track user engagement and performance metrics</li>
+              <li><strong>PWA Features:</strong> Adding offline support and app-like experience</li>
+            </ul>
+
             <h2>Conclusion</h2>
             <p>Building this portfolio has been a rewarding journey that combines my technical skills with my artistic
-              vision. It&#39;s not just a showcase of my work—it&#39;s a reflection of who I am as a developer and
-              artist.</p>
+              vision. The carefully crafted color palette, modular CSS architecture, and attention to detail in both design and functionality have resulted in a portfolio that truly represents who I am as a developer and artist. The earthy, warm color scheme creates an inviting atmosphere while maintaining professional credibility, and the technical implementation ensures a smooth, accessible experience for all visitors.</p>
 
+            <p>The process of selecting and implementing the color palette taught me the importance of systematic design decisions. By using CSS custom properties, I created a flexible theming system that makes future updates and maintenance much easier. The modular CSS architecture also makes the codebase maintainable and scalable.</p>
+
+            <p>This portfolio is not just a showcase of my work—it's a reflection of my approach to web development: thoughtful, accessible, and beautiful. Every color choice, every animation, and every line of code was carefully considered to create an experience that feels both professional and personal.</p>
           </div>
           <div class="blog-post-navigation d-flex justify-content-between mt-5">
             <a href="my-ojt-experience.html" class="prev-post text-start d-flex flex-column align-items-start"><span

@@ -6,20 +6,26 @@
 }
 
 [data-theme="dark"] {
-    --primary-bg: #1A1A1A; /* Darker primary background */
-    --primary-bg-rgb: 26, 26, 26; /* RGB values for primary-bg */
-    --section-bg-1: #1F1F1F; /* Light section background */
-    --section-bg-2: #141414; /* Dark section background */
-    --card-bg: rgba(255, 255, 255, 0.03); /* Darker cards */
-    --accent-bg: #3A3A3A; /* Darker accent background */
-    --highlight-rgb: 99, 102, 241; /* RGB values for coral-tree */
+    --primary-bg: #18191c;
+    --secondary-bg: #23242a;
+    --card-bg: #2a2c30;
+    --accent-bg: #3a3d44;
     --header-color: #F8F8F8; /* Light headers */
+    --text-color: rgba(255, 255, 255, 0.9); /* Light text */
+    --subtle-text: #bdbdbd;
+    --highlight: #C49B6A; /* Metallic bronze for highlights */
+    --border-color: #404040;
+    --section-bg: #1a1a1a;
+    --section-bg-1: #1f1f1f;
+    --section-bg-2: #242424;
+
+    /* RGB versions for dark mode transparency effects */
+    --accent-rgb: 196, 155, 106;
+    --header-color-rgb: 248, 248, 248;
+    --deepwood-shade-rgb: 26, 26, 26;
+    --highlight-rgb: 196, 155, 106;
     --button-color: var(--metallic-bronze); /* Use metallic bronze for buttons */
     --button-hover: #DDAA77; /* Slightly lighter on hover */
-    --text-color: rgba(255, 255, 255, 0.9); /* Light text */
-    --subtle-text: rgba(255, 255, 255, 0.6); /* Lighter subtle text */
-    --highlight: var(--coral-tree); /* Use coral tree for highlight */
-    --border-color: rgba(255, 255, 255, 0.1); /* Darker border */
     --input-bg: #3A3A3A; /* Dark input background */
     --placeholder-color: #888888; /* Darker placeholder */
     --project-link-bg: rgba(255, 255, 255, 0.9); /* White background for links in dark mode */
@@ -150,6 +156,7 @@
 
 [data-theme="dark"] .section-divider {
     background-color: var(--highlight);
+    opacity: 0.45;
 }
 
 [data-theme="dark"] .about,
@@ -441,7 +448,8 @@
 }
 
 [data-theme="dark"] .ig-art-overlay {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(0deg, rgba(24,25,28,0.92) 60%, rgba(24,25,28,0.5) 100%);
+    color: #fff;
 }
 
 [data-theme="dark"] .ig-art-lightbox-content {
@@ -594,4 +602,48 @@
 [data-theme="dark"] section > * {
     position: relative;
     z-index: 2;
+}
+
+[data-theme="dark"] .ig-art-card,
+[data-theme="dark"] .ig-art-card--empty {
+  background: #23242a;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+  border: 1px solid var(--border-color);
+}
+[data-theme="dark"] .ig-art-card--empty {
+  color: var(--subtle-text);
+  background: linear-gradient(135deg, #23242a 60%, #18191c 100%);
+}
+[data-theme="dark"] .ig-art-card img {
+  background: #23242a;
+}
+[data-theme="dark"] .ig-art-overlay {
+  background: linear-gradient(0deg, rgba(24,25,28,0.92) 60%, rgba(24,25,28,0.5) 100%);
+  color: #fff;
+}
+[data-theme="dark"] .section-divider {
+  background: var(--highlight);
+  opacity: 0.45;
+}
+[data-theme="dark"] .gallery-section-header .section-title {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+[data-theme="dark"] .gallery-section-header .gallery-section-intro {
+  color: #bdbdbd;
+}
+[data-theme="dark"] .gallery-filter.active,
+[data-theme="dark"] .gallery-filter:hover {
+  color: #fff;
+  border-bottom: 3px solid var(--highlight);
+  background: rgba(var(--highlight-rgb), 0.12);
+}
+[data-theme="dark"] .btn-accent {
+  background: var(--highlight);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(var(--highlight-rgb), 0.18);
+}
+[data-theme="dark"] .btn-accent:hover {
+  background: #fff;
+  color: var(--highlight);
 }

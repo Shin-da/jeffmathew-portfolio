@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="css/modules/instagram.css">
     <link rel="stylesheet" href="css/modules/responsive.css">
     <link rel="stylesheet" href="css/modules/components.css">
-    <link rel="stylesheet" href="css/modules/animations.css">    <link rel="stylesheet" href="css/modules/navbar.css">
+    <link rel="stylesheet" href="css/modules/animations.css">
+    <link rel="stylesheet" href="css/modules/navbar.css">
     <link rel="stylesheet" href="css/modules/dark-theme.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
@@ -39,88 +40,274 @@
         gtag('config', 'G-83JWZVGGNV');
     </script>
     <style>
-        .gallery-header {
-            padding: 120px 0 40px;
-            text-align: center;
-            background: var(--section-bg);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
-        }
-
-        .gallery-item {
+        /* Enhanced Gallery Styles */
+        .gallery-hero-section {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, var(--section-bg) 0%, var(--card-bg) 100%);
             position: relative;
-            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item-info {
+        .gallery-hero-section::before {
+            content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23f0f0f0" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23f0f0f0" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23f0f0f0" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
         }
 
-        .gallery-item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
+        .gallery-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
         }
 
-        .gallery-item-category {
+        .gallery-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--header-color);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--header-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--subtle-text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .gallery-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .gallery-stat {
+            text-align: center;
+        }
+
+        .gallery-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-stat-label {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--subtle-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced Filter Styles */
+        .gallery-filters-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(var(--deepwood-shade-rgb), 0.08);
+            border: 1px solid var(--border-color);
         }
 
         .gallery-filters {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .gallery-filter {
-            padding: 8px 20px;
-            border: 2px solid var(--accent);
-            border-radius: 20px;
+            padding: 12px 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
             background: transparent;
             color: var(--text-color);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-filter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .gallery-filter:hover::before {
+            left: 100%;
         }
 
         .gallery-filter.active,
         .gallery-filter:hover {
-            background: var(--accent);
+            background: var(--accent-color);
             color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(var(--accent-rgb), 0.3);
         }
 
+        .gallery-filter i {
+            font-size: 1rem;
+        }
+
+        /* Enhanced Grid Styles */
+        .gallery-grid-container {
+            padding: 2rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 8px 32px rgba(var(--deepwood-shade-rgb), 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(var(--deepwood-shade-rgb), 0.15);
+        }
+
+        .gallery-item-image {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9) 0%, rgba(var(--header-color-rgb), 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            padding: 2rem;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-item-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .gallery-item-stat i {
+            font-size: 1.2rem;
+        }
+
+        .gallery-item-view-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item-view-btn:hover {
+            background: white;
+            color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+            background: var(--card-bg);
+        }
+
+        .gallery-item-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--header-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gallery-item-category {
+            font-size: 0.9rem;
+            color: var(--subtle-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .gallery-item-date {
+            font-size: 0.85rem;
+            color: var(--subtle-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Enhanced Lightbox */
         .gallery-lightbox {
             display: none;
             position: fixed;
@@ -128,48 +315,265 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
         .gallery-lightbox-content {
             position: relative;
             max-width: 90%;
             max-height: 90%;
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+            animation: lightboxSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes lightboxSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .gallery-lightbox-content img {
             max-width: 100%;
-            max-height: 80vh;
+            max-height: 75vh;
             object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
 
         .gallery-lightbox-close {
             position: absolute;
             top: 20px;
             right: 20px;
+            background: rgba(0, 0, 0, 0.7);
             color: white;
-            font-size: 2rem;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-lightbox-close:hover {
+            background: var(--accent-color);
+            transform: rotate(90deg);
         }
 
         .gallery-lightbox-info {
-            color: white;
-            text-align: center;
-            margin-top: 20px;
+            padding: 2rem;
+            background: var(--card-bg);
+            color: var(--text-color);
         }
 
         .gallery-lightbox-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--header-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .gallery-lightbox-description {
             font-size: 1rem;
-            opacity: 0.8;
+            color: var(--subtle-text);
+            line-height: 1.6;
+        }
+
+        .gallery-lightbox-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .gallery-lightbox-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--subtle-text);
+            font-size: 0.9rem;
+        }
+
+        /* Navigation arrows */
+        .gallery-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-lightbox-nav:hover {
+            background: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-lightbox-prev {
+            left: 20px;
+        }
+
+        .gallery-lightbox-next {
+            right: 20px;
+        }
+
+        /* Empty state */
+        .gallery-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--subtle-text);
+        }
+
+        .gallery-empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .gallery-empty-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--header-color);
+        }
+
+        .gallery-empty-text {
+            font-size: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .gallery-stats {
+                gap: 2rem;
+            }
+
+            .gallery-stat-number {
+                font-size: 2rem;
+            }
+
+            .gallery-filters {
+                gap: 0.5rem;
+            }
+
+            .gallery-filter {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .gallery-item-image {
+                height: 240px;
+            }
+
+            .gallery-lightbox-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+
+            .gallery-lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .gallery-lightbox-prev {
+                left: 10px;
+            }
+
+            .gallery-lightbox-next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-hero-title {
+                font-size: 2rem;
+            }
+
+            .gallery-stats {
+                gap: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-item-image {
+                height: 200px;
+            }
+
+            .gallery-lightbox-info {
+                padding: 1.5rem;
+            }
+
+            .gallery-lightbox-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Dark mode enhancements */
+        [data-theme="dark"] .gallery-hero-section {
+            background: linear-gradient(135deg, var(--section-bg) 0%, var(--card-bg) 100%);
+        }
+
+        [data-theme="dark"] .gallery-hero-title {
+            background: linear-gradient(135deg, var(--header-color) 0%, var(--highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        [data-theme="dark"] .gallery-filters-container {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .gallery-item {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .gallery-lightbox-content {
+            background: var(--card-bg);
+        }
+
+        [data-theme="dark"] .gallery-lightbox-info {
+            background: var(--card-bg);
         }
     </style>
 </head>
@@ -214,144 +618,273 @@
       </div>
     </nav>
 
-    <!-- Gallery Header -->
-    <header class="gallery-header">
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero-section">
         <div class="container">
-            <h1 class="section-title">Art Gallery</h1>
-            <div class="section-divider"></div>
-            <p class="lead">A collection of my digital and traditional artwork</p>
+            <div class="gallery-hero-content" data-aos="fade-up">
+                <h1 class="gallery-hero-title">Art Gallery</h1>
+                <p class="gallery-hero-subtitle">A curated collection of my digital and traditional artworks. Each piece tells a story of creativity, passion, and artistic exploration.</p>
+                
+                <div class="gallery-stats" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-stat">
+                        <span class="gallery-stat-number">6</span>
+                        <span class="gallery-stat-label">Artworks</span>
+                    </div>
+                    <div class="gallery-stat">
+                        <span class="gallery-stat-number">3</span>
+                        <span class="gallery-stat-label">Categories</span>
+                    </div>
+                    <div class="gallery-stat">
+                        <span class="gallery-stat-number">∞</span>
+                        <span class="gallery-stat-label">Inspiration</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
     <!-- Gallery Filters -->
     <div class="container">
-        <div class="gallery-filters">
-            <button class="gallery-filter active" data-filter="all">All Artwork</button>
-            <button class="gallery-filter" data-filter="digital">Digital Art</button>
-            <button class="gallery-filter" data-filter="traditional">Traditional Art</button>
-            <button class="gallery-filter" data-filter="portraits">Portraits</button>
-            <button class="gallery-filter" data-filter="concept">Concept Art</button>
+        <div class="gallery-filters-container" data-aos="fade-up">
+            <div class="gallery-filters" role="tablist" aria-label="Gallery filters">
+                <button class="gallery-filter active" data-filter="all" aria-selected="true" aria-label="Show all posts">
+                    <i class="fas fa-th"></i> All Posts
+                </button>
+                <button class="gallery-filter" data-filter="traditional" aria-selected="false" aria-label="Show traditional art">
+                    <i class="fas fa-paint-brush"></i> Traditional Art
+                </button>
+                <button class="gallery-filter" data-filter="digital" aria-selected="false" aria-label="Show digital art">
+                    <i class="fas fa-film"></i> Digital Art
+                </button>
+                <button class="gallery-filter" data-filter="portraits" aria-selected="false" aria-label="Show portraits">
+                    <i class="fas fa-user"></i> Portraits
+                </button>
+                <button class="gallery-filter" data-filter="concept" aria-selected="false" aria-label="Show concept art">
+                    <i class="fas fa-lightbulb"></i> Concept Art
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Gallery Grid -->
+    <!-- IG-Inspired Gallery Grid -->
     <div class="container">
-        <div class="gallery-grid">
-            <!-- Digital Art -->
-            <div class="gallery-item" data-category="digital portraits">
-                <img src="assets/images/art1.jpg" alt="Digital portrait artwork by Jeff Mathew Garcia, 2025">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Digital Portrait</div>
-                    <div class="gallery-item-category">Digital Art</div>
+        <div class="gallery-grid-container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="traditional portraits" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art1.jpg" alt="Kugisaki Nobara - Traditional pencil sketch by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>1.2k</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>250</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(0)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Kugisaki Nobara</h3>
+                        <p class="gallery-item-category">Traditional Art • Portraits</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="traditional" data-aos="fade-up" data-aos-delay="150">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art2.jpg" alt="Solo Leveling - Traditional pencil sketch by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>800</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>150</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(1)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Solo Leveling</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2023</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="traditional concept" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art3.jpg" alt="Dandadan - Traditional concept art by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>950</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>180</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(2)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Dandadan</h3>
+                        <p class="gallery-item-category">Traditional Art • Concept</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="traditional" data-aos="fade-up" data-aos-delay="250">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art4.jpg" alt="Sketch - Traditional painting by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>700</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>120</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(3)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Sketch</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="traditional" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art5.jpg" alt="Ink Drawing - Traditional ink drawing by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>600</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>90</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(4)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Ink Drawing</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2022</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="traditional concept" data-aos="fade-up" data-aos-delay="350">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/art6.jpg" alt="Character Design - Traditional character design by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>1.5k</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>300</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(5)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Character Design</h3>
+                        <p class="gallery-item-category">Traditional Art • Concept</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Traditional Art -->
-            <div class="gallery-item" data-category="traditional">
-                <img src="assets/images/art2.jpg" alt="Traditional pencil sketch by Jeff Mathew Garcia, 2023">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Pencil Sketch</div>
-                    <div class="gallery-item-category">Traditional Art</div>
+            <!-- Empty State -->
+            <div class="gallery-empty" id="galleryEmpty" style="display: none;">
+                <div class="gallery-empty-icon">
+                    <i class="fas fa-palette"></i>
                 </div>
-            </div>
-
-            <!-- Concept Art -->
-            <div class="gallery-item" data-category="digital concept">
-                <img src="assets/images/art3.jpg" alt="Concept art by Jeff Mathew Garcia, 2025">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Character Concept</div>
-                    <div class="gallery-item-category">Concept Art</div>
-                </div>
-            </div>
-
-            <!-- Digital Painting -->
-            <div class="gallery-item" data-category="digital">
-                <img src="assets/images/art4.jpg" alt="Digital painting by Jeff Mathew Garcia, 2025">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Digital Painting</div>
-                    <div class="gallery-item-category">Digital Art</div>
-                </div>
-            </div>
-
-            <!-- Traditional Ink -->
-            <div class="gallery-item" data-category="traditional">
-                <img src="assets/images/art5.jpg" alt="Traditional ink drawing by Jeff Mathew Garcia, 2022">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Ink Drawing</div>
-                    <div class="gallery-item-category">Traditional Art</div>
-                </div>
-            </div>
-
-            <!-- Character Design -->
-            <div class="gallery-item" data-category="digital concept">
-                <img src="assets/images/art6.jpg" alt="Digital character design by Jeff Mathew Garcia, 2025">
-                <div class="gallery-item-info">
-                    <div class="gallery-item-title">Character Design</div>
-                    <div class="gallery-item-category">Concept Art</div>
-                </div>
+                <h3 class="gallery-empty-title">No artworks found</h3>
+                <p class="gallery-empty-text">Try selecting a different category or check back later for new pieces.</p>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox -->
+    <!-- Enhanced Lightbox -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <div class="gallery-lightbox-content">
-            <button class="gallery-lightbox-close" id="lightboxClose">&times;</button>
+            <button class="gallery-lightbox-close" id="lightboxClose" aria-label="Close artwork viewer">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <button class="gallery-lightbox-nav gallery-lightbox-prev" id="lightboxPrev" aria-label="Previous artwork">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
             <img src="" alt="" id="lightboxImage">
+            
+            <button class="gallery-lightbox-nav gallery-lightbox-next" id="lightboxNext" aria-label="Next artwork">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
             <div class="gallery-lightbox-info">
                 <h3 class="gallery-lightbox-title" id="lightboxTitle"></h3>
                 <p class="gallery-lightbox-description" id="lightboxDescription"></p>
+                <div class="gallery-lightbox-meta">
+                    <div class="gallery-lightbox-meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="lightboxDate"></span>
+                    </div>
+                    <div class="gallery-lightbox-meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="lightboxCategory"></span>
+                    </div>
+                    <div class="gallery-lightbox-meta-item">
+                        <i class="fas fa-heart"></i>
+                        <span id="lightboxLikes"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html#about">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="index.html#art">Art Gallery</a></li>
-                        <li><a href="index.html#blog">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4>Connect With Me</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.tiktok.com/@jepmachu" target="_blank" aria-label="TikTok"><i
-                                class="fab fa-tiktok"></i></a>
-                    </div>
-                    <div class="mt-3">
-                        <a href="Jeff-Mathew-Garcia-Resume.pdf" class="btn btn-outline-light btn-sm" download
-                            aria-label="Download my resume (PDF)">
-                            <i class="fas fa-file-download"></i> Download Resume
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <h4>Stay Updated</h4>
-                    <p>Subscribe to my newsletter for updates on new projects and artwork.</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
             <hr class="footer-divider">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -373,6 +906,172 @@
     <script src="js/theme-handler.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        // Gallery functionality
+        const galleryItems = [
+            {
+                title: "Kugisaki Nobara",
+                description: "A detailed traditional pencil sketch capturing the essence of this beloved character. This piece showcases my attention to detail and love for anime art.",
+                image: "assets/images/art1.jpg",
+                category: "Traditional Art • Portraits",
+                date: "2025",
+                likes: "1.2k",
+                comments: "250"
+            },
+            {
+                title: "Solo Leveling",
+                description: "A dynamic sketch inspired by the popular web novel and manhwa. This piece explores character design and dramatic composition.",
+                image: "assets/images/art2.jpg",
+                category: "Traditional Art",
+                date: "2023",
+                likes: "800",
+                comments: "150"
+            },
+            {
+                title: "Dandadan",
+                description: "Concept art piece exploring the unique style and energy of this modern manga series. Focuses on character expression and movement.",
+                image: "assets/images/art3.jpg",
+                category: "Traditional Art • Concept",
+                date: "2025",
+                likes: "950",
+                comments: "180"
+            },
+            {
+                title: "Sketch",
+                description: "A traditional painting that demonstrates my versatility in different artistic mediums and techniques.",
+                image: "assets/images/art4.jpg",
+                category: "Traditional Art",
+                date: "2025",
+                likes: "700",
+                comments: "120"
+            },
+            {
+                title: "Ink Drawing",
+                description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
+                image: "assets/images/art5.jpg",
+                category: "Traditional Art",
+                date: "2022",
+                likes: "600",
+                comments: "90"
+            },
+            {
+                title: "Character Design",
+                description: "Original character design concept that demonstrates my creative process and ability to develop unique visual identities.",
+                image: "assets/images/art6.jpg",
+                category: "Traditional Art • Concept",
+                date: "2025",
+                likes: "1.5k",
+                comments: "300"
+            }
+        ];
+
+        let currentLightboxIndex = 0;
+
+        // Filter functionality
+        document.querySelectorAll('.gallery-filter').forEach(filter => {
+            filter.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Update active filter
+                document.querySelectorAll('.gallery-filter').forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter items
+                filterGalleryItems(filterValue);
+            });
+        });
+
+        function filterGalleryItems(filter) {
+            const items = document.querySelectorAll('.gallery-item');
+            const emptyState = document.getElementById('galleryEmpty');
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const categories = item.getAttribute('data-category');
+                if (filter === 'all' || categories.includes(filter)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Show/hide empty state
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+
+        // Lightbox functionality
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            const item = galleryItems[index];
+            
+            document.getElementById('lightboxImage').src = item.image;
+            document.getElementById('lightboxTitle').textContent = item.title;
+            document.getElementById('lightboxDescription').textContent = item.description;
+            document.getElementById('lightboxCategory').textContent = item.category;
+            document.getElementById('lightboxDate').textContent = item.date;
+            document.getElementById('lightboxLikes').textContent = item.likes;
+            
+            document.getElementById('galleryLightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('galleryLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function showPrevArt() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+            openLightbox(currentLightboxIndex);
+        }
+
+        function showNextArt() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+            openLightbox(currentLightboxIndex);
+        }
+
+        // Event listeners
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxPrev').addEventListener('click', showPrevArt);
+        document.getElementById('lightboxNext').addEventListener('click', showNextArt);
+
+        // Close lightbox on backdrop click
+        document.getElementById('galleryLightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('galleryLightbox').style.display === 'flex') {
+                switch(e.key) {
+                    case 'Escape':
+                        closeLightbox();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevArt();
+                        break;
+                    case 'ArrowRight':
+                        showNextArt();
+                        break;
+                }
+            }
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 
 </body>
 

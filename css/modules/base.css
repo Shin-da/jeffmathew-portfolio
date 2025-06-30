@@ -57,6 +57,12 @@
     --subtle-text: var(--canopy-green);
     --highlight: var(--metallic-bronze);
     --border-color: var(--laurel-green);
+
+    /* RGB versions for transparency effects */
+    --accent-rgb: 231, 155, 140;
+    --header-color-rgb: 124, 91, 45;
+    --deepwood-shade-rgb: 42, 44, 38;
+    --highlight-rgb: 196, 155, 106;
 }
 
 /* Global Styles */
