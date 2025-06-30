@@ -172,15 +172,19 @@
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .testimonial-card,
 [data-theme="dark"] .blog-card,
-[data-theme="dark"] .contact-info,
-[data-theme="dark"] .contact-form,
 [data-theme="dark"] .ig-art-card,
-[data-theme="dark"] .blog-post-card,
-[data-theme="dark"] .ojt-card {
+[data-theme="dark"] .blog-post-card {
     background: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .testimonial-card:hover,
+[data-theme="dark"] .blog-card:hover,
+[data-theme="dark"] .ig-art-card:hover,
+[data-theme="dark"] .blog-post-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .hero-image-wrapper {
@@ -498,58 +502,6 @@
     border-bottom-color: #fff;
 }
 
-[data-theme="dark"] .contact-info,
-[data-theme="dark"] .contact-form {
-    background: var(--card-bg);
-    border-color: var(--border-color);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] .contact-info:hover,
-[data-theme="dark"] .contact-form:hover {
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .contact-info-item {
-    background: var(--accent-bg);
-    border-color: var(--border-color);
-}
-
-[data-theme="dark"] .contact-info-item:hover {
-    border-color: var(--highlight);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-[data-theme="dark"] .contact-info-item i {
-    background: var(--card-bg);
-    color: var(--highlight);
-}
-
-[data-theme="dark"] .contact-info-item:hover i {
-    background: var(--highlight);
-    color: var(--card-bg);
-}
-
-[data-theme="dark"] .contact-info-item h4 {
-    color: var(--header-color);
-}
-
-[data-theme="dark"] .contact-info-item p {
-    color: var(--subtle-text);
-}
-
-[data-theme="dark"] .contact-subtitle {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .open-commissions-note {
-    color: var(--highlight);
-}
-
-[data-theme="dark"] .response-time-note {
-    color: var(--subtle-text);
-}
-
 /* Section backgrounds in dark mode */
 [data-theme="dark"] section {
     position: relative;
@@ -584,7 +536,7 @@
 }
 
 /* Contact section (sixth section) */
-[data-theme="dark"] .contact {
+[data-theme="dark"] .contact-section {
     background-color: var(--section-bg-2);
 }
 

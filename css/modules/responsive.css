@@ -27,8 +27,8 @@
     .art-gallery {
         grid-template-columns: 1fr;
     }
-    .contact-info, .contact-form {
-        margin-bottom: 2rem;
+    .contact-section {
+        padding: 80px 0;
     }
     .open-commissions-badge {
         display: block;
@@ -70,21 +70,6 @@
     }
     .ig-highlight-label {
         font-size: 0.95rem;
-    }
-    .contact-info-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .contact-info-item {
-        padding: 1rem;
-    }
-    .contact-info-item i {
-        font-size: 1.2rem;
-        padding: 0.7rem;
-    }
-    .contact-info-title {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
     }
 }
 
@@ -150,9 +135,8 @@
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
-    .contact-info, .contact-form {
-        padding: 1rem;
-        margin-bottom: 1rem;
+    .contact-section {
+        padding: 60px 0;
     }
     .footer {
         padding: 1rem 0;
@@ -187,14 +171,6 @@
     }
     .ig-art-lightbox-title {
         font-size: 1rem;
-    }
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .contact-info-title {
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
     }
     .contact-subtitle {
         font-size: 1.1rem;
@@ -274,20 +250,24 @@
         height: 32px;
         font-size: 1.4rem;
     }
-    .contact-info-item {
-        padding: 0.8rem;
-    }
-    .contact-info-item i {
-        font-size: 1.1rem;
-        padding: 0.6rem;
-    }
-    .contact-info-item h4 {
-        font-size: 1rem;
-    }
-    .contact-info-item p {
-        font-size: 0.9rem;
-    }
     .contact-subtitle {
         font-size: 1rem;
     }
+}
+
+.project-card {
+    margin-bottom: 2rem;
+}
+.art-gallery {
+    grid-template-columns: 1fr;
+}
+.contact-section {
+    padding: 80px 0;
+}
+.open-commissions-badge {
+    display: block;
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+    max-width: 95vw;
+    white-space: normal;
 } 

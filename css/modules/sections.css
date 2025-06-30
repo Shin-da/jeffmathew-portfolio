@@ -177,73 +177,9 @@
 }
 
 /* Contact Section */
-.contact {
-    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--secondary-bg) 100%); /* Adjusted gradient */
+.contact-section {
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
     padding: 120px 0;
-}
-
-.contact-cards-container {
-    gap: 2.5rem;
-    display: flex;
-    justify-content: center;
-}
-
-.contact-info,
-.contact-form {
-    padding: 2.8rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 28px rgba(var(--deepwood-shade-rgb), 0.12); /* Deeper shadow */
-    border: 1px solid var(--border-color);
-}
-
-.contact-info:hover,
-.contact-form:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(var(--deepwood-shade-rgb), 0.2);
-}
-
-.contact-info-title,
-.contact-form-title {
-    font-size: 2rem;
-    margin-bottom: 2.2rem;
-}
-
-.contact-info-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.8rem;
-}
-
-.contact-info-item {
-    padding: 1.2rem 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(var(--milk-chocolate-rgb), 0.08);
-}
-
-.contact-info-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(var(--milk-chocolate-rgb), 0.15);
-}
-
-.contact-info-item i {
-    font-size: 1.8rem;
-}
-
-.contact-info-item h4 {
-    font-size: 1.15rem;
-}
-
-.contact-info-item p {
-    font-size: 1rem;
-}
-
-.contact-form .form-control {
-    padding: 0.9rem 1.2rem;
-    border-radius: 10px;
-    font-size: 1.05rem;
-}
-
-.contact-form .form-control:focus {
-    box-shadow: 0 0 0 0.3rem rgba(var(--metallic-bronze-rgb), 0.3);
 }
 
 /* Testimonials Section */
@@ -582,10 +518,6 @@
     .projects-subtitle {
         font-size: 1.05rem;
     }
-    .contact-info_title,
-    .contact-form-title {
-        font-size: 1.8rem;
-    }
     .ojt-card {
         padding: 2.5rem;
     }
@@ -630,15 +562,11 @@
     .projects-subtitle {
         font-size: 1rem;
     }
-    .contact-info_title,
-    .contact-form-title {
-        font-size: 1.6rem;
-    }
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-    }
     .ojt-card {
         padding: 2rem;
+    }
+    .ojt-logo {
+        max-width: 120px;
     }
     .company-name {
         font-size: 1.6rem;
@@ -679,10 +607,6 @@
     }
     .projects-subtitle {
         font-size: 0.95rem;
-    }
-    .contact-info_title,
-    .contact-form-title {
-        font-size: 1.4rem;
     }
     .ojt-card {
         padding: 1.5rem;

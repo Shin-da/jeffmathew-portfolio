@@ -117,6 +117,7 @@
       <h1 class="ig-profile-name">Jeff Mathew Garcia</h1>
       <div class="ig-profile-tagline">Artist & Web Developer<br><span class="ig-profile-highlight">I bring art to code
           and code to art.</span></div>
+      <div class="ig-profile-penname">Shin (シン)</div>
       <div class="view-counter">
         <i class="fas fa-eye"></i> <span id="viewCount">Loading...</span> views
       </div>
@@ -532,7 +533,7 @@
       <div class="gallery-preview-grid" data-aos="fade-up" data-aos-delay="200">
         <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="100">
           <div class="gallery-preview-image-wrapper">
-            <img src="assets/images/art1.jpg" alt="Kugisaki Nobara - Traditional pencil sketch" class="gallery-preview-img" loading="lazy">
+            <img src="assets/images/kugisaki-nobara.jpg" alt="Kugisaki Nobara - Traditional pencil sketch" class="gallery-preview-img" loading="lazy">
             <div class="gallery-preview-overlay">
               <div class="gallery-preview-stats">
                 <span><i class="fas fa-heart"></i> 1.2k</span>
@@ -548,7 +549,7 @@
         
         <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="200">
           <div class="gallery-preview-image-wrapper">
-            <img src="assets/images/art2.jpg" alt="Solo Leveling - Traditional pencil sketch" class="gallery-preview-img" loading="lazy">
+            <img src="assets/images/eren-aot.jpg" alt="Solo Leveling - Traditional pencil sketch" class="gallery-preview-img" loading="lazy">
             <div class="gallery-preview-overlay">
               <div class="gallery-preview-stats">
                 <span><i class="fas fa-heart"></i> 800</span>
@@ -564,7 +565,7 @@
         
         <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="300">
           <div class="gallery-preview-image-wrapper">
-            <img src="assets/images/art3.jpg" alt="Dandadan - Traditional concept art" class="gallery-preview-img" loading="lazy">
+            <img src="assets/images/solo-leveling.jpg" alt="Dandadan - Traditional concept art" class="gallery-preview-img" loading="lazy">
             <div class="gallery-preview-overlay">
               <div class="gallery-preview-stats">
                 <span><i class="fas fa-heart"></i> 950</span>
@@ -805,125 +806,250 @@
     </div>
   </section>
 
-  <div class="container-fluid contact" style="height:auto; padding: 100px 0;" data-aos="fade-up">
-    <div class="container" id="contact">
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact" data-aos="fade-up">
+    <div class="container">
       <div class="contact-header text-center mb-5">
-        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-badge mb-3">
+          <i class="fas fa-envelope"></i>
+          <span>Get In Touch</span>
+        </div>
+        <h2 class="section-title">Let's Connect</h2>
         <div class="section-divider"></div>
-        <p class="contact-subtitle">Feel free to reach out to me for any inquiries or opportunities.<br><span
-            class="open-commissions-note">Interested in a website, system, or art project? Let's work together!</span>
-        </p>
-        <p class="response-time-note">I usually reply within 24 hours.</p>
+        <p class="contact-subtitle">Feel free to reach out to me for any inquiries or opportunities.</p>
+        <div class="contact-highlights">
+          <span class="highlight-item">
+            <i class="fas fa-clock"></i>
+            <span>24h Response Time</span>
+          </span>
+          <span class="highlight-item">
+            <i class="fas fa-palette"></i>
+            <span>Open for Commissions</span>
+          </span>
+          <span class="highlight-item">
+            <i class="fas fa-code"></i>
+            <span>Project Collaboration</span>
+          </span>
+        </div>
       </div>
-      <div class="row contact-cards-container">
-        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-          <div class="contact-info">
-            <h3 class="contact-info-title">Contact Information</h3>
-            <div class="contact-info-grid">
-              <a href="mailto:jeffmathewg@gmail.com" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fas fa-envelope"></i>
-                  <div>
+      
+      <div class="contact-content">
+        <div class="row g-4">
+          <!-- Contact Information Card -->
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="contact-card contact-info-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon">
+                  <i class="fas fa-address-book"></i>
+                </div>
+                <h3 class="contact-card-title">Contact Information</h3>
+                <p class="contact-card-subtitle">Choose your preferred way to reach me</p>
+              </div>
+              
+              <div class="contact-methods">
+                <!-- Email -->
+                <a href="mailto:jeffmathewg@gmail.com" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>Email</h4>
                     <p>jeffmathewg@gmail.com</p>
+                    <span class="contact-method-label">Primary Contact</span>
                   </div>
-                </div>
-              </a>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
 
-              <a href="https://www.facebook.com/jepmachu" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fab fa-facebook"></i>
-                  <div>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/jepmachu" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-facebook"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>Facebook</h4>
                     <p>Jepmachu Garcia</p>
+                    <span class="contact-method-label">Social Media</span>
                   </div>
-                </div>
-              </a>
-              <div class="contact-info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                  <h4>Location</h4>
-                  <p>San Pedro City, Philippines</p>
-                </div>
-              </div>
-              <a href="https://github.com/Shin-da" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fab fa-github"></i>
-                  <div>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Shin-da" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>GitHub</h4>
                     <p>github.com/Shin-da</p>
+                    <span class="contact-method-label">Code & Projects</span>
                   </div>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fab fa-linkedin"></i>
-                  <div>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>LinkedIn</h4>
                     <p>Jeffmathew Garcia</p>
+                    <span class="contact-method-label">Professional</span>
                   </div>
-                </div>
-              </a>
-              <a href="https://www.instagram.com/jeffmathew04/" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fab fa-instagram"></i>
-                  <div>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/jeffmathew04/" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>Instagram</h4>
                     <p>@jeffmathew04</p>
+                    <span class="contact-method-label">Art & Updates</span>
+                  </div>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
+
+                <!-- Discord -->
+                <div class="contact-method">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-discord"></i>
+                  </div>
+                  <div class="contact-method-content">
+                    <h4>Discord</h4>
+                    <p>shin_da04</p>
+                    <span class="contact-method-label">Gaming & Chat</span>
                   </div>
                 </div>
-              </a>
-              <div class="contact-info-item">
-                <i class="fab fa-discord"></i>
-                <div>
-                  <h4>Discord</h4>
-                  <p>shin_da04</p>
-                </div>
-              </div> 
-              <a href="https://www.tiktok.com/@jepmachu" target="_blank">
-                <div class="contact-info-item">
-                  <i class="fab fa-tiktok"></i>
-                  <div>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@jepmachu" class="contact-method" target="_blank">
+                  <div class="contact-method-icon">
+                    <i class="fab fa-tiktok"></i>
+                  </div>
+                  <div class="contact-method-content">
                     <h4>TikTok</h4>
                     <p>@jepmachu</p>
+                    <span class="contact-method-label">Content & Fun</span>
+                  </div>
+                  <div class="contact-method-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </a>
+
+                <!-- Location -->
+                <div class="contact-method">
+                  <div class="contact-method-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-method-content">
+                    <h4>Location</h4>
+                    <p>San Pedro City, Philippines</p>
+                    <span class="contact-method-label">Based Here</span>
                   </div>
                 </div>
-              </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services & Availability Card -->
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="contact-card services-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="contact-card-title">Services & Availability</h3>
+                <p class="contact-card-subtitle">What I can help you with</p>
+              </div>
+
+              <div class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4>Web Development</h4>
+                    <p>Custom websites, web applications, and system development</p>
+                    <div class="service-tags">
+                      <span class="service-tag">PHP</span>
+                      <span class="service-tag">JavaScript</span>
+                      <span class="service-tag">MySQL</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4>Digital Art</h4>
+                    <p>Custom illustrations, portraits, and digital artwork</p>
+                    <div class="service-tags">
+                      <span class="service-tag">Portraits</span>
+                      <span class="service-tag">Illustrations</span>
+                      <span class="service-tag">Commissions</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4>System Development</h4>
+                    <p>Custom software solutions and automation systems</p>
+                    <div class="service-tags">
+                      <span class="service-tag">Python</span>
+                      <span class="service-tag">APIs</span>
+                      <span class="service-tag">Automation</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="service-content">
+                    <h4>Teaching & Mentoring</h4>
+                    <p>Programming tutorials and educational content</p>
+                    <div class="service-tags">
+                      <span class="service-tag">Tutorials</span>
+                      <span class="service-tag">Code Review</span>
+                      <span class="service-tag">Guidance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="availability-status">
+                <div class="status-indicator">
+                  <span class="status-dot available"></span>
+                  <span class="status-text">Available for new projects</span>
+                </div>
+                <p class="availability-note">I'm currently accepting new commissions and project collaborations. Let's create something amazing together!</p>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="col-lg-6" data-aos="fade-left">
-          <div class="contact-form">
-            <h3 class="contact-form-title">Send Me a Message</h3>
-            <form id="contactForm" action="https://formspree.io/f/mwkgrqzj" method="POST" aria-label="Contact form">
-              <div class="form-group mb-3">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-              </div>
-              <div class="form-group mb-3">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group mb-3">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mb-3">
-                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message"
-                  required></textarea>
-              </div>
-              <input type="hidden" name="_redirect" value="#contact-success">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-            <div id="contactSuccess" class="alert alert-success mt-3" style="display:none;">
-              Thank you for your message! I will get back to you soon.
-            </div>
-            <div id="contactError" class="alert alert-danger mt-3" style="display:none;">
-              Oops! Something went wrong. Please try again later.
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
-  </div>
+  </section>
 
   <footer class="footer">
     <div class="container">

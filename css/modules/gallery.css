@@ -49,6 +49,29 @@
     line-height: 1.6;
 }
 
+.gallery-hero-penname {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    position: relative;
+}
+
+.gallery-hero-penname::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: var(--accent-color);
+    opacity: 0.4;
+}
+
 .gallery-stats {
     display: flex;
     justify-content: center;
@@ -808,10 +831,4 @@
 [data-theme="dark"] .gallery-preview-btn {
     background: var(--highlight);
     border-color: var(--highlight);
-}
-
-[data-theme="dark"] .gallery-preview-btn:hover {
-    background: #fff;
-    color: var(--highlight);
-    border-color: #fff;
 } 
