@@ -4,7 +4,7 @@
    GALLERY HERO SECTION
    ======================================== */
 .gallery-hero-section {
-    padding: 140px 0 60px;
+    padding: 60px 0 60px;
     background: linear-gradient(135deg, var(--section-bg) 0%, var(--card-bg) 100%);
     position: relative;
     overflow: hidden;
