@@ -219,6 +219,126 @@
     font-size: 1rem;
 }
 
+/* See More Projects Card */
+.see-more-card {
+    background: linear-gradient(135deg, var(--accent-bg) 0%, var(--card-bg) 100%);
+    border: 2px dashed var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.see-more-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(var(--accent-rgb), 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.see-more-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(var(--accent-rgb), 0.2);
+}
+
+.see-more-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(var(--accent-rgb), 0.9) 0%, 
+        rgba(var(--accent-rgb), 0.7) 50%, 
+        rgba(var(--accent-rgb), 0.9) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    border-radius: 20px 20px 0 0;
+}
+
+.see-more-card:hover .see-more-overlay {
+    opacity: 1;
+}
+
+.see-more-content {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 280px;
+}
+
+.see-more-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.see-more-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.see-more-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.see-more-content .btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.see-more-content .btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .projects-grid {
@@ -257,6 +377,23 @@
         width: 100%;
         justify-content: center;
     }
+
+    .see-more-content {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .see-more-content i {
+        font-size: 2.5rem;
+    }
+
+    .see-more-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .see-more-content p {
+        font-size: 0.9rem;
+    }
 }
 
 /* GitHub Repositories Section */
@@ -294,6 +431,20 @@
     top: 50%;
     transform: translateY(-50%);
     color: var(--subtle-text);
+}
+
+.filter-options {
+    min-width: 150px;
+}
+
+.filter-options select {
+    border-radius: 25px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 8px 20px;
+    cursor: pointer;
+    height: 45px;
 }
 
 .sort-options select {

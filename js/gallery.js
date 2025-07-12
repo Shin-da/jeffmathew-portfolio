@@ -8,57 +8,95 @@ const galleryItems = [
     {
         title: "Kugisaki Nobara",
         description: "A detailed traditional pencil sketch capturing the essence of this beloved character. This piece showcases my attention to detail and love for anime art.",
-        image: "assets/images/art1.jpg",
+        image: "assets/images/kugisaki-nobara.jpg",
         category: "Traditional Art • Portraits",
         date: "2025",
         likes: "1.2k",
         comments: "250"
     },
+
+    {
+        title: "Eren Yeager",
+        description: "A dynamic sketch inspired by the popular web novel and manhwa. This piece explores character design and dramatic composition.",
+        image: "assets/images/eren-aot.jpg",
+        category: "Traditional Art",
+        date: "2023",
+        likes: "800",
+        comments: "150"
+    },  
     {
         title: "Solo Leveling",
         description: "A dynamic sketch inspired by the popular web novel and manhwa. This piece explores character design and dramatic composition.",
-        image: "assets/images/art2.jpg",
+        image: "assets/images/solo-leveling.jpg",
         category: "Traditional Art",
         date: "2023",
         likes: "800",
         comments: "150"
     },
     {
-        title: "Dandadan",
-        description: "Concept art piece exploring the unique style and energy of this modern manga series. Focuses on character expression and movement.",
-        image: "assets/images/art3.jpg",
-        category: "Traditional Art • Concept",
-        date: "2025",
-        likes: "950",
-        comments: "180"
+        title: "Sukuna (Jujutsu Kaisen) - Commissioned",
+        description: "A commissioned traditional sketch of Sukuna from Jujutsu Kaisen. This piece was created for a client and has been sold. It showcases my ability to work with client specifications while maintaining artistic quality.",
+        image: "assets/images/sukuna.jpeg",
+        category: "Traditional Art • Commissioned",
+        date: "2023",
+        likes: "800",
+        comments: "150"
     },
     {
-        title: "Sketch",
+        title: "Random Sketch",
         description: "A traditional painting that demonstrates my versatility in different artistic mediums and techniques.",
-        image: "assets/images/art4.jpg",
+        image: "assets/images/random-sketch-2.webp",
         category: "Traditional Art",
         date: "2025",
         likes: "700",
         comments: "120"
     },
     {
-        title: "Ink Drawing",
+        title: "Random Sketch",
         description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
-        image: "assets/images/art5.jpg",
+        image: "assets/images/random-sketch.jpg",
+        category: "Traditional Art",
+        date: "2022",
+        likes: "600",
+        comments: "90"
+    },
+    
+    {
+        title: "Okarun and Momo (Dandadan)",
+        description: "Concept art piece exploring the unique style and energy of this modern manga series. Focuses on character expression and movement.",
+        image: "assets/images/okarun-momo.jpg",
+        category: "Traditional Art • Concept",
+        date: "2025",
+        likes: "950",
+        comments: "180"
+    },
+    {
+        title: "Okarun (Dandadan)",
+        description: "Original character design concept that demonstrates my creative process and ability to develop unique visual identities.",
+        image: "assets/images/okarun.jpg",
+        category: "Traditional Art",
+        date: "2025",
+        likes: "1.5k",
+        comments: "300"
+    },
+    {
+        title: "Random Sketch",
+        description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
+        image: "assets/images/random.jpg",
         category: "Traditional Art",
         date: "2022",
         likes: "600",
         comments: "90"
     },
     {
-        title: "Character Design",
-        description: "Original character design concept that demonstrates my creative process and ability to develop unique visual identities.",
-        image: "assets/images/art6.jpg",
-        category: "Traditional Art • Concept",
-        date: "2025",
-        likes: "1.5k",
-        comments: "300"
-    }
+        title: "Kaguya (Kaguya-sama: Love is War)",
+        description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
+        image: "assets/images/kaguya.jpg",
+        category: "Traditional Art",
+        date: "2022",
+        likes: "600",
+        comments: "90"
+    },
 ];
 
 // Global variables

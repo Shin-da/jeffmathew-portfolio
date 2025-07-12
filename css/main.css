@@ -27,6 +27,9 @@
 /* Import Gallery Styles */
 @import url('./modules/gallery.css');
 
+/* Import About Page Enhancement Styles */
+@import url('./modules/about-enhancements.css');
+
 /* Import Animations */
 @import url('./modules/animations.css');
 
@@ -283,7 +286,7 @@
   bottom: 32px;
   right: 32px;
   z-index: 9999;
-  background: var(--metallic-bronze);
+  background: var(--saddle);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -299,7 +302,7 @@
 }
 
 .back-to-top:hover {
-  background: var(--coral-tree-dark);
+  background: var(--saddle);
   transform: translateY(-4px); /* More pronounced lift effect */
 }
 

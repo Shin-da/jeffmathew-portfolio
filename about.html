@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Jeff Mathew Garcia</title>
+  <meta name="description" content="Learn more about Jeff Mathew Garcia, IT professional and artist. Education, experience, skills, and story.">
+  <meta name="keywords" content="Jeff Mathew Garcia, about, portfolio, IT, web development, digital art, resume">
+  <meta name="author" content="Jeff Mathew Garcia">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" rel="stylesheet" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVqIJzUBCdCWWFKlMJJz0NtkGGbnwjdysVE1zZKQ_ACL6ZhtYcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/modules/navbar.css" rel="stylesheet">
+  <link href="css/modules/dark-theme.css" rel="stylesheet">
+  <link href="css/modules/tech-stack.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="css/modules/blog.css" rel="stylesheet">
+  <link href="css/modules/gallery.css" rel="stylesheet">
+  <link href="css/modules/typography.css" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
+</head>
+<body>
+  <!-- Navbar (reuse from index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-first">Jeff</span>
+        <span class="brand-second">Mathew</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto nav-pill-row">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle-wrapper ms-3">
+          <button id="darkModeToggle" type="button" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced About Hero Section -->
+  <section class="gallery-hero-section about-hero-section" style="position:relative;">
+    <div class="container">
+      <div class="gallery-hero-content" data-aos="fade-up">
+        <div class="about-hero-profile mb-4">
+          <div class="about-hero-img-wrapper">
+            <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" class="about-hero-img" width="160" height="160" loading="lazy">
+          </div>
+          <h1 class="gallery-hero-title mb-1">Jeffmathew Garcia</h1>
+          <div class="gallery-hero-penname">Full Stack Developer | AI Enthusiast | UI/UX Designer | Artist</div>
+          <div class="about-hero-tagline mb-3">San Pedro, Laguna | <a href="mailto:jeffmathewg@gmail.com">jeffmathewg@gmail.com</a></div>
+        </div>
+        <div class="ig-social-row">
+          <a href="https://jeffmathew.netlify.app/" target="_blank" aria-label="Portfolio">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Summary -->
+  <section class="container about-summary-section" data-aos="fade-up">
+    <div class="about-summary-card">
+      <h2 class="section-title text-center mb-4">About Me</h2>
+      <p>Innovative Full Stack Developer with a passion for blending clean code and creative design. Experienced in building scalable, user-focused applications and integrating AI technologies to improve functionality and user experience. Known for strong problem-solving skills, cross-functional teamwork, and a proven ability to deliver real-world results — including a 30% boost in chatbot retention and 95%+ freelance client satisfaction. Currently focused on AI-enhanced web development, UI/UX systems, and creative automation.</p>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="container about-timeline-section" data-aos="fade-up">
+    <div class="about-timeline-header text-center mb-5">
+      <h2 class="section-title">My Journey</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-timeline" data-aos="fade-up">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <h4>Pamantasan ng Lungsod ng Muntinlupa</h4>
+          <span class="timeline-date">2021 - 2025</span>
+          <p>Bachelor of Science in Information Technology</p>
+          <div class="timeline-image-gallery" id="journey-gallery">
+            <a href="assets/images/graduation.jpg" class="gallery-item">
+              <img src="assets/images/graduation.jpg" alt="Graduation Photo" class="timeline-image" loading="lazy">
+            </a>
+            <a href="assets/images/plmun.jpg" class="gallery-item">
+              <img src="assets/images/plmun.jpg" alt="PLMUN Campus" class="timeline-image" loading="lazy">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="timeline-content">
+          <h4>SP Madrid Law & Associates</h4>
+          <span class="timeline-date">Feb 2024 - May 2024 (Internship)</span>
+          <h5>Developer & AI Prompt Engineer</h5>
+          <ul class="timeline-details">
+            <li>Tools: Python, APIs, Okpo AI, Lark Dev, Docker, VS Code</li>
+            <li>Assisted in developing enterprise-grade AI agents and automation systems for internal use</li>
+            <li>Contributed to Gradify, a trainee assessment system using async processing and modular Python architecture</li>
+            <li>Focused on logic design, task automation, and integration improvements</li>
+            <li>Collaborated with cross-functional teams for deployment and testing</li>
+            <li>Boosted chatbot response quality and reduced user drop-offs by 30%</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="timeline-content">
+          <h4>Freelance Full-Stack Developer / Artist</h4>
+          <span class="timeline-date">Jan 2019 - Present</span>
+          <ul class="timeline-details">
+            <li>Designed and developed responsive web applications</li>
+            <li>Created custom art and illustrations for clients</li>
+            <li>Managed client projects end-to-end</li>
+            <li>Maintained 95%+ client satisfaction rate</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-icon"><i class="fas fa-school"></i></div>
+        <div class="timeline-content">
+          <h4>San Pedro Relocation National High School</h4>
+          <span class="timeline-date">2019 - 2021</span>
+          <p>Information and Communications Technology</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Visualization Section -->
+  <section class="container about-skills-section" data-aos="fade-up">
+    <div class="about-skills-header text-center mb-5">
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="project-tech-container" data-aos="fade-up">
+      <h4 class="tech-category-title">Frontend</h4>
+      <div class="project-tech">
+        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-html5"></i><span>HTML</span></span>
+        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-css3-alt"></i><span>CSS</span></span>
+        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-js"></i><span>JavaScript</span></span>
+        <span data-aos="fade-up" data-aos-delay="250"><i class="fab fa-react"></i><span>React</span></span>
+        <span class="skill-tailwind" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-wind"></i><span>Tailwind</span></span>
+      </div>
+      <h4 class="tech-category-title">Backend</h4>
+      <div class="project-tech">
+        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-php"></i><span>PHP</span></span>
+        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-laravel"></i><span>Laravel</span></span>
+        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-node-js"></i><span>Node.js</span></span>
+        <span data-aos="fade-up" data-aos-delay="250"><i class="fas fa-database"></i><span>MySQL</span></span>
+        <span class="skill-mongo" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-leaf"></i><span>MongoDB</span></span>
+      </div>
+      <h4 class="tech-category-title">AI</h4>
+      <div class="project-tech">
+        <span class="skill-ai" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-brain"></i><span>OpenAI API</span></span>
+        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-python"></i><span>Python</span></span>
+        <span class="skill-tf" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-robot"></i><span>TensorFlow</span></span>
+        <span class="skill-playground" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-flask"></i><span>OpenAI Playground</span></span>
+      </div>
+      <h4 class="tech-category-title">Tools</h4>
+      <div class="project-tech">
+        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-git-alt"></i><span>Git</span></span>
+        <span class="skill-actions" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-play-circle"></i><span>GitHub Actions</span></span>
+        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-docker"></i><span>Docker</span></span>
+        <span class="skill-vite" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-bolt"></i><span>Vite</span></span>
+        <span class="skill-figma" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-figma"></i><span>Figma</span></span>
+      </div>
+      <h4 class="tech-category-title">Creative</h4>
+      <div class="project-tech art-skills">
+        <span class="skill-graphite" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-pencil-alt"></i><span>Graphite Illustration</span></span>
+        <span class="skill-digital-painting" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-paint-brush"></i><span>Digital Painting</span></span>
+        <span class="skill-ui" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-drafting-compass"></i><span>UI Mockups</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creative Interests Section -->
+  <section class="container about-fun-section" data-aos="fade-up">
+    <div class="about-fun-header text-center mb-5">
+      <h2 class="section-title">Creative Interests</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-fun-grid row g-4 justify-content-center">
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="about-fun-card">
+          <div class="about-fun-icon"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="about-fun-label">Drawing</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-fun-card">
+          <div class="about-fun-icon"><i class="fas fa-code"></i></div>
+          <div class="about-fun-label">Coding</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="about-fun-card">
+          <div class="about-fun-icon"><i class="fas fa-camera"></i></div>
+          <div class="about-fun-label">Photography</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="about-fun-card">
+          <div class="about-fun-icon"><i class="fas fa-sitemap"></i></div>
+          <div class="about-fun-label">Organizing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="container about-cta-section text-center" data-aos="fade-up">
+    <a href="mailto:jeffmathewg@gmail.com" class="btn btn-accent btn-lg mt-4">
+      <i class="fas fa-envelope me-2"></i>Let's Work Together
+    </a>
+    <a href="JeffMathewGarcia_Resume_2025.pdf" class="btn btn-outline btn-lg mt-4 ms-3" download>
+      <i class="fas fa-file-download me-2"></i>Download Resume
+    </a>
+  </section>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h4>Let's Connect</h4>
+          <div class="social-links">
+            <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/AisuruJeff" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/shin.da.art/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+          <a href="mailto:jeffmathewg@gmail.com" class="footer-email">jeffmathewg@gmail.com</a>
+        </div>
+        <div class="col-lg-4">
+          <h4>Download My Resume</h4>
+          <p>Get a copy of my professional resume to see the full details of my work.</p>
+          <a href="JeffMathewGarcia_Resume_2025.pdf" class="btn btn-outline-light btn-sm" download>
+            <i class="fas fa-file-download me-2"></i>Download Resume
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Jeff Mathew Garcia. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0GvGC0Kv3ntMVXUYyo+hRdQRDCI2iLg7sDv8FRrHeFmLgCKTAoNzNBIOs9RY_SJH2A5OaZisWG2gQLpOlEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Initialize Lightgallery
+    document.addEventListener('DOMContentLoaded', function() {
+      const gallery = document.getElementById('journey-gallery');
+      if (gallery) {
+        lightGallery(gallery, {
+          selector: '.gallery-item',
+          download: false,
+          counter: false,
+        });
+      }
+    });
+  </script>
+  <style>
+      /* ... existing styles ... */
+      :root {
+        /* ... existing vars ... */
+        --shadow-color-rgb: 0, 0, 0;
+        --glow-color: rgba(var(--highlight-rgb), 0.3);
+      }
+      /* --- Global Enhancements --- */
+      .section-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 2.8rem;
+        color: var(--header-color);
+        margin-bottom: 0.5rem;
+      }
+      .section-divider {
+        width: 100px;
+        height: 4px;
+        background-image: linear-gradient(to right, var(--accent-color), var(--highlight));
+        border-radius: 2px;
+        margin: 0 auto 1.5rem;
+      }
+      /* --- Hero Section --- */
+      .about-hero-section {
+        background-color: var(--hero-bg);
+        background-image:
+          linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        background-size: cover;
+        padding: 180px 0 100px 0;
+        text-align: center;
+        color: var(--hero-text);
+        border-bottom: 5px solid var(--border-color);
+      }
+      .about-hero-img-wrapper {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        border: 5px solid var(--accent-color);
+        box-shadow: 0 10px 30px rgba(var(--shadow-color-rgb), 0.2);
+        transition: transform 0.3s ease;
+      }
+      .about-hero-img-wrapper:hover {
+        transform: scale(1.05);
+      }
+      .about-hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .gallery-hero-penname {
+        font-size: 1.2rem;
+        font-family: 'Poppins', sans-serif;
+        color: var(--subtle-text);
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+      }
+      .about-hero-tagline {
+        font-size: 1.2rem;
+        color: var(--subtle-text);
+        margin-bottom: 0.5rem;
+      }
+      .about-hero-tagline a {
+        color: var(--subtle-text);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .about-hero-tagline a:hover {
+        color: var(--highlight);
+      }
+      .ig-social-row {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      .ig-social-row a {
+        color: var(--subtle-text);
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+      .ig-social-row a:hover {
+        color: var(--highlight);
+      }
+      /* --- Professional Summary --- */
+      .about-summary-section {
+        margin-top: -60px;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 3rem;
+      }
+      .about-summary-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 16px 48px rgba(var(--shadow-color-rgb), 0.12);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .about-summary-card p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-color);
+        text-align: center;
+      }
+      /* --- Timeline Section --- */
+      .about-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .about-timeline::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: var(--border-color);
+        border-radius: 2px;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      .timeline-icon {
+        width: 44px;
+        height: 44px;
+        background-color: var(--accent-color);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        z-index: 1;
+        border: 3px solid var(--body-bg);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .timeline-item:hover .timeline-icon {
+        transform: scale(1.1);
+        background-color: var(--highlight);
+      }
+      .timeline-content {
+        flex-grow: 1;
+        padding: 1.5rem;
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(var(--shadow-color-rgb), 0.1), 0 0 20px var(--glow-color);
+      }
+      .timeline-content h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--header-color);
+        margin-bottom: 0.2rem;
+      }
+      .timeline-content h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .timeline-details {
+        list-style: none;
+        padding-left: 1rem;
+        margin: 0;
+      }
+      .timeline-details li {
+        font-size: 0.95rem;
+        color: var(--subtle-text);
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+      .timeline-details li::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--highlight);
+        font-weight: 700;
+      }
+      .timeline-date {
+        font-size: 0.95rem;
+        color: var(--subtle-text);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .timeline-image-gallery {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .timeline-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .timeline-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(var(--shadow-color-rgb), 0.15);
+      }
+      /* --- Skills Section --- */
+      .project-tech-container {
+        padding: 1.5rem;
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .project-tech-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(var(--shadow-color-rgb), 0.1), 0 0 20px var(--glow-color);
+      }
+      .tech-category-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--header-color);
+        margin: 1.5rem 0 1rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--border-color);
+      }
+      .tech-category-title:first-child {
+        margin-top: 0;
+      }
+      .project-tech {
+        justify-content: flex-start;
+        gap: 0.8rem;
+      }
+      /* New Skill Colors */
+      .project-tech span.skill-tailwind { color: #38B2AC; background: rgba(56, 178, 172, 0.1); border-color: rgba(56, 178, 172, 0.2); }
+      .project-tech span.skill-tailwind:hover { background: #38B2AC; color: #fff; }
+      .project-tech span:has(.fa-laravel) { color: #FF2D20; background: rgba(255, 45, 32, 0.1); border-color: rgba(255, 45, 32, 0.2); }
+      .project-tech span:has(.fa-laravel):hover { background: #FF2D20; color: #fff; }
+      .project-tech span:has(.fa-node-js) { color: #68A063; background: rgba(104, 160, 99, 0.1); border-color: rgba(104, 160, 99, 0.2); }
+      .project-tech span:has(.fa-node-js):hover { background: #68A063; color: #fff; }
+      .project-tech span.skill-mongo { color: #4DB33D; background: rgba(77, 179, 61, 0.1); border-color: rgba(77, 179, 61, 0.2); }
+      .project-tech span.skill-mongo:hover { background: #4DB33D; color: #fff; }
+      .project-tech span.skill-ai { color: #4A90E2; background: rgba(74, 144, 226, 0.1); border-color: rgba(74, 144, 226, 0.2); }
+      .project-tech span.skill-ai:hover { background: #4A90E2; color: #fff; }
+      .project-tech span.skill-tf { color: #FF6F00; background: rgba(255, 111, 0, 0.1); border-color: rgba(255, 111, 0, 0.2); }
+      .project-tech span.skill-tf:hover { background: #FF6F00; color: #fff; }
+      .project-tech span.skill-playground { color: #41A58F; background: rgba(65, 165, 143, 0.1); border-color: rgba(65, 165, 143, 0.2); }
+      .project-tech span.skill-playground:hover { background: #41A58F; color: #fff; }
+      .project-tech span.skill-actions { color: #2088FF; background: rgba(32, 136, 255, 0.1); border-color: rgba(32, 136, 255, 0.2); }
+      .project-tech span.skill-actions:hover { background: #2088FF; color: #fff; }
+      .project-tech span:has(.fa-docker) { color: #0db7ed; background: rgba(13, 183, 237, 0.1); border-color: rgba(13, 183, 237, 0.2); }
+      .project-tech span:has(.fa-docker):hover { background: #0db7ed; color: #fff; }
+      .project-tech span.skill-vite { color: #646CFF; background: rgba(100, 108, 255, 0.1); border-color: rgba(100, 108, 255, 0.2); }
+      .project-tech span.skill-vite:hover { background: #646CFF; color: #fff; }
+      .project-tech span.skill-graphite { color: #6c757d; background: rgba(108, 117, 125, 0.1); border-color: rgba(108, 117, 125, 0.2); }
+      .project-tech span.skill-graphite:hover { background: #6c757d; color: #fff; }
+      .project-tech span.skill-digital-painting { color: #C71585; background: rgba(199, 21, 133, 0.1); border-color: rgba(199, 21, 133, 0.2); }
+      .project-tech span.skill-digital-painting:hover { background: #C71585; color: #fff; }
+      .project-tech span.skill-ui { color: #FF7B4F; background: rgba(255, 123, 79, 0.1); border-color: rgba(255, 123, 79, 0.2); }
+      .project-tech span.skill-ui:hover { background: #FF7B4F; color: #fff; }
+      /* --- Creative Interests Section --- */
+      .about-fun-section { padding: 4rem 0; }
+      .about-fun-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .about-fun-card:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 24px rgba(var(--shadow-color-rgb), 0.12), 0 0 20px var(--glow-color);
+      }
+      .about-fun-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background-image: linear-gradient(45deg, var(--accent-color), var(--highlight));
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .about-fun-label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--header-color);
+      }
+      /* --- CTA Section --- */
+      .about-cta-section { padding: 2rem 0 4rem 0; }
+      /* --- Dark Theme Overrides --- */
+      [data-theme="dark"] {
+        --shadow-color-rgb: 255, 255, 255;
+        --glow-color: rgba(var(--highlight-rgb), 0.4);
+      }
+      [data-theme="dark"] .about-hero-tagline a:hover {
+        color: var(--highlight);
+      }
+      [data-theme="dark"] .ig-social-row a:hover {
+        color: var(--highlight);
+      }
+      [data-theme="dark"] .about-summary-card,
+      [data-theme="dark"] .timeline-content,
+      [data-theme="dark"] .project-tech-container,
+      [data-theme="dark"] .about-fun-card {
+        background: var(--card-bg);
+        color: var(--header-color);
+        border: 1px solid var(--border-color);
+      }
+      [data-theme="dark"] .tech-category-title {
+        border-bottom-color: var(--border-color);
+      }
+      [data-theme="dark"] .about-fun-label {
+        color: var(--header-color);
+      }
+      @media (max-width: 768px) {
+        .about-timeline::before {
+          left: 20px;
+        }
+        .timeline-item {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .timeline-icon {
+          align-self: flex-start;
+          margin-bottom: 1rem;
+        }
+      }
+  </style>
+</body>
+</html> 

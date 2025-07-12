@@ -72,6 +72,38 @@
     opacity: 0.4;
 }
 
+.gallery-commission-note {
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background: rgba(var(--accent-rgb), 0.05);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-commission-note p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--subtle-text);
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-commission-note i {
+    color: var(--accent-color);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.gallery-commission-note em {
+    font-style: italic;
+    color: var(--text-color);
+}
+
 .gallery-stats {
     display: flex;
     justify-content: center;
@@ -87,7 +119,7 @@
 .gallery-stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--metallic-bronze);
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -152,7 +184,7 @@
 
 .gallery-filter.active,
 .gallery-filter:hover {
-    background: var(--accent-color);
+    background: var(--saddle);
     color: white;
     border-color: var(--accent-color);
     transform: translateY(-2px);
@@ -540,7 +572,7 @@
 }
 
 .gallery-lightbox-close:hover {
-    background: var(--accent-color);
+    background: var(--saddle);
     transform: rotate(90deg);
 }
 
@@ -599,7 +631,7 @@
 }
 
 .gallery-lightbox-nav:hover {
-    background: var(--accent-color);
+    background: var(--saddle);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -642,10 +674,19 @@
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {
-    .gallery-hero-title {
+        .gallery-hero-title {
         font-size: 2.5rem;
     }
-
+    
+    .gallery-commission-note {
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gallery-commission-note p {
+        font-size: 0.9rem;
+    }
+    
     .gallery-stats {
         gap: 2rem;
     }
@@ -724,10 +765,22 @@
 }
 
 @media (max-width: 480px) {
-    .gallery-hero-title {
+        .gallery-hero-title {
         font-size: 2rem;
     }
-
+    
+    .gallery-commission-note {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-commission-note p {
+        font-size: 0.85rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+    }
+    
     .gallery-stats {
         gap: 1.5rem;
     }

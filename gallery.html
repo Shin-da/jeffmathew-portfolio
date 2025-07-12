@@ -47,8 +47,8 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <span class="brand-first">Jeff</span>
-          <span class="brand-second">Mathew</span>
+          <span class="brand-first">シン</span>
+          <span class="brand-second">(shin)</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -87,12 +87,16 @@
         <div class="container">
             <div class="gallery-hero-content" data-aos="fade-up">
                 <h1 class="gallery-hero-title">Art Gallery</h1>
-                <p class="gallery-hero-subtitle">A curated collection of my digital and traditional artworks. Each piece tells a story of creativity, passion, and artistic exploration.</p>
-                <div class="gallery-hero-penname">Shin (シン)</div>
+                <p class="gallery-hero-subtitle">A curated collection of my artworks. Each piece tells a story of creativity, passion, and artistic exploration.</p>
+                <div class="gallery-hero-penname">シン(shin)</div>
+                
+                <div class="gallery-commission-note" data-aos="fade-up" data-aos-delay="150">
+                    <p><i class="fas fa-info-circle"></i> <em>Note: Not all commissioned work is displayed here due to client privacy preferences and confidentiality agreements.</em></p>
+                </div>
                 
                 <div class="gallery-stats" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-stat">
-                        <span class="gallery-stat-number">6</span>
+                        <span class="gallery-stat-number">9</span>
                         <span class="gallery-stat-label">Artworks</span>
                     </div>
                     <div class="gallery-stat">
@@ -126,6 +130,9 @@
                 </button>
                 <button class="gallery-filter" data-filter="concept" aria-selected="false" aria-label="Show concept art">
                     <i class="fas fa-lightbulb"></i> Concept Art
+                </button>
+                <button class="gallery-filter" data-filter="commissioned" aria-selected="false" aria-label="Show commissioned art">
+                    <i class="fas fa-handshake"></i> Commissioned
                 </button>
             </div>
         </div>
@@ -217,18 +224,18 @@
                 </div>
 
                 <!-- Gallery Item 4 -->
-                <div class="gallery-item" data-category="traditional" data-aos="fade-up" data-aos-delay="250">
+                <div class="gallery-item" data-category="traditional commissioned" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-item-image">
-                        <img src="assets/images/dandadan.jpg" alt="Sketch - Traditional painting by Jeff Mathew Garcia" loading="lazy">
+                        <img src="assets/images/sukuna.jpeg" alt="Sukuna - Commissioned traditional art by Jeff Mathew Garcia" loading="lazy">
                         <div class="gallery-item-overlay">
                             <div class="gallery-item-stats">
                                 <div class="gallery-item-stat">
                                     <i class="fas fa-heart"></i>
-                                    <span>700</span>
+                                    <span>950</span>
                                 </div>
                                 <div class="gallery-item-stat">
                                     <i class="fas fa-comment"></i>
-                                    <span>120</span>
+                                    <span>180</span>
                                 </div>
                             </div>
                             <a href="#" class="gallery-item-view-btn" onclick="openLightbox(3)">
@@ -237,9 +244,9 @@
                         </div>
                     </div>
                     <div class="gallery-item-info">
-                        <h3 class="gallery-item-title">Dandadan</h3>
-                        <p class="gallery-item-category">Traditional Art</p>
-                        <p class="gallery-item-date">Created in 2025</p>
+                        <h3 class="gallery-item-title">Sukuna (Jujutsu Kaisen) - Commissioned</h3>
+                        <p class="gallery-item-category">Traditional Art • Commissioned</p>
+                        <p class="gallery-item-date">Created in 2023</p>
                     </div>
                 </div>
 
@@ -296,6 +303,117 @@
                         <p class="gallery-item-date">Created in 2025</p>
                     </div>
                 </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item" data-category="traditional" data-aos="fade-up" data-aos-delay="250">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/okarun-momo.jpg" alt="Sketch - Traditional painting by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>700</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>120</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(6)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Dandadan</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item" data-category="traditional concept" data-aos="fade-up" data-aos-delay="350">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/okarun.jpg" alt="Character Design - Traditional character design by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>2</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(7)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Okarun (Dandadan)</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+
+                <!-- Gallery Item 9 -->
+                <div class="gallery-item" data-category="traditional concept" data-aos="fade-up" data-aos-delay="350">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/random.jpg" alt="Character Design - Traditional character design by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>1</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(8)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Random Sketch</h3>
+                        <p class="gallery-item-category">Traditional Art • Concept</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="gallery-item" data-category="traditional concept" data-aos="fade-up" data-aos-delay="350">
+                    <div class="gallery-item-image">
+                        <img src="assets/images/kaguya.jpg" alt="Character Design - Traditional character design by Jeff Mathew Garcia" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-stats">
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>1.5k</span>
+                                </div>
+                                <div class="gallery-item-stat">
+                                    <i class="fas fa-comment"></i>
+                                    <span>300</span>
+                                </div>
+                            </div>
+                            <a href="#" class="gallery-item-view-btn" onclick="openLightbox(9)">
+                                <i class="fas fa-eye"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3 class="gallery-item-title">Kaguya (Kaguya-sama: Love is War)</h3>
+                        <p class="gallery-item-category">Traditional Art</p>
+                        <p class="gallery-item-date">Created in 2025</p>
+                    </div>
+                </div>
+
+
             </div>
 
             <!-- Empty State -->
