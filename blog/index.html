@@ -10,7 +10,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/main.css" rel="stylesheet">
-  <link href="../css/modules/navbar.css" rel="stylesheet">
+  <link href="../css/modules/navigation.css" rel="stylesheet">
   <link href="../css/modules/dark-theme.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -29,44 +29,68 @@
 
   <a href="#about" class="skip-link">Skip to main content</a>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">
-        <span class="brand-first">シン</span>
-        <span class="brand-second">(shin)</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../gallery.html">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html#contact">Contact</a>
-          </li>
-        </ul>
-        <div class="theme-toggle-wrapper ms-3">
-          <button id="darkModeToggle" type="button" class="theme-toggle" aria-label="Toggle dark mode">
-            <span class="toggle-track">
-              <span class="toggle-thumb"></span>
-            </span>
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="navbar-left d-none d-lg-block">
+        <a class="navbar-brand" href="../index.html">
+          <span class="brand-first">シン</span>
+          <span class="brand-second">(shin)</span>
+        </a>
+      </div>
+      <div class="navbar-center flex-grow-1 d-flex justify-content-center">
+        <button class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+          <!-- Mobile close button -->
+          <button class="mobile-menu-close d-lg-none" aria-label="Close menu" type="button" tabindex="0">
+            <span aria-hidden="true">&times;</span>
           </button>
+          <!-- Brand for mobile menu -->
+          <div class="d-lg-none mobile-brand" style="width:100%;text-align:right;margin-bottom:1.5rem;">
+            <a class="navbar-brand" href="../index.html">
+              <span class="brand-first">シン</span>
+              <span class="brand-second">(shin)</span>
+            </a>
+          </div>
+          <ul class="navbar-nav nav-pill-row">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#contact">Contact</a>
+            </li>
+            <!-- Theme toggle for mobile -->
+            <li class="nav-item mobile-theme-toggle-wrapper d-lg-none" style="width:100%;text-align:right;">
+              <button id="darkModeToggleMobile" type="button" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="toggle-track">
+                  <span class="toggle-thumb"></span>
+                </span>
+              </button>
+            </li>
+          </ul>
         </div>
+      </div>
+      <!-- Theme toggle for desktop -->
+      <div class="theme-toggle-wrapper d-none d-lg-flex">
+        <button id="darkModeToggle" type="button" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+        </button>
       </div>
     </div>
   </nav>
-  
+
   <section class="blog-index">
     <div class="container">
       <div class="row justify-content-center">
@@ -77,7 +101,8 @@
               <span>Blog & Updates</span>
             </div>
             <h1 class="blog-index-title">Exploring the Intersection of Art & Technology</h1>
-            <p class="blog-index-subtitle">Insights, tutorials, and thoughts on web development, digital art, and the creative process</p>
+            <p class="blog-index-subtitle">Insights, tutorials, and thoughts on web development, digital art, and the
+              creative process</p>
             <div class="blog-index-stats">
               <div class="stat-item">
                 <span class="stat-number">2</span>
@@ -93,7 +118,7 @@
               </div>
             </div>
           </header>
-          
+
           <div class="row">
             <div class="col-lg-8">
               <div class="blog-posts">
@@ -123,7 +148,10 @@
                         <h2 class="blog-post-title">
                           <a href="building-portfolio.html">Building My Portfolio: A Journey Through Design & Code</a>
                         </h2>
-                        <p class="blog-post-excerpt">Creating a portfolio website that showcases both my technical skills and artistic abilities was an exciting challenge. Let me walk you through the process of building this site, from concept to completion, including the actual color palettes and technical decisions that went into its creation.</p>
+                        <p class="blog-post-excerpt">Creating a portfolio website that showcases both my technical
+                          skills and artistic abilities was an exciting challenge. Let me walk you through the process
+                          of building this site, from concept to completion, including the actual color palettes and
+                          technical decisions that went into its creation.</p>
                         <div class="blog-post-tags">
                           <span class="tag">CSS Variables</span>
                           <span class="tag">Color Theory</span>
@@ -159,9 +187,12 @@
                           </span>
                         </div>
                         <h2 class="blog-post-title">
-                          <a href="my-ojt-experience.html">My On-the-Job Training Experience at SP Madrid & Associates Law Firm</a>
+                          <a href="my-ojt-experience.html">My On-the-Job Training Experience at SP Madrid & Associates
+                            Law Firm</a>
                         </h2>
-                        <p class="blog-post-excerpt">I recently completed my 500-hour On-the-Job Training (OJT) as a Developer and AI Prompt Engineer at SP Madrid & Associates Law Firm, an experience that significantly enhanced my technical skills and professional development.</p>
+                        <p class="blog-post-excerpt">I recently completed my 500-hour On-the-Job Training (OJT) as a
+                          Developer and AI Prompt Engineer at SP Madrid & Associates Law Firm, an experience that
+                          significantly enhanced my technical skills and professional development.</p>
                         <div class="blog-post-tags">
                           <span class="tag">OJT Experience</span>
                           <span class="tag">AI Development</span>
@@ -184,7 +215,8 @@
                       <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>More Articles Coming Soon</h3>
-                    <p>I'm working on new content about web development, digital art techniques, and creative coding. Stay tuned for more insights and tutorials!</p>
+                    <p>I'm working on new content about web development, digital art techniques, and creative coding.
+                      Stay tuned for more insights and tutorials!</p>
                     <div class="upcoming-topics">
                       <span class="topic">Digital Art Tips & Tricks</span>
                       <span class="topic">The Art of Web Development</span>
@@ -194,7 +226,7 @@
                 </div>
               </div>
             </div>
-            
+
             <aside class="col-lg-4 d-none d-lg-block">
               <div class="blog-sidebar">
                 <div class="sidebar-section">
@@ -214,7 +246,7 @@
                     </li>
                   </ul>
                 </div>
-                
+
                 <div class="sidebar-section">
                   <h3 class="sidebar-title">Categories</h3>
                   <div class="category-list">
@@ -240,7 +272,7 @@
                     </a>
                   </div>
                 </div>
-                
+
                 <div class="sidebar-section">
                   <h3 class="sidebar-title">Newsletter</h3>
                   <div class="newsletter-signup">

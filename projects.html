@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css/modules/components.css">
     <link rel="stylesheet" href="css/modules/responsive.css">
     <link rel="stylesheet" href="css/modules/animations.css">
-    <link rel="stylesheet" href="css/modules/navbar.css">
+    <link rel="stylesheet" href="css/modules/navigation.css">
     <link rel="stylesheet" href="css/modules/dark-theme.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/modules/projects-section.css">
@@ -58,11 +58,14 @@
                 </a>
             </div>
             <div class="navbar-center flex-grow-1 d-flex justify-content-center">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                    <!-- Mobile close button -->
+                    <button class="mobile-menu-close d-lg-none" aria-label="Close menu" type="button" tabindex="0">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                     <!-- Brand for mobile menu -->
                     <div class="d-lg-none mobile-brand" style="width:100%;text-align:right;margin-bottom:1.5rem;">
                         <a class="navbar-brand" href="index.html">

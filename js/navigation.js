@@ -172,6 +172,14 @@ class NavigationManager {
                 }
             });
 
+            // Mobile close button
+            const mobileMenuClose = navbarCollapse.querySelector('.mobile-menu-close');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', () => {
+                    this.closeMobileMenu();
+                });
+            }
+
             // Close menu on outside click
             document.addEventListener('click', (e) => {
                 if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
@@ -374,45 +382,9 @@ class NavigationManager {
     }
 }
 
-// Theme toggle functionality for both desktop and mobile
-function setupThemeToggles() {
-  const desktopToggle = document.getElementById('darkModeToggle');
-  const mobileToggle = document.getElementById('darkModeToggleMobile');
-
-  function setTheme(isDark) {
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    // Sync both toggles visually if needed
-  }
-
-  function getTheme() {
-    return document.documentElement.getAttribute('data-theme') === 'dark';
-  }
-
-  if (desktopToggle) {
-    desktopToggle.addEventListener('click', () => {
-      setTheme(!getTheme());
-    });
-  }
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      setTheme(!getTheme());
-    });
-  }
-
-  // On load, set theme from localStorage or system
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-}
-
 // Initialize navigation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new NavigationManager();
-    setupThemeToggles();
 });
 
 // Export for potential use in other modules

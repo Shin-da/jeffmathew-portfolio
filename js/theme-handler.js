@@ -1,22 +1,31 @@
 // Theme mode handling
 function setThemeMode(enabled, save = true) {
     const htmlEl = document.documentElement;
-    const toggleButton = document.getElementById('darkModeToggle');
+    const desktopToggle = document.getElementById('darkModeToggle');
+    const mobileToggle = document.getElementById('darkModeToggleMobile');
     
     if (enabled) {
         htmlEl.setAttribute('data-theme', 'dark');
-        if (toggleButton) {
-            toggleButton.setAttribute('aria-checked', 'true');
-            toggleButton.classList.add('dark-mode-active');
+        if (desktopToggle) {
+            desktopToggle.setAttribute('aria-checked', 'true');
+            desktopToggle.classList.add('dark-mode-active');
+        }
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-checked', 'true');
+            mobileToggle.classList.add('dark-mode-active');
         }
         if (save) {
             localStorage.setItem('theme', 'dark');
         }
     } else {
         htmlEl.setAttribute('data-theme', 'light');
-        if (toggleButton) {
-            toggleButton.setAttribute('aria-checked', 'false');
-            toggleButton.classList.remove('dark-mode-active');
+        if (desktopToggle) {
+            desktopToggle.setAttribute('aria-checked', 'false');
+            desktopToggle.classList.remove('dark-mode-active');
+        }
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-checked', 'false');
+            mobileToggle.classList.remove('dark-mode-active');
         }
         if (save) {
             localStorage.setItem('theme', 'light');
@@ -34,9 +43,19 @@ function initializeTheme() {
         setThemeMode(prefersDark, true);
     }
 
-    const themeToggle = document.getElementById('darkModeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    // Setup desktop theme toggle
+    const desktopToggle = document.getElementById('darkModeToggle');
+    if (desktopToggle) {
+        desktopToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setThemeMode(currentTheme !== 'dark');
+        });
+    }
+
+    // Setup mobile theme toggle
+    const mobileToggle = document.getElementById('darkModeToggleMobile');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             setThemeMode(currentTheme !== 'dark');
         });
