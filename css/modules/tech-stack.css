@@ -87,73 +87,91 @@
 .skills-list li:hover .fa-git-alt { background: #F05032; color: #fff; }
 .skills-list li:hover .fa-draw-polygon { background: #62C462; color: #fff; }
 
-/* Project Tech Stack Styling */
-.project-tech {
+/* --- Redesigned Tech Card Styles --- */
+.tech-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(var(--shadow-color-rgb), 0.10);
+  border: 1.5px solid var(--border-color);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.2rem;
-}
-
-.project-tech span {
-  background: rgba(var(--shadow-color-rgb), 0.05); /* Light background by default */
-  color: var(--text-color); /* Default text color */
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  min-height: 120px;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 2px 8px rgba(var(--shadow-color-rgb), 0.05);
 }
-
-.project-tech span:hover {
-  transform: translateY(-3px);
-  color: #fff;
-  border-color: transparent; /* Border will be handled by the tech color */
-  box-shadow: 0 6px 20px rgba(var(--shadow-color-rgb), 0.15);
+.tech-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 16px 48px rgba(var(--highlight-rgb), 0.18);
+  border-color: var(--highlight);
 }
-
-.project-tech span i {
-  position: relative;
-  z-index: 1;
-  font-size: 1rem;
-  color: inherit; /* Inherit color from span or set specifically below */
-  transition: all 0.3s ease;
-}
-
-.project-tech span span {
-  position: relative;
-  z-index: 1;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
+.tech-card i {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-bg), var(--highlight), var(--accent-bg));
+  border-radius: 50%;
+  padding: 0.7rem;
   color: inherit;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 10px rgba(var(--shadow-color-rgb), 0.08);
+}
+.tech-card:hover i {
+  background: linear-gradient(135deg, var(--highlight), var(--accent-bg));
+  color: #fff;
+  transform: scale(1.12) rotate(-3deg);
+}
+.tech-card-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.2rem;
+  letter-spacing: 0.5px;
 }
 
-/* Specific colors for project tech stack */
-.project-tech span:has(.fa-html5) { color: #E34F26; background: rgba(227, 79, 38, 0.1); border-color: rgba(227, 79, 38, 0.2); }
-.project-tech span:has(.fa-css3-alt) { color: #1572B6; background: rgba(21, 114, 182, 0.1); border-color: rgba(21, 114, 182, 0.2); }
-.project-tech span:has(.fa-js) { color: #2d2c22; background: rgba(247, 222, 30, 0.483); border-color: rgba(247, 223, 30, 0.2); }
-.project-tech span:has(.fa-php) { color: #777BB4; background: rgba(119, 123, 180, 0.1); border-color: rgba(119, 123, 180, 0.2); }
-.project-tech span:has(.fa-database) { color: #4479A1; background: rgba(68, 121, 161, 0.1); border-color: rgba(68, 121, 161, 0.2); }
-.project-tech span:has(.fa-bootstrap) { color: #7952B3; background: rgba(121, 82, 179, 0.1); border-color: rgba(121, 82, 179, 0.2); }
-.project-tech span:has(.fa-git-alt) { color: #F05032; background: rgba(240, 80, 50, 0.1); border-color: rgba(240, 80, 50, 0.2); }
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  .tech-card {
+    min-height: 90px;
+    padding: 0.7rem 0.2rem;
+  }
+  .tech-card i {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+  }
+  .tech-card-label {
+    font-size: 0.98rem;
+  }
+}
 
-/* Specific colors for project tech stack on hover */
-.project-tech span:has(.fa-html5):hover { background: #E34F26; color: #fff; }
-.project-tech span:has(.fa-css3-alt):hover { background: #1572B6; color: #fff; }
-.project-tech span:has(.fa-js):hover { background: #F7DF1E; color: #333; }
-.project-tech span:has(.fa-php):hover { background: #777BB4; color: #fff; }
-.project-tech span:has(.fa-database):hover { background: #4479A1; color: #fff; }
-.project-tech span:has(.fa-bootstrap):hover { background: #7952B3; color: #fff; }
-.project-tech span:has(.fa-git-alt):hover { background: #F05032; color: #fff; }
+@media (max-width: 575.98px) {
+  .tech-card {
+    min-height: 70px;
+    padding: 0.5rem 0.1rem;
+  }
+  .tech-card i {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+  .tech-card-label {
+    font-size: 0.92rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .tech-card {
+  background: var(--dark-card-bg);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .tech-card:hover {
+  box-shadow: 0 16px 48px rgba(var(--highlight-rgb), 0.22);
+  border-color: var(--highlight);
+}
+[data-theme="dark"] .tech-card-label {
+  color: var(--light-text);
+}
 
 /* Dark Theme Adjustments */
 [data-theme="dark"] .skills-list li {

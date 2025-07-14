@@ -80,147 +80,332 @@
     <div class="breadcrumb-container"></div>
   </div>
 
-  <!-- Enhanced About Hero Section -->
-  <section class="gallery-hero-section about-hero-section" style="position:relative;">
-    <div class="container">
-      <div class="gallery-hero-content" data-aos="fade-up">
-        <div class="about-hero-profile mb-4">
-          <div class="about-hero-img-wrapper">
-            <img src="assets/images/me.jpg" alt="Jeff Mathew Garcia" class="about-hero-img" width="160" height="160" loading="lazy">
-          </div>
-          <h1 class="gallery-hero-title mb-1">Jeffmathew Garcia</h1>
-          <div class="gallery-hero-penname">Full Stack Developer | AI Enthusiast | UI/UX Designer | Artist</div>
-          <div class="about-hero-tagline mb-3">San Pedro, Laguna | <a href="mailto:jeffmathewg@gmail.com">jeffmathewg@gmail.com</a></div>
-        </div>
-        <div class="ig-social-row">
-          <a href="https://jeffmathew.netlify.app/" target="_blank" aria-label="Portfolio">
-            <i class="fas fa-globe"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
+  <!-- Hero/Profile Section (Redesigned) -->
+  <header class="ig-header-section">
+    <div class="ig-header-bg"></div>
+    <div class="container ig-header-content text-center">
+      <div class="ig-profile-pic-wrapper">
+        <picture>
+          <source srcset="assets/images/me.webp" type="image/webp">
+          <img src="assets/images/me.jpg" alt="Portrait of Jeff Mathew Garcia" class="ig-profile-pic" width="144" height="144" loading="lazy">
+        </picture>
+      </div>
+      <h1 class="ig-profile-name">Jeff Mathew Garcia</h1>
+      <div class="ig-profile-tagline">I bring art to code and code to art.<br><span class="ig-profile-highlight">Full Stack Developer & Artist</span></div>
+      <div class="ig-profile-penname">
+        <span class="brand-second">シン</span>
+        <span class="brand-first">(shin)</span>
+      </div>
+      <div class="ig-social-row">
+        <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:jeffmathewg@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Professional Summary -->
-  <section class="container about-summary-section" data-aos="fade-up">
-    <div class="about-summary-card">
-      <h2 class="section-title text-center mb-4">About Me</h2>
-      <p>Innovative Full Stack Developer with a passion for blending clean code and creative design. Experienced in building scalable, user-focused applications and integrating AI technologies to improve functionality and user experience. Known for strong problem-solving skills, cross-functional teamwork, and a proven ability to deliver real-world results — including a 30% boost in chatbot retention and 95%+ freelance client satisfaction. Currently focused on AI-enhanced web development, UI/UX systems, and creative automation.</p>
+  <!-- About/Story Section (Redesigned) -->
+  <section class="container about-story-section" data-aos="fade-up">
+    <div class="about-story-card">
+      <h2 class="section-title text-center mb-4">My Story</h2>
+      <p>Hi, I’m Jeff! I’m passionate about blending technology and creativity to build things that make people’s lives better and more beautiful. Whether I’m coding a web app, designing a user interface, or sketching a new piece of art, I believe in the power of curiosity and imagination.<br><br>
+      When I’m not coding or drawing, you’ll probably find me watching anime, reading manga, or vibing to K-pop and OPM.<br><br>
+      My journey has taken me from drawing in sketchbooks to developing full-stack applications and exploring the frontiers of AI. I love learning new things, solving real-world problems, and collaborating with others who share a drive for innovation.<br><br>
+      My philosophy? <strong>“Art and code are two sides of the same creative coin.”</strong> I strive to bring empathy, clarity, and a touch of artistry to every project I work on. Let’s create something amazing together!</p>
     </div>
   </section>
 
-  <!-- Timeline Section -->
+  <!-- Timeline/Experience Section (Redesigned) -->
   <section class="container about-timeline-section" data-aos="fade-up">
     <div class="about-timeline-header text-center mb-5">
       <h2 class="section-title">My Journey</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="about-timeline" data-aos="fade-up">
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="timeline-content">
-          <h4>Pamantasan ng Lungsod ng Muntinlupa</h4>
-          <span class="timeline-date">2021 - 2025</span>
-          <p>Bachelor of Science in Information Technology</p>
-          <div class="timeline-image-gallery" id="journey-gallery">
-            <a href="assets/images/graduation.jpg" class="gallery-item">
-              <img src="assets/images/graduation.jpg" alt="Graduation Photo" class="timeline-image" loading="lazy">
-            </a>
-            <a href="assets/images/plmun.jpg" class="gallery-item">
-              <img src="assets/images/plmun.jpg" alt="PLMUN Campus" class="timeline-image" loading="lazy">
-            </a>
-          </div>
+    <div class="row justify-content-center g-4">
+      <!-- Education Card -->
+      <div class="col-md-6 col-lg-3">
+        <div class="timeline-card text-center p-4 h-100">
+          <div class="timeline-icon mb-3"><i class="fas fa-graduation-cap fa-2x"></i></div>
+          <h4 class="timeline-title">PLMUN</h4>
+          <div class="timeline-date">2021 - 2025</div>
+          <div class="timeline-desc">B.S. in Information Technology<br>Pamantasan ng Lungsod ng Muntinlupa</div>
         </div>
       </div>
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-        <div class="timeline-content">
-          <h4>SP Madrid Law & Associates</h4>
-          <span class="timeline-date">Feb 2024 - May 2024 (Internship)</span>
-          <h5>Developer & AI Prompt Engineer</h5>
-          <ul class="timeline-details">
-            <li>Tools: Python, APIs, Okpo AI, Lark Dev, Docker, VS Code</li>
-            <li>Assisted in developing enterprise-grade AI agents and automation systems for internal use</li>
-            <li>Contributed to Gradify, a trainee assessment system using async processing and modular Python architecture</li>
-            <li>Focused on logic design, task automation, and integration improvements</li>
-            <li>Collaborated with cross-functional teams for deployment and testing</li>
-            <li>Boosted chatbot response quality and reduced user drop-offs by 30%</li>
-          </ul>
+      <!-- Internship Card -->
+      <div class="col-md-6 col-lg-3">
+        <div class="timeline-card text-center p-4 h-100">
+          <div class="timeline-icon mb-3"><i class="fas fa-briefcase fa-2x"></i></div>
+          <h4 class="timeline-title">Internship</h4>
+          <div class="timeline-date">Feb - May 2024</div>
+          <div class="timeline-desc">AI Prompt Engineer & Developer<br>SP Madrid Law & Associates</div>
         </div>
       </div>
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="timeline-content">
-          <h4>Freelance Full-Stack Developer / Artist</h4>
-          <span class="timeline-date">Jan 2019 - Present</span>
-          <ul class="timeline-details">
-            <li>Designed and developed responsive web applications</li>
-            <li>Created custom art and illustrations for clients</li>
-            <li>Managed client projects end-to-end</li>
-            <li>Maintained 95%+ client satisfaction rate</li>
-          </ul>
+      <!-- Freelance Card -->
+      <div class="col-md-6 col-lg-3">
+        <div class="timeline-card text-center p-4 h-100">
+          <div class="timeline-icon mb-3"><i class="fas fa-laptop-code fa-2x"></i></div>
+          <h4 class="timeline-title">Freelance</h4>
+          <div class="timeline-date">2019 - Present</div>
+          <div class="timeline-desc">Full-Stack Developer & Artist<br>Web, UI/UX, Digital Art</div>
         </div>
       </div>
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-icon"><i class="fas fa-school"></i></div>
-        <div class="timeline-content">
-          <h4>San Pedro Relocation National High School</h4>
-          <span class="timeline-date">2019 - 2021</span>
-          <p>Information and Communications Technology</p>
+      <!-- High School Card -->
+      <div class="col-md-6 col-lg-3">
+        <div class="timeline-card text-center p-4 h-100">
+          <div class="timeline-icon mb-3"><i class="fas fa-school fa-2x"></i></div>
+          <h4 class="timeline-title">High School</h4>
+          <div class="timeline-date">2019 - 2021</div>
+          <div class="timeline-desc">ICT Track<br>San Pedro Relocation National High School</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Visualization Section -->
+  <!-- Skills/Tech Stack Section (Redesigned) -->
   <section class="container about-skills-section" data-aos="fade-up">
     <div class="about-skills-header text-center mb-5">
       <h2 class="section-title">Tech Stack</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="project-tech-container" data-aos="fade-up">
-      <h4 class="tech-category-title">Frontend</h4>
-      <div class="project-tech">
-        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-html5"></i><span>HTML</span></span>
-        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-css3-alt"></i><span>CSS</span></span>
-        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-js"></i><span>JavaScript</span></span>
-        <span data-aos="fade-up" data-aos-delay="250"><i class="fab fa-react"></i><span>React</span></span>
-        <span class="skill-tailwind" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-wind"></i><span>Tailwind</span></span>
+    <div class="row g-4">
+      <!-- Frontend -->
+      <div class="col-12">
+        <h4 class="tech-category-title">Frontend</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-html5 fa-2x" style="color:#E34F26;"></i>
+              <div class="tech-card-label mt-2">HTML5</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-css3-alt fa-2x" style="color:#1572B6;"></i>
+              <div class="tech-card-label mt-2">CSS3</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-js fa-2x" style="color:#F7DF1E;"></i>
+              <div class="tech-card-label mt-2">JavaScript</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-react fa-2x" style="color:#61DAFB;"></i>
+              <div class="tech-card-label mt-2">React</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-wind fa-2x" style="color:#38B2AC;"></i>
+              <div class="tech-card-label mt-2">Tailwind</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h4 class="tech-category-title">Backend</h4>
-      <div class="project-tech">
-        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-php"></i><span>PHP</span></span>
-        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-laravel"></i><span>Laravel</span></span>
-        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-node-js"></i><span>Node.js</span></span>
-        <span data-aos="fade-up" data-aos-delay="250"><i class="fas fa-database"></i><span>MySQL</span></span>
-        <span class="skill-mongo" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-leaf"></i><span>MongoDB</span></span>
+      <!-- Backend -->
+      <div class="col-12 mt-4">
+        <h4 class="tech-category-title">Backend</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-php fa-2x" style="color:#777BB4;"></i>
+              <div class="tech-card-label mt-2">PHP</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-laravel fa-2x" style="color:#FF2D20;"></i>
+              <div class="tech-card-label mt-2">Laravel</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-node-js fa-2x" style="color:#68A063;"></i>
+              <div class="tech-card-label mt-2">Node.js</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-database fa-2x" style="color:#4479A1;"></i>
+              <div class="tech-card-label mt-2">MySQL</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-leaf fa-2x" style="color:#4DB33D;"></i>
+              <div class="tech-card-label mt-2">MongoDB</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h4 class="tech-category-title">AI</h4>
-      <div class="project-tech">
-        <span class="skill-ai" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-brain"></i><span>OpenAI API</span></span>
-        <span data-aos="fade-up" data-aos-delay="150"><i class="fab fa-python"></i><span>Python</span></span>
-        <span class="skill-tf" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-robot"></i><span>TensorFlow</span></span>
-        <span class="skill-playground" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-flask"></i><span>OpenAI Playground</span></span>
+      <!-- AI -->
+      <div class="col-12 mt-4">
+        <h4 class="tech-category-title">AI</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-brain fa-2x" style="color:#4A90E2;"></i>
+              <div class="tech-card-label mt-2">OpenAI API</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-python fa-2x" style="color:#3776AB;"></i>
+              <div class="tech-card-label mt-2">Python</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-robot fa-2x" style="color:#FF6F00;"></i>
+              <div class="tech-card-label mt-2">TensorFlow</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-flask fa-2x" style="color:#41A58F;"></i>
+              <div class="tech-card-label mt-2">OpenAI Playground</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h4 class="tech-category-title">Tools</h4>
-      <div class="project-tech">
-        <span data-aos="fade-up" data-aos-delay="100"><i class="fab fa-git-alt"></i><span>Git</span></span>
-        <span class="skill-actions" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-play-circle"></i><span>GitHub Actions</span></span>
-        <span data-aos="fade-up" data-aos-delay="200"><i class="fab fa-docker"></i><span>Docker</span></span>
-        <span class="skill-vite" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-bolt"></i><span>Vite</span></span>
-        <span class="skill-figma" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-figma"></i><span>Figma</span></span>
+      <!-- Tools -->
+      <div class="col-12 mt-4">
+        <h4 class="tech-category-title">Tools</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-git-alt fa-2x" style="color:#F05032;"></i>
+              <div class="tech-card-label mt-2">Git</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-play-circle fa-2x" style="color:#2088FF;"></i>
+              <div class="tech-card-label mt-2">GitHub Actions</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-docker fa-2x" style="color:#0db7ed;"></i>
+              <div class="tech-card-label mt-2">Docker</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-bolt fa-2x" style="color:#646CFF;"></i>
+              <div class="tech-card-label mt-2">Vite</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fab fa-figma fa-2x" style="color:#F24E1E;"></i>
+              <div class="tech-card-label mt-2">Figma</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h4 class="tech-category-title">Creative</h4>
-      <div class="project-tech art-skills">
-        <span class="skill-graphite" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-pencil-alt"></i><span>Graphite Illustration</span></span>
-        <span class="skill-digital-painting" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-paint-brush"></i><span>Digital Painting</span></span>
-        <span class="skill-ui" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-drafting-compass"></i><span>UI Mockups</span></span>
+      <!-- Creative -->
+      <div class="col-12 mt-4">
+        <h4 class="tech-category-title">Creative</h4>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-pencil-alt fa-2x" style="color:#6c757d;"></i>
+              <div class="tech-card-label mt-2">Graphite Illustration</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-paint-brush fa-2x" style="color:#C71585;"></i>
+              <div class="tech-card-label mt-2">Digital Painting</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tech-card text-center p-3 h-100">
+              <i class="fas fa-drafting-compass fa-2x" style="color:#FF7B4F;"></i>
+              <div class="tech-card-label mt-2">UI Mockups</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mindset/Philosophy Section -->
+  <section class="container about-mindset-section" data-aos="fade-up">
+    <div class="about-mindset-header text-center mb-5">
+      <h2 class="section-title">My Mindset</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="mindset-card p-4 text-center">
+          <p class="mindset-narrative mb-4">
+            I believe that <strong>growth comes from embracing challenges</strong> and that learning never stops. My journey has taught me that you have to keep going, even when life gets tough—because at the end of the day, you have only yourself, and only you can help yourself move forward.
+          </p>
+          <div class="mindset-quotes mb-3">
+            <blockquote class="blockquote mb-2">
+              <span class="quote-mark">“</span>Reality is created by the mind. We can change our reality by changing our mind.<span class="quote-mark">”</span>
+              <footer class="blockquote-footer">Plato</footer>
+            </blockquote>
+            <blockquote class="blockquote mb-2">
+              <span class="quote-mark">“</span>Memento mori.<span class="quote-mark">”</span>
+              <footer class="blockquote-footer">Remember you must die</footer>
+            </blockquote>
+          </div>
+          <div class="mindset-summary">
+            <strong>What keeps me going?</strong> The drive to keep learning, to adapt, and to face whatever comes my way. I’ve learned to manage my emotions, control my perfectionism, and turn every experience—good or bad—into a lesson for growth.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section class="container about-funfacts-section" data-aos="fade-up">
+    <div class="about-funfacts-header text-center mb-5">
+      <h2 class="section-title">Fun Facts About Me</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-palette"></i></div>
+          <div class="funfact-label">I’ve been drawing since I could hold a pencil—art is my first language.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-brain"></i></div>
+          <div class="funfact-label">I love learning about AI for programming and automation—making tasks easier is fascinating to me. But when it comes to art, I prefer the human touch over AI-generated creations.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-mug-hot"></i></div>
+          <div class="funfact-label">Coffee is my creative fuel—most of my best ideas start with a cup!</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-users"></i></div>
+          <div class="funfact-label">I’m an INFJ-turned-INTJ: creative, critical, and now more logical and vocal than ever.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-mountain"></i></div>
+          <div class="funfact-label">I’ve overcome a lot, but I always find a way to keep climbing and growing.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="funfact-card text-center p-4 h-100">
+          <div class="funfact-icon mb-3"><i class="fas fa-music"></i></div>
+          <div class="funfact-label">I’m a huge fan of anime, K-drama, manga, manhwa, and all kinds of music—from K-pop and J-pop to OPM and beatboxing.</div>
+        </div>
       </div>
     </div>
   </section>
