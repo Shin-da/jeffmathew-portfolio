@@ -1,4 +1,41 @@
 <!DOCTYPE html>
+<!--
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - ABOUT PAGE
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  LinkedIn: https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/
+  
+  This page provides detailed information about my background, skills,
+  education, and professional experience as an IT professional and artist.
+  
+  Features:
+  - Comprehensive personal and professional information
+  - Interactive skill showcase with categories
+  - Education and experience timeline
+  - Responsive design with animations
+  - Dark/Light theme support
+  - Accessibility-focused design
+  
+  Content Sections:
+  - Personal background and interests
+  - Technical skills and expertise
+  - Education and certifications
+  - Professional experience
+  - Achievements and projects
+  
+  Tech Stack:
+  - HTML5, CSS3, JavaScript (Vanilla)
+  - Bootstrap 5.2.3, Font Awesome 6.0.0
+  - AOS (Animate On Scroll)
+  - Custom animations and interactions
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +44,17 @@
   <meta name="description" content="Learn more about Jeff Mathew Garcia, IT professional and artist. Education, experience, skills, and story.">
   <meta name="keywords" content="Jeff Mathew Garcia, about, portfolio, IT, web development, digital art, resume">
   <meta name="author" content="Jeff Mathew Garcia">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Me - Jeff Mathew Garcia">
+  <meta name="twitter:description" content="Explore Jeff Mathew Garcia's digital and traditional artwork gallery.">
+  <meta name="twitter:image" content="https://shin-da.github.io/jeffmathew-portfolio/assets/images/me.webp">
+  <meta name="twitter:url" content="https://shin-da.github.io/jeffmathew-portfolio/gallery.html">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" rel="stylesheet" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVqIJzUBCdCWWFKlMJJz0NtkGGbnwjdysVE1zZKQ_ACL6ZhtYcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,9 +63,13 @@
   <link href="css/modules/dark-theme.css" rel="stylesheet">
   <link href="css/modules/tech-stack.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="css/modules/blog.css" rel="stylesheet">
-  <link href="css/modules/gallery.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/modules/responsive.css">
+  <link rel="stylesheet" href="css/modules/components.css">
+  <link rel="stylesheet" href="css/modules/animations.css">
+  <link rel="stylesheet" href="css/modules/navigation.css">
+  <link rel="stylesheet" href="css/modules/dark-theme.css">
   <link href="css/modules/typography.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/modules/about-enhancements.css">
   <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
 </head>
 <body>
@@ -75,790 +127,332 @@
     </div>
   </nav>
 
-  <!-- Breadcrumb Navigation -->
-  <div class="container" style="padding-top: 120px;">
-    <div class="breadcrumb-container"></div>
-  </div>
-
-  <!-- Hero/Profile Section (Redesigned) -->
-  <header class="ig-header-section">
-    <div class="ig-header-bg"></div>
-    <div class="container ig-header-content text-center">
-      <div class="ig-profile-pic-wrapper">
-        <picture>
-          <source srcset="assets/images/me.webp" type="image/webp">
-          <img src="assets/images/me.jpg" alt="Portrait of Jeff Mathew Garcia" class="ig-profile-pic" width="144" height="144" loading="lazy">
-        </picture>
-      </div>
-      <h1 class="ig-profile-name">Jeff Mathew Garcia</h1>
-      <div class="ig-profile-tagline">I bring art to code and code to art.<br><span class="ig-profile-highlight">Full Stack Developer & Artist</span></div>
-      <div class="ig-profile-penname">
-        <span class="brand-second">シン</span>
-        <span class="brand-first">(shin)</span>
-      </div>
-      <div class="ig-social-row">
-        <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:jeffmathewg@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- About/Story Section (Redesigned) -->
-  <section class="container about-story-section" data-aos="fade-up">
-    <div class="about-story-card">
-      <h2 class="section-title text-center mb-4">My Story</h2>
-      <p>Hi, I’m Jeff! I’m passionate about blending technology and creativity to build things that make people’s lives better and more beautiful. Whether I’m coding a web app, designing a user interface, or sketching a new piece of art, I believe in the power of curiosity and imagination.<br><br>
-      When I’m not coding or drawing, you’ll probably find me watching anime, reading manga, or vibing to K-pop and OPM.<br><br>
-      My journey has taken me from drawing in sketchbooks to developing full-stack applications and exploring the frontiers of AI. I love learning new things, solving real-world problems, and collaborating with others who share a drive for innovation.<br><br>
-      My philosophy? <strong>“Art and code are two sides of the same creative coin.”</strong> I strive to bring empathy, clarity, and a touch of artistry to every project I work on. Let’s create something amazing together!</p>
-    </div>
-  </section>
-
-  <!-- Timeline/Experience Section (Redesigned) -->
-  <section class="container about-timeline-section" data-aos="fade-up">
-    <div class="about-timeline-header text-center mb-5">
-      <h2 class="section-title">My Journey</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="row justify-content-center g-4">
-      <!-- Education Card -->
-      <div class="col-md-6 col-lg-3">
-        <div class="timeline-card text-center p-4 h-100">
-          <div class="timeline-icon mb-3"><i class="fas fa-graduation-cap fa-2x"></i></div>
-          <h4 class="timeline-title">PLMUN</h4>
-          <div class="timeline-date">2021 - 2025</div>
-          <div class="timeline-desc">B.S. in Information Technology<br>Pamantasan ng Lungsod ng Muntinlupa</div>
-        </div>
-      </div>
-      <!-- Internship Card -->
-      <div class="col-md-6 col-lg-3">
-        <div class="timeline-card text-center p-4 h-100">
-          <div class="timeline-icon mb-3"><i class="fas fa-briefcase fa-2x"></i></div>
-          <h4 class="timeline-title">Internship</h4>
-          <div class="timeline-date">Feb - May 2024</div>
-          <div class="timeline-desc">AI Prompt Engineer & Developer<br>SP Madrid Law & Associates</div>
-        </div>
-      </div>
-      <!-- Freelance Card -->
-      <div class="col-md-6 col-lg-3">
-        <div class="timeline-card text-center p-4 h-100">
-          <div class="timeline-icon mb-3"><i class="fas fa-laptop-code fa-2x"></i></div>
-          <h4 class="timeline-title">Freelance</h4>
-          <div class="timeline-date">2019 - Present</div>
-          <div class="timeline-desc">Full-Stack Developer & Artist<br>Web, UI/UX, Digital Art</div>
-        </div>
-      </div>
-      <!-- High School Card -->
-      <div class="col-md-6 col-lg-3">
-        <div class="timeline-card text-center p-4 h-100">
-          <div class="timeline-icon mb-3"><i class="fas fa-school fa-2x"></i></div>
-          <h4 class="timeline-title">High School</h4>
-          <div class="timeline-date">2019 - 2021</div>
-          <div class="timeline-desc">ICT Track<br>San Pedro Relocation National High School</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills/Tech Stack Section (Redesigned) -->
-  <section class="container about-skills-section" data-aos="fade-up">
-    <div class="about-skills-header text-center mb-5">
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="row g-4">
-      <!-- Frontend -->
-      <div class="col-12">
-        <h4 class="tech-category-title">Frontend</h4>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-html5 fa-2x" style="color:#E34F26;"></i>
-              <div class="tech-card-label mt-2">HTML5</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-css3-alt fa-2x" style="color:#1572B6;"></i>
-              <div class="tech-card-label mt-2">CSS3</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-js fa-2x" style="color:#F7DF1E;"></i>
-              <div class="tech-card-label mt-2">JavaScript</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-react fa-2x" style="color:#61DAFB;"></i>
-              <div class="tech-card-label mt-2">React</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-wind fa-2x" style="color:#38B2AC;"></i>
-              <div class="tech-card-label mt-2">Tailwind</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Backend -->
-      <div class="col-12 mt-4">
-        <h4 class="tech-category-title">Backend</h4>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-php fa-2x" style="color:#777BB4;"></i>
-              <div class="tech-card-label mt-2">PHP</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-laravel fa-2x" style="color:#FF2D20;"></i>
-              <div class="tech-card-label mt-2">Laravel</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-node-js fa-2x" style="color:#68A063;"></i>
-              <div class="tech-card-label mt-2">Node.js</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-database fa-2x" style="color:#4479A1;"></i>
-              <div class="tech-card-label mt-2">MySQL</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-leaf fa-2x" style="color:#4DB33D;"></i>
-              <div class="tech-card-label mt-2">MongoDB</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- AI -->
-      <div class="col-12 mt-4">
-        <h4 class="tech-category-title">AI</h4>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-brain fa-2x" style="color:#4A90E2;"></i>
-              <div class="tech-card-label mt-2">OpenAI API</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-python fa-2x" style="color:#3776AB;"></i>
-              <div class="tech-card-label mt-2">Python</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-robot fa-2x" style="color:#FF6F00;"></i>
-              <div class="tech-card-label mt-2">TensorFlow</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-flask fa-2x" style="color:#41A58F;"></i>
-              <div class="tech-card-label mt-2">OpenAI Playground</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Tools -->
-      <div class="col-12 mt-4">
-        <h4 class="tech-category-title">Tools</h4>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-git-alt fa-2x" style="color:#F05032;"></i>
-              <div class="tech-card-label mt-2">Git</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-play-circle fa-2x" style="color:#2088FF;"></i>
-              <div class="tech-card-label mt-2">GitHub Actions</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-docker fa-2x" style="color:#0db7ed;"></i>
-              <div class="tech-card-label mt-2">Docker</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-bolt fa-2x" style="color:#646CFF;"></i>
-              <div class="tech-card-label mt-2">Vite</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fab fa-figma fa-2x" style="color:#F24E1E;"></i>
-              <div class="tech-card-label mt-2">Figma</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Creative -->
-      <div class="col-12 mt-4">
-        <h4 class="tech-category-title">Creative</h4>
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-pencil-alt fa-2x" style="color:#6c757d;"></i>
-              <div class="tech-card-label mt-2">Graphite Illustration</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-paint-brush fa-2x" style="color:#C71585;"></i>
-              <div class="tech-card-label mt-2">Digital Painting</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="tech-card text-center p-3 h-100">
-              <i class="fas fa-drafting-compass fa-2x" style="color:#FF7B4F;"></i>
-              <div class="tech-card-label mt-2">UI Mockups</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mindset/Philosophy Section -->
-  <section class="container about-mindset-section" data-aos="fade-up">
-    <div class="about-mindset-header text-center mb-5">
-      <h2 class="section-title">My Mindset</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="mindset-card p-4 text-center">
-          <p class="mindset-narrative mb-4">
-            I believe that <strong>growth comes from embracing challenges</strong> and that learning never stops. My journey has taught me that you have to keep going, even when life gets tough—because at the end of the day, you have only yourself, and only you can help yourself move forward.
-          </p>
-          <div class="mindset-quotes mb-3">
-            <blockquote class="blockquote mb-2">
-              <span class="quote-mark">“</span>Reality is created by the mind. We can change our reality by changing our mind.<span class="quote-mark">”</span>
-              <footer class="blockquote-footer">Plato</footer>
-            </blockquote>
-            <blockquote class="blockquote mb-2">
-              <span class="quote-mark">“</span>Memento mori.<span class="quote-mark">”</span>
-              <footer class="blockquote-footer">Remember you must die</footer>
-            </blockquote>
-          </div>
-          <div class="mindset-summary">
-            <strong>What keeps me going?</strong> The drive to keep learning, to adapt, and to face whatever comes my way. I’ve learned to manage my emotions, control my perfectionism, and turn every experience—good or bad—into a lesson for growth.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fun Facts Section -->
-  <section class="container about-funfacts-section" data-aos="fade-up">
-    <div class="about-funfacts-header text-center mb-5">
-      <h2 class="section-title">Fun Facts About Me</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-palette"></i></div>
-          <div class="funfact-label">I’ve been drawing since I could hold a pencil—art is my first language.</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-brain"></i></div>
-          <div class="funfact-label">I love learning about AI for programming and automation—making tasks easier is fascinating to me. But when it comes to art, I prefer the human touch over AI-generated creations.</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-mug-hot"></i></div>
-          <div class="funfact-label">Coffee is my creative fuel—most of my best ideas start with a cup!</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-users"></i></div>
-          <div class="funfact-label">I’m an INFJ-turned-INTJ: creative, critical, and now more logical and vocal than ever.</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-mountain"></i></div>
-          <div class="funfact-label">I’ve overcome a lot, but I always find a way to keep climbing and growing.</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="funfact-card text-center p-4 h-100">
-          <div class="funfact-icon mb-3"><i class="fas fa-music"></i></div>
-          <div class="funfact-label">I’m a huge fan of anime, K-drama, manga, manhwa, and all kinds of music—from K-pop and J-pop to OPM and beatboxing.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Creative Interests Section -->
-  <section class="container about-fun-section" data-aos="fade-up">
-    <div class="about-fun-header text-center mb-5">
-      <h2 class="section-title">Creative Interests</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="about-fun-grid row g-4 justify-content-center">
-      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="about-fun-card">
-          <div class="about-fun-icon"><i class="fas fa-pencil-ruler"></i></div>
-          <div class="about-fun-label">Drawing</div>
-        </div>
-      </div>
-      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="about-fun-card">
-          <div class="about-fun-icon"><i class="fas fa-code"></i></div>
-          <div class="about-fun-label">Coding</div>
-        </div>
-      </div>
-      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="about-fun-card">
-          <div class="about-fun-icon"><i class="fas fa-camera"></i></div>
-          <div class="about-fun-label">Photography</div>
-        </div>
-      </div>
-      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="about-fun-card">
-          <div class="about-fun-icon"><i class="fas fa-sitemap"></i></div>
-          <div class="about-fun-label">Organizing</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="container about-cta-section text-center" data-aos="fade-up">
-    <a href="mailto:jeffmathewg@gmail.com" class="btn btn-accent btn-lg mt-4">
-      <i class="fas fa-envelope me-2"></i>Let's Work Together
-    </a>
-    <a href="JeffMathewGarcia_Resume_2025.pdf" class="btn btn-outline btn-lg mt-4 ms-3" download>
-      <i class="fas fa-file-download me-2"></i>Download Resume
-    </a>
-  </section>
-
-  <!-- Footer (reuse from index.html) -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h4>Let's Connect</h4>
-          <div class="social-links">
-            <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/AisuruJeff" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/shin.da.art/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-          <a href="mailto:jeffmathewg@gmail.com" class="footer-email">jeffmathewg@gmail.com</a>
-        </div>
-        <div class="col-lg-4">
-          <h4>Download My Resume</h4>
-          <p>Get a copy of my professional resume to see the full details of my work.</p>
-          <a href="JeffMathewGarcia_Resume_2025.pdf" class="btn btn-outline-light btn-sm" download>
-            <i class="fas fa-file-download me-2"></i>Download Resume
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Jeff Mathew Garcia. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha512-jEJ0GvGC0Kv3ntMVXUYyo+hRdQRDCI2iLg7sDv8FRrHeFmLgCKTAoNzNBIOs9RY_SJH2A5OaZisWG2gQLpOlEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Initialize Lightgallery
-    document.addEventListener('DOMContentLoaded', function() {
-      const gallery = document.getElementById('journey-gallery');
-      if (gallery) {
-        lightGallery(gallery, {
-          selector: '.gallery-item',
-          download: false,
-          counter: false,
-        });
-      }
-    });
-  </script>
-  <style>
-      /* ... existing styles ... */
-      :root {
-        /* ... existing vars ... */
-        --shadow-color-rgb: 0, 0, 0;
-        --glow-color: rgba(var(--highlight-rgb), 0.3);
-      }
-      /* --- Global Enhancements --- */
-      .section-title {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 2.8rem;
-        color: var(--header-color);
-        margin-bottom: 0.5rem;
-      }
-      .section-divider {
-        width: 100px;
-        height: 4px;
-        background-image: linear-gradient(to right, var(--accent-color), var(--highlight));
-        border-radius: 2px;
-        margin: 0 auto 1.5rem;
-      }
-      /* --- Hero Section --- */
-      .about-hero-section {
-        background-color: var(--hero-bg);
-        background-image:
-          linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)),
-          url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        background-size: cover;
-        padding: 180px 0 100px 0;
-        text-align: center;
-        color: var(--hero-text);
-        border-bottom: 5px solid var(--border-color);
-      }
-      .about-hero-img-wrapper {
-        position: relative;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto 1.5rem;
-        border-radius: 50%;
-        border: 5px solid var(--accent-color);
-        box-shadow: 0 10px 30px rgba(var(--shadow-color-rgb), 0.2);
-        transition: transform 0.3s ease;
-      }
-      .about-hero-img-wrapper:hover {
-        transform: scale(1.05);
-      }
-      .about-hero-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-      .gallery-hero-penname {
-        font-size: 1.2rem;
-        font-family: 'Poppins', sans-serif;
-        color: var(--subtle-text);
-        letter-spacing: 1px;
-        margin-top: 0.5rem;
-      }
-      .about-hero-tagline {
-        font-size: 1.2rem;
-        color: var(--subtle-text);
-        margin-bottom: 0.5rem;
-      }
-      .about-hero-tagline a {
-        color: var(--subtle-text);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      .about-hero-tagline a:hover {
-        color: var(--highlight);
-      }
-      .ig-social-row {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      .ig-social-row a {
-        color: var(--subtle-text);
-        font-size: 1.5rem;
-        transition: color 0.3s;
-      }
-      .ig-social-row a:hover {
-        color: var(--highlight);
-      }
-      /* --- Professional Summary --- */
-      .about-summary-section {
-        margin-top: -60px;
-        position: relative;
-        z-index: 2;
-        padding-bottom: 3rem;
-      }
-      .about-summary-card {
-        background: var(--card-bg);
-        border-radius: 20px;
-        padding: 2.5rem;
-        box-shadow: 0 16px 48px rgba(var(--shadow-color-rgb), 0.12);
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .about-summary-card p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: var(--text-color);
-        text-align: center;
-      }
-      /* --- Timeline Section --- */
-      .about-timeline {
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .about-timeline::before {
-        content: '';
-        position: absolute;
-        left: 20px;
-        top: 0;
-        bottom: 0;
-        width: 3px;
-        background-color: var(--border-color);
-        border-radius: 2px;
-      }
-      .timeline-item {
-        display: flex;
-        gap: 1.5rem;
-        align-items: flex-start;
-      }
-      .timeline-icon {
-        width: 44px;
-        height: 44px;
-        background-color: var(--accent-color);
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-        z-index: 1;
-        border: 3px solid var(--body-bg);
-        transition: background-color 0.3s, transform 0.3s;
-      }
-      .timeline-item:hover .timeline-icon {
-        transform: scale(1.1);
-        background-color: var(--highlight);
-      }
-      .timeline-content {
-        flex-grow: 1;
-        padding: 1.5rem;
-        background: var(--card-bg);
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .timeline-content:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px rgba(var(--shadow-color-rgb), 0.1), 0 0 20px var(--glow-color);
-      }
-      .timeline-content h4 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--header-color);
-        margin-bottom: 0.2rem;
-      }
-      .timeline-content h5 {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--accent-color);
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .timeline-details {
-        list-style: none;
-        padding-left: 1rem;
-        margin: 0;
-      }
-      .timeline-details li {
-        font-size: 0.95rem;
-        color: var(--subtle-text);
-        position: relative;
-        padding-left: 1.2rem;
-        margin-bottom: 0.4rem;
-      }
-      .timeline-details li::before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--highlight);
-        font-weight: 700;
-      }
-      .timeline-date {
-        font-size: 0.95rem;
-        color: var(--subtle-text);
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-      .timeline-image-gallery {
-        display: flex;
-        gap: 0.8rem;
-        margin-top: 1rem;
-        flex-wrap: wrap;
-      }
-      .timeline-image {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 12px;
-        border: 3px solid var(--border-color);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      }
-      .timeline-image:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(var(--shadow-color-rgb), 0.15);
-      }
-      /* --- Skills Section --- */
-      .project-tech-container {
-        padding: 1.5rem;
-        background: var(--card-bg);
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .project-tech-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px rgba(var(--shadow-color-rgb), 0.1), 0 0 20px var(--glow-color);
-      }
-      .tech-category-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--header-color);
-        margin: 1.5rem 0 1rem 0;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--border-color);
-      }
-      .tech-category-title:first-child {
-        margin-top: 0;
-      }
-      .project-tech {
-        justify-content: flex-start;
-        gap: 0.8rem;
-      }
-      /* New Skill Colors */
-      .project-tech span.skill-tailwind { color: #38B2AC; background: rgba(56, 178, 172, 0.1); border-color: rgba(56, 178, 172, 0.2); }
-      .project-tech span.skill-tailwind:hover { background: #38B2AC; color: #fff; }
-      .project-tech span:has(.fa-laravel) { color: #FF2D20; background: rgba(255, 45, 32, 0.1); border-color: rgba(255, 45, 32, 0.2); }
-      .project-tech span:has(.fa-laravel):hover { background: #FF2D20; color: #fff; }
-      .project-tech span:has(.fa-node-js) { color: #68A063; background: rgba(104, 160, 99, 0.1); border-color: rgba(104, 160, 99, 0.2); }
-      .project-tech span:has(.fa-node-js):hover { background: #68A063; color: #fff; }
-      .project-tech span.skill-mongo { color: #4DB33D; background: rgba(77, 179, 61, 0.1); border-color: rgba(77, 179, 61, 0.2); }
-      .project-tech span.skill-mongo:hover { background: #4DB33D; color: #fff; }
-      .project-tech span.skill-ai { color: #4A90E2; background: rgba(74, 144, 226, 0.1); border-color: rgba(74, 144, 226, 0.2); }
-      .project-tech span.skill-ai:hover { background: #4A90E2; color: #fff; }
-      .project-tech span.skill-tf { color: #FF6F00; background: rgba(255, 111, 0, 0.1); border-color: rgba(255, 111, 0, 0.2); }
-      .project-tech span.skill-tf:hover { background: #FF6F00; color: #fff; }
-      .project-tech span.skill-playground { color: #41A58F; background: rgba(65, 165, 143, 0.1); border-color: rgba(65, 165, 143, 0.2); }
-      .project-tech span.skill-playground:hover { background: #41A58F; color: #fff; }
-      .project-tech span.skill-actions { color: #2088FF; background: rgba(32, 136, 255, 0.1); border-color: rgba(32, 136, 255, 0.2); }
-      .project-tech span.skill-actions:hover { background: #2088FF; color: #fff; }
-      .project-tech span:has(.fa-docker) { color: #0db7ed; background: rgba(13, 183, 237, 0.1); border-color: rgba(13, 183, 237, 0.2); }
-      .project-tech span:has(.fa-docker):hover { background: #0db7ed; color: #fff; }
-      .project-tech span.skill-vite { color: #646CFF; background: rgba(100, 108, 255, 0.1); border-color: rgba(100, 108, 255, 0.2); }
-      .project-tech span.skill-vite:hover { background: #646CFF; color: #fff; }
-      .project-tech span.skill-graphite { color: #6c757d; background: rgba(108, 117, 125, 0.1); border-color: rgba(108, 117, 125, 0.2); }
-      .project-tech span.skill-graphite:hover { background: #6c757d; color: #fff; }
-      .project-tech span.skill-digital-painting { color: #C71585; background: rgba(199, 21, 133, 0.1); border-color: rgba(199, 21, 133, 0.2); }
-      .project-tech span.skill-digital-painting:hover { background: #C71585; color: #fff; }
-      .project-tech span.skill-ui { color: #FF7B4F; background: rgba(255, 123, 79, 0.1); border-color: rgba(255, 123, 79, 0.2); }
-      .project-tech span.skill-ui:hover { background: #FF7B4F; color: #fff; }
-      /* --- Creative Interests Section --- */
-      .about-fun-section { padding: 4rem 0; }
-      .about-fun-card {
-        background: var(--card-bg);
-        border-radius: 16px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 4px 16px rgba(var(--shadow-color-rgb), 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .about-fun-card:hover {
-        transform: translateY(-5px) scale(1.03);
-        box-shadow: 0 8px 24px rgba(var(--shadow-color-rgb), 0.12), 0 0 20px var(--glow-color);
-      }
-      .about-fun-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        background-image: linear-gradient(45deg, var(--accent-color), var(--highlight));
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .about-fun-label {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--header-color);
-      }
-      /* --- CTA Section --- */
-      .about-cta-section { padding: 2rem 0 4rem 0; }
-      /* --- Dark Theme Overrides --- */
-      [data-theme="dark"] {
-        --shadow-color-rgb: 255, 255, 255;
-        --glow-color: rgba(var(--highlight-rgb), 0.4);
-      }
-      [data-theme="dark"] .about-hero-tagline a:hover {
-        color: var(--highlight);
-      }
-      [data-theme="dark"] .ig-social-row a:hover {
-        color: var(--highlight);
-      }
-      [data-theme="dark"] .about-summary-card,
-      [data-theme="dark"] .timeline-content,
-      [data-theme="dark"] .project-tech-container,
-      [data-theme="dark"] .about-fun-card {
-        background: var(--card-bg);
-        color: var(--header-color);
-        border: 1px solid var(--border-color);
-      }
-      [data-theme="dark"] .tech-category-title {
-        border-bottom-color: var(--border-color);
-      }
-      [data-theme="dark"] .about-fun-label {
-        color: var(--header-color);
-      }
-      @media (max-width: 768px) {
-        .about-timeline::before {
-          left: 20px;
-        }
-        .timeline-item {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .timeline-icon {
-          align-self: flex-start;
-          margin-bottom: 1rem;
-        }
-      }
-  </style>
+  <script src="js/about-enhancements.js"></script>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/theme-handler.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Breadcrumb Navigation -->
+  <div class="container" style="padding-top: 120px;">
+    <div class="breadcrumb-container"></div>
+  </div>
+  <!-- Enhanced Hero Section (with video/audio placeholder) -->
+  <section class="container enhanced-hero-section" data-aos="fade-up" aria-label="Hero">
+    
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <div class="enhanced-hero-img-wrapper" tabindex="0" aria-label="Profile photo">
+          <img src="https://via.placeholder.com/160/4A90E2/ffffff?text=JMG" alt="Profile photo of Jeff Mathew Garcia" class="enhanced-hero-img" />
+        </div>
+        <!-- Video/Audio Greeting Placeholder -->
+        <div class="hero-media-placeholder mt-3" aria-label="Video or audio greeting">
+          <video width="220" height="124" controls poster="https://via.placeholder.com/220x124/4A90E2/ffffff?text=Intro+Video">
+            <source src="#" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="text-muted">[Video/Audio greeting coming soon]</p>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-md-start align-items-center mt-4 mt-md-0">
+        <h1 class="enhanced-hero-title mb-2">Jeff Mathew Garcia</h1>
+        <p class="enhanced-hero-tagline mb-3">I bring art to code and code to art.<br><span class="fw-bold" style="color:var(--accent-color)">Full Stack Developer & Artist</span></p>
+        <nav class="enhanced-hero-social" aria-label="Social links">
+          <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </nav>
+      </div>
+    </div>
+  </section>
 
+
+  <!-- Portfolio / Gallery Section Placeholder -->
+  <section class="container portfolio-section" data-aos="fade-up" aria-label="Portfolio">
+    <h2 class="section-title text-center">Portfolio</h2>
+    <div class="row g-4 portfolio-gallery">
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Artful Web App">
+          <img src="https://via.placeholder.com/300x200/222/fff?text=Artful+Web+App" alt="Screenshot of Artful Web App project" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">Artful Web App</h3>
+            <p class="portfolio-desc">A creative platform for artists to showcase and sell digital artwork. Built with React and Node.js.</p>
+            <a href="#" class="portfolio-link" aria-label="View details for Artful Web App">View Project</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Portfolio Redesign">
+          <img src="https://via.placeholder.com/300x200/4A90E2/fff?text=Portfolio+Redesign" alt="Screenshot of Portfolio Redesign project" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">Portfolio Redesign</h3>
+            <p class="portfolio-desc">A modern, responsive portfolio website with dark mode and interactive galleries. Built with Bootstrap and custom CSS.</p>
+            <a href="#" class="portfolio-link" aria-label="View details for Portfolio Redesign">View Project</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: AI Prompt Tool">
+          <img src="https://via.placeholder.com/300x200/FF7B4F/fff?text=AI+Prompt+Tool" alt="Screenshot of AI Prompt Tool project" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">AI Prompt Tool</h3>
+            <p class="portfolio-desc">A tool for generating and testing AI prompts for creative and technical projects. Built with Python and Flask.</p>
+            <a href="#" class="portfolio-link" aria-label="View details for AI Prompt Tool">View Project</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="text-center mt-3 text-muted">[Add more portfolio items as needed]</p>
+  </section>
+ 
+
+  <!-- Storytelling Timeline Section Placeholder -->
+  <section class="container storytelling-timeline-section" data-aos="fade-up" aria-label="Journey Timeline">
+    <h2 class="section-title text-center">My Journey</h2>
+    <div class="timeline-vertical">
+      <article class="timeline-event" tabindex="0" aria-label="Milestone: University Graduation">
+        <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-event-content">
+          <h3 class="timeline-event-title">University Graduation</h3>
+          <span class="timeline-event-date">2025</span>
+          <p class="timeline-event-desc">Graduated with a B.S. in Information Technology from PLMUN. Developed a passion for blending technology and creativity.</p>
+          <img src="https://via.placeholder.com/100/4A90E2/fff?text=PLMUN" alt="Graduation at PLMUN" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Never stop learning and growing.</p>
+        </div>
+      </article>
+      <article class="timeline-event" tabindex="0" aria-label="Milestone: Internship Experience">
+        <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+        <div class="timeline-event-content">
+          <h3 class="timeline-event-title">Internship Experience</h3>
+          <span class="timeline-event-date">2024</span>
+          <p class="timeline-event-desc">Worked as an AI Prompt Engineer & Developer at SP Madrid Law & Associates. Built tools to automate legal workflows.</p>
+          <img src="https://via.placeholder.com/100/FF7B4F/fff?text=Intern" alt="Internship at SP Madrid Law & Associates" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Real-world problems need creative solutions.</p>
+        </div>
+      </article>
+      <article class="timeline-event" tabindex="0" aria-label="Milestone: Freelance Journey">
+        <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+        <div class="timeline-event-content">
+          <h3 class="timeline-event-title">Freelance Journey</h3>
+          <span class="timeline-event-date">2019 - Present</span>
+          <p class="timeline-event-desc">Full-stack developer and artist for various clients. Designed web apps, UIs, and digital art commissions.</p>
+          <img src="https://via.placeholder.com/100/222/fff?text=Freelance" alt="Freelance work" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Collaboration and adaptability are key.</p>
+        </div>
+      </article>
+    </div>
+    <p class="text-center mt-3 text-muted">[Add more timeline events as needed]</p>
+  </section>
+ 
+  <!-- Interactive Skills Section Placeholder -->
+  <section class="container interactive-skills-section" data-aos="fade-up" aria-label="Skills">
+    <h2 class="section-title text-center">Skills</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="skills-category mb-4">
+          <h3 class="skills-category-title">Frontend</h3>
+          <ul class="skills-badge-list">
+            <li class="skill-badge"><span class="skill-name">HTML5</span><span class="skill-label">Advanced</span></li>
+            <li class="skill-badge"><span class="skill-name">CSS3</span><span class="skill-label">Advanced</span></li>
+            <li class="skill-badge"><span class="skill-name">JavaScript</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">React</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Tailwind</span><span class="skill-label">Familiar</span></li>
+          </ul>
+        </div>
+        <div class="skills-category mb-4">
+          <h3 class="skills-category-title">Backend</h3>
+          <ul class="skills-badge-list">
+            <li class="skill-badge"><span class="skill-name">PHP</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Node.js</span><span class="skill-label">Intermediate</span></li>
+            <li class="skill-badge"><span class="skill-name">MySQL</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">MongoDB</span><span class="skill-label">Familiar</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="skills-category mb-4">
+          <h3 class="skills-category-title">AI & Data</h3>
+          <ul class="skills-badge-list">
+            <li class="skill-badge"><span class="skill-name">OpenAI API</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Python</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">TensorFlow</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">OpenAI Playground</span><span class="skill-label">Familiar</span></li>
+          </ul>
+        </div>
+        <div class="skills-category mb-4">
+          <h3 class="skills-category-title">Tools</h3>
+          <ul class="skills-badge-list">
+            <li class="skill-badge"><span class="skill-name">Git</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">GitHub Actions</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">Docker</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">Vite</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">Figma</span><span class="skill-label">Proficient</span></li>
+          </ul>
+        </div>
+        <div class="skills-category mb-4">
+          <h3 class="skills-category-title">Creative</h3>
+          <ul class="skills-badge-list">
+            <li class="skill-badge"><span class="skill-name">Graphite Illustration</span><span class="skill-label">Advanced</span></li>
+            <li class="skill-badge"><span class="skill-name">Digital Painting</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">UI Mockups</span><span class="skill-label">Proficient</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-3 text-muted">*Skill levels: Advanced, Proficient, Intermediate, Familiar</p>
+  </section>
+
+
+  <!-- Testimonials / Achievements Section Placeholder -->
+  <section class="container testimonials-section" data-aos="fade-up" aria-label="Testimonials and Achievements">
+    <h2 class="section-title text-center">Testimonials & Achievements</h2>
+    <div class="row g-4">
+      <article class="col-md-4">
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Jane Doe, Product Manager">
+          <img src="https://via.placeholder.com/64/4A90E2/fff?text=JD" alt="Avatar of Jane Doe" class="testimonial-avatar" />
+          <blockquote>"Jeff is a rare blend of technical skill and creative vision. He brought our project to life with passion and precision."</blockquote>
+          <figcaption class="blockquote-footer">Jane Doe, Product Manager</figcaption>
+        </figure>
+      </article>
+      <article class="col-md-4">
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Mark Lee, Developer">
+          <img src="https://via.placeholder.com/64/FF7B4F/fff?text=ML" alt="Avatar of Mark Lee" class="testimonial-avatar" />
+          <blockquote>"Working with Jeff was a fantastic experience. His attention to detail and collaborative spirit made all the difference."</blockquote>
+          <figcaption class="blockquote-footer">Mark Lee, Developer</figcaption>
+        </figure>
+      </article>
+      <article class="col-md-4">
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Sarah Kim, Designer">
+          <img src="https://via.placeholder.com/64/222/fff?text=SK" alt="Avatar of Sarah Kim" class="testimonial-avatar" />
+          <blockquote>"Jeff's ability to merge art and code is inspiring. He elevates every project with his creativity."</blockquote>
+          <figcaption class="blockquote-footer">Sarah Kim, Designer</figcaption>
+        </figure>
+      </article>
+    </div>
+    <div class="row mt-4 achievements-row text-center" aria-label="Achievements">
+      <div class="col">
+        <div class="achievement-stat" tabindex="0" aria-label="18 Projects Completed">
+          <span class="achievement-number">18</span>
+          <span class="achievement-label">Projects Completed</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="achievement-stat" tabindex="0" aria-label="5 Years Experience">
+          <span class="achievement-number">5</span>
+          <span class="achievement-label">Years Experience</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="achievement-stat" tabindex="0" aria-label="3 Awards">
+          <span class="achievement-number">3</span>
+          <span class="achievement-label">Awards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Process / Approach Section Placeholder -->
+  <section class="container process-section" data-aos="fade-up" aria-label="My Process">
+    <h2 class="section-title text-center">My Process</h2>
+    <div class="row g-4 justify-content-center process-steps-row">
+      <article class="col-md-2 col-6">
+        <div class="process-step text-center" tabindex="0" aria-label="Step 1: Discover">
+          <div class="process-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
+          <div class="process-label">Discover</div>
+          <div class="process-desc">Understand the problem, goals, and user needs.</div>
+        </div>
+      </article>
+      <article class="col-md-2 col-6">
+        <div class="process-step text-center" tabindex="0" aria-label="Step 2: Design">
+          <div class="process-icon" aria-hidden="true"><i class="fas fa-pencil-ruler"></i></div>
+          <div class="process-label">Design</div>
+          <div class="process-desc">Sketch, wireframe, and prototype creative solutions.</div>
+        </div>
+      </article>
+      <article class="col-md-2 col-6">
+        <div class="process-step text-center" tabindex="0" aria-label="Step 3: Develop">
+          <div class="process-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
+          <div class="process-label">Develop</div>
+          <div class="process-desc">Build, test, and iterate with clean, scalable code.</div>
+        </div>
+      </article>
+      <article class="col-md-2 col-6">
+        <div class="process-step text-center" tabindex="0" aria-label="Step 4: Deliver">
+          <div class="process-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+          <div class="process-label">Deliver</div>
+          <div class="process-desc">Launch, monitor, and support for real-world impact.</div>
+        </div>
+      </article>
+    </div>
+    <p class="text-center mt-3 text-muted">Every project is a journey—let's make it a great one!</p>
+  </section>
+
+
+  <!-- What's Next / Open To Section Placeholder -->
+  <section class="container open-to-section" data-aos="fade-up" aria-label="What's Next">
+    <h2 class="section-title text-center">What's Next?</h2>
+    <article class="open-to-card text-center p-4" tabindex="0" aria-label="Open to new opportunities">
+      <p>I'm currently open to freelance projects, creative collaborations, and full-time opportunities in web development, UI/UX, or digital art. Let's connect and create something amazing together!</p>
+      <a href="mailto:jeffmathewg@gmail.com" class="btn btn-accent mt-3" aria-label="Contact Jeff">Contact Me</a>
+    </article>
+  </section>
+
+
+  <!-- Creative Interests Mini-Gallery Section Placeholder -->
+  <section class="container creative-interests-section" data-aos="fade-up" aria-label="Creative Interests">
+    <h2 class="section-title text-center">Creative Interests</h2>
+    <div class="row g-4 justify-content-center">
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Drawing">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-pencil-ruler"></i></span>
+          <figcaption class="creative-interest-label">Drawing</figcaption>
+          <p class="creative-interest-desc">From graphite sketches to digital art, drawing is my first language.</p>
+        </figure>
+      </article>
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Coding">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
+          <figcaption class="creative-interest-label">Coding</figcaption>
+          <p class="creative-interest-desc">I love building web apps and exploring new tech stacks.</p>
+        </figure>
+      </article>
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Photography">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-camera"></i></span>
+          <figcaption class="creative-interest-label">Photography</figcaption>
+          <p class="creative-interest-desc">Capturing moments and stories through the lens.</p>
+        </figure>
+      </article>
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Organizing">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-sitemap"></i></span>
+          <figcaption class="creative-interest-label">Organizing</figcaption>
+          <p class="creative-interest-desc">I enjoy bringing order to chaos, whether in code or life.</p>
+        </figure>
+      </article>
+    </div>
+    <p class="text-center mt-3 text-muted">[Add more interests as needed]</p>
+  </section>
+
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="footer minimal-footer mt-5" aria-label="Site Footer">
+    <div class="container text-center">
+      <nav class="footer-social mb-2" aria-label="Social links">
+        <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+      </nav>
+      <nav class="footer-links mb-2" aria-label="Footer navigation">
+        <a href="about.html">About</a> |
+        <a href="projects.html">Projects</a> |
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-copyright">
+        <p>&copy; 2024 Jeff Mathew Garcia. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 

@@ -1,3 +1,32 @@
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - MAIN STYLESHEET
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This is the main CSS file that imports all modular stylesheets for the
+  portfolio website. The design features a modern, responsive layout with
+  Instagram-inspired elements and smooth animations.
+  
+  CSS Architecture:
+  - Modular approach with separate files for different components
+  - CSS custom properties for theming
+  - Responsive design with mobile-first approach
+  - Dark/Light theme support
+  - Accessibility-focused design
+  
+  File Structure:
+  - main.css (this file) - Main imports and core styles
+  - modules/ - Component-specific stylesheets
+  - theme.css - CSS custom properties and theming
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 /* Main CSS File - Imports all modules */
 
 /* Import Theme */

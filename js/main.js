@@ -1,5 +1,35 @@
 console.log('main.js loaded');
 
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - MAIN JAVASCRIPT
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This is the main JavaScript file that handles core functionality for the
+  portfolio website including animations, interactions, and user experience
+  enhancements.
+  
+  Features:
+  - AOS (Animate On Scroll) initialization
+  - Interactive project and art galleries
+  - Lightbox functionality for images
+  - View counter integration
+  - Responsive navigation enhancements
+  - Theme switching support
+  
+  Dependencies:
+  - AOS library for scroll animations
+  - Bootstrap 5.2.3 for UI components
+  - Font Awesome 6.0.0 for icons
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 // Initialize AOS (Animate On Scroll)
 AOS.init({
   duration: 800,
@@ -319,4 +349,17 @@ igArtCards.forEach(card => {
       }
     };
   }
-}); 
+});
+
+/*
+  ============================================================================
+  END OF MAIN.JS
+  ============================================================================
+  
+  This file contains all core functionality for the portfolio website.
+  For modular organization, see individual files in the js/ directory.
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/ 

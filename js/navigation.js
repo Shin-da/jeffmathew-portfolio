@@ -1,3 +1,30 @@
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - NAVIGATION SYSTEM
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This file handles all navigation-related functionality including:
+  - Smooth scrolling to sections
+  - Mobile menu toggle and animations
+  - Active section highlighting
+  - Scroll-based navbar effects
+  - Accessibility enhancements
+  
+  Features:
+  - Responsive mobile navigation
+  - Smooth scroll behavior
+  - Active state management
+  - Keyboard navigation support
+  - ARIA accessibility compliance
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 // Enhanced Navigation System
 class NavigationManager {
     constructor() {

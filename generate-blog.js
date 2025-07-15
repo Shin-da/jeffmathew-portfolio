@@ -1,3 +1,37 @@
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - BLOG GENERATOR
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This script generates static blog pages from Markdown files in the posts/
+  directory. It converts Markdown content to HTML and creates individual
+  blog post pages with consistent styling and navigation.
+  
+  Features:
+  - Markdown to HTML conversion
+  - YAML frontmatter support
+  - Automatic blog post generation
+  - SEO-friendly URLs
+  - Responsive blog templates
+  - Navigation between posts
+  
+  Usage:
+  - Add Markdown files to posts/ directory
+  - Run: node generate-blog.js
+  - Generated HTML files will be created in blog/ directory
+  
+  Dependencies:
+  - marked (Markdown parser)
+  - fs, path (Node.js built-ins)
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 const fs = require('fs');
 const path = require('path');
 const marked = require('marked');

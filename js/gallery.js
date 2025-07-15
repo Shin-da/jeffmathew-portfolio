@@ -1,7 +1,36 @@
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - ART GALLERY SYSTEM
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This file handles the interactive art gallery functionality including:
+  - Category-based filtering system
+  - Lightbox with navigation
+  - Touch/swipe support for mobile
+  - Keyboard navigation
+  - Loading states and fallbacks
+  
+  Gallery Features:
+  - Instagram-inspired design
+  - Multi-category filtering
+  - Full-screen lightbox view
+  - Previous/Next navigation
+  - Keyboard shortcuts (Arrow keys, ESC)
+  - Touch gestures for mobile
+  - Responsive image loading
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 /**
- * Gallery JavaScript - Dedicated JS file for gallery functionality
- * Handles filtering, lightbox, navigation, and interactive features
- */
+* Gallery JavaScript - Dedicated JS file for gallery functionality
+* Handles filtering, lightbox, navigation, and interactive features
+*/
 
 // Gallery items data
 const galleryItems = [

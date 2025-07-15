@@ -2,7 +2,17 @@
 
 # Jeff Mathew Garcia Portfolio
 
-Welcome to my personal portfolio website! I am Jeff Mathew Garcia, an IT graduate and artist passionate about web development, system creation, and digital art. This site showcases my projects, skills, and services, and is open for commissions.
+Welcome to my personal portfolio website! I am Jeff Mathew Garcia (シン/shin), an IT graduate and artist passionate about web development, system creation, and digital art. This site showcases my projects, skills, and services, and is open for commissions.
+
+## 📋 Important Notice
+
+This portfolio is **open source** for educational and portfolio-building purposes. However, please respect the following:
+
+- ✅ **You can use** the code structure, design patterns, and functionality
+- ❌ **You cannot use** my personal content, images, artwork, or text
+- 📝 **Please include attribution** if you use this code for your portfolio
+
+For detailed usage guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md) and [LICENSE](LICENSE).
 
 ## 🚀 Features
 - Professional About Me section
@@ -65,5 +75,26 @@ Welcome to my personal portfolio website! I am Jeff Mathew Garcia, an IT graduat
 ## 📬 Contact
 Feel free to reach out via the contact form or any of my social links!
 
+## 🙏 Attribution
+
+If you use this code for your portfolio, please include attribution:
+
+```html
+<!-- 
+  Portfolio inspired by Jeff Mathew Garcia's design
+  Original: https://github.com/shin-da/jeffmathew-portfolio
+-->
+```
+
+## 📄 License
+
+This project is licensed under the MIT License with additional terms for portfolio content. See the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+- **GitHub**: [@shin-da](https://github.com/shin-da)
+- **LinkedIn**: [Jeff Mathew Garcia](https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/)
+- **Website**: [Portfolio](https://shin-da.github.io/jeffmathew-portfolio/)
+
 ---
-Made with ❤️ by Jeff Mathew Garcia 
+Made with ❤️ by Jeff Mathew Garcia (シン/shin) 

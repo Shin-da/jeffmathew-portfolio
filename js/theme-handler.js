@@ -1,3 +1,30 @@
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - THEME HANDLER
+  ============================================================================
+  
+  Created by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+  
+  This file manages the dark/light theme switching functionality including:
+  - Theme toggle button functionality
+  - Local storage persistence
+  - System preference detection
+  - Smooth theme transitions
+  - Accessibility considerations
+  
+  Features:
+  - Toggle between dark and light themes
+  - Remembers user preference
+  - Respects system theme preference
+  - Smooth CSS transitions
+  - ARIA labels for accessibility
+  
+  Copyright © 2025 Jeff Mathew Garcia. All rights reserved.
+  ============================================================================
+*/
+
 // Theme mode handling
 function setThemeMode(enabled, save = true) {
     const htmlEl = document.documentElement;
