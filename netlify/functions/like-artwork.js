@@ -52,6 +52,7 @@ exports.handler = async (event, context) => {
  */
 async function handleGetLikes(event, headers) {
   const { artwork_id } = event.queryStringParameters || {};
+  const userIp = event.headers['client-ip'] || event.headers['x-forwarded-for'] || 'unknown';
 
   try {
     if (artwork_id) {
@@ -69,7 +70,16 @@ async function handleGetLikes(event, headers) {
 
       if (error) throw error;
 
+      // Check if current user has liked this artwork
+      const { data: userLike, error: userError } = await supabase
+        .from('artwork_likes')
+        .select('id')
+        .eq('artwork_id', artwork_id)
+        .eq('user_ip', userIp)
+        .single();
+
       const totalLikes = data.base_likes + (data.artwork_likes?.length || 0);
+      const userLiked = !userError && userLike ? 1 : 0;
       
       return {
         statusCode: 200,
@@ -78,7 +88,7 @@ async function handleGetLikes(event, headers) {
           id: data.id,
           title: data.title,
           base_likes: data.base_likes,
-          user_likes: data.artwork_likes?.length || 0,
+          user_likes: userLiked,
           total_likes: totalLikes
         })
       };
@@ -96,13 +106,26 @@ async function handleGetLikes(event, headers) {
 
       if (error) throw error;
 
-      const results = data.map(artwork => ({
-        id: artwork.id,
-        title: artwork.title,
-        base_likes: artwork.base_likes,
-        user_likes: artwork.artwork_likes?.length || 0,
-        total_likes: artwork.base_likes + (artwork.artwork_likes?.length || 0)
-      }));
+      // Get current user's likes for all artworks
+      const { data: userLikes, error: userError } = await supabase
+        .from('artwork_likes')
+        .select('artwork_id')
+        .eq('user_ip', userIp);
+
+      const userLikedArtworks = userError ? [] : userLikes.map(like => like.artwork_id);
+
+      const results = data.map(artwork => {
+        const totalLikes = artwork.base_likes + (artwork.artwork_likes?.length || 0);
+        const userLiked = userLikedArtworks.includes(artwork.id) ? 1 : 0;
+        
+        return {
+          id: artwork.id,
+          title: artwork.title,
+          base_likes: artwork.base_likes,
+          user_likes: userLiked,
+          total_likes: totalLikes
+        };
+      });
 
       return {
         statusCode: 200,

@@ -97,7 +97,7 @@ const galleryItems = [
         image: "assets/images/random-sketch.jpg",
         category: "Traditional Art",
         date: "2022",
-        likes: 0,
+        likes: 0,   
         comments: 0,
         isLiked: false
     },
@@ -523,7 +523,7 @@ function updateLikeDisplay(item) {
         const likeCount = element.querySelector('span');
         
         if (heartIcon && likeCount) {
-            // Update heart icon
+            // Update heart icon based on user's like status
             if (item.isLiked) {
                 heartIcon.classList.remove('far');
                 heartIcon.classList.add('fas', 'text-danger');
@@ -532,7 +532,7 @@ function updateLikeDisplay(item) {
                 heartIcon.classList.add('far');
             }
             
-            // Update count with formatting
+            // Always show the total like count from server
             likeCount.textContent = formatLikeCount(item.likes);
         }
     });
@@ -616,6 +616,9 @@ function initInteractiveLikes() {
     // Load like counts from server on page load
     loadLikeCountsFromServer();
     
+    // Set up periodic refresh of like counts (every 30 seconds)
+    setInterval(refreshLikeCounts, 30000);
+    
     // Add click handlers to all like buttons
     document.addEventListener('click', function(e) {
         if (e.target.closest('.gallery-item-stat')) {
@@ -659,6 +662,48 @@ function initInteractiveLikes() {
 }
 
 /**
+ * Refresh like counts from server (without changing user's like status)
+ */
+async function refreshLikeCounts() {
+    try {
+        const response = await fetch('/.netlify/functions/like-artwork');
+        if (!response.ok) {
+            throw new Error('Failed to refresh like counts');
+        }
+        
+        const likeData = await response.json();
+        
+        // Update gallery items with server data (preserve user's like status)
+        likeData.forEach(serverItem => {
+            const galleryItem = galleryItems.find(item => item.id === parseInt(serverItem.id));
+            if (galleryItem) {
+                // Update total likes from server
+                galleryItem.likes = parseInt(serverItem.total_likes);
+                galleryItem.baseLikes = parseInt(serverItem.base_likes);
+                
+                // Update user's like status from server
+                const serverUserLiked = parseInt(serverItem.user_likes) > 0;
+                if (serverUserLiked !== galleryItem.isLiked) {
+                    galleryItem.isLiked = serverUserLiked;
+                    if (serverUserLiked) {
+                        userLikes.add(galleryItem.id);
+                    } else {
+                        userLikes.delete(galleryItem.id);
+                    }
+                }
+            }
+        });
+        
+        // Update displays with server data
+        updateAllLikeDisplays();
+        
+    } catch (error) {
+        console.error('Error refreshing like counts:', error);
+        // Don't fallback to local storage for refresh - just log the error
+    }
+}
+
+/**
  * Load like counts from server
  */
 async function loadLikeCountsFromServer() {
@@ -674,19 +719,23 @@ async function loadLikeCountsFromServer() {
         likeData.forEach(serverItem => {
             const galleryItem = galleryItems.find(item => item.id === parseInt(serverItem.id));
             if (galleryItem) {
+                // Update total likes from server
                 galleryItem.likes = parseInt(serverItem.total_likes);
                 galleryItem.baseLikes = parseInt(serverItem.base_likes);
                 galleryItem.userLikes = parseInt(serverItem.user_likes);
                 
-                // Check if user has liked this item
+                // Check if current user has liked this item
                 if (serverItem.user_likes > 0) {
                     galleryItem.isLiked = true;
                     userLikes.add(galleryItem.id);
+                } else {
+                    galleryItem.isLiked = false;
+                    userLikes.delete(galleryItem.id);
                 }
             }
         });
         
-        // Update displays
+        // Update displays with server data
         updateAllLikeDisplays();
         
     } catch (error) {
