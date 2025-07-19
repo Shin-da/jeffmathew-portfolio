@@ -1,0 +1,106 @@
+/* about-testimonials.css - Testimonials Section Styles */
+
+.testimonials-section {
+  padding: 4rem 0;
+  background: #ffffff;
+  border-top: var(--instagram-border);
+  border-bottom: var(--instagram-border);
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  padding: 2rem 1.25rem 1.5rem 1.25rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+  outline: none;
+  border: var(--instagram-border);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.testimonial-card:focus,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.testimonial-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+  box-shadow: var(--instagram-shadow);
+  border: 3px solid #ffffff;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  transform: scale(1.05);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.testimonial-card blockquote {
+  font-size: 1rem;
+  color: var(--text-color, #262626);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+}
+
+.blockquote-footer {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.achievements-row {
+  margin-top: 2.5rem !important;
+  gap: 1.5rem;
+}
+
+.achievement-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  padding: 1.5rem 1.25rem;
+  min-width: 140px;
+  margin: 0 auto;
+  transition: var(--transition-smooth);
+  border: var(--instagram-border);
+  position: relative;
+}
+
+.achievement-stat:focus,
+.achievement-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--instagram-shadow-hover);
+  outline: none;
+}
+
+.achievement-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.achievement-label {
+  font-size: 0.9rem;
+  color: var(--subtle-text, #8e8e93);
+  font-weight: 500;
+} 

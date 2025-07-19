@@ -671,6 +671,264 @@
 }
 
 /* ========================================
+   INTERACTIVE LIKES
+   ======================================== */
+
+/* Like button styles */
+.gallery-item-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 4px 8px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Heart icon specific styles */
+.gallery-item-stat i.fa-heart {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+}
+
+/* Unliked state */
+.gallery-item-stat i.far.fa-heart {
+    color: var(--subtle-text);
+}
+
+/* Liked state */
+.gallery-item-stat i.fas.fa-heart {
+    color: #e74c3c;
+    animation: heartBeat 0.6s ease-in-out;
+}
+
+/* Hover effects */
+.gallery-item-stat.hover-effect {
+    background: rgba(var(--accent-rgb), 0.1);
+    transform: scale(1.05);
+}
+
+.gallery-item-stat:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    transform: scale(1.05);
+}
+
+.gallery-item-stat:hover i.far.fa-heart {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+/* Click animation */
+.gallery-item-stat.like-animation {
+    animation: likePulse 0.3s ease-in-out;
+}
+
+.gallery-item-stat.like-animation i.fas.fa-heart {
+    animation: heartBeat 0.6s ease-in-out;
+}
+
+/* Heart beat animation */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.3);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* Like pulse animation */
+@keyframes likePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Like count styles */
+.gallery-item-stat span {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.gallery-item-stat:hover span {
+    color: var(--accent-color);
+}
+
+/* Active like state */
+.gallery-item-stat.liked {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.gallery-item-stat.liked i.fas.fa-heart {
+    color: #e74c3c;
+}
+
+/* Like button accessibility */
+.gallery-item-stat:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Like button disabled state */
+.gallery-item-stat.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Like button loading state */
+.gallery-item-stat.loading {
+    position: relative;
+}
+
+.gallery-item-stat.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Like tooltip */
+.gallery-item-stat::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.gallery-item-stat:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Like success feedback */
+.gallery-item-stat.like-success {
+    animation: likeSuccess 0.5s ease-in-out;
+}
+
+@keyframes likeSuccess {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Like error feedback */
+.gallery-item-stat.like-error {
+    animation: likeError 0.5s ease-in-out;
+}
+
+@keyframes likeError {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-4px);
+    }
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .gallery-item-stat {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .gallery-item-stat:hover {
+    background: rgba(var(--accent-rgb), 0.2);
+}
+
+[data-theme="dark"] .gallery-item-stat i.far.fa-heart {
+    color: var(--subtle-text);
+}
+
+[data-theme="dark"] .gallery-item-stat::before {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .gallery-item-stat {
+        padding: 6px 10px;
+        font-size: 1rem;
+    }
+    
+    .gallery-item-stat i.fa-heart {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-item-stat:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item-stat {
+        padding: 8px 12px;
+        font-size: 1.1rem;
+    }
+    
+    .gallery-item-stat i.fa-heart {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {

@@ -1,0 +1,65 @@
+/* about-footer.css - Footer Section Styles */
+
+.minimal-footer {
+  background: #ffffff;
+  border-top: var(--instagram-border);
+  padding: 2rem 0 1.5rem 0;
+  margin-top: 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  color: var(--subtle-text, #8e8e93);
+  font-size: 1.5rem;
+  transition: var(--transition-smooth);
+  outline: none;
+  padding: 8px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.footer-social a:focus,
+.footer-social a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+  background: rgba(var(--accent-rgb), 0.1);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: var(--subtle-text, #8e8e93);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.footer-links a:focus,
+.footer-links a:hover {
+  color: var(--accent-color);
+  background: rgba(var(--accent-rgb), 0.1);
+  text-decoration: none;
+}
+
+.footer-copyright {
+  color: var(--subtle-text, #8e8e93);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 400;
+} 

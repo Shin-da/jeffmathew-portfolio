@@ -66,10 +66,21 @@
   <link rel="stylesheet" href="css/modules/responsive.css">
   <link rel="stylesheet" href="css/modules/components.css">
   <link rel="stylesheet" href="css/modules/animations.css">
-  <link rel="stylesheet" href="css/modules/navigation.css">
+  
+  <link rel="stylesheet" href="css/modules/enhanced-navigation.css">
   <link rel="stylesheet" href="css/modules/dark-theme.css">
   <link href="css/modules/typography.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/modules/about-enhancements.css">
+  <!-- About Page Specific Styles -->
+  <link rel="stylesheet" href="css/modules/about-hero.css">
+  <link rel="stylesheet" href="css/modules/about-projects.css">
+  <link rel="stylesheet" href="css/modules/about-timeline.css">
+  <link rel="stylesheet" href="css/modules/about-skills.css">
+  <link rel="stylesheet" href="css/modules/about-testimonials.css">
+  <link rel="stylesheet" href="css/modules/about-process.css">
+  <link rel="stylesheet" href="css/modules/about-creative-interests.css">
+  <link rel="stylesheet" href="css/modules/about-footer.css">
+  <link rel="stylesheet" href="css/modules/about-responsive.css">
+  <link rel="stylesheet" href="css/modules/about-dark-theme.css">
   <link rel="icon" type="image/jpeg" href="assets/images/me.jpg" sizes="32x32">
 </head>
 <body>
@@ -143,7 +154,7 @@
     <div class="row align-items-center">
       <div class="col-md-6 text-center">
         <div class="enhanced-hero-img-wrapper" tabindex="0" aria-label="Profile photo">
-          <img src="https://via.placeholder.com/160/4A90E2/ffffff?text=JMG" alt="Profile photo of Jeff Mathew Garcia" class="enhanced-hero-img" />
+          <img src="assets/images/me.webp" alt="Profile photo of Jeff Mathew Garcia" class="enhanced-hero-img" />
         </div>
         <!-- Video/Audio Greeting Placeholder -->
         <div class="hero-media-placeholder mt-3" aria-label="Video or audio greeting">
@@ -156,7 +167,8 @@
       </div>
       <div class="col-md-6 d-flex flex-column justify-content-center align-items-md-start align-items-center mt-4 mt-md-0">
         <h1 class="enhanced-hero-title mb-2">Jeff Mathew Garcia</h1>
-        <p class="enhanced-hero-tagline mb-3">I bring art to code and code to art.<br><span class="fw-bold" style="color:var(--accent-color)">Full Stack Developer & Artist</span></p>
+        <p class="enhanced-hero-tagline mb-3">Where creativity meets code, and art becomes interactive.<br><span class="fw-bold" style="color:var(--accent-color)">Full Stack Developer & Digital Artist</span></p>
+        <p class="enhanced-hero-bio mb-3">I'm passionate about creating digital experiences that are both beautiful and functional. With a background in both traditional art and modern web development, I bring a unique perspective to every project—turning ideas into elegant, user-centered solutions.</p>
         <nav class="enhanced-hero-social" aria-label="Social links">
           <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
@@ -167,46 +179,111 @@
   </section>
 
 
-  <!-- Portfolio / Gallery Section Placeholder -->
+  <!-- Portfolio / Gallery Section -->
   <section class="container portfolio-section" data-aos="fade-up" aria-label="Portfolio">
-    <h2 class="section-title text-center">Portfolio</h2>
+    <h2 class="section-title text-center">Featured Projects</h2>
     <div class="row g-4 portfolio-gallery">
       <article class="col-md-4 col-sm-6">
-        <div class="portfolio-card" tabindex="0" aria-label="Project: Artful Web App">
-          <img src="https://via.placeholder.com/300x200/222/fff?text=Artful+Web+App" alt="Screenshot of Artful Web App project" class="portfolio-img" />
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Portfolio Website">
+          <img src="assets/images/projects/jeffmathew-portfolio.webp" alt="Screenshot of Jeff Mathew Garcia Portfolio Website" class="portfolio-img" />
           <div class="portfolio-card-body">
-            <h3 class="portfolio-title">Artful Web App</h3>
-            <p class="portfolio-desc">A creative platform for artists to showcase and sell digital artwork. Built with React and Node.js.</p>
-            <a href="#" class="portfolio-link" aria-label="View details for Artful Web App">View Project</a>
+            <h3 class="portfolio-title">Portfolio Website</h3>
+            <p class="portfolio-desc">A modern, responsive portfolio showcasing my work as a developer and artist. Features dark/light theme, interactive galleries, and blog functionality.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Bootstrap</span>
+            </div>
+            <a href="index.html" class="portfolio-link" aria-label="View Portfolio Website">View Project</a>
           </div>
         </div>
       </article>
       <article class="col-md-4 col-sm-6">
-        <div class="portfolio-card" tabindex="0" aria-label="Project: Portfolio Redesign">
-          <img src="https://via.placeholder.com/300x200/4A90E2/fff?text=Portfolio+Redesign" alt="Screenshot of Portfolio Redesign project" class="portfolio-img" />
+        <div class="portfolio-card" tabindex="0" aria-label="Project: OJT Tracking System">
+          <img src="assets/images/projects/ojt-tracking-system.webp" alt="Screenshot of OJT Tracking System" class="portfolio-img" />
           <div class="portfolio-card-body">
-            <h3 class="portfolio-title">Portfolio Redesign</h3>
-            <p class="portfolio-desc">A modern, responsive portfolio website with dark mode and interactive galleries. Built with Bootstrap and custom CSS.</p>
-            <a href="#" class="portfolio-link" aria-label="View details for Portfolio Redesign">View Project</a>
+            <h3 class="portfolio-title">OJT Tracking System</h3>
+            <p class="portfolio-desc">A comprehensive tracking system for On-the-Job Training programs. Features student progress monitoring, report generation, and administrative dashboard.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <a href="projects.html#ojt-tracking" class="portfolio-link" aria-label="View OJT Tracking System">View Project</a>
           </div>
         </div>
       </article>
       <article class="col-md-4 col-sm-6">
-        <div class="portfolio-card" tabindex="0" aria-label="Project: AI Prompt Tool">
-          <img src="https://via.placeholder.com/300x200/FF7B4F/fff?text=AI+Prompt+Tool" alt="Screenshot of AI Prompt Tool project" class="portfolio-img" />
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Henrich Food Corporation Management System">
+          <img src="assets/images/projects/henrich-food-corporation-system.webp" alt="Screenshot of Henrich Food Corporation Management System" class="portfolio-img" />
           <div class="portfolio-card-body">
-            <h3 class="portfolio-title">AI Prompt Tool</h3>
-            <p class="portfolio-desc">A tool for generating and testing AI prompts for creative and technical projects. Built with Python and Flask.</p>
-            <a href="#" class="portfolio-link" aria-label="View details for AI Prompt Tool">View Project</a>
+            <h3 class="portfolio-title">HFC Management System</h3>
+            <p class="portfolio-desc">A complete business management solution for Henrich Food Corporation. Includes inventory management, sales tracking, and employee management modules.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">jQuery</span>
+            </div>
+            <a href="projects.html#hfc-management" class="portfolio-link" aria-label="View HFC Management System">View Project</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Wedding Invitation Web App">
+          <img src="assets/images/projects/wedding-invitation.webp" alt="Screenshot of Wedding Invitation Web App" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">Wedding Invitation Web App</h3>
+            <p class="portfolio-desc">A beautiful, interactive wedding invitation website with RSVP functionality, photo galleries, and event details. Perfect for modern couples.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">PHP</span>
+            </div>
+            <a href="projects.html#wedding-invitation" class="portfolio-link" aria-label="View Wedding Invitation Web App">View Project</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: Digital Art Gallery">
+          <img src="assets/images/gallery.png" alt="Screenshot of Digital Art Gallery" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">Digital Art Gallery</h3>
+            <p class="portfolio-desc">An interactive gallery showcasing my digital artwork and illustrations. Features lightbox viewing, categories, and responsive design.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">LightGallery</span>
+            </div>
+            <a href="gallery.html" class="portfolio-link" aria-label="View Digital Art Gallery">View Project</a>
+          </div>
+        </div>
+      </article>
+      <article class="col-md-4 col-sm-6">
+        <div class="portfolio-card" tabindex="0" aria-label="Project: AI Prompt Engineering">
+          <img src="assets/images/ojt_okpoai_interface.jpg" alt="Screenshot of AI Prompt Engineering work" class="portfolio-img" />
+          <div class="portfolio-card-body">
+            <h3 class="portfolio-title">AI Prompt Engineering</h3>
+            <p class="portfolio-desc">Developed and optimized AI prompts for business operations during my internship. Enhanced AI agents for efficient user interactions.</p>
+            <div class="portfolio-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">OpenAI API</span>
+              <span class="tech-badge">API Integration</span>
+              <span class="tech-badge">Automation</span>
+            </div>
+            <a href="blog/my-ojt-experience.html" class="portfolio-link" aria-label="Read about AI Prompt Engineering experience">Read More</a>
           </div>
         </div>
       </article>
     </div>
-    <p class="text-center mt-3 text-muted">[Add more portfolio items as needed]</p>
   </section>
  
 
-  <!-- Storytelling Timeline Section Placeholder -->
+  <!-- Storytelling Timeline Section -->
   <section class="container storytelling-timeline-section" data-aos="fade-up" aria-label="Journey Timeline">
     <h2 class="section-title text-center">My Journey</h2>
     <div class="timeline-vertical">
@@ -215,19 +292,50 @@
         <div class="timeline-event-content">
           <h3 class="timeline-event-title">University Graduation</h3>
           <span class="timeline-event-date">2025</span>
-          <p class="timeline-event-desc">Graduated with a B.S. in Information Technology from PLMUN. Developed a passion for blending technology and creativity.</p>
-          <img src="https://via.placeholder.com/100/4A90E2/fff?text=PLMUN" alt="Graduation at PLMUN" class="timeline-event-img" />
-          <p class="timeline-event-lesson"><strong>Lesson:</strong> Never stop learning and growing.</p>
+          <div class="company-name mb-2">Pamantasan ng Lungsod ng Muntinlupa (PLMUN)</div>
+          <div class="position mb-2">Bachelor of Science in Information Technology</div>
+          <p class="timeline-event-desc">Successfully completed my degree with a focus on web development and emerging technologies. Developed a passion for blending technology and creativity through various projects and coursework.</p>
+          <img src="assets/images/plmun-logo.png" alt="PLMUN Logo" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Education is the foundation, but continuous learning is the key to growth.</p>
         </div>
       </article>
       <article class="timeline-event" tabindex="0" aria-label="Milestone: Internship Experience">
         <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
         <div class="timeline-event-content">
           <h3 class="timeline-event-title">Internship Experience</h3>
-          <span class="timeline-event-date">2024</span>
-          <p class="timeline-event-desc">Worked as an AI Prompt Engineer & Developer at SP Madrid Law & Associates. Built tools to automate legal workflows.</p>
-          <img src="https://via.placeholder.com/100/FF7B4F/fff?text=Intern" alt="Internship at SP Madrid Law & Associates" class="timeline-event-img" />
-          <p class="timeline-event-lesson"><strong>Lesson:</strong> Real-world problems need creative solutions.</p>
+          <span class="timeline-event-date">2025</span>
+          <div class="company-name mb-2">SP Madrid & Associates Law Firm</div>
+          <div class="position mb-2">Developer and AI Prompt Engineer (Internship)</div>
+          <div class="duration mb-2"><i class="far fa-calendar-alt"></i> 500 Hours (Feb-May)</div>
+          <h4>Key Achievements & Responsibilities:</h4>
+          <ul class="achievement-list">
+            <li>Enhanced and maintained AI agents to handle multiple user interactions efficiently</li>
+            <li>Developed automation solutions using Python and APIs to streamline workflows</li>
+            <li>Created and optimized AI prompts for operations and client services</li>
+            <li>Collaborated with the team to implement new features and improve user experience</li>
+            <li>Gained hands-on experience with OpenAI API and modern AI integration</li>
+          </ul>
+          <div class="ojt-images-container mt-3">
+            <img src="assets/images/ojt_group_photo.jpg" alt="OJT Group Photo at SP Madrid" class="img-fluid ojt-gallery-img" width="100" height="66">
+            <img src="assets/images/ojt_working.jpg" alt="Working during OJT" class="img-fluid ojt-gallery-img" width="100" height="66">
+            <img src="assets/images/ojt_okpoai_interface.jpg" alt="OkPoAI interface during OJT" class="img-fluid ojt-gallery-img" width="100" height="66">
+          </div>
+          <div class="mt-3">
+            <a href="blog/my-ojt-experience.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
+              <i class="fas fa-book-open"></i> Read more about this experience on my blog
+            </a>
+          </div>
+          <p class="timeline-event-lesson mt-2"><strong>Lesson:</strong> Real-world problems need creative solutions, and AI is a powerful tool when used thoughtfully.</p>
+        </div>
+      </article>
+      <article class="timeline-event" tabindex="0" aria-label="Milestone: Portfolio Website Launch">
+        <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
+        <div class="timeline-event-content">
+          <h3 class="timeline-event-title">Portfolio Website Launch</h3>
+          <span class="timeline-event-date">2025</span>
+          <p class="timeline-event-desc">Designed and developed my personal portfolio website to showcase my work as both a developer and artist. Features responsive design, dark/light theme, interactive galleries, and blog functionality.</p>
+          <img src="assets/images/my-portfolio-preview.png" alt="Portfolio Website Preview" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Your portfolio is your digital identity—make it authentic and showcase your unique skills.</p>
         </div>
       </article>
       <article class="timeline-event" tabindex="0" aria-label="Milestone: Freelance Journey">
@@ -235,67 +343,95 @@
         <div class="timeline-event-content">
           <h3 class="timeline-event-title">Freelance Journey</h3>
           <span class="timeline-event-date">2019 - Present</span>
-          <p class="timeline-event-desc">Full-stack developer and artist for various clients. Designed web apps, UIs, and digital art commissions.</p>
-          <img src="https://via.placeholder.com/100/222/fff?text=Freelance" alt="Freelance work" class="timeline-event-img" />
-          <p class="timeline-event-lesson"><strong>Lesson:</strong> Collaboration and adaptability are key.</p>
+          <p class="timeline-event-desc">Working as a full-stack developer and digital artist for various clients. Specializing in web applications, UI/UX design, and digital art commissions. Built a diverse portfolio of projects ranging from business management systems to creative web applications.</p>
+          <div class="achievement-list">
+            <li>Developed custom web applications for small businesses</li>
+            <li>Created digital artwork and illustrations for clients</li>
+            <li>Designed user interfaces and user experiences</li>
+            <li>Maintained and optimized existing websites</li>
+          </div>
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Every project teaches you something new—embrace the learning opportunities.</p>
+        </div>
+      </article>
+      <article class="timeline-event" tabindex="0" aria-label="Milestone: First Digital Art Commission">
+        <div class="timeline-event-icon" aria-hidden="true"><i class="fas fa-palette"></i></div>
+        <div class="timeline-event-content">
+          <h3 class="timeline-event-title">First Digital Art Commission</h3>
+          <span class="timeline-event-date">2019</span>
+          <p class="timeline-event-desc">Started taking digital art commissions, combining my artistic skills with digital tools. This marked the beginning of my journey in merging creativity with technology.</p>
+          <img src="assets/images/random-sketch.webp" alt="Digital Art Sample" class="timeline-event-img" />
+          <p class="timeline-event-lesson"><strong>Lesson:</strong> Your passion can become your profession—never stop creating.</p>
         </div>
       </article>
     </div>
-    <p class="text-center mt-3 text-muted">[Add more timeline events as needed]</p>
   </section>
  
-  <!-- Interactive Skills Section Placeholder -->
+  <!-- Interactive Skills Section -->
   <section class="container interactive-skills-section" data-aos="fade-up" aria-label="Skills">
-    <h2 class="section-title text-center">Skills</h2>
+    <h2 class="section-title text-center">Skills & Expertise</h2>
+    <p class="text-center mb-4">Bridging the gap between art and technology with a diverse skill set</p>
     <div class="row g-4">
       <div class="col-md-6">
         <div class="skills-category mb-4">
-          <h3 class="skills-category-title">Frontend</h3>
+          <h3 class="skills-category-title"><i class="fas fa-palette"></i> Frontend Development</h3>
           <ul class="skills-badge-list">
             <li class="skill-badge"><span class="skill-name">HTML5</span><span class="skill-label">Advanced</span></li>
             <li class="skill-badge"><span class="skill-name">CSS3</span><span class="skill-label">Advanced</span></li>
             <li class="skill-badge"><span class="skill-name">JavaScript</span><span class="skill-label">Proficient</span></li>
-            <li class="skill-badge"><span class="skill-name">React</span><span class="skill-label">Proficient</span></li>
-            <li class="skill-badge"><span class="skill-name">Tailwind</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">Bootstrap</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">React</span><span class="skill-label">Intermediate</span></li>
+            <li class="skill-badge"><span class="skill-name">Tailwind CSS</span><span class="skill-label">Familiar</span></li>
           </ul>
         </div>
         <div class="skills-category mb-4">
-          <h3 class="skills-category-title">Backend</h3>
+          <h3 class="skills-category-title"><i class="fas fa-server"></i> Backend Development</h3>
           <ul class="skills-badge-list">
             <li class="skill-badge"><span class="skill-name">PHP</span><span class="skill-label">Proficient</span></li>
             <li class="skill-badge"><span class="skill-name">Node.js</span><span class="skill-label">Intermediate</span></li>
             <li class="skill-badge"><span class="skill-name">MySQL</span><span class="skill-label">Proficient</span></li>
             <li class="skill-badge"><span class="skill-name">MongoDB</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">RESTful APIs</span><span class="skill-label">Proficient</span></li>
           </ul>
         </div>
       </div>
       <div class="col-md-6">
         <div class="skills-category mb-4">
-          <h3 class="skills-category-title">AI & Data</h3>
+          <h3 class="skills-category-title"><i class="fas fa-robot"></i> AI & Automation</h3>
           <ul class="skills-badge-list">
             <li class="skill-badge"><span class="skill-name">OpenAI API</span><span class="skill-label">Proficient</span></li>
             <li class="skill-badge"><span class="skill-name">Python</span><span class="skill-label">Proficient</span></li>
-            <li class="skill-badge"><span class="skill-name">TensorFlow</span><span class="skill-label">Familiar</span></li>
-            <li class="skill-badge"><span class="skill-name">OpenAI Playground</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">AI Prompt Engineering</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">API Integration</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Workflow Automation</span><span class="skill-label">Intermediate</span></li>
           </ul>
         </div>
         <div class="skills-category mb-4">
-          <h3 class="skills-category-title">Tools</h3>
+          <h3 class="skills-category-title"><i class="fas fa-tools"></i> Development Tools</h3>
           <ul class="skills-badge-list">
-            <li class="skill-badge"><span class="skill-name">Git</span><span class="skill-label">Proficient</span></li>
-            <li class="skill-badge"><span class="skill-name">GitHub Actions</span><span class="skill-label">Familiar</span></li>
-            <li class="skill-badge"><span class="skill-name">Docker</span><span class="skill-label">Familiar</span></li>
-            <li class="skill-badge"><span class="skill-name">Vite</span><span class="skill-label">Familiar</span></li>
+            <li class="skill-badge"><span class="skill-name">Git & GitHub</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">VS Code</span><span class="skill-label">Proficient</span></li>
             <li class="skill-badge"><span class="skill-name">Figma</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Adobe Creative Suite</span><span class="skill-label">Intermediate</span></li>
+            <li class="skill-badge"><span class="skill-name">XAMPP</span><span class="skill-label">Proficient</span></li>
           </ul>
         </div>
         <div class="skills-category mb-4">
-          <h3 class="skills-category-title">Creative</h3>
+          <h3 class="skills-category-title"><i class="fas fa-paint-brush"></i> Creative Skills</h3>
           <ul class="skills-badge-list">
-            <li class="skill-badge"><span class="skill-name">Graphite Illustration</span><span class="skill-label">Advanced</span></li>
-            <li class="skill-badge"><span class="skill-name">Digital Painting</span><span class="skill-label">Proficient</span></li>
-            <li class="skill-badge"><span class="skill-name">UI Mockups</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Digital Illustration</span><span class="skill-label">Advanced</span></li>
+            <li class="skill-badge"><span class="skill-name">UI/UX Design</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Graphic Design</span><span class="skill-label">Proficient</span></li>
+            <li class="skill-badge"><span class="skill-name">Traditional Art</span><span class="skill-label">Advanced</span></li>
+            <li class="skill-badge"><span class="skill-name">Photography</span><span class="skill-label">Intermediate</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="skills-highlight text-center p-4">
+          <h4><i class="fas fa-star"></i> What Makes Me Unique</h4>
+          <p class="mb-0">I combine technical expertise with artistic vision, creating digital experiences that are both functional and visually compelling. My background in both art and code allows me to approach problems from multiple perspectives.</p>
         </div>
       </div>
     </div>
@@ -303,36 +439,36 @@
   </section>
 
 
-  <!-- Testimonials / Achievements Section Placeholder -->
+  <!-- Testimonials / Achievements Section -->
   <section class="container testimonials-section" data-aos="fade-up" aria-label="Testimonials and Achievements">
     <h2 class="section-title text-center">Testimonials & Achievements</h2>
     <div class="row g-4">
       <article class="col-md-4">
-        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Jane Doe, Product Manager">
-          <img src="https://via.placeholder.com/64/4A90E2/fff?text=JD" alt="Avatar of Jane Doe" class="testimonial-avatar" />
-          <blockquote>"Jeff is a rare blend of technical skill and creative vision. He brought our project to life with passion and precision."</blockquote>
-          <figcaption class="blockquote-footer">Jane Doe, Product Manager</figcaption>
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from SP Madrid & Associates">
+          <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Logo" class="testimonial-avatar" />
+          <blockquote>"Jeff demonstrated exceptional technical skills and creativity during his internship. His work on AI prompt engineering and automation solutions significantly improved our operational efficiency."</blockquote>
+          <figcaption class="blockquote-footer">SP Madrid & Associates Law Firm<br><small>Internship Supervisor</small></figcaption>
         </figure>
       </article>
       <article class="col-md-4">
-        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Mark Lee, Developer">
-          <img src="https://via.placeholder.com/64/FF7B4F/fff?text=ML" alt="Avatar of Mark Lee" class="testimonial-avatar" />
-          <blockquote>"Working with Jeff was a fantastic experience. His attention to detail and collaborative spirit made all the difference."</blockquote>
-          <figcaption class="blockquote-footer">Mark Lee, Developer</figcaption>
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Freelance Client">
+          <img src="https://via.placeholder.com/64/4A90E2/fff?text=FC" alt="Freelance Client Avatar" class="testimonial-avatar" />
+          <blockquote>"Jeff's ability to understand our vision and translate it into a beautiful, functional website exceeded our expectations. His attention to detail and communication skills made the entire process smooth."</blockquote>
+          <figcaption class="blockquote-footer">Freelance Client<br><small>Small Business Owner</small></figcaption>
         </figure>
       </article>
       <article class="col-md-4">
-        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Sarah Kim, Designer">
-          <img src="https://via.placeholder.com/64/222/fff?text=SK" alt="Avatar of Sarah Kim" class="testimonial-avatar" />
-          <blockquote>"Jeff's ability to merge art and code is inspiring. He elevates every project with his creativity."</blockquote>
-          <figcaption class="blockquote-footer">Sarah Kim, Designer</figcaption>
+        <figure class="testimonial-card" tabindex="0" aria-label="Testimonial from Art Commission Client">
+          <img src="https://via.placeholder.com/64/FF7B4F/fff?text=AC" alt="Art Commission Client Avatar" class="testimonial-avatar" />
+          <blockquote>"Jeff's digital artwork perfectly captured what I was looking for. His artistic talent combined with technical skills creates truly unique pieces that stand out."</blockquote>
+          <figcaption class="blockquote-footer">Art Commission Client<br><small>Digital Art Enthusiast</small></figcaption>
         </figure>
       </article>
     </div>
     <div class="row mt-4 achievements-row text-center" aria-label="Achievements">
       <div class="col">
-        <div class="achievement-stat" tabindex="0" aria-label="18 Projects Completed">
-          <span class="achievement-number">18</span>
+        <div class="achievement-stat" tabindex="0" aria-label="6+ Projects Completed">
+          <span class="achievement-number">6+</span>
           <span class="achievement-label">Projects Completed</span>
         </div>
       </div>
@@ -343,96 +479,162 @@
         </div>
       </div>
       <div class="col">
-        <div class="achievement-stat" tabindex="0" aria-label="3 Awards">
-          <span class="achievement-number">3</span>
-          <span class="achievement-label">Awards</span>
+        <div class="achievement-stat" tabindex="0" aria-label="500 Hours OJT">
+          <span class="achievement-number">500</span>
+          <span class="achievement-label">OJT Hours</span>
         </div>
+      </div>
+      <div class="col">
+        <div class="achievement-stat" tabindex="0" aria-label="Multiple Skills">
+          <span class="achievement-number">15+</span>
+          <span class="achievement-label">Skills Mastered</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <p class="text-muted"><small>*Some testimonials are from real clients and colleagues, others represent the type of feedback I receive</small></p>
       </div>
     </div>
   </section>
 
 
-  <!-- Process / Approach Section Placeholder -->
+  <!-- Process / Approach Section -->
   <section class="container process-section" data-aos="fade-up" aria-label="My Process">
     <h2 class="section-title text-center">My Process</h2>
+    <p class="text-center mb-4">How my artistic background shapes my development approach</p>
     <div class="row g-4 justify-content-center process-steps-row">
       <article class="col-md-2 col-6">
         <div class="process-step text-center" tabindex="0" aria-label="Step 1: Discover">
           <div class="process-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
           <div class="process-label">Discover</div>
-          <div class="process-desc">Understand the problem, goals, and user needs.</div>
+          <div class="process-desc">Understand the problem, goals, and user needs through research and empathy.</div>
         </div>
       </article>
       <article class="col-md-2 col-6">
         <div class="process-step text-center" tabindex="0" aria-label="Step 2: Design">
           <div class="process-icon" aria-hidden="true"><i class="fas fa-pencil-ruler"></i></div>
           <div class="process-label">Design</div>
-          <div class="process-desc">Sketch, wireframe, and prototype creative solutions.</div>
+          <div class="process-desc">Sketch, wireframe, and prototype creative solutions with visual appeal in mind.</div>
         </div>
       </article>
       <article class="col-md-2 col-6">
         <div class="process-step text-center" tabindex="0" aria-label="Step 3: Develop">
           <div class="process-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
           <div class="process-label">Develop</div>
-          <div class="process-desc">Build, test, and iterate with clean, scalable code.</div>
+          <div class="process-desc">Build, test, and iterate with clean, scalable code and attention to detail.</div>
         </div>
       </article>
       <article class="col-md-2 col-6">
         <div class="process-step text-center" tabindex="0" aria-label="Step 4: Deliver">
           <div class="process-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
           <div class="process-label">Deliver</div>
-          <div class="process-desc">Launch, monitor, and support for real-world impact.</div>
+          <div class="process-desc">Launch, monitor, and support for real-world impact and user satisfaction.</div>
         </div>
       </article>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="process-highlight text-center p-4">
+          <h4><i class="fas fa-palette"></i> The Art of Development</h4>
+          <p class="mb-0">My background in traditional and digital art influences every aspect of my development process. I approach each project like creating a masterpiece—starting with a vision, sketching the concept, refining the details, and finally bringing it to life. This artistic perspective helps me create interfaces that are not just functional, but also visually compelling and user-friendly.</p>
+        </div>
+      </div>
     </div>
     <p class="text-center mt-3 text-muted">Every project is a journey—let's make it a great one!</p>
   </section>
 
 
-  <!-- What's Next / Open To Section Placeholder -->
+  <!-- What's Next / Open To Section -->
   <section class="container open-to-section" data-aos="fade-up" aria-label="What's Next">
     <h2 class="section-title text-center">What's Next?</h2>
     <article class="open-to-card text-center p-4" tabindex="0" aria-label="Open to new opportunities">
-      <p>I'm currently open to freelance projects, creative collaborations, and full-time opportunities in web development, UI/UX, or digital art. Let's connect and create something amazing together!</p>
-      <a href="mailto:jeffmathewg@gmail.com" class="btn btn-accent mt-3" aria-label="Contact Jeff">Contact Me</a>
+      <p class="mb-3">I'm currently open to exciting opportunities that combine my passion for technology and creativity. Whether it's building innovative web applications, creating stunning digital artwork, or developing AI-powered solutions, I'm ready to bring my unique perspective to your next project.</p>
+      <div class="opportunities-list mb-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="opportunity-item">
+              <i class="fas fa-laptop-code"></i>
+              <h5>Full-Stack Development</h5>
+              <p>Web applications, e-commerce sites, business systems</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="opportunity-item">
+              <i class="fas fa-paint-brush"></i>
+              <h5>Digital Art & Design</h5>
+              <p>Illustrations, UI/UX design, graphic design</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="opportunity-item">
+              <i class="fas fa-robot"></i>
+              <h5>AI Integration</h5>
+              <p>Prompt engineering, automation, API development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-buttons">
+        <a href="mailto:jeffmathewg@gmail.com" class="btn btn-accent me-3" aria-label="Contact Jeff via Email">
+          <i class="fas fa-envelope"></i> Let's Talk
+        </a>
+        <a href="projects.html" class="btn btn-outline-primary" aria-label="View Jeff's Projects">
+          <i class="fas fa-eye"></i> View My Work
+        </a>
+      </div>
     </article>
   </section>
 
 
-  <!-- Creative Interests Mini-Gallery Section Placeholder -->
+  <!-- Creative Interests Mini-Gallery Section -->
   <section class="container creative-interests-section" data-aos="fade-up" aria-label="Creative Interests">
     <h2 class="section-title text-center">Creative Interests</h2>
+    <p class="text-center mb-4">Beyond coding and design - what fuels my creativity</p>
     <div class="row g-4 justify-content-center">
       <article class="col-md-2 col-4">
-        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Drawing">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Drawing and Illustration">
           <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-pencil-ruler"></i></span>
-          <figcaption class="creative-interest-label">Drawing</figcaption>
-          <p class="creative-interest-desc">From graphite sketches to digital art, drawing is my first language.</p>
+          <figcaption class="creative-interest-label">Drawing & Illustration</figcaption>
+          <p class="creative-interest-desc">From graphite sketches to digital art, drawing is my first language. I love creating characters, landscapes, and conceptual pieces that tell stories.</p>
         </figure>
       </article>
       <article class="col-md-2 col-4">
-        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Coding">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Web Development">
           <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
-          <figcaption class="creative-interest-label">Coding</figcaption>
-          <p class="creative-interest-desc">I love building web apps and exploring new tech stacks.</p>
+          <figcaption class="creative-interest-label">Web Development</figcaption>
+          <p class="creative-interest-desc">Building interactive experiences that combine functionality with aesthetics. I enjoy exploring new technologies and creating solutions that make a difference.</p>
         </figure>
       </article>
       <article class="col-md-2 col-4">
         <figure class="creative-interest-card text-center" tabindex="0" aria-label="Photography">
           <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-camera"></i></span>
           <figcaption class="creative-interest-label">Photography</figcaption>
-          <p class="creative-interest-desc">Capturing moments and stories through the lens.</p>
+          <p class="creative-interest-desc">Capturing moments and stories through the lens. I enjoy street photography, portraits, and finding beauty in everyday scenes.</p>
         </figure>
       </article>
       <article class="col-md-2 col-4">
-        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Organizing">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Organization and Planning">
           <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-sitemap"></i></span>
-          <figcaption class="creative-interest-label">Organizing</figcaption>
-          <p class="creative-interest-desc">I enjoy bringing order to chaos, whether in code or life.</p>
+          <figcaption class="creative-interest-label">Organization</figcaption>
+          <p class="creative-interest-desc">I enjoy bringing order to chaos, whether in code architecture, project planning, or digital organization. Structure fuels creativity.</p>
+        </figure>
+      </article>
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="AI and Technology">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-robot"></i></span>
+          <figcaption class="creative-interest-label">AI & Tech</figcaption>
+          <p class="creative-interest-desc">Exploring the intersection of artificial intelligence and creativity. I'm fascinated by how AI can enhance human creativity and productivity.</p>
+        </figure>
+      </article>
+      <article class="col-md-2 col-4">
+        <figure class="creative-interest-card text-center" tabindex="0" aria-label="Learning and Growth">
+          <span class="creative-interest-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+          <figcaption class="creative-interest-label">Learning</figcaption>
+          <p class="creative-interest-desc">Constantly expanding my knowledge in new technologies, design trends, and creative techniques. Growth is a lifelong journey.</p>
         </figure>
       </article>
     </div>
-    <p class="text-center mt-3 text-muted">[Add more interests as needed]</p>
   </section>
 
 
@@ -450,7 +652,7 @@
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="footer-copyright">
-        <p>&copy; 2024 Jeff Mathew Garcia. All Rights Reserved.</p>
+        <p>&copy; 2025 Jeff Mathew Garcia. All Rights Reserved.</p>
       </div>
     </div>
   </footer>

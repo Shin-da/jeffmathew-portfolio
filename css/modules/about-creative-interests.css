@@ -1,0 +1,59 @@
+/* about-creative-interests.css - Creative Interests Section Styles */
+
+.creative-interests-section {
+  padding: 4rem 0;
+  background: var(--instagram-bg);
+  border-top: var(--instagram-border);
+}
+
+.creative-interest-card {
+  background: #ffffff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+  transition: var(--transition-smooth);
+  outline: none;
+  border: var(--instagram-border);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: default;
+  position: relative;
+}
+
+.creative-interest-card:focus,
+.creative-interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.creative-interest-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+.creative-interest-card:hover .creative-interest-icon {
+  transform: scale(1.1);
+}
+
+.creative-interest-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.creative-interest-desc {
+  font-size: 0.9rem;
+  color: var(--subtle-text, #8e8e93);
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+} 

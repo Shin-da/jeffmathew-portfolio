@@ -1,0 +1,189 @@
+/* about-timeline.css - Timeline Section Styles */
+
+.storytelling-timeline-section {
+  padding: 4rem 0;
+  background: #ffffff;
+  border-top: var(--instagram-border);
+  border-bottom: var(--instagram-border);
+}
+
+.timeline-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  outline: none;
+  transition: var(--transition-smooth);
+  border-radius: var(--card-border-radius);
+  background: transparent;
+  position: relative;
+}
+
+.timeline-event:focus,
+.timeline-event:hover {
+  transform: translateX(5px);
+}
+
+.timeline-event-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  box-shadow: var(--instagram-shadow);
+  transition: var(--transition-smooth);
+  position: relative;
+  z-index: 10;
+}
+
+.timeline-event:hover .timeline-event-icon {
+  transform: scale(1.1);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.timeline-event-content {
+  background: #ffffff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  padding: 1.25rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: var(--instagram-border);
+  transition: var(--transition-smooth);
+}
+
+.timeline-event:hover .timeline-event-content {
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.timeline-event-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  margin-bottom: 0.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.timeline-event-date {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+  background: rgba(var(--accent-rgb), 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.company-name {
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  font-size: 1rem;
+}
+
+.position {
+  color: var(--subtle-text, #8e8e93);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.duration {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.achievement-list li {
+  padding: 0.4rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text-color, #262626);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.achievement-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.timeline-event-desc {
+  font-size: 0.95rem;
+  color: var(--text-color, #262626);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.timeline-event-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--card-border-radius);
+  margin-top: 0.5rem;
+  border: 2px solid #f0f0f0;
+  background: #fafafa;
+  transition: var(--transition-smooth);
+}
+
+.timeline-event:hover .timeline-event-img {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+.timeline-event-lesson {
+  font-size: 0.9rem;
+  color: var(--highlight, #ff6b35);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--highlight, #ff6b35);
+}
+
+.ojt-images-container {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.ojt-gallery-img {
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.ojt-gallery-img:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-color);
+  box-shadow: var(--instagram-shadow-hover);
+} 

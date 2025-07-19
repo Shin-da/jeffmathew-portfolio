@@ -1,0 +1,116 @@
+/* about-hero.css - Hero Section Styles */
+
+/* Instagram-like theming variables */
+:root {
+  --shadow-color-rgb: 0, 0, 0;
+  --glow-color: rgba(var(--highlight-rgb), 0.3);
+  --card-border-radius: 12px;
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --gradient-primary: linear-gradient(135deg, var(--accent-color), var(--highlight));
+  --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --instagram-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --instagram-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --instagram-border: 1px solid rgba(0, 0, 0, 0.06);
+  --instagram-bg: #fafafa;
+}
+
+.enhanced-hero-section {
+  padding: 4rem 0 3rem 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: var(--instagram-border);
+}
+
+.enhanced-hero-img-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: var(--instagram-shadow);
+  transition: var(--transition-smooth);
+  outline: none;
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.enhanced-hero-img-wrapper:focus,
+.enhanced-hero-img-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.enhanced-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.enhanced-hero-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.5px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.enhanced-hero-tagline {
+  font-size: 1.3rem;
+  color: var(--subtle-text, #8e8e93);
+  text-align: left;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.enhanced-hero-bio {
+  font-size: 1rem;
+  color: var(--text-color, #262626);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-right: 1rem;
+  font-weight: 400;
+}
+
+.enhanced-hero-social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.enhanced-hero-social a {
+  color: var(--subtle-text, #8e8e93);
+  font-size: 1.8rem;
+  transition: var(--transition-smooth);
+  outline: none;
+  padding: 8px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.enhanced-hero-social a:focus,
+.enhanced-hero-social a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.hero-media-placeholder video {
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  background: #fafafa;
+  transition: var(--transition-smooth);
+}
+
+.hero-media-placeholder video:hover {
+  transform: scale(1.02);
+  box-shadow: var(--instagram-shadow-hover);
+} 

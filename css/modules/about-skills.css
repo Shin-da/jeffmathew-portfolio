@@ -1,0 +1,97 @@
+/* about-skills.css - Skills Section Styles */
+
+.interactive-skills-section {
+  padding: 4rem 0;
+  background: var(--instagram-bg);
+}
+
+.skills-category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  margin-bottom: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.skills-category-title i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.skills-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.skill-badge {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--header-color, #262626);
+  box-shadow: var(--instagram-shadow);
+  transition: var(--transition-smooth);
+  cursor: default;
+  position: relative;
+}
+
+.skill-badge:hover, 
+.skill-badge:focus {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--instagram-shadow-hover);
+  outline: none;
+}
+
+.skill-name {
+  margin-right: 0.5rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.skill-label {
+  font-size: 0.8em;
+  color: var(--accent-color);
+  background: rgba(var(--accent-rgb), 0.1);
+  border-radius: 10px;
+  padding: 0.15em 0.6em;
+  font-weight: 500;
+  margin-left: 0.1em;
+  transition: var(--transition-smooth);
+}
+
+.skills-highlight {
+  background: #ffffff;
+  color: var(--text-color, #262626);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  margin-top: 2rem;
+  border: var(--instagram-border);
+  padding: 1.5rem;
+}
+
+.skills-highlight h4 {
+  color: var(--header-color, #262626);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.skills-highlight p {
+  color: var(--text-color, #262626);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+} 

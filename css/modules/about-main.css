@@ -1,0 +1,13 @@
+/* about-main.css - Main Import File for About Page Modular Styles */
+
+@import url('about-hero.css');
+@import url('about-timeline.css');
+@import url('about-skills.css');
+@import url('about-testimonials.css');
+@import url('about-process.css');
+@import url('about-creative-interests.css');
+@import url('about-footer.css');
+@import url('about-responsive.css');
+@import url('about-dark-theme.css');
+
+/* All about page styles are now modularized for easier maintenance. */ 

@@ -54,8 +54,10 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  
   <link href="css/modules/navigation.css" rel="stylesheet">
   <link href="css/modules/dark-theme.css" rel="stylesheet">
+  <link href="css/modules/about-main.css" rel="stylesheet">
   <link href="css/modules/tech-stack.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -143,19 +145,23 @@
   </nav>
 
   <!-- IG-Inspired Header/Profile Section -->
-  <header class="ig-header-section">
+  <header class="ig-header-section instagram-cards">
     <div class="ig-header-bg"></div>
     <div class="container ig-header-content text-center">
       <div class="ig-profile-pic-wrapper">
         <picture>
           <source srcset="assets/images/me.webp" type="image/webp">
-          <img src="assets/images/me.jpg" alt="Portrait of Jeff Mathew Garcia" class="ig-profile-pic" width="144"
-            height="144" loading="lazy">
+          <img src="assets/images/me.jpg" alt="Portrait of Jeff Mathew Garcia" class="ig-profile-pic" width="144" height="144" loading="lazy">
         </picture>
       </div>
       <h1 class="ig-profile-name">Jeff Mathew Garcia</h1>
-      <div class="ig-profile-tagline">Artist & Web Developer<br><span class="ig-profile-highlight">I bring art to code
-          and code to art.</span></div>
+      <div class="ig-profile-tagline">
+        Artist & Web Developer<br>
+        <span class="ig-profile-highlight">I bring art to code and code to art.</span>
+      </div>
+      <p class="ig-profile-intro mt-3">
+        Hi, I’m Jeff—a web developer and digital artist based in Laguna Philippines. <br> I love building interactive web experiences and creating art that inspires. Welcome to my portfolio!
+      </p>
       <div class="ig-profile-penname">
         <span class="brand-second">シン</span>
         <span class="brand-first">(shin)</span>
@@ -170,14 +176,11 @@
             fill="none" />
         </svg>
       </span>
-      <div class="ig-social-row">
+      <div class="ig-social-row instagram-cards">
         <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i
-            class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook"><i
-            class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         <a href="#contact" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
@@ -200,7 +203,8 @@
     </div>
   </div>
 
-  <div class="container-fluid about" data-aos="fade-up">
+  <!-- About Section -->
+  <div class="container-fluid about instagram-cards" data-aos="fade-up">
     <div class="container" id="about">
       <div class="about-header text-center mb-5">
         <h2 class="section-title">About Me</h2>
@@ -208,8 +212,7 @@
       </div>
       <div class="about-content text-center">
         <div class="about-description">
-          <p>I am Jeff Mathew Garcia, an IT professional and artist passionate about blending technology and creativity.
-            I love building beautiful, functional solutions and creating digital art.</p>
+          <p>I'm Jeff, a web developer and digital artist based in Laguna, Philippines. My journey began with a fascination for technology and a passion for art, leading me to create projects that merge both worlds.</p>
         </div>
         <a href="about.html" class="btn btn-accent btn-lg mt-3" style="min-width:220px;">
           <i class="fas fa-user me-2"></i>Learn more about me
@@ -219,60 +222,24 @@
   </div>
 
   <!-- OJT Experience Section -->
-  <section class="ojt-experience" id="ojt" data-aos="fade-up">
+  <section class="ojt-experience instagram-cards" id="ojt" data-aos="fade-up">
     <div class="container">
       <div class="section-header text-center mb-5">
         <h2 class="section-title">Experience</h2>
         <div class="section-divider"></div>
       </div>
-
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="ojt-card">
-            <div class="row align-items-center">
-              <div class="col-md-9 mx-auto">
-                <div class="ojt-content">
-                  <div class="d-flex align-items-center justify-content-center mb-3 flex-column flex-md-row">
-                    <img src="assets/images/spm-logo.jpg" alt="SP Madrid & Associates Law Firm Logo"
-                      class="company-logo ojt-logo me-md-3 mb-3 mb-md-0" width="60" height="60">
-                    <h3 class="company-name mb-0">SP Madrid & Associates Law Firm</h3>
-                  </div>
-                  <div class="position">Developer and AI Prompt Engineer (Internship)</div>
-                  <div class="duration"><i class="far fa-calendar-alt"></i> Duration: 500 Hours (Feb-May)</div>
-
-                  <div class="achievements mt-4">
-                    <h4>Key Achievements & Responsibilities:</h4>
-                    <ul class="achievement-list">
-                      <li><i class="fas fa-check-circle"></i> Enhanced and maintained AI agents to handle multiple user
-                        interactions efficiently</li>
-                      <li><i class="fas fa-check-circle"></i> Developed automation solutions using Python and APIs to
-                        streamline workflows</li>
-                      <li><i class="fas fa-check-circle"></i> Created and optimized AI prompts for operations and client
-                        services</li>
-                      <li><i class="fas fa-check-circle"></i> Collaborated with the team to implement new features and
-                        improve user experience</li>
-                    </ul>
-                  </div>
-
-                  <div class="ojt-gallery mt-4">
-                    <h4>Memories & Workplace:</h4>
-                    <div class="ojt-images-container">
-                      <img src="assets/images/ojt_group_photo.jpg" alt="OJT Group Photo at SP Madrid"
-                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
-                      <img src="assets/images/ojt_working.jpg" alt="Working during OJT"
-                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
-                      <img src="assets/images/ojt_okpoai_interface.jpg" alt="OkPoAI interface during OJT"
-                        class="img-fluid ojt-gallery-img" loading="lazy" width="300" height="200">
-                    </div>
-                  </div>
-                  <div class="mt-4 text-center">
-                    <a href="blog/index.html" class="btn btn-outline-primary" target="_blank" rel="noopener">
-                      <i class="fas fa-book-open"></i> Read more about this on my blog
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="ojt-card text-center instagram-cards">
+            <h3 class="company-name mb-2">SP Madrid & Associates Law Firm</h3>
+            <div class="position mb-2">Developer and AI Prompt Engineer (Internship, 2025)</div>
+            <ul class="achievement-list list-unstyled mb-3">
+              <li>Enhanced AI agents and automated workflows</li>
+              <li>Collaborated on innovative legal tech solutions</li>
+            </ul>
+            <a href="about.html#ojt" class="btn btn-outline-primary btn-sm mt-2">
+              <i class="fas fa-arrow-right me-2"></i>See full experience in About
+            </a>
           </div>
         </div>
       </div>
@@ -280,7 +247,7 @@
   </section>
 
   <!-- Projects Section -->
-  <div class="container-fluid projects" style="height:auto; padding: 100px 0;" data-aos="fade-up">
+  <div class="container-fluid projects instagram-cards" style="height:auto; padding: 100px 0;" data-aos="fade-up">
     <div class="container" id="projects">
       <div class="projects-header text-center mb-5">
         <h2 class="section-title">My Projects</h2>
@@ -291,7 +258,7 @@
       <div class="row g-4">
         <!-- HFC Management System / Thesis Project -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="project-card">
+          <div class="project-card instagram-cards">
             <div class="project-image-container">
               <picture>
                 <source srcset="assets/images/hfc-management.webp" type="image/webp">
@@ -310,9 +277,7 @@
             </div>
             <div class="project-content">
               <h3>HFC Management System</h3>
-              <p>A comprehensive ERP & E-commerce solution developed for Henrich Food Corporation as a capstone research
-                project. This enterprise-grade system streamlines operations, enhances data accuracy, and provides
-                real-time business analytics.</p>
+              <p>Enterprise-grade ERP & E-commerce platform for Henrich Food Corporation. I led the backend and analytics modules, enabling real-time business insights and streamlined operations for a team of 20+ users.</p>
               <div class="project-tech">
                 <span><i class="fab fa-php"></i><span>PHP</span></span>
                 <span><i class="fab fa-js"></i><span>JavaScript</span></span>
@@ -326,7 +291,7 @@
 
         <!-- Wedding Invitation Project -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-          <div class="project-card">
+          <div class="project-card instagram-cards">
             <div class="project-image-container">
               <picture>
                 <source srcset="assets/images/wedding-invitation-preview.webp" type="image/webp">
@@ -345,8 +310,40 @@
             </div>
             <div class="project-content">
               <h3>Online Wedding Invitation with RSVP</h3>
-              <p> An elegant and interactive online wedding invitation platform that combines beautiful design with
-                seamless functionality. Creating memorable digital experiences for special moments.</p>
+              <p>Custom web app for digital wedding invitations. I designed the UI/UX and implemented RSVP tracking, making event management seamless for couples and guests.</p>
+              <div class="project-tech">
+                <span><i class="fab fa-php"></i><span>PHP</span></span>
+                <span><i class="fab fa-html5"></i><span>HTML</span></span>
+                <span><i class="fab fa-css3-alt"></i><span>CSS</span></span>
+                <span><i class="fab fa-js"></i><span>JavaScript</span></span>
+                <span><i class="fas fa-database"></i><span>MySQL</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OJT Tracking System Project -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+          <div class="project-card instagram-cards">
+            <div class="project-image-container">
+              <picture>
+                <source srcset="assets/images/ojt-tracker-preview.png" type="image/webp">
+                <img src="assets/images/ojt-tracker-preview.png"
+                  alt="Screenshot of OJT Tracking System project by Jeff Mathew Garcia"
+                  class="project-image" width="400" height="200" loading="lazy">
+              </picture>
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live
+                    Demo</a>
+                  <a href="https://github.com/Shin-da/OJT-Tracking-System.git" class="project-link" target="_blank"><i
+                      class="fab fa-github"></i> Source Code</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>OJT Tracking System</h3>
+              <p>Comprehensive system for tracking On-the-Job Training progress, reports, and hours. Built for students and coordinators to streamline OJT management and documentation.</p>
               <div class="project-tech">
                 <span><i class="fab fa-php"></i><span>PHP</span></span>
                 <span><i class="fab fa-html5"></i><span>HTML</span></span>
@@ -359,15 +356,14 @@
         </div>
 
         <!-- See More Projects Card -->
-        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-          <div class="project-card see-more-card">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-card see-more-card instagram-cards">
             <div class="project-image-container">
               <div class="see-more-overlay">
                 <div class="see-more-content">
                   <i class="fas fa-plus-circle"></i>
                   <h3>See More Projects</h3>
-                  <p>Explore my complete portfolio of web development projects, creative designs, and innovative
-                    solutions.</p>
+                  <p>Explore my complete portfolio of web development projects, creative designs, and innovative solutions.</p>
                   <a href="projects.html" class="btn btn-accent">
                     <i class="fas fa-arrow-right me-2"></i>View All Projects
                   </a>
@@ -391,63 +387,46 @@
         <div class="gallery-preview-header text-center mb-5">
           <h2 class="section-title">Gallery Preview</h2>
           <div class="section-divider"></div>
-          <p class="gallery-preview-subtitle">A glimpse at my latest artworks. Each piece represents a moment of
-            creative inspiration and artistic expression.</p>
+          <p class="gallery-preview-subtitle">A glimpse at my latest artworks. Each piece represents a moment of creative inspiration and artistic expression.</p>
         </div>
-
-        <div class="gallery-preview-grid" data-aos="fade-up" data-aos-delay="200">
-          <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="100">
-            <div class="gallery-preview-image-wrapper">
-              <img src="assets/images/kugisaki-nobara.jpg" alt="Kugisaki Nobara - Traditional pencil sketch"
-                class="gallery-preview-img" loading="lazy">
+        <div class="row g-4 justify-content-center">
+          <!-- Artwork 1 -->
+          <div class="col-md-4">
+            <div class="gallery-preview-image-wrapper instagram-cards">
+              <img src="assets/images/solo-leveling.jpg" alt="Solo Leveling concept art, graphite and ink, 2025" class="gallery-preview-img" loading="lazy">
               <div class="gallery-preview-overlay">
-                <div class="gallery-preview-stats">
-                  <span><i class="fas fa-heart"></i> 1.2k</span>
-                  <span><i class="fas fa-comment"></i> 250</span>
-                </div>
-                <div class="gallery-preview-info">
-                  <h4>Kugisaki Nobara</h4>
-                  <p>Traditional Art • Portraits</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="200">
-            <div class="gallery-preview-image-wrapper">
-              <img src="assets/images/eren-aot.jpg" alt="Solo Leveling - Traditional pencil sketch"
-                class="gallery-preview-img" loading="lazy">
-              <div class="gallery-preview-overlay">
-                <div class="gallery-preview-stats">
-                  <span><i class="fas fa-heart"></i> 800</span>
-                  <span><i class="fas fa-comment"></i> 150</span>
-                </div>
-                <div class="gallery-preview-info">
-                  <h4>Attack Om Titan</h4>
-                  <p>Traditional Art</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-preview-item" data-aos="zoom-in" data-aos-delay="300">
-            <div class="gallery-preview-image-wrapper">
-              <img src="assets/images/solo-leveling.jpg" alt="Solo Leveling - Traditional concept art"
-                class="gallery-preview-img" loading="lazy">
-              <div class="gallery-preview-overlay">
-                <div class="gallery-preview-stats">
-                  <span><i class="fas fa-heart"></i> 950</span>
-                  <span><i class="fas fa-comment"></i> 180</span>
-                </div>
                 <div class="gallery-preview-info">
                   <h4>Solo Leveling (Smiling Statue)</h4>
-                  <p>Traditional Art • Concept</p>
+                  <p>Graphite & Ink • Concept Art • 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Artwork 2 -->
+          <div class="col-md-4">
+            <div class="gallery-preview-image-wrapper instagram-cards">
+              <img src="assets/images/kugisaki-nobara.webp" alt="Kugisaki Nobara fanart, colored pencil and ink, 2023" class="gallery-preview-img" loading="lazy">
+              <div class="gallery-preview-overlay">
+                <div class="gallery-preview-info">
+                  <h4>Kugisaki Nobara</h4>
+                  <p>Colored Pencil & Ink • Fanart • 2023</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Artwork 3 -->
+          <div class="col-md-4">
+            <div class="gallery-preview-image-wrapper instagram-cards">
+              <img src="assets/images/art1.jpg" alt="Digital Art Sample, 2024" class="gallery-preview-img" loading="lazy">
+              <div class="gallery-preview-overlay">
+                <div class="gallery-preview-info">
+                  <h4>Digital Art Sample</h4>
+                  <p>Digital Painting • 2024</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
           <a href="gallery.html" class="btn btn-accent btn-lg gallery-preview-btn">
             <i class="fas fa-images me-2"></i>View Full Gallery
@@ -541,7 +520,7 @@
   </section> -->
 
     <!-- Blog/Updates Section -->
-    <section class="container blog-section" id="blog" data-aos="fade-up">
+    <section class="container blog-section instagram-cards" id="blog" data-aos="fade-up">
       <div class="blog-header text-center mb-5">
         <div class="blog-index-badge mb-3">
           <i class="fas fa-pen-fancy"></i>
@@ -565,119 +544,84 @@
           </div>
         </div>
       </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="blog-posts">
-            <!-- Featured Post -->
-            <article class="blog-post-card featured-post">
-              <div class="featured-badge">
-                <i class="fas fa-star"></i>
-                <span>Featured</span>
-              </div>
-              <div class="row g-4 align-items-center">
-                <div class="col-md-12">
-                  <div class="blog-post-content">
-                    <div class="blog-post-meta">
-                      <span class="date">
-                        <i class="far fa-calendar-alt"></i>
-                        2025-05-01
-                      </span>
-                      <span class="category">
-                        <i class="fas fa-tag"></i>
-                        Portfolio Development
-                      </span>
-                      <span class="read-time">
-                        <i class="far fa-clock"></i>
-                        8 min read
-                      </span>
-                    </div>
-                    <h3 class="blog-post-title">
-                      <a href="blog/building-portfolio.html">Building My Portfolio: A Journey Through Design & Code</a>
-                    </h3>
-                    <p class="blog-post-excerpt">Creating a portfolio website that showcases both my technical skills
-                      and artistic abilities was an exciting challenge. Let me walk you through the process of building
-                      this site, from concept to completion, including the actual color palettes and technical decisions
-                      that went into its creation.</p>
-                    <div class="blog-post-tags">
-                      <span class="tag">CSS Variables</span>
-                      <span class="tag">Color Theory</span>
-                      <span class="tag">Responsive Design</span>
-                      <span class="tag">Dark Mode</span>
-                    </div>
-                    <a href="blog/building-portfolio.html" class="blog-readmore">
-                      Read Full Article
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Regular Post -->
-            <!-- <article clx
-              <div class="row g-4 align-items-center">
-                <div class="col-md-12">
-                  <div class="blog-post-content">
-                    <div class="blog-post-meta">
-                      <span class="date">
-                        <i class="far fa-calendar-alt"></i>
-                        2025-05-20
-                      </span>
-                      <span class="category">
-                        <i class="fas fa-tag"></i>
-                        Professional Experience
-                      </span>
-                      <span class="read-time">
-                        <i class="far fa-clock"></i>
-                        6 min read
-                      </span>
-                    </div>
-                    <h3 class="blog-post-title">
-                      <a href="blog/my-ojt-experience.html">My On-the-Job Training Experience at SP Madrid & Associates
-                        Law Firm</a>
-                    </h3>
-                    <p class="blog-post-excerpt">I recently completed my 500-hour On-the-Job Training (OJT) as a
-                      Developer and AI Prompt Engineer at SP Madrid & Associates Law Firm, an experience that
-                      significantly enhanced my technical skills and professional development.</p>
-                    <div class="blog-post-tags">
-                      <span class="tag">OJT Experience</span>
-                      <span class="tag">AI Development</span>
-                      <span class="tag">Law Firm</span>
-                      <span class="tag">Professional Growth</span>
-                    </div>
-                    <a href="blog/my-ojt-experience.html" class="blog-readmore">
-                      Read Full Article
-                      <i class="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article> -->
-
-            <!-- Coming Soon Section -->
-            <div class="coming-soon-section">
-              <div class="coming-soon-card">
-                <div class="coming-soon-icon">
-                  <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>More Articles Coming Soon</h3>
-                <p>I'm working on new content about web development, digital art techniques, and creative coding. Stay
-                  tuned for more insights and tutorials!</p>
-                <div class="upcoming-topics">
-                  <span class="topic">Digital Art Tips & Tricks</span>
-                  <span class="topic">The Art of Web Development</span>
-                  <span class="topic">Creative Coding Projects</span>
-                </div>
-              </div>
+      <div class="row g-4 justify-content-center blog-preview-row" style="max-width: 1100px; margin: 0 auto;">
+        <!-- Blog Post 1 -->
+        <div class="col-md-12 col-lg-6">
+          <div class="blog-post-card instagram-cards">
+            <div class="blog-post-meta">
+              <span class="date">
+                <i class="far fa-calendar-alt"></i>
+                2025-05-01
+              </span>
+              <span class="category">
+                <i class="fas fa-tag"></i>
+                Portfolio Development
+              </span>
+              <span class="read-time">
+                <i class="far fa-clock"></i>
+                8 min read
+              </span>
             </div>
+            <h3 class="blog-post-title">
+              <a href="blog/building-portfolio.html">Building My Portfolio: A Journey Through Design & Code</a>
+            </h3>
+            <p class="blog-post-excerpt">Creating a portfolio website that showcases both my technical
+              skills and artistic abilities was an exciting challenge. Let me walk you through the process
+              of building this site, from concept to completion, including the actual color palettes and
+              technical decisions that went into its creation.</p>
+            <div class="blog-post-tags">
+              <span class="tag">CSS Variables</span>
+              <span class="tag">Color Theory</span>
+              <span class="tag">Responsive Design</span>
+              <span class="tag">Dark Mode</span>
+            </div>
+            <a href="blog/building-portfolio.html" class="blog-readmore">
+              Read Full Article
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Blog Post 2 -->
+        <div class="col-md-12 col-lg-6">
+          <div class="blog-post-card instagram-cards">
+            <div class="blog-post-meta">
+              <span class="date">
+                <i class="far fa-calendar-alt"></i>
+                2025-05-20
+              </span>
+              <span class="category">
+                <i class="fas fa-tag"></i>
+                Professional Experience
+              </span>
+              <span class="read-time">
+                <i class="far fa-clock"></i>
+                6 min read
+              </span>
+            </div>
+            <h3 class="blog-post-title">
+              <a href="blog/my-ojt-experience.html">My On-the-Job Training Experience at SP Madrid & Associates
+                Law Firm</a>
+            </h3>
+            <p class="blog-post-excerpt">I recently completed my 500-hour On-the-Job Training (OJT) as a
+              Developer and AI Prompt Engineer at SP Madrid & Associates Law Firm, an experience that
+              significantly enhanced my technical skills and professional development.</p>
+            <div class="blog-post-tags">
+              <span class="tag">OJT Experience</span>
+              <span class="tag">AI Development</span>
+              <span class="tag">Law Firm</span>
+              <span class="tag">Professional Growth</span>
+            </div>
+            <a href="blog/my-ojt-experience.html" class="blog-readmore">
+              Read Full Article
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
-
       <div class="text-center mt-5">
-        <a href="blog/index.html" class="btn btn-outline btn-lg">
-          <i class="fas fa-arrow-right me-2"></i>View All Posts
+        <a href="blog/index.html" class="btn btn-accent btn-lg">
+          <i class="fas fa-blog me-2"></i>View All Blog Posts
+          <i class="fas fa-arrow-right ms-2"></i>
         </a>
       </div>
     </section>
@@ -686,7 +630,7 @@
     <section class="contact-section" id="contact" data-aos="fade-up">
       <div class="container">
         <div class="contact-header text-center mb-5">
-          <div class="contact-badge mb-3">
+          <div class="contact-badge mb-3 blog-index-badge">
             <i class="fas fa-envelope"></i>
             <span>Get In Touch</span>
           </div>
@@ -713,7 +657,7 @@
           <div class="row g-4">
             <!-- Contact Information Card -->
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-              <div class="contact-card contact-info-card">
+              <div class="contact-card contact-info-card instagram-cards">
                 <div class="contact-card-header">
                   <div class="contact-card-icon">
                     <i class="fas fa-address-book"></i>
@@ -843,7 +787,7 @@
 
             <!-- Services & Availability Card -->
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-              <div class="contact-card services-card">
+              <div class="contact-card services-card instagram-cards">
                 <div class="contact-card-header">
                   <div class="contact-card-icon">
                     <i class="fas fa-briefcase"></i>
@@ -929,59 +873,24 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#art">Art Gallery</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <h4>Connect With Me</h4>
-            <div class="social-links">
-              <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank"
-                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram"><i
-                  class="fab fa-instagram"></i></a>
-              <a href="https://www.facebook.com/jepmachu" target="_blank" aria-label="Facebook"><i
-                  class="fab fa-facebook"></i></a>
-              <a href="https://www.tiktok.com/@jepmachu" target="_blank" aria-label="TikTok"><i
-                  class="fab fa-tiktok"></i></a>
-            </div>
-            <div class="mt-3">
-              <a href="JeffMathewGarcia_Resume_2025.pdf" class="btn btn-outline-light btn-sm" download
-                aria-label="Download my resume (PDF)">
-                <i class="fas fa-file-download"></i> Download Resume
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h4>Stay Updated</h4>
-            <p>Subscribe to my newsletter for updates on new projects and artwork.</p>
-            <form class="newsletter-form" id="newsletterForm">
-              <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your email" required>
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <hr class="footer-divider">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <p class="mb-0">Made with <span aria-label="love" style="color:#b47c6c;">❤️</span> by Jeff Mathew Garcia
-              &mdash; &copy; 2025. All rights reserved.</p>
-          </div>
-        </div>
+  <!-- Footer -->
+  <footer class="footer mt-5" aria-label="Site Footer">
+    <div class="container text-center">
+      <nav class="footer-social mb-2" aria-label="Social links">
+        <a href="https://github.com/Shin-da" target="_blank" aria-label="GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jeffmathew-garcia-a1b636347/" target="_blank" aria-label="LinkedIn" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/jepmachu/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+      </nav>
+      <nav class="footer-links mb-2" aria-label="Footer navigation">
+        <a href="about.html">About</a> |
+        <a href="projects.html">Projects</a> |
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Jeff Mathew Garcia. All Rights Reserved.</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
     <!-- Back to Top Button -->
     <button id="backToTop" aria-label="Back to top" class="back-to-top">

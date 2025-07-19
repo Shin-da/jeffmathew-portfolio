@@ -1,0 +1,103 @@
+/* about-responsive.css - Responsive Design Enhancements */
+
+@media (max-width: 768px) {
+  .enhanced-hero-section {
+    padding: 3rem 0 2rem 0;
+    min-height: unset;
+  }
+  .enhanced-hero-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .enhanced-hero-tagline,
+  .enhanced-hero-bio {
+    text-align: center;
+    padding-right: 0;
+  }
+  .enhanced-hero-social {
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  .enhanced-hero-social a {
+    font-size: 1.6rem;
+    padding: 6px;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .portfolio-section,
+  .storytelling-timeline-section,
+  .interactive-skills-section,
+  .testimonials-section,
+  .process-section,
+  .open-to-section,
+  .creative-interests-section {
+    padding: 3rem 0;
+  }
+  .portfolio-img {
+    height: 160px;
+  }
+  .timeline-vertical {
+    gap: 1.5rem;
+  }
+  .timeline-event {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .timeline-event-img {
+    margin: 0 auto;
+  }
+  .skills-badge-list {
+    gap: 0.5rem;
+  }
+  .testimonial-card {
+    min-height: 250px;
+    padding: 1.5rem 1rem 1.25rem 1rem;
+  }
+  .achievements-row {
+    gap: 1rem;
+  }
+  .achievement-stat {
+    min-width: 120px;
+    padding: 1.25rem 1rem;
+  }
+  .process-step {
+    min-height: 140px;
+    padding: 1.25rem 1rem 1rem 1rem;
+  }
+  .process-icon {
+    font-size: 1.8rem;
+  }
+  .open-to-card {
+    padding: 1.5rem 1rem;
+  }
+  .creative-interest-card {
+    min-height: 180px;
+    padding: 1.25rem 1rem 1rem 1rem;
+  }
+  .creative-interest-icon {
+    font-size: 2rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  .footer-social {
+    gap: 1.25rem;
+  }
+  .footer-social a {
+    font-size: 1.3rem;
+    padding: 6px;
+  }
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+} 

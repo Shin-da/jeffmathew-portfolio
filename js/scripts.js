@@ -3,7 +3,25 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
 */
-//
+
+/*
+  ============================================================================
+  JEFF MATHEW GARCIA PORTFOLIO - CUSTOM SCRIPTS
+  ============================================================================
+  
+  Customizations and enhancements by: Jeff Mathew Garcia (シン/shin)
+  Website: https://shin-da.github.io/jeffmathew-portfolio/
+  GitHub: https://github.com/shin-da/jeffmathew-portfolio
+
+  This file contains custom JavaScript for navigation, theme switching,
+  smooth scrolling, and accessibility improvements for my portfolio.
+
+  Portions of this file are based on Start Bootstrap Grayscale (MIT License).
+  Additional code and modifications © 2025 Jeff Mathew Garcia. All rights reserved.
+
+  ============================================================================
+*/
+// 
 // Scripts
 // 
 

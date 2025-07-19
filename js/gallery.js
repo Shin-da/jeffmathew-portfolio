@@ -35,108 +35,132 @@
 // Gallery items data
 const galleryItems = [
     {
+        id: 1,
         title: "Kugisaki Nobara",
         description: "A detailed traditional pencil sketch capturing the essence of this beloved character. This piece showcases my attention to detail and love for anime art.",
         image: "assets/images/kugisaki-nobara.jpg",
         category: "Traditional Art • Portraits",
         date: "2025",
-        likes: "1.2k",
-        comments: "250"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
 
     {
+        id: 2,
         title: "Eren Yeager",
         description: "A dynamic sketch inspired by the popular web novel and manhwa. This piece explores character design and dramatic composition.",
         image: "assets/images/eren-aot.jpg",
         category: "Traditional Art",
         date: "2023",
-        likes: "800",
-        comments: "150"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },  
     {
+        id: 3,
         title: "Solo Leveling",
         description: "A dynamic sketch inspired by the popular web novel and manhwa. This piece explores character design and dramatic composition.",
         image: "assets/images/solo-leveling.jpg",
         category: "Traditional Art",
         date: "2023",
-        likes: "800",
-        comments: "150"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 4,
         title: "Sukuna (Jujutsu Kaisen) - Commissioned",
         description: "A commissioned traditional sketch of Sukuna from Jujutsu Kaisen. This piece was created for a client and has been sold. It showcases my ability to work with client specifications while maintaining artistic quality.",
         image: "assets/images/sukuna.jpeg",
         category: "Traditional Art • Commissioned",
         date: "2023",
-        likes: "800",
-        comments: "150"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 5,
         title: "Random Sketch",
         description: "A traditional painting that demonstrates my versatility in different artistic mediums and techniques.",
         image: "assets/images/random-sketch-2.webp",
         category: "Traditional Art",
         date: "2025",
-        likes: "700",
-        comments: "120"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 6,
         title: "Random Sketch",
         description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
         image: "assets/images/random-sketch.jpg",
         category: "Traditional Art",
         date: "2022",
-        likes: "600",
-        comments: "90"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     
     {
+        id: 7,
         title: "Okarun and Momo (Dandadan)",
         description: "Concept art piece exploring the unique style and energy of this modern manga series. Focuses on character expression and movement.",
         image: "assets/images/okarun-momo.jpg",
         category: "Traditional Art • Concept",
         date: "2025",
-        likes: "950",
-        comments: "180"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 8,
         title: "Okarun (Dandadan)",
         description: "Original character design concept that demonstrates my creative process and ability to develop unique visual identities.",
         image: "assets/images/okarun.jpg",
         category: "Traditional Art",
         date: "2025",
-        likes: "1.5k",
-        comments: "300"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 9,
         title: "Random Sketch",
         description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
         image: "assets/images/random.jpg",
         category: "Traditional Art",
         date: "2022",
-        likes: "600",
-        comments: "90"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
     {
+        id: 10,
         title: "Kaguya (Kaguya-sama: Love is War)",
         description: "An intricate ink drawing showcasing precision and contrast. This piece highlights the beauty of monochromatic art.",
         image: "assets/images/kaguya.jpg",
         category: "Traditional Art",
         date: "2022",
-        likes: "600",
-        comments: "90"
+        likes: 0,
+        comments: 0,
+        isLiked: false
     },
 ];
 
 // Global variables
 let currentLightboxIndex = 0;
 let isLightboxOpen = false;
+let userLikes = new Set(); // Track user's liked items
 
 /**
  * Initialize gallery functionality
  */
 function initGallery() {
     console.log('Gallery initialized');
+    
+    // Load user likes from localStorage
+    loadUserLikes();
     
     // Initialize filter functionality
     initGalleryFilters();
@@ -149,6 +173,12 @@ function initGallery() {
     
     // Initialize gallery preview (if on homepage)
     initGalleryPreview();
+    
+    // Initialize interactive likes
+    initInteractiveLikes();
+    
+    // Update like displays
+    updateAllLikeDisplays();
 }
 
 /**
@@ -480,6 +510,293 @@ function initResponsiveHandling() {
     }, 250);
     
     window.addEventListener('resize', handleResize);
+}
+
+/**
+ * Update the like display for a specific item
+ * @param {Object} item - The gallery item object
+ */
+function updateLikeDisplay(item) {
+    const likeElements = document.querySelectorAll(`[data-item-id="${item.id}"] .gallery-item-stat`);
+    likeElements.forEach(element => {
+        const heartIcon = element.querySelector('i');
+        const likeCount = element.querySelector('span');
+        
+        if (heartIcon && likeCount) {
+            // Update heart icon
+            if (item.isLiked) {
+                heartIcon.classList.remove('far');
+                heartIcon.classList.add('fas', 'text-danger');
+            } else {
+                heartIcon.classList.remove('fas', 'text-danger');
+                heartIcon.classList.add('far');
+            }
+            
+            // Update count with formatting
+            likeCount.textContent = formatLikeCount(item.likes);
+        }
+    });
+    
+    // Also update lightbox if open
+    if (isLightboxOpen && currentLightboxIndex === item.id - 1) {
+        updateLightboxLikes(item);
+    }
+}
+
+/**
+ * Update like displays for all gallery items
+ */
+function updateAllLikeDisplays() {
+    galleryItems.forEach(item => {
+        updateLikeDisplay(item);
+    });
+}
+
+/**
+ * Load user's liked items from localStorage
+ */
+function loadUserLikes() {
+    try {
+        const savedLikes = localStorage.getItem('galleryUserLikes');
+        if (savedLikes) {
+            const parsedLikes = JSON.parse(savedLikes);
+            userLikes = new Set(parsedLikes);
+            
+            // Update gallery items based on loaded likes
+            galleryItems.forEach(item => {
+                if (userLikes.has(item.id)) {
+                    item.isLiked = true;
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error loading user likes:', error);
+        userLikes = new Set();
+    }
+}
+
+/**
+ * Save user's liked items to localStorage
+ */
+function saveUserLikes() {
+    try {
+        localStorage.setItem('galleryUserLikes', JSON.stringify(Array.from(userLikes)));
+    } catch (error) {
+        console.error('Error saving user likes:', error);
+    }
+}
+
+/**
+ * Format like count for display
+ * @param {number} count - The like count
+ * @returns {string} Formatted count
+ */
+function formatLikeCount(count) {
+    if (count >= 1000) {
+        return (count / 1000).toFixed(1) + 'k';
+    }
+    return count.toString();
+}
+
+/**
+ * Update lightbox likes display
+ * @param {Object} item - The gallery item object
+ */
+function updateLightboxLikes(item) {
+    const lightboxLikes = document.getElementById('lightboxLikes');
+    if (lightboxLikes) {
+        lightboxLikes.textContent = formatLikeCount(item.likes);
+    }
+}
+
+/**
+ * Initialize interactive likes functionality
+ */
+function initInteractiveLikes() {
+    // Load like counts from server on page load
+    loadLikeCountsFromServer();
+    
+    // Add click handlers to all like buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.gallery-item-stat')) {
+            const statElement = e.target.closest('.gallery-item-stat');
+            const heartIcon = statElement.querySelector('i.fa-heart');
+            
+            if (heartIcon) {
+                const galleryItem = statElement.closest('.gallery-item');
+                if (galleryItem) {
+                    // Find the item index based on position in gallery
+                    const items = Array.from(document.querySelectorAll('.gallery-item'));
+                    const itemIndex = items.indexOf(galleryItem);
+                    
+                    if (itemIndex !== -1 && itemIndex < galleryItems.length) {
+                        const item = galleryItems[itemIndex];
+                        toggleLikeWithServer(item);
+                        
+                        // Prevent event bubbling
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                }
+            }
+        }
+    });
+    
+    // Add hover effects
+    document.addEventListener('mouseenter', function(e) {
+        if (e.target.closest('.gallery-item-stat')) {
+            const statElement = e.target.closest('.gallery-item-stat');
+            statElement.classList.add('hover-effect');
+        }
+    }, true);
+    
+    document.addEventListener('mouseleave', function(e) {
+        if (e.target.closest('.gallery-item-stat')) {
+            const statElement = e.target.closest('.gallery-item-stat');
+            statElement.classList.remove('hover-effect');
+        }
+    }, true);
+}
+
+/**
+ * Load like counts from server
+ */
+async function loadLikeCountsFromServer() {
+    try {
+        const response = await fetch('/.netlify/functions/like-artwork');
+        if (!response.ok) {
+            throw new Error('Failed to load like counts');
+        }
+        
+        const likeData = await response.json();
+        
+        // Update gallery items with server data
+        likeData.forEach(serverItem => {
+            const galleryItem = galleryItems.find(item => item.id === parseInt(serverItem.id));
+            if (galleryItem) {
+                galleryItem.likes = parseInt(serverItem.total_likes);
+                galleryItem.baseLikes = parseInt(serverItem.base_likes);
+                galleryItem.userLikes = parseInt(serverItem.user_likes);
+                
+                // Check if user has liked this item
+                if (serverItem.user_likes > 0) {
+                    galleryItem.isLiked = true;
+                    userLikes.add(galleryItem.id);
+                }
+            }
+        });
+        
+        // Update displays
+        updateAllLikeDisplays();
+        
+    } catch (error) {
+        console.error('Error loading like counts:', error);
+        // Fallback to local storage
+        loadUserLikes();
+    }
+}
+
+/**
+ * Toggle like with server integration
+ * @param {Object} item - The gallery item object
+ */
+async function toggleLikeWithServer(item) {
+    const likeButton = document.querySelector(`[data-item-id="${item.id}"] .gallery-item-stat`);
+    
+    // Add loading state
+    if (likeButton) {
+        likeButton.classList.add('loading');
+    }
+    
+    try {
+        const response = await fetch('/.netlify/functions/like-artwork', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                artwork_id: item.id,
+                action: 'toggle'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to update like');
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Update item data
+            item.likes = result.total_likes;
+            item.isLiked = result.liked;
+            
+            if (result.liked) {
+                userLikes.add(item.id);
+            } else {
+                userLikes.delete(item.id);
+            }
+            
+            // Update display
+            updateLikeDisplay(item);
+            
+            // Add success animation
+            if (likeButton) {
+                likeButton.classList.remove('loading');
+                likeButton.classList.add('like-success');
+                setTimeout(() => {
+                    likeButton.classList.remove('like-success');
+                }, 500);
+            }
+            
+            // Save to local storage as backup
+            saveUserLikes();
+            
+        } else {
+            throw new Error(result.error || 'Failed to update like');
+        }
+        
+    } catch (error) {
+        console.error('Error toggling like:', error);
+        
+        // Remove loading state
+        if (likeButton) {
+            likeButton.classList.remove('loading');
+            likeButton.classList.add('like-error');
+            setTimeout(() => {
+                likeButton.classList.remove('like-error');
+            }, 500);
+        }
+        
+        // Fallback to client-side only
+        toggleLike(item);
+        updateLikeDisplay(item);
+        saveUserLikes();
+    }
+}
+
+/**
+ * Toggle like status for an item (client-side fallback)
+ * @param {Object} item - The gallery item object
+ */
+function toggleLike(item) {
+    if (item.isLiked) {
+        item.likes--;
+        userLikes.delete(item.id);
+    } else {
+        item.likes++;
+        userLikes.add(item.id);
+    }
+    item.isLiked = !item.isLiked;
+    
+    // Add animation effect
+    const likeButton = document.querySelector(`[data-item-id="${item.id}"] .gallery-item-stat`);
+    if (likeButton) {
+        likeButton.classList.add('like-animation');
+        setTimeout(() => {
+            likeButton.classList.remove('like-animation');
+        }, 300);
+    }
 }
 
 // Initialize everything when DOM is loaded

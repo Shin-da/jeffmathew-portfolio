@@ -1,0 +1,84 @@
+/* about-process.css - Process Section Styles */
+
+.process-section {
+  padding: 4rem 0;
+  background: var(--instagram-bg);
+}
+
+.process-steps-row {
+  margin-top: 2rem;
+}
+
+.process-step {
+  background: #ffffff;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+  transition: var(--transition-smooth);
+  outline: none;
+  border: var(--instagram-border);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: default;
+  position: relative;
+}
+
+.process-step:focus,
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--instagram-shadow-hover);
+}
+
+.process-icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  transition: var(--transition-smooth);
+}
+
+.process-step:hover .process-icon {
+  transform: scale(1.1);
+}
+
+.process-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--header-color, #262626);
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.process-desc {
+  font-size: 0.9rem;
+  color: var(--subtle-text, #8e8e93);
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.process-highlight {
+  background: #ffffff;
+  color: var(--text-color, #262626);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--instagram-shadow);
+  margin-top: 2rem;
+  border: var(--instagram-border);
+  padding: 1.5rem;
+}
+
+.process-highlight h4 {
+  color: var(--header-color, #262626);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.process-highlight p {
+  color: var(--text-color, #262626);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+} 

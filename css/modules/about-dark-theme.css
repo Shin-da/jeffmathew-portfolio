@@ -1,0 +1,35 @@
+/* about-dark-theme.css - Dark Theme Enhancements */
+
+[data-theme="dark"] {
+  --shadow-color-rgb: 255, 255, 255;
+  --glow-color: rgba(var(--highlight-rgb), 0.4);
+  --instagram-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  --instagram-shadow-hover: 0 4px 16px rgba(255, 255, 255, 0.15);
+  --instagram-border: 1px solid rgba(255, 255, 255, 0.1);
+  --instagram-bg: #1a1a1a;
+}
+
+[data-theme="dark"] .about-hero-tagline a:hover {
+  color: var(--highlight);
+}
+
+[data-theme="dark"] .ig-social-row a:hover {
+  color: var(--highlight);
+}
+
+[data-theme="dark"] .about-summary-card,
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .project-tech-container,
+[data-theme="dark"] .about-fun-card {
+  background: var(--card-bg);
+  color: var(--header-color);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tech-category-title {
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .about-fun-label {
+  color: var(--header-color);
+} 
