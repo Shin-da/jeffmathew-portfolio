@@ -2,6 +2,11 @@
 
 # Jeff Mathew Garcia Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be375a2c-ded4-4049-afd4-fbd45b9abe74/deploy-status)](https://app.netlify.com/projects/jeffmathew/deploys)
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/shin-da/jeffmathew-portfolio.svg?style=social)](https://github.com/shin-da/jeffmathew-portfolio/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/shin-da/jeffmathew-portfolio.svg?style=social)](https://github.com/shin-da/jeffmathew-portfolio/network/members)
+
 Welcome to my personal portfolio website! I am Jeff Mathew Garcia (シン/shin), an IT graduate and artist passionate about web development, system creation, and digital art. This site showcases my projects, skills, and services, and is open for commissions.
 
 ## 📋 Important Notice
